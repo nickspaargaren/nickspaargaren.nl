@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Socialblok from './components/socialblok.js';
 
 function App() {
   return (
@@ -8,9 +9,9 @@ function App() {
         <h1>Nick Spaargaren</h1>
         <h2>Designer & Front-End Developer</h2>
       </div>
-      <a href="https://github.com/nickspaargaren" target="_blank" className="github" rel="noopener noreferrer"><i className="fab fa-github"></i><span><strong>Github</strong>Nick Spaargaren</span></a>
-      <a href="https://www.linkedin.com/in/nickspaargaren" target="_blank" className="linkedin" rel="noopener noreferrer"><i className="fab fa-linkedin"></i><span><strong>Linkedin</strong>Nick Spaargaren</span></a>
-      <a href="https://dribbble.com/nickspaargaren" target="_blank" className="dribbble" rel="noopener noreferrer"><i className="fab fa-dribbble"></i><span><strong>Dribbble</strong>Nick Spaargaren</span></a>
+      <Socialblok platform="github" link="https://github.com/nickspaargaren" />
+      <Socialblok platform="linkedin" link="https://www.linkedin.com/in/nickspaargaren" />
+      <Socialblok platform="dribbble" link="https://dribbble.com/nickspaargaren" />
     </div>
   );
 }
