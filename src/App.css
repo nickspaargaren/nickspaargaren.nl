@@ -21,7 +21,7 @@ body::before {
 
 .inhoud a span {display: block; border-radius: 3px; white-space: nowrap; padding: 9px 11px; font-size: 12px; line-height: 1.25em; pointer-events: none; position: relative; margin-top: 10px; transition: .3s all ease;}
 .inhoud a span::before {border: solid; border-width: 0px 6px 6px 6px; top: -4px; content: ""; position: absolute; left: 50%; transform: translateX(-50%); transition: .3s all ease;}
-.inhoud a span strong {display: block; font-size: 14px;}
+.inhoud a span strong {display: block; font-size: 14px; text-transform: capitalize;}
 
 .inhoud a.linkedin:hover {border-color: #2578b5; background-color: #e7f2f7;}
 .inhoud a.linkedin span {background: #e7f2f7; color: #2578b5;}
