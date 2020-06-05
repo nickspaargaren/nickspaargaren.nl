@@ -1,12 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+import './index.css';
+import Socialblok from './components/socialblok.js';
+
+function App() {
+  return (
+    <div className="inhoud">
+      <div className="titel">
+        <h1>Nick Spaargaren</h1>
+        <h2>Designer & Front-End Developer</h2>
+      </div>
+      <Socialblok platform="github" link="https://github.com/nickspaargaren" />
+      <Socialblok platform="linkedin" link="https://www.linkedin.com/in/nickspaargaren" />
+      <Socialblok platform="dribbble" link="https://dribbble.com/nickspaargaren" />
+    </div>
+  );
+}
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+// serviceWorker.unregister();
+serviceWorker.register();
