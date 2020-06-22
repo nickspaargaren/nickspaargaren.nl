@@ -49,6 +49,11 @@ body::before {
 .inhoud a.github span::before {border-color: #292a2c transparent;}
 .inhoud a.github svg path {fill:#292a2c;}
 
+.inhoud a.youtube:hover {border-color: #ff0200;  background-color: #ffe9e8;}
+.inhoud a.youtube span {background: #ff0200; color: #fff;}
+.inhoud a.youtube span::before {border-color: #ff0200 transparent;}
+.inhoud a.youtube svg path {fill:#ff0200;}
+
 .inhoud a.dribbble:hover {border-color: #ea4c89; background-color: #fdedf3;}
 .inhoud a.dribbble span {background: #ea4c89; color: #fff;}
 .inhoud a.dribbble span::before {border-color: #ea4c89 transparent;}
