@@ -11,9 +11,10 @@ function App() {
         <h1>Nick Spaargaren</h1>
         <h2>Designer & Front-End Developer</h2>
       </div>
-      <Socialblok platform="github" link="https://github.com/nickspaargaren" />
-      <Socialblok platform="linkedin" link="https://www.linkedin.com/in/nickspaargaren" />
       <Socialblok platform="dribbble" link="https://dribbble.com/nickspaargaren" />
+      <Socialblok platform="github" link="https://github.com/nickspaargaren" />
+      <Socialblok platform="youtube" link="https://www.youtube.com/watch?v=zDiSkH9PPJg&list=PLrZcPERRIctdZztCmNMHQ11aOne2yYOX3" />
+      <Socialblok platform="linkedin" link="https://www.linkedin.com/in/nickspaargaren" />
     </div>
   );
 }
