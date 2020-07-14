@@ -1,17 +1,22 @@
 import React, { Suspense } from 'react';
+import {useSpring, animated} from 'react-spring'
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 import './index.css';
 const Socialblok = React.lazy(() => import('./components/socialblok')); 
 
 function App() {
+
+  const fadeIn = useSpring({opacity: 1, from: {opacity: 0}})
+
   return (
-  <div className="inhoud">
+  <animated.div style={fadeIn} className="inhoud">
+    <Suspense fallback={<div>Laden...</div>}>
       <div className="titel">
         <h1>Nick Spaargaren</h1>
         <h2>Designer & Front-End Developer</h2>
       </div>
-      <Suspense fallback={<div>Laden...</div>}>
+      
         <div className="socialmedia">
           <Socialblok platform="dribbble" link="https://dribbble.com/nickspaargaren" />
           <Socialblok platform="github" link="https://github.com/nickspaargaren" />
@@ -19,7 +24,7 @@ function App() {
           <Socialblok platform="linkedin" link="https://www.linkedin.com/in/nickspaargaren" />
         </div>
       </Suspense>
-    </div>
+    </animated.div>
   );
 }
 
