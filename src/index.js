@@ -5,7 +5,7 @@ import * as serviceWorker from './serviceWorker';
 import './index.css';
 const Socialblok = React.lazy(() => import('./components/socialblok')); 
 
-function App() {
+const App = () => {
 
   const fadeIn = useSpring({opacity: 1, from: {opacity: 0}})
 
