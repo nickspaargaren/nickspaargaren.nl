@@ -1,0 +1,41 @@
+:root {
+  --dribbble-color: #ea4c89;
+  --dribbble-color-tint: #fdedf3;
+  --github-color: #292a2c;
+  --github-color-tint: #e9e9e9;
+  --youtube-color: #ff0200;
+  --youtube-color-tint: #ffe9e8;
+  --linkedin-color: #2578b5;
+  --linkedin-color-tint: #e7f2f7;
+}
+
+.houder {display: grid; grid-gap: 10px; grid-template-columns: repeat(auto-fit, minmax(158px, 1fr)); max-width: 768px;}
+
+.houder a.blok {transition: .3s all ease; transform: rotate(-1deg); color: inherit; text-decoration: none; white-space: nowrap; font-size: 30px; position: relative; border: 1px solid #e1e2e2; padding: 20px; border-bottom-width: 2px; border-bottom-color: #c3c3c3; background: #fff; border-radius: 5px;}
+
+.houder a.blok span {display: block; border-radius: 3px; white-space: nowrap; padding: 9px 11px; font-size: 12px; line-height: 1.25em; pointer-events: none; position: relative; margin-top: 10px; transition: .3s all ease; background: #aaa;}
+.houder a.blok span::before {border: solid; border-width: 0px 6px 6px 6px; top: -4px; content: ""; position: absolute; left: 50%; transform: translateX(-50%); transition: .3s all ease; border-color: #aaa transparent;}
+.houder a.blok span strong {display: block; font-size: 14px; text-transform: capitalize;}
+
+.houder a.blok.linkedin:hover {border-color: var(--linkedin-color); background-color: var(--linkedin-color-tint);}
+.houder a.blok.linkedin span {background: var(--linkedin-color-tint); color: var(--linkedin-color);}
+.houder a.blok.linkedin:hover span {background: var(--linkedin-color); color: #fff;}
+.houder a.blok.linkedin span::before {border-color: var(--linkedin-color-tint) transparent;}
+.houder a.blok.linkedin:hover span::before {border-color: var(--linkedin-color) transparent;}
+.houder a.blok.linkedin svg path {fill: var(--linkedin-color);}
+.houder a.blok.linkedin::before {content: ""; height: 13px; width: 13px; border-radius: 4px; top: -5px; position: absolute; right: -5px; background: #F54335; border: 2px solid rgba(255, 255, 255, 0.5); box-sizing: border-box;}
+
+.houder a.blok.github:hover {border-color: var(--github-color); background-color: var(--github-color-tint);}
+.houder a.blok.github span {background: var(--github-color); color: #fff;}
+.houder a.blok.github span::before {border-color: var(--github-color) transparent;}
+.houder a.blok.github svg path {fill:var(--github-color);}
+
+.houder a.blok.youtube:hover {border-color: var(--youtube-color); background-color: var(--youtube-color-tint);}
+.houder a.blok.youtube span {background: var(--youtube-color); color: #fff;}
+.houder a.blok.youtube span::before {border-color: var(--youtube-color) transparent;}
+.houder a.blok.youtube svg path {fill: var(--youtube-color);}
+
+.houder a.blok.dribbble:hover {border-color: var(--dribbble-color); background-color: var(--dribbble-color-tint);}
+.houder a.blok.dribbble span {background: var(--dribbble-color); color: #fff;}
+.houder a.blok.dribbble span::before {border-color: var(--dribbble-color) transparent;}
+.houder a.blok.dribbble svg path {fill: var(--dribbble-color);}
