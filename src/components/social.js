@@ -13,7 +13,11 @@ const Socials = () => {
   return (
       <div className={styles.houder}>
         {Socials.map(social =>
-          <a key={social.id} className={`${styles.blok} ${social.class}`} rel="noopener noreferrer" href={social.link} target="_blank" ><i className={`fab fa-${social.platform}`}></i><span><strong>{social.platform}</strong>Nick Spaargaren</span></a>)}
+          <a key={social.id} className={`${styles.blok} ${social.class}`} rel="noopener noreferrer" href={social.link} target="_blank" >
+            <i className={`fab fa-${social.platform}`}></i>
+            <span><strong>{social.platform}</strong>Nick Spaargaren</span>
+          </a>
+        )}
       </div>
     );
 }
