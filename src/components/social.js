@@ -1,6 +1,13 @@
 import React from 'react';
 import styles from './social.module.css';
 
+const SocialBlok = ({platform, socialclass, link}) => (
+  <a className={`${styles.blok} ${socialclass}`} rel="noopener noreferrer" href={link} target="_blank" >
+    <i className={`fab fa-${platform}`}></i>
+    <span><strong>{platform}</strong>Nick Spaargaren</span>
+  </a>
+)
+
 const Socials = () => {
   
   const Socials = [
@@ -13,10 +20,7 @@ const Socials = () => {
   return (
       <div className={styles.houder}>
         {Socials.map(social =>
-          <a key={social.id} className={`${styles.blok} ${social.class}`} rel="noopener noreferrer" href={social.link} target="_blank" >
-            <i className={`fab fa-${social.platform}`}></i>
-            <span><strong>{social.platform}</strong>Nick Spaargaren</span>
-          </a>
+          <SocialBlok key={social.id} platform={social.platform} socialclass={social.class} link={social.link} />
         )}
       </div>
     );
