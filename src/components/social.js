@@ -1,9 +1,10 @@
 import React from 'react';
 import styles from './social.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const SocialBlok = ({platform, socialclass, link}) => (
   <a className={`${styles.blok} ${socialclass}`} rel="noopener noreferrer" href={link} target="_blank" >
-    <i className={`fab fa-${platform}`}></i>
+    <FontAwesomeIcon icon={["fab", `${platform.toLowerCase()}`]} />
     <span><strong>{platform}</strong>Nick Spaargaren</span>
   </a>
 )
