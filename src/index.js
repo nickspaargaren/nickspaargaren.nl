@@ -3,6 +3,11 @@ import {useSpring, animated} from 'react-spring'
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 import './index.css';
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faDribbble, faGithub, faYoutube, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+library.add(faDribbble, faGithub, faYoutube, faLinkedin)
+
 const Socials = React.lazy(() => import('./components/social')); 
 
 const App = () => {
