@@ -1,17 +1,15 @@
 import React, { Suspense } from 'react';
-import {useSpring, animated} from 'react-spring'
+import loadable from '@loadable/component'
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 import './index.css';
 
-const Socials = React.lazy(() => import('./components/social')); 
+const Socials = loadable(() => import('./components/social')); 
 
 const App = () => {
 
-  const fadeIn = useSpring({opacity: 1, from: {opacity: 0}})
-
   return (
-    <animated.div style={fadeIn} className="inhoud">
+    <div className="inhoud">
       <Suspense fallback={<div>Laden...</div>}>
         <div className="titel">
           <h1>Nick Spaargaren</h1>
@@ -19,7 +17,7 @@ const App = () => {
         </div>
         <Socials/>
       </Suspense>
-    </animated.div>
+    </div>
   );
 }
 
