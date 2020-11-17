@@ -11,7 +11,7 @@ body {margin: 0;
   background-color: #fbfbfb;
 }
 
-#root {display: flex; height: 100%;}
+.sitehouder {display: flex; height: 100vh;}
 
 .inhoud {margin: auto; text-align: center; padding: 10px; box-sizing: border-box; max-width: 768px; width: 100%; }
 .inhoud .titel {margin-bottom: 30px;}
