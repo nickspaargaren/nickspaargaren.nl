@@ -1,4 +1,5 @@
 import React from 'react';
+import Layout from '../layout/layout';
 import {Trail} from 'react-spring/renderprops'
 
 import '../styles/index.css';
@@ -16,23 +17,25 @@ export default function Home() {
   ];
 
   return (
-    <div className="sitehouder">
-      <div className="inhoud">
-        <div className="titel">
-          <h1>Nick Spaargaren</h1>
-          <h2>Designer & Front-End Developer</h2>
-        </div>
-        <div className={styles.houder}>
-          <Trail items={SocialList} keys={social => social.id} from={{opacity: 0}} to={{opacity: 1}}>
-            {social => props => 
-              <a style={props} key={social.id} className={`${styles.blok} ${social.class}`} rel="noopener noreferrer" href={social.link} target="_blank" >
-                {social.icoon} 
-                <span><strong>{social.platform}</strong>Nick Spaargaren</span>
-              </a>
-            }
-          </Trail>
+      <Layout> 
+      <div className="sitehouder">
+        <div className="inhoud">
+          <div className="titel">
+            <h1>Nick Spaargaren</h1>
+            <h2>Designer & Front-End Developer</h2>
+          </div>
+          <div className={styles.houder}>
+            <Trail items={SocialList} keys={social => social.id} from={{opacity: 0}} to={{opacity: 1}}>
+              {social => props => 
+                <a style={props} key={social.id} className={`${styles.blok} ${social.class}`} rel="noopener noreferrer" href={social.link} target="_blank" >
+                  {social.icoon} 
+                  <span><strong>{social.platform}</strong>Nick Spaargaren</span>
+                </a>
+              }
+            </Trail>
+          </div>
         </div>
       </div>
-    </div>
+      </Layout>
   )
 }
