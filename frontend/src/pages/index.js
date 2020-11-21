@@ -4,20 +4,12 @@ import {Trail} from 'react-spring/renderprops'
 
 import '../styles/index.css';
 import styles from '../styles/styles.module.css';
+import {SocialData} from '../components/socials/SocialData';
 
-import { FaDribbble, FaGithub, FaYoutube, FaLinkedin } from 'react-icons/fa';
-
-export default function Home() {
-
-  const SocialList = [
-    {id: 1, platform: 'Dribbble', class: styles.dribbble, icoon: <FaDribbble/>, link: 'https://dribbble.com/nickspaargaren'},
-    {id: 2, platform: 'Github', class: styles.github, icoon: <FaGithub/>, link: 'https://github.com/nickspaargaren'},
-    {id: 3, platform: 'Youtube', class: styles.youtube, icoon: <FaYoutube/>, link: 'https://www.youtube.com/watch?v=zDiSkH9PPJg&list=PLrZcPERRIctdZztCmNMHQ11aOne2yYOX3'},
-    {id: 4, platform: 'Linkedin', class: styles.linkedin, icoon: <FaLinkedin/>, link: 'https://www.linkedin.com/in/nickspaargaren'}
-  ];
+const Home = () => {
 
   return (
-      <Layout> 
+      <Layout title="Nick Spaargaren" description="Designer & Front-End Developer"> 
       <div className="sitehouder">
         <div className="inhoud">
           <div className="titel">
@@ -25,9 +17,9 @@ export default function Home() {
             <h2>Designer & Front-End Developer</h2>
           </div>
           <div className={styles.houder}>
-            <Trail items={SocialList} keys={social => social.id} from={{opacity: 0}} to={{opacity: 1}}>
+            <Trail items={SocialData} keys={social => social.id} from={{opacity: 0}} to={{opacity: 1}}>
               {social => props => 
-                <a style={props} key={social.id} className={`${styles.blok} ${social.class}`} rel="noopener noreferrer" href={social.link} target="_blank" >
+                <a style={props} key={social.id} className={`${styles.blok} ${styles[social.class]}`} rel="noopener noreferrer" target="_blank" href={social.url}>
                   {social.icoon} 
                   <span><strong>{social.platform}</strong>Nick Spaargaren</span>
                 </a>
@@ -39,3 +31,5 @@ export default function Home() {
       </Layout>
   )
 }
+
+export default Home
