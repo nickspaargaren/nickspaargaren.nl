@@ -3,8 +3,6 @@
   box-shadow: rgba(0, 0, 0, .1) 0px 1px 2px 0px;
   display: flex;
   position: relative;
-  margin: 0 auto 100px;
-  max-width: 1000px;
   padding: 0 10px;
   border-radius: 4px;
 }
@@ -16,10 +14,9 @@
 .bovenkant strong {display: block;}
 .bovenkant .klein {font-size: 14px;}
 
-.bovenkant .social {display: flex; margin-left: auto;}
+.bovenkant .social {display: grid; grid-gap: 15px; grid-template-columns: 1fr 1fr 1fr 1fr; margin-left: auto;}
 .bovenkant .social a {
   position: relative;
-  margin-left: 15px;
   display: inline-flex;
   line-height: 10px;
   background: #f1f1f1;
@@ -41,3 +38,8 @@
   white-space: nowrap;
 }
 .bovenkant .social a span strong {font-size: 10px; letter-spacing: .15px;}
+
+@media (max-width: 735px) {
+  .bovenkant {flex-direction: column;}
+  .bovenkant .social {margin: 0;}
+}

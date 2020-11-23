@@ -2,7 +2,6 @@ import React from 'react';
 import Layout from '../layout/layout';
 import {Trail} from 'react-spring/renderprops'
 
-import '../styles/index.css';
 import styles from '../styles/styles.module.css';
 import {SocialData} from '../data/socials/SocialData';
 import {useSiteMetadata} from '../data/hooks/algemeen';
@@ -14,7 +13,7 @@ const Home = () => {
   return (
       <Layout title="Nick Spaargaren" description="Designer & Front-End Developer"> 
       <div className="sitehouder">
-        <div className="inhoud">
+        <div className="inhoud" style={{textAlign: 'center', width: '100%'}}>
           <div className="titel">
             <h1>{naam}</h1>
             <h2>{functie}</h2>

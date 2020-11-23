@@ -13,8 +13,26 @@ body {margin: 0;
 
 .sitehouder {display: flex; height: 100vh;}
 
-.inhoud {margin: auto; text-align: center; padding: 10px; box-sizing: border-box; max-width: 768px; width: 100%; }
+.inhoud {margin: auto; padding: 40px; box-sizing: border-box; max-width: 1200px;}
 .inhoud .titel {margin-bottom: 30px;}
 .inhoud .titel h1 {margin: 0 0 10px;}
 .inhoud .titel h2 {margin: 0 0 10px; font-weight: normal; font-size: 1em;}
 .inhoud .titel h1 + h2 {margin-top: -10px; opacity: .7;}
+
+header {background: #221e25;}
+header h1 {font-size: 40px; color: #fff; font-weight: normal;}
+header h1 + p {margin-top: -15px; color: #fff; opacity: .6;}
+
+/* Grid Templates */
+div[class*="grid"] {hyphens: auto; -webkit-hyphens: auto; display: grid; grid-gap: 30px; box-sizing: border-box;}
+div[class*="grid"].vertical-align-middle > div {margin: auto 0;}
+div[class*="grid"] img {max-width: 100%; height: auto !important;}
+.grid-2x {grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));}
+.grid-3x {grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));}
+.grid-4x {grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));}
+/* Einde Grid Templates */
+
+
+@media (max-width: 735px) {
+  .inhoud {padding: 10px;}
+}

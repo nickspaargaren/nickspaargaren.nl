@@ -19,36 +19,40 @@ const Portfolio = () => {
   return (
         <Layout title="Portfolio | Nick Spaargaren" description="Designer & Front-End Developer" noindex>
           <header>
-            <Nav/>
-            <div className={styles.inhoud}>
-              <h1>Welkom, ik ben <strong>Nick Spaargaren</strong></h1>
-              <p>Designer & Front-End Developer</p>
-              <div class={styles.skills}>
-                {skills.nodes.map((item, key) => (
-                  <div key={key} class={styles.skill}>
-                    {item.afbeelding ? <Img fluid={item.afbeelding.asset.fluid} alt={item.titel} loading="lazy" /> : <img src="https://placehold.it/35x35"/>}
-                    <div>
-                      <div className={styles.titel}>
-                        {item.titel}
-                        <span>{item.percentage + '%'}</span>
+            <div className="inhoud"><Nav/></div>
+            <div className="inhoud">
+              <div className="grid-2x">
+                <div>
+                  <h1>Welkom, ik ben <strong style={{whiteSpace: 'nowrap'}}>Nick Spaargaren</strong></h1>
+                  <p>Designer & Front-End Developer</p>
+                </div>
+                <div class={styles.skills}>
+                  {skills.nodes.map((item, key) => (
+                    <div key={key} class={styles.skill}>
+                      {item.afbeelding ? <Img fluid={item.afbeelding.asset.fluid} alt={item.titel} loading="lazy" /> : <img src="https://placehold.it/35x35"/>}
+                      <div>
+                        <div className={styles.titel}>
+                          {item.titel}
+                          <span>{item.percentage + '%'}</span>
+                        </div>
+                        <div className={styles.percentage}>
+                          <Spring from={{ width: '0%' }} to={{ width: item.percentage + '%'}}>
+                            {style => (
+                              <div style={style} className={styles.gevuld}></div>
+                            )}
+                          </Spring>
+                        </div>
                       </div>
-                      <div className={styles.percentage}>
-                        <Spring from={{ width: '0%' }} to={{ width: item.percentage + '%'}}>
-                          {style => (
-                            <div style={style} className={styles.gevuld}></div>
-                          )}
-                        </Spring>
                       </div>
-                    </div>
-                    </div>
-                ))}
+                  ))}
+              </div>
               </div>
             </div>
           </header>
           <div className={styles.portfolio}>
           {portfolio.nodes.map((item, key) =>
               <section key={key}>
-                <div className={`${styles.item} ${styles.inhoud}`}> 
+                <div className={`${styles.item} inhoud grid-2x`}> 
                   <div className={styles.beschrijving}>
                     <h2>{item.titel}</h2>
                     <p>{item.beschrijving}</p>
