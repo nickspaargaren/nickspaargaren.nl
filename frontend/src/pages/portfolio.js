@@ -22,9 +22,19 @@ const Portfolio = () => {
             <div className={styles.inhoud}>
               <h1>Welkom, ik ben <strong>Nick Spaargaren</strong></h1>
               <p>Designer & Front-End Developer</p>
-              {skills.nodes.map((item, key) => (
-                <div key={key}>{item.titel}</div>
-              ))}
+              <div class={styles.skills}>
+                {skills.nodes.map((item, key) => (
+                  <div key={key} class={styles.skill}>
+                    {item.afbeelding ? <Img fluid={item.afbeelding.asset.fluid} alt={item.titel} loading="lazy" /> : <img src="https://placehold.it/35x35"/>}
+                    <div>
+                      <div className={styles.titel}>{item.titel}</div>
+                      <div className={styles.percentage}>
+                        <div className={styles.gevuld} style={{width: item.percentage + '%'}}></div>
+                      </div>
+                    </div>
+                    </div>
+                ))}
+              </div>
             </div>
           </header>
           <div className={styles.portfolio}>

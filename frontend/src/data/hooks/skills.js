@@ -5,8 +5,20 @@ export const useSkillsData = () => {
     query skills {
       skills: allSanitySkills {
         nodes {
-          titel
           id
+          titel
+          percentage
+          afbeelding {
+            asset {
+              fluid(maxWidth: 35, maxHeight: 35) {
+                base64
+                aspectRatio
+                src
+                srcSet
+                sizes
+              }
+            }
+          }
         }
       }
     }  

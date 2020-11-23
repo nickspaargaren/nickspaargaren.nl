@@ -9,6 +9,13 @@ export default {
       type: 'string',
     },
     {
+      name: 'percentage',
+      title: 'Percentage',
+      description: '0 - 100',
+      type: 'number',
+      validation: Rule => Rule.required().min(0).max(100)
+    },
+    {
       name: 'afbeelding',
       title: 'Afbeelding',
       type: 'image',
