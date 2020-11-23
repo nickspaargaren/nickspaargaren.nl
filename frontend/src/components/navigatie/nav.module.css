@@ -1,0 +1,51 @@
+.bovenkant {
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, .1) 0px 1px 2px 0px;
+  display: flex;
+  position: relative;
+  padding: 0 10px;
+  border-radius: 4px;
+}
+.bovenkant > div {margin: auto 0; padding: 10px;}
+.bovenkant > div a {color: inherit; text-decoration: none;}
+.bovenkant > .info {display: flex;}
+.bovenkant > .info img {height: 37px; margin: auto 10px auto 0; border-radius: 50px;}
+
+.bovenkant strong {display: block;}
+.bovenkant .klein {font-size: 14px;}
+
+.bovenkant .social {display: grid; grid-gap: 15px; grid-template-columns: 1fr 1fr 1fr 1fr; margin-left: auto;}
+.bovenkant .social a {
+  position: relative;
+  display: inline-flex;
+  line-height: 10px;
+  background: #f1f1f1;
+  padding: 5px 8px 5px 7px;
+  border-radius: 3px;
+  transition: .3s all ease;
+  box-shadow: rgba(0, 0, 0, .1) 0px 1px 2px 0px inset;
+}
+
+.bovenkant .social a:hover {background: #221e25; color: #fff;}
+
+.bovenkant .social a svg {margin: auto 0;}
+.bovenkant .social a span {
+  display: inline-block;
+  margin: auto 0 auto 5px;
+  position: relative;
+  text-transform: uppercase;
+  font-size: 8px;
+  white-space: nowrap;
+}
+.bovenkant .social a span strong {font-size: 10px; letter-spacing: .15px;}
+
+
+
+
+@media (max-width: 735px) {
+  .bovenkant {flex-direction: column; padding: 0;}
+  .bovenkant .social {margin: 0; grid-template-columns: 1fr 1fr; grid-gap: 5px;}
+  .bovenkant > div {padding: 10px 10px 0;}
+  .bovenkant > div:first-child {display: none;}
+  .bovenkant > div:last-child {padding-bottom: 10px;}
+}
