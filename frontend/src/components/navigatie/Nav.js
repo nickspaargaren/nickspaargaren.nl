@@ -1,19 +1,23 @@
 import React from 'react';
 import styles from './nav.module.css';
 import { Link } from "gatsby"
-import profielfoto from '../../assets/images/nick-spaargaren.jpeg';
+import profielfoto from '../../data/images/nick-spaargaren.jpeg';
 
-import {SocialData} from '../socials/SocialData';
+import {SocialData} from '../../data/socials/SocialData';
+import {useSiteMetadata} from '../../data/hooks/algemeen';
 
 const Nav = () => {
+
+  const {naam, functie} = useSiteMetadata();
+
   return (
     <div className={styles.bovenkant}>
       <div><Link to="/">Terug</Link></div>
       <div className={styles.info}>
       <img src={profielfoto} alt="Nick Spaargaren"/>
       <div>
-        <strong>Nick Spaargaren</strong>
-        <div className={styles.klein}>Designer & Front-End Developer</div>
+        <strong>{naam}</strong>
+        <div className={styles.klein}>{functie}</div>
       </div>
       </div>
       <div className={styles.social}>

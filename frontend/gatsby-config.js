@@ -1,4 +1,8 @@
 module.exports = {
+  siteMetadata: {
+    naam: 'Nick Spaargaren',
+    functie: 'Designer & Front-End Developer',    
+  },
   plugins: [
     {
       resolve: 'gatsby-source-sanity',

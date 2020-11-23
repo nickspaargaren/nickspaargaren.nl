@@ -1,40 +1,19 @@
 import React from "react"
 import Layout from "../layout/layout"
 
-import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image"
 
 import styles from '../styles/portfolio.module.css';
 import Nav from "../components/navigatie/Nav";
 
+import {usePortfolioData} from "../data/hooks/portfolio";
+import {useSkillsData} from "../data/hooks/skills";
+
+
 const Portfolio = () => {
 
-  const { portfolio } = useStaticQuery(
-    graphql`
-      query portfolio {
-        portfolio: allSanityPortfolio {
-          nodes {
-            titel
-            website
-            tags
-            id
-            github
-            beschrijving
-            afbeelding {
-              asset {
-                fluid {
-                  aspectRatio
-                  base64
-                  srcWebp
-                  srcSetWebp
-                }
-              }
-            }
-          }
-        }
-      }  
-    `
-  )
+  const {portfolio} = usePortfolioData();
+  const {skills} = useSkillsData();
 
   return (
         <Layout title="Portfolio | Nick Spaargaren" description="Designer & Front-End Developer" noindex>
@@ -43,10 +22,13 @@ const Portfolio = () => {
             <div className={styles.inhoud}>
               <h1>Welkom, ik ben <strong>Nick Spaargaren</strong></h1>
               <p>Designer & Front-End Developer</p>
+              {skills.nodes.map((item, key) => (
+                <div key={key}>{item.titel}</div>
+              ))}
             </div>
           </header>
           <div className={styles.portfolio}>
-            {portfolio.nodes.map((item, key) =>
+          {portfolio.nodes.map((item, key) =>
               <section key={key}>
                 <div className={`${styles.item} ${styles.inhoud}`}> 
                   <div className={styles.beschrijving}>
