@@ -3,7 +3,7 @@ export const useSkillsData = () => {
   const data = useStaticQuery(
     graphql`
     query skills {
-      skills: allSanitySkills {
+      skills: allSanitySkills(sort: {fields: percentage, order: DESC}) {
         nodes {
           id
           titel

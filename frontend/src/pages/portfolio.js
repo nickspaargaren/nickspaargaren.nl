@@ -9,6 +9,7 @@ import Nav from "../components/navigatie/Nav";
 import {usePortfolioData} from "../data/hooks/portfolio";
 import {useSkillsData} from "../data/hooks/skills";
 
+import {Spring} from 'react-spring/renderprops'
 
 const Portfolio = () => {
 
@@ -27,9 +28,16 @@ const Portfolio = () => {
                   <div key={key} class={styles.skill}>
                     {item.afbeelding ? <Img fluid={item.afbeelding.asset.fluid} alt={item.titel} loading="lazy" /> : <img src="https://placehold.it/35x35"/>}
                     <div>
-                      <div className={styles.titel}>{item.titel}</div>
+                      <div className={styles.titel}>
+                        {item.titel}
+                        <span>{item.percentage + '%'}</span>
+                      </div>
                       <div className={styles.percentage}>
-                        <div className={styles.gevuld} style={{width: item.percentage + '%'}}></div>
+                        <Spring from={{ width: '0%' }} to={{ width: item.percentage + '%'}}>
+                          {style => (
+                            <div style={style} className={styles.gevuld}></div>
+                          )}
+                        </Spring>
                       </div>
                     </div>
                     </div>
