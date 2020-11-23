@@ -39,7 +39,13 @@
 }
 .bovenkant .social a span strong {font-size: 10px; letter-spacing: .15px;}
 
+
+
+
 @media (max-width: 735px) {
-  .bovenkant {flex-direction: column;}
-  .bovenkant .social {margin: 0;}
+  .bovenkant {flex-direction: column; padding: 0;}
+  .bovenkant .social {margin: 0; grid-template-columns: 1fr 1fr; grid-gap: 5px;}
+  .bovenkant > div {padding: 10px 10px 0;}
+  .bovenkant > div:first-child {display: none;}
+  .bovenkant > div:last-child {padding-bottom: 10px;}
 }
