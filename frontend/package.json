@@ -13,9 +13,15 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "gatsby": "^2.25.3",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "gatsby": "^2.27.0",
+    "gatsby-image": "^2.6.0",
+    "gatsby-plugin-google-fonts": "^1.0.1",
+    "gatsby-plugin-sharp": "^2.9.0",
+    "gatsby-source-sanity": "^6.0.4",
+    "gatsby-transformer-sharp": "^2.7.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-helmet": "^6.1.0",
     "react-icons": "^3.11.0",
     "react-spring": "^8.0.27"
   },
