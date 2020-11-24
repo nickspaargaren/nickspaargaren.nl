@@ -7,6 +7,9 @@ export default {
       name: 'titel',
       title: 'Titel',
       type: 'string',
+      validation: Rule => [
+        Rule.required()
+      ]
     },
     {
       name: 'beschrijving',
@@ -42,6 +45,11 @@ export default {
       name: 'tags',
       type: 'array',
       of: [{type: 'string'}],
+    },
+    {
+      title: 'In samenwerking met CM Specialist',
+      name: 'samenwerking',
+      type: 'boolean'
     }
   ],
   preview: {

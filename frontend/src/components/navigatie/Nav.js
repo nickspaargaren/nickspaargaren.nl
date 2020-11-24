@@ -17,7 +17,7 @@ const Nav = () => {
       <img src={profielfoto} alt="Nick Spaargaren"/>
       <div>
         <strong>{naam}</strong>
-        <div className={styles.klein}>{functie}</div>
+        <div className="klein">{functie}</div>
       </div>
       </div>
       <div className={styles.social}>

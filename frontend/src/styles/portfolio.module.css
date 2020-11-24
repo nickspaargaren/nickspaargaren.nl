@@ -22,7 +22,6 @@
   height: 100%;
   border-radius: inherit;}
 
-.portfolio section .item {}
 .portfolio section .item .beschrijving {margin: auto 0;}
 .portfolio section .item .beschrijving ul.tags {list-style: none; margin: 0; padding: 0; display: flex;}
 .portfolio section .item .beschrijving ul.tags li {
@@ -36,3 +35,9 @@
   margin: 10px 10px 0 0;
   border-radius: 3px;
 }
+
+.info {display: flex; padding: 10px; border: 1px solid #eee; border-top:0; border-radius: 0 4px 4px 0;}
+.info .samenwerking {display: flex;}
+.info .samenwerking img {margin: auto 10px auto 0;}
+.info .samenwerking div strong {display: block;}
+.info .links {margin-left: auto; padding-left: 10px;}
