@@ -9,7 +9,7 @@ import Nav from "../components/navigatie/Nav";
 import {usePortfolioData} from "../data/hooks/portfolio";
 import {useSkillsData} from "../data/hooks/skills";
 
-import {Spring} from 'react-spring/renderprops'
+import {Spring, config} from 'react-spring/renderprops'
 
 const Portfolio = () => {
 
@@ -19,7 +19,13 @@ const Portfolio = () => {
   return (
         <Layout title="Portfolio | Nick Spaargaren" description="Designer & Front-End Developer" noindex>
           <header>
-            <div className="inhoud"><Nav/></div>
+              <Spring config={{ tension: 280, friction: 60 }} from={{ opacity: 0, transform: 'translateY(-20px) scale(0.8)' }} to={{ opacity: 1, transform: 'translateY(0px) scale(1.0)' }}>
+                {style => (
+                  <div style={style} className="inhoud">
+                  <Nav />
+                  </div>
+                )}
+              </Spring>  
             <div className="inhoud">
               <div className="grid-2x">
                 <div>
@@ -36,14 +42,14 @@ const Portfolio = () => {
                           <span>{item.percentage + '%'}</span>
                         </div>
                         <div className={styles.percentage}>
-                          <Spring from={{ width: '0%' }} to={{ width: item.percentage + '%'}}>
+                          <Spring config={{ tension: 280, friction: 60, delay: 300 }} from={{ width: '0%' }} to={{ width: item.percentage + '%'}}>
                             {style => (
                               <div style={style} className={styles.gevuld}></div>
                             )}
                           </Spring>
                         </div>
                       </div>
-                      </div>
+                    </div>
                   ))}
               </div>
               </div>
