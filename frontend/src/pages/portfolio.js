@@ -7,7 +7,7 @@ import styles from '../styles/portfolio.module.css';
 import Nav from "../components/navigatie/Nav";
 
 import cmspecialistLogo from '../data/images/logo-cm-specialist.png'
-import { FaGlobe, FaGithub } from 'react-icons/fa';
+import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 
 import {usePortfolioData} from "../data/hooks/portfolio";
 import {useSkillsData} from "../data/hooks/skills";
@@ -78,7 +78,7 @@ const Portfolio = () => {
                     <div class={styles.info}>
                       {item.samenwerking && <div class={styles.samenwerking}><img src={cmspecialistLogo} alt="CM Specialist" width="39px" height="39px" /><div><span class="klein">Samenwerking</span><strong>CM Specialist</strong></div></div>}
                       <div class={styles.links}>
-                        {item.website && <div><a rel="noopener noreferrer" target="_blank" href={item.website}><FaGlobe/></a></div>}
+                        {item.website && <div><a rel="noopener noreferrer" target="_blank" href={item.website}>Bekijken<FaExternalLinkAlt/></a></div>}
                         {item.github && <div><a rel="noopener noreferrer" target="_blank" href={item.github}><FaGithub/></a></div>}
                       </div>
                     </div>

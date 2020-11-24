@@ -36,7 +36,7 @@
   font-size: 8px;
   white-space: nowrap;
 }
-.bovenkant .social a span strong {font-size: 10px; letter-spacing: .15px;}
+.bovenkant .social a span strong {font-size: 10px; opacity: .9; letter-spacing: .15px; }
 
 
 
