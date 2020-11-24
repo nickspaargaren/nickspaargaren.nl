@@ -11,6 +11,7 @@ export const usePortfolioData = () => {
           id
           github
           beschrijving
+          samenwerking
           afbeelding {
             asset {
               fluid {

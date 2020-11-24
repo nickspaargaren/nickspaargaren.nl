@@ -23,6 +23,8 @@ header {background: #221e25;}
 header h1 {font-size: 40px; color: #fff; font-weight: normal;}
 header h1 + p {margin-top: -15px; color: #fff; opacity: .6;}
 
+.klein {font-size: 14px;}
+
 /* Grid Templates */
 div[class*="grid"] {hyphens: auto; -webkit-hyphens: auto; display: grid; grid-gap: 30px; box-sizing: border-box;}
 div[class*="grid"].vertical-align-middle > div {margin: auto 0;}
