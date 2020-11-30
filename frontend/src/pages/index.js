@@ -15,7 +15,7 @@ const Home = () => {
       <div className="sitehouder">
         <div className="inhoud" style={{textAlign: 'center', width: '100%'}}>
           <div className="titel">
-            <h1>{naam}</h1>
+            <h1 style={{fontSize: '2em'}}>{naam}</h1>
             <h2>{functie}</h2>
           </div>
           <div className={styles.houder}>

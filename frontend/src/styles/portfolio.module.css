@@ -22,6 +22,7 @@
   height: 100%;
   border-radius: inherit;}
 
+.portfolio section {border-bottom: 1px solid #eee; background: linear-gradient(rgba(248, 248, 248, 0), rgba(248, 248, 248, 1));}
 .portfolio section .item .beschrijving {margin: auto 0;}
 .portfolio section .item .beschrijving ul.tags {list-style: none; margin: 0; padding: 0; display: flex;}
 .portfolio section .item .beschrijving ul.tags li {
@@ -35,11 +36,12 @@
   margin: 10px 10px 0 0;
   border-radius: 3px;
 }
-.portfolio section .item .plaatje {border: 1px solid #eee;}
-.info {display: flex; padding: 10px 15px; min-height: 40px; background: #fff; box-shadow: rgba(0, 0, 0, .1) 0px 1px 2px 0px; border-top: 1px solid #eee; border-radius: 0 0 4px 4px;}
-.info .samenwerking {display: flex; margin-right: auto;}
-.info .samenwerking div {margin: auto 0;}
-.info .samenwerking div img {display: block; margin-right: 10px;}
-.info .samenwerking div strong {display: block;}
-.info .links {display: flex; margin-left: auto;}
-.info .links > * {margin-left: 15px;}
+.portfolio section .item .plaatje {border: 1px solid #eee; border-radius: 4px;}
+.portfolio section .item .plaatje img {border-radius: 4px 4px 0 0;}
+.portfolio section .item .plaatje .info {display: flex; padding: 10px 15px; min-height: 40px; background: #fff; box-shadow: rgba(0, 0, 0, .1) 0px 1px 2px 0px; border-top: 1px solid #eee; border-radius: 0 0 4px 4px;}
+.portfolio section .item .plaatje .info .samenwerking {display: flex; margin-right: auto;}
+.portfolio section .item .plaatje .info .samenwerking div {margin: auto 0;}
+.portfolio section .item .plaatje .info .samenwerking div img {display: block; margin-right: 10px; border-radius: 2px;}
+.portfolio section .item .plaatje .info .samenwerking div strong {display: block;}
+.portfolio section .item .plaatje .info .links {display: flex; margin-left: auto;}
+.portfolio section .item .plaatje .info .links > * {margin-left: 15px;}
