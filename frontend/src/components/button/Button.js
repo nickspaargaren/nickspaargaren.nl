@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 const Button = ({title, subtitle, icoon, url}) => {
 
   return (
-    <Link to={url} rel="noopener noreferrer" target="_blank" class={styles.button}>
+    <Link to={url} rel="noopener noreferrer" target="_blank" className={styles.button}>
       {icoon}
       <span>
         <strong>{title}</strong>
