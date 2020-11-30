@@ -13,6 +13,7 @@ import {usePortfolioData} from "../data/hooks/portfolio";
 import {useSkillsData} from "../data/hooks/skills";
 
 import {Spring, config} from 'react-spring/renderprops'
+import Button from "../components/button/Button";
 
 const Portfolio = () => {
 
@@ -78,10 +79,11 @@ const Portfolio = () => {
                     <div class={styles.info}>
                       {item.samenwerking && <div class={styles.samenwerking}>
                         <div><img src={cmspecialistLogo} alt="CM Specialist" width="39px" height="39px" /></div>
-                        <div><span class="klein">Samenwerking</span><strong>CM Specialist</strong></div></div>}
+                        <div><span class="klein">Samenwerking</span><strong>CM Specialist</strong></div></div>
+                      }
                       <div class={styles.links}>
-                        {item.website && <div><a rel="noopener noreferrer" target="_blank" href={item.website}>Bekijken<FaExternalLinkAlt/></a></div>}
-                        {item.github && <div><a rel="noopener noreferrer" target="_blank" href={item.github}><FaGithub/></a></div>}
+                        {item.website && <Button key={key} title="Website" subtitle="Bekijken" icoon={<FaExternalLinkAlt/>} url={item.website}/>}
+                        {item.github && <Button key={key} title="Source" subtitle="Bekijken" icoon={<FaGithub/>} url={item.github}/>}
                       </div>
                     </div>
                   </div>
