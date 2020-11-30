@@ -39,7 +39,7 @@ const Portfolio = () => {
                 <div class={styles.skills}>
                   {skills.nodes.map((item, key) => (
                     <div key={key} class={styles.skill}>
-                      {item.afbeelding ? <Img fluid={item.afbeelding.asset.fluid} alt={item.titel} loading="lazy" /> : <img src="https://placehold.it/35x35"/>}
+                      {item.afbeelding ? <Img fluid={item.afbeelding.asset.fluid} alt={item.titel} loading="lazy" /> : <img src="https://placehold.it/35x35" alt="placeholder"/>}
                       <div>
                         <div className={styles.titel}>
                           {item.titel}
