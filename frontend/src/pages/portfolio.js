@@ -76,7 +76,9 @@ const Portfolio = () => {
                   <div>
                     {item.afbeelding && <a rel="noopener noreferrer" target="_blank" href={item.website}><Img fluid={item.afbeelding.asset.fluid} alt={item.titel} loading="lazy" /></a>}
                     <div class={styles.info}>
-                      {item.samenwerking && <div class={styles.samenwerking}><img src={cmspecialistLogo} alt="CM Specialist" width="39px" height="39px" /><div><span class="klein">Samenwerking</span><strong>CM Specialist</strong></div></div>}
+                      {item.samenwerking && <div class={styles.samenwerking}>
+                        <div><img src={cmspecialistLogo} alt="CM Specialist" width="39px" height="39px" /></div>
+                        <div><span class="klein">Samenwerking</span><strong>CM Specialist</strong></div></div>}
                       <div class={styles.links}>
                         {item.website && <div><a rel="noopener noreferrer" target="_blank" href={item.website}>Bekijken<FaExternalLinkAlt/></a></div>}
                         {item.github && <div><a rel="noopener noreferrer" target="_blank" href={item.github}><FaGithub/></a></div>}
