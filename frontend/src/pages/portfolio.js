@@ -82,8 +82,8 @@ const Portfolio = () => {
                         <div><span className="klein">Samenwerking</span><strong>CM Specialist</strong></div></div>
                       }
                       <div className={styles.links}>
-                        {item.website && <Button key={key} title="Website" subtitle="Bekijken" icoon={<FaAngleDoubleRight/>} url={item.website}/>}
-                        {item.github && <Button key={key} title="Source" subtitle="Bekijken" icoon={<FaCode/>} url={item.github}/>}
+                        {item.website && <Button title="Website" subtitle="Bekijken" icoon={<FaAngleDoubleRight/>} url={item.website}/>}
+                        {item.github && <Button title="Source" subtitle="Bekijken" icoon={<FaCode/>} url={item.github}/>}
                       </div>
                     </div>
                   </div>
