@@ -23,7 +23,7 @@ const Nav = () => {
       </div>
       <div className={styles.social}>
         {SocialData.map((data, key) => (
-          <Button key={key} title={data.platform} subtitle="Account" icoon={data.icoon} url={data.url}/>
+          <Button key={key} title={data.platform} subtitle="Account" icoon={data.icoon} url={data.url} external/>
         ))}
       </div>
 

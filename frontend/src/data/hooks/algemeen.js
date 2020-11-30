@@ -7,6 +7,7 @@ export const useSiteMetadata = () => {
           siteMetadata {
             naam
             functie
+            telfoonnummer
           }
         }
       }

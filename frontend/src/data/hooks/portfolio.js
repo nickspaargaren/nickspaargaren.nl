@@ -3,7 +3,7 @@ export const usePortfolioData = () => {
   const data = useStaticQuery(
     graphql`
     query portfolio {
-      portfolio: allSanityPortfolio {
+      portfolio: allSanityPortfolio(sort: {fields: samenwerking, order: ASC}) {
         nodes {
           titel
           website
@@ -25,7 +25,7 @@ export const usePortfolioData = () => {
           }
         }
       }
-    }  
+    }
     `
   )
   

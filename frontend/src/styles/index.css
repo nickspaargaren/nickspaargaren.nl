@@ -19,9 +19,21 @@ body {margin: 0;
 .inhoud .titel h2 {margin: 0 0 10px; font-weight: normal; font-size: 1em;}
 .inhoud .titel h1 + h2 {margin-top: -10px; opacity: .7;}
 
-header {background: #221e25;}
-header h1 {font-size: 40px; color: #fff; font-weight: normal;}
-header h1 + p {margin-top: -15px; color: #fff; opacity: .6;}
+h1, h2, h3 {margin: 0 0 10px;}
+h1 {font-size: 40px;}
+h1 + p {margin-top: -10px;}
+h2 {font-size: 30px;}
+h3 {font-size: 20px;}
+
+header, footer {background: #221e25; color: rgba(255,255,255,.6);}
+header h1, footer h1
+header h2, footer h2,
+header h3, footer h3 {color: #fff; font-weight: normal;}
+
+footer {text-align: center;}
+footer a {color: #fff;}
+footer .tel {font-size: 25px; font-weight: bold; color: #fff; margin: 0 0 10px;}
+footer .tel + p {margin-top: -10px;}
 
 .klein {font-size: 14px;}
 
