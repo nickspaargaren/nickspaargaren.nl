@@ -74,7 +74,7 @@ const Portfolio = () => {
                     </ul>
 
                   </div>
-                  <div>
+                  <div className={styles.plaatje}>
                     {item.afbeelding && <a rel="noopener noreferrer" target="_blank" href={item.website}><Img fluid={item.afbeelding.asset.fluid} alt={item.titel} loading="lazy" /></a>}
                     <div className={styles.info}>
                       {item.samenwerking && <div className={styles.samenwerking}>
