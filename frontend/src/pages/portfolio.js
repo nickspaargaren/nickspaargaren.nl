@@ -36,9 +36,9 @@ const Portfolio = () => {
                   <h1>Welkom, ik ben <strong style={{whiteSpace: 'nowrap'}}>Nick Spaargaren</strong></h1>
                   <p>Designer & Front-End Developer</p>
                 </div>
-                <div class={styles.skills}>
+                <div className={styles.skills}>
                   {skills.nodes.map((item, key) => (
-                    <div key={key} class={styles.skill}>
+                    <div key={key} className={styles.skill}>
                       {item.afbeelding ? <Img fluid={item.afbeelding.asset.fluid} alt={item.titel} loading="lazy" /> : <img src="https://placehold.it/35x35" alt="placeholder"/>}
                       <div>
                         <div className={styles.titel}>
@@ -76,12 +76,12 @@ const Portfolio = () => {
                   </div>
                   <div>
                     {item.afbeelding && <a rel="noopener noreferrer" target="_blank" href={item.website}><Img fluid={item.afbeelding.asset.fluid} alt={item.titel} loading="lazy" /></a>}
-                    <div class={styles.info}>
-                      {item.samenwerking && <div class={styles.samenwerking}>
+                    <div className={styles.info}>
+                      {item.samenwerking && <div className={styles.samenwerking}>
                         <div><img src={cmspecialistLogo} alt="CM Specialist" width="39px" height="39px" /></div>
-                        <div><span class="klein">Samenwerking</span><strong>CM Specialist</strong></div></div>
+                        <div><span className="klein">Samenwerking</span><strong>CM Specialist</strong></div></div>
                       }
-                      <div class={styles.links}>
+                      <div className={styles.links}>
                         {item.website && <Button key={key} title="Website" subtitle="Bekijken" icoon={<FaAngleDoubleRight/>} url={item.website}/>}
                         {item.github && <Button key={key} title="Source" subtitle="Bekijken" icoon={<FaCode/>} url={item.github}/>}
                       </div>
