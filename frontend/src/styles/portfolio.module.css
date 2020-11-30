@@ -37,8 +37,9 @@
 }
 
 .info {display: flex; padding: 10px; border: 1px solid #eee; border-top:0; border-radius: 0 4px 4px 0;}
-.info .samenwerking {display: flex;}
+.info .samenwerking {display: flex; margin-right: auto;}
 .info .samenwerking div {margin: auto 0;}
-.info .samenwerking div img {margin-right: 10px;}
+.info .samenwerking div img {display: block; margin-right: 10px;}
 .info .samenwerking div strong {display: block;}
-.info .links {margin: auto 0 auto auto; padding-left: 10px;}
+.info .links {display: flex; margin-left: auto;}
+.info .links > * {margin-left: 15px;}

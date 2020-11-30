@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './nav.module.css';
 import { Link } from "gatsby"
 import profielfoto from '../../data/images/nick-spaargaren.jpeg';
+import Button from '../button/Button';
 
 import {SocialData} from '../../data/socials/SocialData';
 import {useSiteMetadata} from '../../data/hooks/algemeen';
@@ -22,13 +23,7 @@ const Nav = () => {
       </div>
       <div className={styles.social}>
         {SocialData.map((data, key) => (
-          <a key={key} href={data.url} rel="noopener noreferrer" target="_blank">
-            {data.icoon}
-            <span>
-            <strong>{data.platform}</strong>
-            Account
-            </span>
-          </a>
+          <Button key={key} title={data.platform} subtitle="Account" icoon={data.icoon} url={data.url}/>
         ))}
       </div>
 
