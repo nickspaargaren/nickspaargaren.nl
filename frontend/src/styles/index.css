@@ -25,6 +25,8 @@ h1 + p {margin-top: -10px;}
 h2 {font-size: 30px;}
 h3 {font-size: 20px;}
 
+p {line-height: 1.5em; margin: 0 0 10px;}
+
 header, footer {background: #221e25; color: rgba(255,255,255,.6);}
 header h1, footer h1
 header h2, footer h2,
