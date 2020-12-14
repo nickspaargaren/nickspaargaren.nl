@@ -24,6 +24,7 @@ h1 {font-size: 40px;}
 h1 + p {margin-top: -10px;}
 h2 {font-size: 30px;}
 h3 {font-size: 20px;}
+h3 + p {margin-top: -10px;}
 
 p {line-height: 1.5em; margin: 0 0 10px;}
 

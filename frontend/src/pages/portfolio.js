@@ -15,6 +15,7 @@ import {useSkillsData} from "../data/hooks/skills";
 
 import {Spring} from 'react-spring/renderprops'
 import Button from "../components/button/Button";
+import Github from "../components/github/Github";
 
 const Portfolio = () => {
 
@@ -93,6 +94,13 @@ const Portfolio = () => {
               </section>
             )}
           </div>
+          <section>
+            <div className="inhoud" style={{textAlign: 'center'}}>
+              <h3>Open source project</h3>
+              <p>Met meeste contributers</p>
+              <Github  />
+            </div>
+          </section>
           <footer>
             <div className="inhoud">            
               <div className="tel">{telfoonnummer}</div>
