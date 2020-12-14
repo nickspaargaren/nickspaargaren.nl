@@ -96,8 +96,8 @@ const Portfolio = () => {
           </div>
           <section>
             <div className="inhoud" style={{textAlign: 'center'}}>
-              <h3>Open source project</h3>
-              <p>Met meeste contributers</p>
+              <h3>Open Source project</h3>
+              <p>met meeste contributors</p>
               <Github  />
             </div>
           </section>
