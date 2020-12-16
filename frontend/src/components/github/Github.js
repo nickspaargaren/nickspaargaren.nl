@@ -29,7 +29,7 @@ const Github = () => {
   } else {
     return (
       <div className={styles.github}>
-        <div class={styles.titel}>{github.name}</div>
+        <div className={styles.titel}>{github.name}</div>
         <p>{github.description}</p>
         <p><a href={github.html_url} rel="noopener noreferrer" target="_blank">{github.html_url}</a></p>
         <small>
