@@ -29,7 +29,6 @@ const Nav = () => {
           <Button key={key} title={data.platform} subtitle="Account" icoon={data.icoon} url={data.url} external/>
         ))}
       </div>
-
     </div>
 
   )
