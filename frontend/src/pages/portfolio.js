@@ -21,7 +21,7 @@ const Portfolio = () => {
 
   const {portfolio} = usePortfolioData();
   const {skills} = useSkillsData();
-  const {naam, functie, telfoonnummer} = useSiteMetadata();
+  const {naam, functie, telefoonnummer} = useSiteMetadata();
 
   return (
         <Layout title={`Portfolio | ${naam}`} description={functie} noindex>
@@ -103,7 +103,7 @@ const Portfolio = () => {
           </section>
           <footer>
             <div className="inhoud">            
-              <div className="tel">{telfoonnummer}</div>
+              <div className="tel">{telefoonnummer}</div>
               <p>Of toch eerst <a href="https://www.google.com/search?q=site%3Acmspecialist.nl+%22Nick+Spaargaren%22" rel="noopener noreferrer" target="_blank">meer projecten</a> zien?</p>
             </div>
           </footer>
