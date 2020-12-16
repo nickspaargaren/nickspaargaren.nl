@@ -14,6 +14,10 @@
 
 .bovenkant .social {display: grid; grid-gap: 15px; grid-template-columns: 1fr 1fr 1fr 1fr; margin-left: auto;}
 
+.switch {overflow: hidden; height: 17px;}
+.switch > div {position: relative; top: 0; transition: .3s all ease;}
+.bovenkant:hover .switch > div {top: -17px;}
+
 @media (max-width: 735px) {
   .bovenkant {flex-direction: column; padding: 0;}
   .bovenkant .social {margin: 0; grid-template-columns: 1fr 1fr; grid-gap: 5px;}

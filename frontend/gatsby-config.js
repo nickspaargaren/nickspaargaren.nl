@@ -1,8 +1,13 @@
+require("dotenv").config({
+  path: `.env`,
+})
+
 module.exports = {
   siteMetadata: {
     naam: 'Nick Spaargaren',
     functie: 'Designer & Front-End Developer',
-    telefoonnummer: '06 343 260 53'
+    telefoonnummer: process.env.TELEFOONNUMMER,
+    email: process.env.EMAIL
   },
   plugins: [
     {
