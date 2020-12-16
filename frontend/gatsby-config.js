@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     naam: 'Nick Spaargaren',
     functie: 'Designer & Front-End Developer',
-    telfoonnummer: '06 343 260 53'
+    telefoonnummer: '06 343 260 53'
   },
   plugins: [
     {
