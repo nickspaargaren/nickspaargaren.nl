@@ -9,7 +9,7 @@ import {useSiteMetadata} from '../../data/hooks/algemeen';
 
 const Nav = () => {
 
-  const {naam, functie} = useSiteMetadata();
+  const {naam, functie, email} = useSiteMetadata();
 
   return (
     <div className={styles.bovenkant}>
@@ -18,7 +18,10 @@ const Nav = () => {
       <img src={profielfoto} alt={`${"Profielfoto"} ${naam}`}/>
       <div>
         <strong>{naam}</strong>
-        <div className="klein">{functie}</div>
+        <div className={styles.switch}>
+          <div className="klein">{functie}</div>
+          <div className="klein"> <a href={`mailto:${email}`}>{email}</a></div>
+        </div>
       </div>
       </div>
       <div className={styles.social}>

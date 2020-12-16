@@ -51,5 +51,6 @@ div[class*="grid"] img {max-width: 100%; height: auto !important;}
 
 
 @media (max-width: 735px) {
-  .inhoud {padding: 10px;}
+  div[class*="grid"] {grid-gap: 15px !important;}
+  .inhoud {padding: 40px 10px;}
 }
