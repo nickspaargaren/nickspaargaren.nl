@@ -8,7 +8,7 @@
   text-transform: uppercase;
   font-weight: bold;
 }
-.skills .skill .titel span {margin-left: auto; color: rgba(255,255,255,.4);}
+.skills .skill .titel span {margin-left: auto;}
 
 .skills .skill .percentage {
   height: 6px;
