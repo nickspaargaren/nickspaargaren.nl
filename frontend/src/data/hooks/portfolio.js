@@ -14,12 +14,14 @@ export const usePortfolioData = () => {
           samenwerking
           afbeelding {
             asset {
-              fluid {
+              fluid(maxWidth: 1086, toFormat: WEBP) {
                 base64
                 aspectRatio
                 src
                 srcSet
                 sizes
+                srcSetWebp
+                srcWebp
               }
             }
           }
