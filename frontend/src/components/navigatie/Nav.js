@@ -15,7 +15,7 @@ const Nav = () => {
     <div className={styles.bovenkant}>
       <div><Link to="/">Terug</Link></div>
       <div className={styles.info}>
-      <img src={profielfoto} alt={`${"Profielfoto"} ${naam}`}/>
+      <img src={profielfoto} width="37px" height="37px" alt={`${"Profielfoto"} ${naam}`}/>
       <div>
         <strong>{naam}</strong>
         <div className={styles.switch}>
