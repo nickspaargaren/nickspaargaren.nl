@@ -16,7 +16,6 @@ const Layout = ({ children, title, description, noindex }) => {
           <title>{title}</title>
           <meta name="description" content={description} />
           {noindextag}
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Helmet>
       <main>{children}</main>
     </>
