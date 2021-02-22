@@ -12,6 +12,15 @@ export default {
       ]
     },
     {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'titel',
+        slugify: input => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200)
+      }
+    },
+    {
       name: 'beschrijving',
       title: 'Beschrijving',
       type: 'text',
@@ -41,14 +50,20 @@ export default {
       }
     },
     {
-      title: 'Tags',
+      name: 'afbeeldingen',
+      title: 'Extra afbeeldingen',
+      type: 'array',
+      of: [{type: 'image'}]
+    },
+    {
       name: 'tags',
+      title: 'Tags',
       type: 'array',
       of: [{type: 'string'}],
     },
     {
-      title: 'In samenwerking met CM Specialist',
       name: 'samenwerking',
+      title: 'In samenwerking met CM Specialist',
       type: 'boolean'
     }
   ],
