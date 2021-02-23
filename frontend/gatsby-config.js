@@ -29,5 +29,8 @@ module.exports = {
         display: 'swap'
       }
     },
+    {
+      resolve: `gatsby-plugin-styled-components`
+    },
   ],
 }
