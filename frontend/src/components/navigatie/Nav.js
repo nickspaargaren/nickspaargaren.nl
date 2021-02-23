@@ -13,17 +13,21 @@ const Nav = () => {
 
   return (
     <div className={styles.bovenkant}>
-      <div><Link to="/">Terug</Link></div>
       <div className={styles.info}>
-      <img src={profielfoto} width="37px" height="37px" alt={`${"Profielfoto"} ${naam}`}/>
-      <div>
-        <strong>{naam}</strong>
-        <div className={styles.switch}>
-          <div className="klein">{functie}</div>
-          <div className="klein"> <a href={`mailto:${email}`}>{email}</a></div>
+        <img src={profielfoto} width="37px" height="37px" alt={`${"Profielfoto"} ${naam}`}/>
+        <div>
+          <strong>{naam}</strong>
+          <div className={styles.switch}>
+            <div className="klein">{functie}</div>
+            <div className="klein"> <a href={`mailto:${email}`}>{email}</a></div>
+          </div>
         </div>
       </div>
-      </div>
+      <ul className={styles.menu}>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/portfolio">Portfolio</Link></li>
+        <li><Link to="/drone">Drone</Link></li>
+      </ul>
       <div className={styles.social}>
         {SocialData.map((data, key) => (
           <Button key={key} title={data.platform} subtitle="Account" icoon={data.icoon} url={data.url} external/>
