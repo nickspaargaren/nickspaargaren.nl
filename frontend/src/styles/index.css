@@ -8,7 +8,7 @@ body {margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #fbfbfb;
+  background-color: #fff;
 }
 
 .sitehouder {display: flex; height: 100vh;}
@@ -28,12 +28,11 @@ h3 + p {margin-top: -10px;}
 
 p {line-height: 1.5em; margin: 0 0 10px;}
 
-header, footer {background: #221e25; color: rgba(255,255,255,.6);}
-header h1, footer h1
-header h2, footer h2,
-header h3, footer h3 {color: #fff; font-weight: normal;}
+header .links, header .rechts {padding: 100px;}
+header .links {background: #b9b8ba; border-bottom: 30px solid #fff;}
+header .rechts {background: #221e25;} 
 
-footer {text-align: center;}
+footer {background: #221e25; color: rgba(255,255,255,.6); text-align: center;}
 footer a {color: #fff;}
 footer .tel {font-size: 25px; font-weight: bold; color: #fff; margin: 0 0 10px;}
 footer .tel + p {margin-top: -10px;}
