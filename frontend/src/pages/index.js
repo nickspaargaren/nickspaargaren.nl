@@ -5,8 +5,6 @@ import Img from "gatsby-image"
 
 import styles from '../styles/portfolio.module.css';
 
-import Nav from "../components/navigatie/Nav";
-
 import cmspecialistLogo from '../data/images/logo-cm-specialist.png'
 import { FaAngleDoubleRight, FaCode } from 'react-icons/fa';
 
@@ -77,7 +75,6 @@ const Portfolio = () => {
 
   return (
         <Layout title={`Portfolio | ${naam}`} description={functie} noindex>
-          <Nav />
           <header>
             <div className="grid-2x">
               <div className="links">
@@ -85,20 +82,20 @@ const Portfolio = () => {
                 <p>{functie}</p>
                 <div>
 
-                    {SocialData.map((social, key) => 
-                      <div>
-                        <a key={key} rel="noopener noreferrer" target="_blank" href={social.url}>
-                          {social.icoon} 
-                          <span><strong>{social.platform}</strong></span>
-                        </a>
-                      </div>
+                  {SocialData.map((social, key) => 
+                    <div>
+                      <a key={key} rel="noopener noreferrer" target="_blank" href={social.url}>
+                        {social.icoon} 
+                        <span><strong>{social.platform}</strong></span>
+                      </a>
+                    </div>
                   )}
 
                 </div>
               </div>
               <div className="rechts">
                 <div className={styles.skills}>
-                  {data.skills.nodes.map((item, key) => (
+                  {data.skills.nodes.map((item, key) => 
                     <div key={key} className={styles.skill}>
                       {item.afbeelding ? <Img fluid={item.afbeelding.asset.fluid} alt={item.titel} loading="lazy" /> : <img src="https://placehold.it/35x35" alt="placeholder"/>}
                       <div>
@@ -115,7 +112,7 @@ const Portfolio = () => {
                         </div>
                       </div>
                     </div>
-                  ))}
+                  )}
                 </div>
               </div>
             </div>

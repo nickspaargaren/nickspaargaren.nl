@@ -24,14 +24,14 @@ const Nav = () => {
         </div>
       </div>
       <ul className={styles.menu}>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/portfolio">Portfolio</Link></li>
-        <li><Link to="/drone">Drone</Link></li>
+        <li><Link activeClassName="active" to="/">Home</Link></li>
+        <li><Link activeClassName="active" to="/portfolio">Portfolio</Link></li>
+        <li><Link activeClassName="active" to="/drone">Drone</Link></li>
       </ul>
       <div className={styles.social}>
-        {SocialData.map((data, key) => (
+        {SocialData.map((data, key) => 
           <Button key={key} title={data.platform} subtitle="Account" icoon={data.icoon} url={data.url} external/>
-        ))}
+        )}
       </div>
     </div>
 

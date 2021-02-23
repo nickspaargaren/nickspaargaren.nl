@@ -1,6 +1,7 @@
 import React from "react"
 import { Helmet } from "react-helmet";
-import '../styles/index.css';
+import GlobalStyle from "../styles/globalStyles.js";
+import Nav from "../components/navigatie/Nav";
 
 const Layout = ({ children, title, description, noindex }) => {
 
@@ -10,6 +11,8 @@ const Layout = ({ children, title, description, noindex }) => {
 
   return (
     <>
+      <GlobalStyle/>
+      <Nav/>
       <Helmet>
           <html lang="nl" />
           <meta charSet="utf-8" />
