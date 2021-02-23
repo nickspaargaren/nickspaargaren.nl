@@ -26,6 +26,17 @@ export default {
       type: 'text',
     },
     {
+      name: 'skillsused',
+      title: 'Skills used',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'skills'}]
+        }
+      ]
+    },
+    {
       name: 'website',
       title: 'Website',
       type: 'url',
