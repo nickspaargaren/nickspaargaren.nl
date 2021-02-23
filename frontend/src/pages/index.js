@@ -83,8 +83,8 @@ const Portfolio = () => {
                 <div>
 
                   {SocialData.map((social, key) => 
-                    <div>
-                      <a key={key} rel="noopener noreferrer" target="_blank" href={social.url}>
+                    <div key={key} >
+                      <a rel="noopener noreferrer" target="_blank" href={social.url}>
                         {social.icoon} 
                         <span><strong>{social.platform}</strong></span>
                       </a>

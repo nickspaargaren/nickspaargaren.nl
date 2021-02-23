@@ -47,7 +47,9 @@ const EenPagina = ({data}) => {
           )}
 
           <PortfolioGrid>
-          <div className="afbeelding groot"><Img fluid={data.pagina.afbeelding.asset.fluid} alt="" loading="lazy" /></div>
+          <div className="afbeelding groot">
+            {data.pagina.afbeelding && <Img fluid={data.pagina.afbeelding.asset.fluid} alt="" loading="lazy" />}
+            </div>
             {data.pagina.afbeeldingen.map((afbeelding, key) => 
               <div key={key} className="afbeelding">
                 <Img fluid={afbeelding.asset.fluid} alt="" loading="lazy" />
