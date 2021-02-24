@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import styles from './github.module.css';
 import { GoStar, GoRepoForked } from "react-icons/go";
 
 const Github = () => {
@@ -28,12 +27,12 @@ const Github = () => {
     return <>Laden...</>;
   } else {
     return (
-      <div className={styles.github}>
-        <div className={styles.titel}>{github.name}</div>
+      <div className="github">
+        <div className="titel">{github.name}</div>
         <p>{github.description}</p>
         <p><a href={github.html_url} rel="noopener noreferrer" target="_blank">{github.html_url}</a></p>
         <small>
-          <span className={styles.stars}>
+          <span className="stars">
             <GoStar/>
             {github.stargazers_count}
           </span>
