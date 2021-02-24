@@ -14,7 +14,7 @@ exports.createPages = async function ({ actions, graphql }) {
     const slug = node.slug.current
     actions.createPage({
       path: `/portfolio/${slug}`,
-      component: require.resolve(`./src/templates/PortfolioDetail.js`),
+      component: require.resolve(`./src/templates/PortfolioDetail.tsx`),
       context: { slug: slug },
     })
   })

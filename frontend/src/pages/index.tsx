@@ -3,7 +3,6 @@ import Layout from "../layout/layout"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 
-import cmspecialistLogo from '../data/images/logo-cm-specialist.png'
 import { FaAngleDoubleRight, FaCode } from 'react-icons/fa';
 
 import {useSiteMetadata} from '../data/hooks/algemeen';
@@ -135,7 +134,7 @@ const Portfolio = () => {
                     {item.afbeelding && <a rel="noopener noreferrer" target="_blank" href={item.website}><Img fluid={item.afbeelding.asset.fluid} alt={item.titel} loading="lazy" /></a>}
                     <div className="info">
                       {item.samenwerking && <div className="samenwerking">
-                        <div><img src={cmspecialistLogo} alt="CM Specialist" width="39px" height="39px" /></div>
+                        <div><img src={`/images/logo-cm-specialist.png`} alt="CM Specialist" width="39px" height="39px" /></div>
                         <div><span className="klein">Samenwerking</span><strong>CM Specialist</strong></div></div>
                       }
                       <div className="links">

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from "gatsby"
-import profielfoto from '../../data/images/nick-spaargaren.jpeg';
 import Button from '../button/Button';
 
 import {SocialData} from '../../data/socials/SocialData';
@@ -13,7 +12,7 @@ const Nav = () => {
   return (
     <div className="bovenkant">
       <div className="info">
-        <img src={profielfoto} width="37px" height="37px" alt={`${"Profielfoto"} ${naam}`}/>
+        <img src={'/images/nick-spaargaren.jpeg'} width="37px" height="37px" alt={`${"Profielfoto"} ${naam}`}/>
         <div>
           <strong>{naam}</strong>
           <div className="switch">

@@ -13,6 +13,8 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@types/react-helmet": "^6.1.0",
+    "@types/styled-components": "^5.1.7",
     "babel-plugin-styled-components": "^1.12.0",
     "gatsby": "^2.32.4",
     "gatsby-image": "^2.11.0",
@@ -26,7 +28,8 @@
     "react-helmet": "^6.1.0",
     "react-icons": "^3.11.0",
     "react-spring": "^8.0.27",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.2.1",
+    "typescript": "^4.2.2"
   },
   "devDependencies": {
     "prettier": "2.1.2"

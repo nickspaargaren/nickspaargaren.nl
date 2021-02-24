@@ -1,9 +1,16 @@
 import React from "react"
 import { Helmet } from "react-helmet";
-import GlobalStyle from "../styles/globalStyles.js";
+import GlobalStyle from "../styles/globalStyles";
 import Nav from "../components/navigatie/Nav";
 
-const Layout = ({ children, title, description, noindex }) => {
+interface Props {
+  children: any,
+  title: any,
+  description: any,
+  noindex?: any
+}
+
+const Layout: React.FC<Props> = ({ children, title, description, noindex }) => {
 
   if (noindex) {
     var noindextag = <meta name="robots" content="noindex" />;
