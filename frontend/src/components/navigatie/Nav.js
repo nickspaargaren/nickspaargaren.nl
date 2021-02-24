@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from './nav.module.css';
 import { Link } from "gatsby"
 import profielfoto from '../../data/images/nick-spaargaren.jpeg';
 import Button from '../button/Button';
@@ -12,23 +11,23 @@ const Nav = () => {
   const {naam, functie, email} = useSiteMetadata();
 
   return (
-    <div className={styles.bovenkant}>
-      <div className={styles.info}>
+    <div className="bovenkant">
+      <div className="info">
         <img src={profielfoto} width="37px" height="37px" alt={`${"Profielfoto"} ${naam}`}/>
         <div>
           <strong>{naam}</strong>
-          <div className={styles.switch}>
+          <div className="switch">
             <div className="klein">{functie}</div>
             <div className="klein"> <a href={`mailto:${email}`}>{email}</a></div>
           </div>
         </div>
       </div>
-      <ul className={styles.menu}>
+      <ul className="menu">
         <li><Link activeClassName="active" to="/">Home</Link></li>
         <li><Link activeClassName="active" to="/portfolio">Portfolio</Link></li>
         <li><Link activeClassName="active" to="/drone">Drone</Link></li>
       </ul>
-      <div className={styles.social}>
+      <div className="social">
         {SocialData.map((data, key) => 
           <Button key={key} title={data.platform} subtitle="Account" icoon={data.icoon} url={data.url} external/>
         )}

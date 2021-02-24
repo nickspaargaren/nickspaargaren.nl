@@ -3,8 +3,6 @@ import Layout from "../layout/layout"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 
-import styles from '../styles/portfolio.module.css';
-
 import cmspecialistLogo from '../data/images/logo-cm-specialist.png'
 import { FaAngleDoubleRight, FaCode } from 'react-icons/fa';
 
@@ -94,19 +92,19 @@ const Portfolio = () => {
                 </div>
               </div>
               <div className="rechts">
-                <div className={styles.skills}>
+                <div className="skills">
                   {data.skills.nodes.map((item, key) => 
-                    <div key={key} className={styles.skill}>
+                    <div key={key} className="skill">
                       {item.afbeelding ? <Img fluid={item.afbeelding.asset.fluid} alt={item.titel} loading="lazy" /> : <img src="https://placehold.it/35x35" alt="placeholder"/>}
                       <div>
-                        <div className={styles.titel}>
+                        <div className="titel">
                           {item.titel}
                           <span>{item.percentage + '%'}</span>
                         </div>
-                        <div className={styles.percentage}>
+                        <div className="percentage">
                           <Spring config={{ tension: 280, friction: 60, delay: 300 }} from={{ width: '0%' }} to={{ width: item.percentage + '%'}}>
                             {style => (
-                              <div style={style} className={styles.gevuld}></div>
+                              <div style={style} className="gevuld"></div>
                             )}
                           </Spring>
                         </div>
@@ -117,15 +115,15 @@ const Portfolio = () => {
               </div>
             </div>
           </header>
-          <div className={styles.portfolio}>
+          <div className="portfolio">
           {data.portfolio.nodes.map((item, key) =>
               <section key={key}>
-                <div className={`${styles.item} inhoud grid-2x`}> 
-                  <div className={styles.beschrijving}>
+                <div className="item inhoud grid-2x"> 
+                  <div className="beschrijving">
                     <h2>{item.titel}</h2>
                     <p>{item.beschrijving}</p>                   
 
-                    <ul className={styles.tags}>
+                    <ul className="tags">
                       {item.tags.map((tag, key) => 
                         <li key={key}>{tag}</li>
                       )}
@@ -133,14 +131,14 @@ const Portfolio = () => {
                     <Link to={`portfolio/${item.slug.current}`}>Link</Link>
 
                   </div>
-                  <div className={styles.plaatje}>
+                  <div className="plaatje">
                     {item.afbeelding && <a rel="noopener noreferrer" target="_blank" href={item.website}><Img fluid={item.afbeelding.asset.fluid} alt={item.titel} loading="lazy" /></a>}
-                    <div className={styles.info}>
-                      {item.samenwerking && <div className={styles.samenwerking}>
+                    <div className="info">
+                      {item.samenwerking && <div className="samenwerking">
                         <div><img src={cmspecialistLogo} alt="CM Specialist" width="39px" height="39px" /></div>
                         <div><span className="klein">Samenwerking</span><strong>CM Specialist</strong></div></div>
                       }
-                      <div className={styles.links}>
+                      <div className="links">
                         {item.website && <Button title="Website" subtitle="Bekijken" icoon={<FaAngleDoubleRight/>} url={item.website} external/>}
                         {item.github && <Button title="Source" subtitle="Bekijken" icoon={<FaCode/>} url={item.github} external/>}
                       </div>
