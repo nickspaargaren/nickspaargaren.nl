@@ -32,7 +32,7 @@ ul.menu li a.active {background: #fff; border-radius: 4px; box-shadow: rgba(0, 0
 
 
 @media (max-width: 735px) {
-  {flex-direction: column; padding: 0;}
+  flex-direction: column; padding: 0;
   .social {margin: 0; grid-template-columns: 1fr 1fr; grid-gap: 5px;}
   > div {padding: 10px 10px 0;}
   > div:first-child {display: none;}
