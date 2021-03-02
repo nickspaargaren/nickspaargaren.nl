@@ -3,7 +3,8 @@ import Layout from "../layout/layout"
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import styled from 'styled-components'
-import { FaCaretRight } from 'react-icons/fa';
+import { FaAngleDoubleRight, FaCaretRight, FaCode } from 'react-icons/fa';
+import Button from "../components/button/Button"
 
 const PortfolioGrid = styled.div`
 
@@ -31,12 +32,13 @@ const EenPagina = ({data}) => {
             <ul className="bcrumbs">
               <li><Link to="/">Home</Link></li>
               <li><FaCaretRight/></li>
-              <li><Link to="/portfolio">Portfolio</Link></li>
+              <li><Link to="/portfolio/">Portfolio</Link></li>
               <li><FaCaretRight/></li>
               <li>{data.pagina.titel}</li>
             </ul>
           </small>
-
+        </div>
+        <div className="inhoud">
           <h1>{data.pagina.titel}</h1>
           <p>{data.pagina.website}</p>
 
@@ -45,7 +47,10 @@ const EenPagina = ({data}) => {
             {item.titel}
             </div>
           )}
-
+          <div className="links">
+            {data.pagina.website && <Button title="Website" subtitle="Bekijken" icoon={<FaAngleDoubleRight/>} url={data.pagina.website} external/>}
+            {data.pagina.github && <Button title="Source" subtitle="Bekijken" icoon={<FaCode/>} url={data.pagina.github} external/>}
+          </div>
           <PortfolioGrid>
           <div className="afbeelding groot"><Img fluid={data.pagina.afbeelding.asset.fluid} alt="" loading="lazy" /></div>
             {data.pagina.afbeeldingen.map((afbeelding, key) => 

@@ -2,12 +2,13 @@ import React from "react"
 import { Helmet } from "react-helmet";
 import GlobalStyle from "../styles/globalStyles";
 import Nav from "../components/navigatie/Nav";
+import Footer from "../components/Footer";
 
 interface Props {
   children: any,
-  title: any,
-  description: any,
-  noindex?: any
+  title: string,
+  description: string,
+  noindex?: boolean
 }
 
 const Layout: React.FC<Props> = ({ children, title, description, noindex }) => {
@@ -28,6 +29,7 @@ const Layout: React.FC<Props> = ({ children, title, description, noindex }) => {
           {noindextag}
       </Helmet>
       <main>{children}</main>
+      <Footer/>
     </>
   )
 }
