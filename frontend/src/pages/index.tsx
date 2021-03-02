@@ -46,10 +46,12 @@ const Index = () => {
             titel
             afbeelding {
               asset {
-                fluid(maxWidth: 50) {
+                fluid(maxWidth: 35, maxHeight: 35) {
                   base64
-                  srcWebp
-                  srcSetWebp
+                  aspectRatio
+                  src
+                  srcSet
+                  sizes
                 }
               }
             }

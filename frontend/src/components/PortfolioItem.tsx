@@ -53,18 +53,12 @@ return (
         <h2>{titel}</h2>
         <p>{beschrijving}</p>
         <ul className="tags">
-          {skillsused.map((skill, key) => {
-            
-            console.log(skill);
-            
-            return (
+          {skillsused.map((skill, key) => (
               <li key={key}>
                 <Img fluid={skill.afbeelding.asset.fluid} loading="lazy" />
                 {skill.titel}
-                </li>
+              </li>
             )
-          }
-            
           )}
         </ul>
 

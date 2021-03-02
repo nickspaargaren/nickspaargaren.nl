@@ -10,7 +10,6 @@ const StyledNav = styled.div`
 
   background: #fff;
   color: #292a2c;
-  box-shadow: rgba(0, 0, 0, .1) 0px 1px 2px 0px;
   display: flex;
   position: relative;
 
