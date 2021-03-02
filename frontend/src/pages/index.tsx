@@ -3,8 +3,6 @@ import Layout from "../layout/layout"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 
-import { FaAngleDoubleRight, FaCode } from 'react-icons/fa';
-
 import {useSiteMetadata} from '../data/hooks/algemeen';
 
 import {Spring} from 'react-spring/renderprops'
@@ -12,13 +10,14 @@ import Button from "../components/button/Button";
 import Github from "../components/github/Github";
 
 import {SocialData} from '../data/socials/SocialData';
+import PortfolioItem from "../components/PortfolioItem";
 
-const Portfolio = () => {
+const Index = () => {
 
   const data = useStaticQuery(graphql`
 
     query {
-      portfolio: allSanityPortfolio(sort: {fields: samenwerking, order: ASC}) {
+      portfolio: allSanityPortfolio(sort: {fields: samenwerking, order: ASC}, limit: 3) {
         nodes {
           titel
           website
@@ -42,6 +41,18 @@ const Portfolio = () => {
           }
           slug {
             current
+          }
+          skillsused {
+            titel
+            afbeelding {
+              asset {
+                fluid(maxWidth: 50) {
+                  base64
+                  srcWebp
+                  srcSetWebp
+                }
+              }
+            }
           }
         }
       }
@@ -114,37 +125,23 @@ const Portfolio = () => {
               </div>
             </div>
           </header>
-          <div className="portfolio">
-          {data.portfolio.nodes.map((item, key) =>
-              <section key={key}>
-                <div className="item inhoud grid-2x"> 
-                  <div className="beschrijving">
-                    <h2>{item.titel}</h2>
-                    <p>{item.beschrijving}</p>                   
+          <div className="inhoud">
+          {data.portfolio.nodes.map((item, key) => {
+            return (
+              <>
+              <PortfolioItem key={key} titel={item.titel} beschrijving={item.beschrijving} slug={item.slug.current} afbeelding={item.afbeelding} skillsused={item.skillsused}/>
 
-                    <ul className="tags">
-                      {item.tags.map((tag, key) => 
-                        <li key={key}>{tag}</li>
-                      )}
-                    </ul>
-                    <Link to={`portfolio/${item.slug.current}`}>Link</Link>
+              {/* <div className="info">
+                    {item.samenwerking && <div className="samenwerking">
+                      <div><img src={`/images/logo-cm-specialist.png`} alt="CM Specialist" width="39px" height="39px" /></div>
+                      <div><span className="klein">Samenwerking</span><strong>CM Specialist</strong></div></div>
+                    }
+                  </div> */}
 
-                  </div>
-                  <div className="plaatje">
-                    {item.afbeelding && <a rel="noopener noreferrer" target="_blank" href={item.website}><Img fluid={item.afbeelding.asset.fluid} alt={item.titel} loading="lazy" /></a>}
-                    <div className="info">
-                      {item.samenwerking && <div className="samenwerking">
-                        <div><img src={`/images/logo-cm-specialist.png`} alt="CM Specialist" width="39px" height="39px" /></div>
-                        <div><span className="klein">Samenwerking</span><strong>CM Specialist</strong></div></div>
-                      }
-                      <div className="links">
-                        {item.website && <Button title="Website" subtitle="Bekijken" icoon={<FaAngleDoubleRight/>} url={item.website} external/>}
-                        {item.github && <Button title="Source" subtitle="Bekijken" icoon={<FaCode/>} url={item.github} external/>}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
+            </>
+            )
+          }
+             
             )}
           </div>
           <section>
@@ -154,14 +151,8 @@ const Portfolio = () => {
               <Github  />
             </div>
           </section>
-          <footer>
-            <div className="inhoud">            
-              <div className="tel">{telefoonnummer}</div>
-              <p>Of toch eerst <a href="https://www.google.com/search?q=site%3Acmspecialist.nl+%22Nick+Spaargaren%22" rel="noopener noreferrer" target="_blank">meer projecten</a> zien?</p>
-            </div>
-          </footer>
         </Layout>
         )
 }
 
-export default Portfolio
+export default Index
