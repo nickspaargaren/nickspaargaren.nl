@@ -16,25 +16,33 @@ const GlobalStyle = createGlobalStyle`
 
   .sitehouder {display: flex; height: 100vh;}
 
-  .inhoud {margin: 40px auto; padding: 0 40px; box-sizing: border-box; max-width: 1500px;}
+  .inhoud {margin: 0 auto; padding: 40px; box-sizing: border-box; max-width: 1500px;}
+  .inhoud svg {margin: 0 10px 5px 0;}
+
+  .hgroup {margin-bottom: 40px;}
 
   h1, h2, h3 {margin: 0 0 10px;}
-  h1 {font-size: 40px;}
+  h1 {font-size: 36px; font-weight: normal;}
   h1 + p {margin-top: -10px;}
   h2 {font-size: 30px;}
+  h2 + p {margin-top: -10px;}
   h3 {font-size: 20px;}
   h3 + p {margin-top: -10px;}
+  h4 {font-size: 18px; margin: 0 0 5px;}
 
   p {line-height: 1.5em; margin: 0 0 10px;}
 
+  .calc {display: inline-block; text-decoration: line-through; background: #d1d9e2; opacity: .5; padding: 0 7px; border-radius: 3px; font-size: 13px;}
+
+  header {background: #221e25; color: #fff;}
   header .links, header .rechts {padding: 100px;}
-  header .links {background: #d0d9e2;}
-  header .rechts {background: #221e25;} 
+  header .links {}
+  header .rechts {} 
 
   .klein {font-size: 14px;}
 
   /* Grid Templates */
-  div[class*="grid"] {hyphens: auto; -webkit-hyphens: auto; display: grid; grid-gap: 30px; box-sizing: border-box;}
+  div[class*="grid"] {display: grid; grid-gap: 30px; box-sizing: border-box;}
   div[class*="grid"].vertical-align-middle > div {margin: auto 0;}
   div[class*="grid"] img {max-width: 100%; height: auto !important;}
   .grid-2x {grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));}

@@ -39,8 +39,19 @@ const EenPagina = ({data}) => {
           </small>
         </div>
         <div className="inhoud">
+        <PortfolioGrid>
+          <div className="afbeelding groot"><Img fluid={data.pagina.afbeelding.asset.fluid} alt="" loading="lazy" /></div>
+            {data.pagina.afbeeldingen.map((afbeelding, key) => 
+            
+              <div key={key} className="afbeelding">
+                <Img fluid={afbeelding.asset.fluid} alt="" loading="lazy" />
+              </div>
+            )}
+          </PortfolioGrid>
+
           <h1>{data.pagina.titel}</h1>
           <p>{data.pagina.website}</p>
+          <p>{data.pagina.beschrijving}</p>
 
           {data.pagina.skillsused.map((item, key) => 
             <div key={key}>
@@ -51,14 +62,6 @@ const EenPagina = ({data}) => {
             {data.pagina.website && <Button title="Website" subtitle="Bekijken" icoon={<FaAngleDoubleRight/>} url={data.pagina.website} external/>}
             {data.pagina.github && <Button title="Source" subtitle="Bekijken" icoon={<FaCode/>} url={data.pagina.github} external/>}
           </div>
-          <PortfolioGrid>
-          <div className="afbeelding groot"><Img fluid={data.pagina.afbeelding.asset.fluid} alt="" loading="lazy" /></div>
-            {data.pagina.afbeeldingen.map((afbeelding, key) => 
-              <div key={key} className="afbeelding">
-                <Img fluid={afbeelding.asset.fluid} alt="" loading="lazy" />
-              </div>
-            )}
-          </PortfolioGrid>
         </div>
       </Layout>
     </>
