@@ -12,6 +12,8 @@ import Github from "../components/github/Github";
 import {SocialData} from '../data/socials/SocialData';
 import PortfolioItem from "../components/PortfolioItem";
 
+import {SiAdobe, SiSketch, SiVisualstudiocode, SiMaterialdesignicons, SiCodeclimate, SiAirbnb, SiDevDotTo, SiOneplus, SiRaspberrypi, SiLinux, SiApple, SiAdobepremiere, SiXbox, SiNetflix, SiSpotify} from 'react-icons/si';
+
 const Index = () => {
 
   const data = useStaticQuery(graphql`
@@ -88,10 +90,9 @@ const Index = () => {
           <header>
             <div className="grid-2x">
               <div className="links">
-                <h1>Welkom, ik ben <strong style={{whiteSpace: 'nowrap'}}>{naam}</strong></h1>
-                <p>{functie}</p>
-                <div>
+                <h1>Welkom, ik ben <strong style={{whiteSpace: 'nowrap'}}>{naam}</strong>. {functie}</h1>
 
+                <div>
                   {SocialData.map((social, key) => 
                     <div key={key} >
                       <a rel="noopener noreferrer" target="_blank" href={social.url}>
@@ -100,8 +101,8 @@ const Index = () => {
                       </a>
                     </div>
                   )}
-
                 </div>
+
               </div>
               <div className="rechts">
                 <div className="skills">
@@ -128,6 +129,55 @@ const Index = () => {
             </div>
           </header>
           <div className="inhoud">
+            <div className="hgroup">
+              <h2>Waar ik goed in ben</h2>
+              <p>Ervaring en interesse</p>
+            </div>
+            <div className="grid-3x">
+              <div>
+                <SiMaterialdesignicons/><SiAdobe/><SiSketch/>
+                <h4>Design</h4>
+                <p>Minimaal 10 jaar <span className="calc">27 - 10 = 17 ✓</span> ervaring met vormgeving, design, fotobewerking en dtp.</p>
+              </div>
+              <div>
+                <SiVisualstudiocode/><SiDevDotTo/>
+                <h4>Develop</h4>
+                <p>Front-end developer sinds 2013. Altijd zoekend naar nieuwe technieken waaronder op dit moment <i>Graphql</i></p>
+              </div>
+              <div>
+                <SiCodeclimate/><SiAirbnb/>
+                <h4>Drone videography</h4>
+                <p>Vakantie en activiteitenvideo's, promotievideo's / inzamelingsacties, luchtopnames</p>
+              </div>
+              <div>
+                <SiOneplus/><SiApple/>
+                <h4>Device rooting/jailbreakscene</h4>
+                <p>Checkra1n, ADB debug, Unc0ver, Odin, Custom recoveries, TWRP, ClockwordMod, CarBridge</p>
+              </div>
+              <div>
+                <SiRaspberrypi/><SiLinux/>
+                <h4>Linux / Raspberry pi</h4>
+                <p>Pi-hole, Homebrige, Unbound DNS, openVPN, Domoticz, Wireguard</p>
+              </div>
+              <div>
+                <SiAdobe/><SiAdobepremiere/>
+                <h4>Videobewerking</h4>
+                <p>Premiere pro, Audacity, <span style={{ textDecoration: 'line-through' }}>Adobe Flash</span>, Proxies, GoPro timelapses</p>
+              </div>
+              <div>
+                <SiXbox/><SiNetflix/><SiSpotify/>
+                <h4>Overige</h4>
+                <p>Xbox ambassador, iOS Dev Beta, PSP Custom Firmware, SONOS fan, Testflight</p>
+              </div>
+              
+            </div>
+
+          </div>
+          <div className="inhoud">
+          <div className="hgroup">
+            <h2>Projecten</h2>
+            <p>Ervaring en interesse</p>
+          </div>
           {data.portfolio.nodes.map((item, key) => {
             return (
               <>
