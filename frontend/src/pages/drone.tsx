@@ -7,6 +7,7 @@ import { FaAngleDoubleRight, FaCode, FaCaretRight } from 'react-icons/fa';
 
 import {Spring} from 'react-spring/renderprops'
 import Button from "../components/button/Button";
+import Youtube from "../components/Youtube";
 
 const Drone = () => {
 
@@ -56,8 +57,31 @@ const Drone = () => {
                 <li>Drone</li>
               </ul>
             </small>
-            Drone
+
           </div>
+
+          <div className="inhoud">
+            <div className="grid-2x">
+              <Youtube url="https://www.youtube-nocookie.com/embed/CI7je7P7ask" />
+              <Youtube url="https://www.youtube-nocookie.com/embed/06G-JPIPK0U" />
+            </div>
+
+          </div>
+          <div className="inhoud">
+            <div className="grid-2x">
+              <Youtube url="https://www.youtube-nocookie.com/embed/Fp_LSgD7D9E" />
+              <Youtube url="https://www.youtube-nocookie.com/embed/zDiSkH9PPJg" />
+            </div>
+          </div>
+          <div className="inhoud">
+            <div className="grid-2x">
+              <Youtube url="https://www.youtube-nocookie.com/embed/mDX5lj4eepQ" />
+            </div>
+          </div>
+
+
+          
+
         </Layout>
         )
 }

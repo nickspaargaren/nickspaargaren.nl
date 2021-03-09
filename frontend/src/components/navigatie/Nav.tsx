@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from "gatsby"
-import Button from '../button/Button';
 
-import {SocialData} from '../../data/socials/SocialData';
 import {useSiteMetadata} from '../../data/hooks/algemeen';
 import styled from 'styled-components';
 
@@ -12,33 +10,24 @@ const StyledNav = styled.div`
   color: #292a2c;
   display: flex;
   position: relative;
+  padding: 15px;
 
- > div {margin: auto 0; padding: 15px;}
+ > div {margin: auto 0;}
  > div a {color: inherit; text-decoration: none;}
  > .info {display: flex;}
  > .info img {height: 37px; margin: auto 10px auto 0; border-radius: 50px;}
 
- .social {display: grid; grid-gap: 15px; grid-template-columns: 1fr 1fr 1fr 1fr; margin-left: auto;}
+  .switch {overflow: hidden; height: 17px;}
+  .switch > div {position: relative; top: 0; transition: .3s all ease;}
 
-.switch {overflow: hidden; height: 17px;}
-.switch > div {position: relative; top: 0; transition: .3s all ease;}
+  > .info:hover .switch > div {top: -17px;}
 
-> .info:hover .switch > div {top: -17px;}
+  ul.menu {list-style: none; display: flex; margin: auto 0 auto auto;}
+  ul.menu li {}
+  ul.menu li a {display: block; position: relative; padding: 10px 0; margin: 0 10px; color: #292a2c; text-decoration: none; font-weight: bold;}
+  ul.menu li a.active {&::after {content:""; position: absolute; left: 0; bottom: 0; right: 0; height: 3px; background-color: #019bff; border-radius: 13px; transform: rotate(-1deg) }}
 
-ul.menu {list-style: none; display: flex; margin: auto 0; background-color: #f1f1f1; border-radius: 4px; padding: 4px; font-size: 14px;}
-ul.menu li {}
-ul.menu li a {display: block; padding: 6px; color: #292a2c; text-decoration: none; font-weight: bold;}
-ul.menu li a.active {background: #fff; border-radius: 4px; box-shadow: rgba(0, 0, 0, .1) 0px 1px 2px 0px;}
-
-
-@media (max-width: 735px) {
-  flex-direction: column; padding: 0;
-  .social {margin: 0; grid-template-columns: 1fr 1fr; grid-gap: 5px;}
-  > div {padding: 10px 10px 0;}
-  > div:first-child {display: none;}
-  > div:last-child {padding-bottom: 10px;}
-}`;
-
+`;
 
 const Nav = () => {
 
@@ -56,16 +45,12 @@ const Nav = () => {
           </div>
         </div>
       </div>
+
       <ul className="menu">
         <li><Link activeClassName="active" to="/">Home</Link></li>
         <li><Link activeClassName="active" to="/portfolio/">Portfolio</Link></li>
         <li><Link activeClassName="active" to="/drone/">Drone</Link></li>
       </ul>
-      <div className="social">
-        {SocialData.map((data, key) => 
-          <Button key={key} title={data.platform} subtitle="Account" icoon={data.icoon} url={data.url} external/>
-        )}
-      </div>
     </StyledNav>
 
   )

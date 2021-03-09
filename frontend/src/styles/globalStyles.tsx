@@ -32,6 +32,8 @@ const GlobalStyle = createGlobalStyle`
 
   p {line-height: 1.5em; margin: 0 0 10px;}
 
+  p a {color: #019bff;}
+
   .calc {display: inline-block; text-decoration: line-through; background: #d1d9e2; opacity: .5; padding: 0 7px; border-radius: 3px; font-size: 13px;}
 
   header {background: #221e25; color: #fff;}
@@ -53,7 +55,7 @@ const GlobalStyle = createGlobalStyle`
   .bcrumbs {
     display: flex; list-style: none; margin: 0; padding: 0;
     li {margin-right: 5px;}
-    li svg {display: inline-block; vertical-align: middle;}
+    li svg {display: inline-block; vertical-align: middle; margin: 0;}
   }
 
 

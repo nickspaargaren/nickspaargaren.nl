@@ -142,17 +142,17 @@ const Index = () => {
               <div>
                 <SiVisualstudiocode/><SiDevDotTo/>
                 <h4>Develop</h4>
-                <p>Front-end developer sinds 2013. Altijd zoekend naar nieuwe technieken waaronder op dit moment <i>Graphql</i></p>
+                <p>Front-end developer sinds 2013. Altijd zoekend naar nieuwe technieken waaronder op dit moment <i>Apollo en Graphql</i></p>
               </div>
               <div>
                 <SiCodeclimate/><SiAirbnb/>
                 <h4>Drone videography</h4>
-                <p>Vakantie en activiteitenvideo's, promotievideo's / inzamelingsacties, luchtopnames</p>
+                <p>Vakantie en activiteitenvideo's, promotievideo's / inzamelingsacties, luchtopnames. <Link to="/drone">Naar video's</Link></p>
               </div>
               <div>
                 <SiOneplus/><SiApple/>
                 <h4>Device rooting/jailbreakscene</h4>
-                <p>Checkra1n, ADB debug, Unc0ver, Odin, Custom recoveries, TWRP, ClockwordMod, CarBridge</p>
+                <p>Checkra1n, ADB debug, Unc0ver, Odin, Custom recoveries, TWRP, ClockwordMod, LineageOS, CarBridge</p>
               </div>
               <div>
                 <SiRaspberrypi/><SiLinux/>
