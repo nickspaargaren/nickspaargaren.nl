@@ -22,6 +22,12 @@ const StyledPortfolioItem = styled.div`
   .plaatje .info .links {display: flex; margin-left: auto;}
   .plaatje .info .links > * {margin-left: 15px;}
 
+  @media (max-width: 735px) {
+    flex-direction: column !important;
+    .beschrijving {width: 100%; padding: 0 0 10px !important;}
+    .plaatje {width: 100%;}
+  }
+
 `;
 
 interface PortfolioItemProps {

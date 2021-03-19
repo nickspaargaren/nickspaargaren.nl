@@ -8,7 +8,7 @@ const StyledButton = styled.a`
   display: inline-flex;
   line-height: 10px;
   background: #221e25;
-  padding: 5px 8px 5px 7px;
+  padding: 9px 12px 9px 11px;
   border-radius: 3px;
   transition: .3s all ease;
   box-shadow: rgba(0, 0, 0, .1) 0px 1px 2px 0px inset;
@@ -17,7 +17,7 @@ const StyledButton = styled.a`
   margin: 0 10px 10px 0;
 
 
-:hover {background: #221e25; color: #fff;}
+  &:hover {background: #221e25; color: #fff;}
 
  strong {display: block;}
  svg {margin: auto 0;}
@@ -54,13 +54,13 @@ const Button = (props: ButtonProps) => {
               </span>
             </StyledButton>
             :
-            <Link to={props.url} className="button">
+            <StyledButton as={Link} to={props.url} className="button">
               {props.icoon}
               <span>
                 <strong>{props.title}</strong>
                 {props.subtitle}
               </span>
-            </Link>
+            </StyledButton>
             }
           </>
   )

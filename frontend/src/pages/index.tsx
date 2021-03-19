@@ -73,16 +73,11 @@ const Index = () => {
           <header>
             <div className="grid-2x">
               <div className="links">
-                <h1>Welkom, ik ben <strong style={{whiteSpace: 'nowrap'}}>{naam}</strong>. {functie}</h1>
-
+                <h1>{functie}</h1>
+                <p>{naam}</p>
                 <div>
                   {SocialData.map((social, key) => 
-                    <div key={key} >
-                      <a rel="noopener noreferrer" target="_blank" href={social.url}>
-                        {social.icoon} 
-                        <span><strong>{social.platform}</strong></span>
-                      </a>
-                    </div>
+                    <Button key={key} title={social.platform} subtitle="Account" icoon={social.icoon} url={social.url} external />
                   )}
                 </div>
 
@@ -91,7 +86,7 @@ const Index = () => {
                 <div className="skills">
                   {data.skills.nodes.map((item, key) => 
                     <div key={key} className="skill">
-                      {item.afbeelding ? <GatsbyImage image={item.afbeelding.asset.gatsbyImageData} alt={item.titel} loading="lazy" /> : <img src="https://placehold.it/35x35" alt="placeholder"/>}
+                      {item.afbeelding ? <GatsbyImage image={item.afbeelding.asset.gatsbyImageData} alt={item.titel} /> : <img src="https://placehold.it/35x35" alt="placeholder"/>}
                       <div>
                         <div className="titel">
                           {item.titel}
