@@ -33,7 +33,7 @@ const GlobalStyle = createGlobalStyle`
 
   .calc {display: inline-block; text-decoration: line-through; background: #d1d9e2; opacity: .5; padding: 0 7px; border-radius: 3px; font-size: 13px;}
 
-  header {background: #221e25; color: #fff;}
+  header {background: #221e25; color: #fff; clip-path: ellipse(100% 70% at 80% 30%);}
   header .links, header .rechts {padding: 100px;}
   header .links {}
   header .rechts {} 
@@ -58,6 +58,8 @@ const GlobalStyle = createGlobalStyle`
 
   @media (max-width: 735px) {
     div[class*="grid"] {grid-gap: 15px !important;}
+    header {clip-path: ellipse(100% 100% at 50% 50%);}
+    header .links, header .rechts {padding: 40px 10px;}
     .inhoud {padding: 40px 10px;}
   }
 

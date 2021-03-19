@@ -5,7 +5,6 @@ import { Link } from "gatsby"
 import { FaAngleDoubleRight, FaCode, FaCaretRight } from 'react-icons/fa';
 
 import {Spring} from 'react-spring/renderprops'
-import Button from "../components/button/Button";
 import Youtube from "../components/Youtube";
 
 const Drone = () => {

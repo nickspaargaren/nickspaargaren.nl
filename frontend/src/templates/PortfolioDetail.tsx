@@ -38,7 +38,6 @@ const EenPagina = ({data}) => {
 
             <div>
               <h1>{data.pagina.titel}</h1>
-              <p>{data.pagina.website}</p>
               <p>{data.pagina.beschrijving}</p>
 
               <div className="links">

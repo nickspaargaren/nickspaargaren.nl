@@ -15,7 +15,8 @@ const StyledNav = styled.div`
  > div {margin: auto 0;}
  > div a {color: inherit; text-decoration: none;}
  > .info {display: flex;}
- > .info .gatsby-image-wrapper {margin: auto 10px auto 0; border-radius: 50px;}
+ > .info .gatsby-image-wrapper {margin: auto 10px auto 0;}
+ > .info .gatsby-image-wrapper picture {border-radius: 50px;}
 
   .switch {overflow: hidden; height: 17px;}
   .switch > div {position: relative; top: 0; transition: .3s all ease;}
@@ -27,6 +28,9 @@ const StyledNav = styled.div`
   ul.menu li a {display: block; position: relative; padding: 10px 0; margin: 0 10px; color: #292a2c; text-decoration: none; font-weight: bold;}
   ul.menu li a.active {&::after {content:""; position: absolute; left: 0; bottom: 0; right: 0; height: 3px; background-color: #019bff; border-radius: 13px; transform: rotate(-1deg) }}
 
+  @media (max-width: 735px) {
+    flex-direction: column;
+  }
 `;
 
 const Nav = () => {
