@@ -27,13 +27,13 @@ const StyledYoutube = styled.div`
     }
 `;
 
-interface Props {
+interface YoutubeProps {
   url: string
 }
 
-const Youtube: React.FC<Props> = ({url}) => (
+const Youtube = (props: YoutubeProps) => (
   <StyledYoutube>
-    <iframe src={url} allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"></iframe>
+    <iframe src={props.url} allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"></iframe>
   </StyledYoutube>
 )
 

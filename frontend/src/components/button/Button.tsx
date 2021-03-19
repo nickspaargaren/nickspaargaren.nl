@@ -33,7 +33,7 @@ const StyledButton = styled.a`
 
 `;
 
-interface Props {
+interface ButtonProps {
   title: string,
   subtitle: string,
   icoon: any,
@@ -41,30 +41,28 @@ interface Props {
   external?: boolean
 }
 
-const Button: React.FC<Props> = ({title, subtitle, icoon, url, external}) => {
+const Button = (props: ButtonProps) => {
 
   return (
           <>
-          {external ?
-            <StyledButton href={url} rel="noopener noreferrer" target="_blank">
-                {icoon}
-                <span>
-                  <strong>{title}</strong>
-                  {subtitle}
-                </span>
-              </StyledButton>
-              :
-              <Link to={url} className="button">
-                {icoon}
-                <span>
-                  <strong>{title}</strong>
-                  {subtitle}
-                </span>
-              </Link>
-              }
-            </>
-            
-          
+          {props.external ?
+            <StyledButton href={props.url} rel="noopener noreferrer" target="_blank">
+              {props.icoon}
+              <span>
+                <strong>{props.title}</strong>
+                {props.subtitle}
+              </span>
+            </StyledButton>
+            :
+            <Link to={props.url} className="button">
+              {props.icoon}
+              <span>
+                <strong>{props.title}</strong>
+                {props.subtitle}
+              </span>
+            </Link>
+            }
+          </>
   )
 
 }

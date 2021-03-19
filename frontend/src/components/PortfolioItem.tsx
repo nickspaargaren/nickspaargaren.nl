@@ -24,7 +24,7 @@ const StyledPortfolioItem = styled.div`
 
 `;
 
-interface Props {
+interface PortfolioItemProps {
   titel: string,
   beschrijving: string,
   slug: string,
@@ -32,16 +32,16 @@ interface Props {
   skillsused?: any
 }
 
-const PortfolioItem: React.FC<Props> = ({titel, beschrijving, slug, afbeelding, skillsused}) => {
+const PortfolioItem = (props: PortfolioItemProps) => {
 
 return (
   <>
     <StyledPortfolioItem>
       <div className="beschrijving">
-        <h2>{titel}</h2>
-        <p>{beschrijving}</p>
+        <h2>{props.titel}</h2>
+        <p>{props.beschrijving}</p>
         <ul className="tags">
-          {skillsused.map((skill, key) => (
+          {props.skillsused.map((skill, key) => (
               <li key={key}>
                 <GatsbyImage image={skill.afbeelding.asset.gatsbyImageData} alt={skill.titel} />
                 <span>{skill.titel}</span>
@@ -52,7 +52,7 @@ return (
 
       </div>
       <div className="plaatje">
-        {afbeelding && <Link to={`/portfolio/${slug}`}><GatsbyImage image={afbeelding.asset.gatsbyImageData} alt={titel} /></Link>}
+        {props.afbeelding && <Link to={`/portfolio/${props.slug}`}><GatsbyImage image={props.afbeelding.asset.gatsbyImageData} alt={props.titel} /></Link>}
       </div>
     </StyledPortfolioItem>
   </>

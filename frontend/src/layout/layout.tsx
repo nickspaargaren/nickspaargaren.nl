@@ -4,16 +4,16 @@ import GlobalStyle from "../styles/globalStyles";
 import Nav from "../components/navigatie/Nav";
 import Footer from "../components/Footer";
 
-interface Props {
+interface LayoutProps {
   children: any,
   title: string,
   description: string,
   noindex?: boolean
 }
 
-const Layout: React.FC<Props> = ({ children, title, description, noindex }) => {
+const Layout = (props: LayoutProps) => {
 
-  if (noindex) {
+  if (props.noindex) {
     var noindextag = <meta name="robots" content="noindex" />;
   }
 
@@ -24,11 +24,11 @@ const Layout: React.FC<Props> = ({ children, title, description, noindex }) => {
       <Helmet>
           <html lang="nl" />
           <meta charSet="utf-8" />
-          <title>{title}</title>
-          <meta name="description" content={description} />
+          <title>{props.title}</title>
+          <meta name="description" content={props.description} />
           {noindextag}
       </Helmet>
-      <main>{children}</main>
+      <main>{props.children}</main>
       <Footer/>
     </>
   )
