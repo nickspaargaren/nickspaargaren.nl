@@ -18,6 +18,7 @@ module.exports = {
         watchMode: true,
       }
     },
+    `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

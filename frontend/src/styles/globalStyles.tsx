@@ -22,12 +22,9 @@ const GlobalStyle = createGlobalStyle`
   .hgroup {margin-bottom: 40px;}
 
   h1, h2, h3 {margin: 0 0 10px;}
-  h1 {font-size: 36px; font-weight: normal;}
-  h1 + p {margin-top: -10px;}
+  h1 {font-size: 36px;}
   h2 {font-size: 30px;}
-  h2 + p {margin-top: -10px;}
   h3 {font-size: 20px;}
-  h3 + p {margin-top: -10px;}
   h4 {font-size: 18px; margin: 0 0 5px;}
 
   p {line-height: 1.5em; margin: 0 0 10px;}

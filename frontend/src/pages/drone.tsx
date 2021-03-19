@@ -1,7 +1,6 @@
 import React from "react"
 import Layout from "../layout/layout"
-import { useStaticQuery, graphql, Link } from "gatsby"
-import Img from "gatsby-image"
+import { Link } from "gatsby"
 
 import { FaAngleDoubleRight, FaCode, FaCaretRight } from 'react-icons/fa';
 
@@ -10,45 +9,8 @@ import Button from "../components/button/Button";
 import Youtube from "../components/Youtube";
 
 const Drone = () => {
-
-  const data = useStaticQuery(graphql`
-
-    query {
-      portfolio: allSanityPortfolio(sort: {fields: samenwerking, order: ASC}) {
-        nodes {
-          titel
-          website
-          tags
-          id
-          github
-          beschrijving
-          samenwerking
-          afbeelding {
-            asset {
-              fluid(maxWidth: 1086, toFormat: WEBP) {
-                base64
-                aspectRatio
-                src
-                srcSet
-                sizes
-                srcSetWebp
-                srcWebp
-              }
-            }
-          }
-          slug {
-            current
-          }
-        }
-      }
-
-    }  
-    `
-  )
-
-
   return (
-        <Layout title={`Drone`} noindex>
+        <Layout title={`Drone`} description="Drone videos" noindex>
           <div className="inhoud">
           <small>
               <ul className="bcrumbs">
@@ -78,10 +40,6 @@ const Drone = () => {
               <Youtube url="https://www.youtube-nocookie.com/embed/mDX5lj4eepQ" />
             </div>
           </div>
-
-
-          
-
         </Layout>
         )
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "gatsby"
-
+import { StaticImage } from "gatsby-plugin-image"
 import {useSiteMetadata} from '../../data/hooks/algemeen';
 import styled from 'styled-components';
 
@@ -15,7 +15,7 @@ const StyledNav = styled.div`
  > div {margin: auto 0;}
  > div a {color: inherit; text-decoration: none;}
  > .info {display: flex;}
- > .info img {height: 37px; margin: auto 10px auto 0; border-radius: 50px;}
+ > .info .gatsby-image-wrapper {margin: auto 10px auto 0; border-radius: 50px;}
 
   .switch {overflow: hidden; height: 17px;}
   .switch > div {position: relative; top: 0; transition: .3s all ease;}
@@ -36,7 +36,7 @@ const Nav = () => {
   return (
     <StyledNav>
       <div className="info">
-        <img src={'/images/nick-spaargaren.jpeg'} width="37px" height="37px" alt={`${"Profielfoto"} ${naam}`}/>
+        <StaticImage src="../../images/nick-spaargaren.jpeg" width={37} height={37} alt={`${"Profielfoto"} ${naam}`}/>
         <div>
           <strong>{naam}</strong>
           <div className="switch">
