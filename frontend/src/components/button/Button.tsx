@@ -2,18 +2,19 @@ import React from 'react';
 import { Link } from "gatsby"
 import styled from 'styled-components';
 
-const StyledButton = styled.div`
+const StyledButton = styled.a`
 
   position: relative;
   display: inline-flex;
   line-height: 10px;
-  background: #f1f1f1;
+  background: #221e25;
   padding: 5px 8px 5px 7px;
   border-radius: 3px;
   transition: .3s all ease;
   box-shadow: rgba(0, 0, 0, .1) 0px 1px 2px 0px inset;
-  color: inherit; text-decoration: none;
-  margin: auto 0;
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px 10px 0;
 
 
 :hover {background: #221e25; color: #fff;}
@@ -32,7 +33,6 @@ const StyledButton = styled.div`
 
 `;
 
-
 interface Props {
   title: string,
   subtitle: string,
@@ -44,15 +44,15 @@ interface Props {
 const Button: React.FC<Props> = ({title, subtitle, icoon, url, external}) => {
 
   return (
-          <StyledButton>
+          <>
           {external ?
-              <a href={url} rel="noopener noreferrer" target="_blank" className="button">
+            <StyledButton href={url} rel="noopener noreferrer" target="_blank">
                 {icoon}
                 <span>
                   <strong>{title}</strong>
                   {subtitle}
                 </span>
-              </a>
+              </StyledButton>
               :
               <Link to={url} className="button">
                 {icoon}
@@ -61,8 +61,10 @@ const Button: React.FC<Props> = ({title, subtitle, icoon, url, external}) => {
                   {subtitle}
                 </span>
               </Link>
-            }
-          </StyledButton>
+              }
+            </>
+            
+          
   )
 
 }

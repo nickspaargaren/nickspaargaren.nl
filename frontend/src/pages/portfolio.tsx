@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../layout/layout"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import { FaAngleDoubleRight, FaCode, FaCaretRight } from 'react-icons/fa';
 
@@ -25,15 +25,7 @@ const Portfolio = () => {
             samenwerking
             afbeelding {
               asset {
-                fluid(maxWidth: 1086, toFormat: WEBP) {
-                  base64
-                  aspectRatio
-                  src
-                  srcSet
-                  sizes
-                  srcSetWebp
-                  srcWebp
-                }
+                gatsbyImageData
               }
             }
             slug {
@@ -43,24 +35,18 @@ const Portfolio = () => {
               titel
               afbeelding {
                 asset {
-                  fluid(maxWidth: 35, maxHeight: 35) {
-                    base64
-                    aspectRatio
-                    src
-                    srcSet
-                    sizes
-                  }
+                  gatsbyImageData( width: 37 )
                 }
               }
             }
           }
         }
-      }
+      }      
     `
   )
 
   return (
-        <Layout title={`Portfolio`} noindex>
+        <Layout title={`Portfolio`} description="Portfolio overzicht" noindex>
           <div className="inhoud">
             <small>
               <ul className="bcrumbs">
