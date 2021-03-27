@@ -5,7 +5,6 @@ import { GatsbyImage } from "gatsby-plugin-image"
 
 import { FaAngleDoubleRight, FaCode, FaCaretRight } from 'react-icons/fa';
 
-import {Spring} from 'react-spring/renderprops'
 import PortfolioItem from "../components/PortfolioItem";
 
 const Portfolio = () => {
