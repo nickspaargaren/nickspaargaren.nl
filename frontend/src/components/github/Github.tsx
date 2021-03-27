@@ -22,43 +22,40 @@ const StyledGithub = styled.div`
 `;
 
 const Github = () => {
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [github, setItemsGithub] = useState([]);
+  const [github, setGithub] = useState({data: null, loading: true, error: null});
 
   useEffect(() => {
+    setGithub({data: null, loading: true, error: null});
     fetch("https://api.github.com/repos/nickspaargaren/no-google")
       .then(res => res.json())
       .then(
         (result) => {
-          setIsLoaded(true);
-          setItemsGithub(result);
+          setGithub({data: result, loading: false, error:  null});
         },
         (error) => {
-          setIsLoaded(true);
-          setError(error);
+          setGithub({data: null, loading: false, error:  error});
         }
       )
   }, [])
 
-  if (error) {
-    return <>{error.message}</>;
-  } else if (!isLoaded) {
+  if (github.error) {
+    return <>{github.error.message}</>;
+  } else if (github.loading) {
     return <>Laden...</>;
   } else {
     return (
       <StyledGithub>
-        <div className="titel">{github.name}</div>
-        <p>{github.description}</p>
-        <p><a href={github.html_url} rel="noopener noreferrer" target="_blank">{github.html_url}</a></p>
+        <div className="titel">{github.data.name}</div>
+        <p>{github.data.description}</p>
+        <p><a href={github.data.html_url} rel="noopener noreferrer" target="_blank">{github.data.html_url}</a></p>
         <small>
           <span className="stars">
             <GoStar/>
-            {github.stargazers_count}
+            {github.data.stargazers_count}
           </span>
           <span>
             <GoRepoForked/>
-            {github.forks}
+            {github.data.forks}
           </span>
         </small>
       </StyledGithub>
