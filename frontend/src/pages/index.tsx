@@ -59,6 +59,7 @@ const Index = () => {
             gatsbyImageData
           }
         }
+        exclude
       }
     }
   }
@@ -71,39 +72,44 @@ const Index = () => {
   return (
         <Layout title={`Portfolio | ${naam}`} description={functie} noindex>
           <header>
+          <div className="inhoud">
             <div className="grid-2x">
               <div className="links">
                 <h1>{functie}</h1>
                 <p>{naam}</p>
                 <div>
-                  {SocialData.map((social, key) => 
+                  {SocialData.map((social, key) =>
                     <Button key={key} title={social.platform} subtitle="Account" icoon={social.icoon} url={social.url} external />
                   )}
                 </div>
-
               </div>
               <div className="rechts">
                 <div className="skills">
-                  {data.skills.nodes.map((item, key) => 
-                    <div key={key} className="skill">
-                      {item.afbeelding ? <GatsbyImage image={item.afbeelding.asset.gatsbyImageData} alt={item.titel} /> : <img src="https://placehold.it/35x35" alt="placeholder"/>}
-                      <div>
-                        <div className="titel">
-                          {item.titel}
-                          <span>{item.percentage + '%'}</span>
+                  {data.skills.nodes.map((item, key) => {
+                    if (!item.exclude) {
+                      return (
+                        <div key={key} className="skill">
+                          {item.afbeelding ? <GatsbyImage image={item.afbeelding.asset.gatsbyImageData} alt={item.titel} /> : <img src="https://placehold.it/35x35" alt="placeholder" />}
+                          <div>
+                            <div className="titel">
+                              {item.titel}
+                              <span>{item.percentage + '%'}</span>
+                            </div>
+                            <div className="percentage">
+                              <Spring config={{ tension: 280, friction: 60, delay: 300 }} from={{ width: '0%' }} to={{ width: item.percentage + '%' }}>
+                                {style => (
+                                  <div style={style} className="gevuld"></div>
+                                )}
+                              </Spring>
+                            </div>
+                          </div>
                         </div>
-                        <div className="percentage">
-                          <Spring config={{ tension: 280, friction: 60, delay: 300 }} from={{ width: '0%' }} to={{ width: item.percentage + '%'}}>
-                            {style => (
-                              <div style={style} className="gevuld"></div>
-                            )}
-                          </Spring>
-                        </div>
-                      </div>
-                    </div>
-                  )}
+                      )
+                    }
+                  })}
                 </div>
               </div>
+            </div>
             </div>
           </header>
           <div className="inhoud">
@@ -158,11 +164,9 @@ const Index = () => {
           </div>
           {data.portfolio.nodes.map((item, key) => {
             return (
-              <PortfolioItem key={key} titel={item.titel} beschrijving={item.beschrijving} slug={item.slug.current} afbeelding={item.afbeelding} skillsused={item.skillsused}/>
+              <PortfolioItem key={key} titel={item.titel} beschrijving={item.beschrijving} slug={item.slug.current} afbeelding={item.afbeelding} skillsused={item.skillsused} />
             )
-          }
-             
-            )}
+          })}
           </div>
           <section>
             <div className="inhoud" style={{textAlign: 'center'}}>
