@@ -6,10 +6,8 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import {useSiteMetadata} from '../data/hooks/algemeen';
 
 import {Spring} from 'react-spring/renderprops'
-import Button from "../components/button/Button";
 import Github from "../components/github/Github";
 
-import {SocialData} from '../data/socials/SocialData';
 import PortfolioItem from "../components/PortfolioItem";
 
 import {SiAdobe, SiSketch, SiVisualstudiocode, SiMaterialdesignicons, SiCodeclimate, SiAirbnb, SiDevDotTo, SiOneplus, SiRaspberrypi, SiLinux, SiApple, SiAdobepremiere, SiXbox, SiNetflix, SiSpotify} from 'react-icons/si';
@@ -77,10 +75,10 @@ const Index = () => {
               <div className="links">
                 <h1>{functie}</h1>
                 <p>{naam}</p>
-                <div>
-                  {SocialData.map((social, key) =>
-                    <Button key={key} title={social.platform} subtitle="Account" icoon={social.icoon} url={social.url} external />
-                  )}
+                <div style={{ marginTop: 'auto' }}>
+                  <h3>Open Source project</h3>
+                  <p>met meeste contributors</p>
+                  <Github  />
                 </div>
               </div>
               <div className="rechts">
@@ -168,13 +166,6 @@ const Index = () => {
             )
           })}
           </div>
-          <section>
-            <div className="inhoud" style={{textAlign: 'center'}}>
-              <h3>Open Source project</h3>
-              <p>met meeste contributors</p>
-              <Github  />
-            </div>
-          </section>
         </Layout>
         )
 }
