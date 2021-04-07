@@ -48,7 +48,7 @@ const Projecten = () => {
           <div className="inhoud">
             <small>
               <ul className="bcrumbs">
-                <li><Link to="/">Home</Link></li>
+                <li><Link to="/portfolio">Home</Link></li>
                 <li><FaCaretRight/></li>
                 <li>Projecten</li>
               </ul>
