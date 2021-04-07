@@ -17,16 +17,16 @@ const PortfolioGrid = styled.div`
 
 `;
 
-const EenPagina = ({data}) => {
+const ProjectDetail = ({data}) => {
   return (
     <>
-      <Layout title={`Portfolio | ${data.pagina.titel}`} description={data.pagina.beschrijving} noindex>
+      <Layout title={`Projecten | ${data.pagina.titel}`} description={data.pagina.beschrijving} noindex>
         <div className="inhoud">
           <small>
             <ul className="bcrumbs">
               <li><Link to="/">Home</Link></li>
               <li><FaCaretRight /></li>
-              <li><Link to="/portfolio/">Portfolio</Link></li>
+              <li><Link to="/portfolio/projecten/">Projecten</Link></li>
               <li><FaCaretRight /></li>
               <li>{data.pagina.titel}</li>
             </ul>
@@ -91,4 +91,4 @@ export const query = graphql`
   }
 `;
 
-export default EenPagina
+export default ProjectDetail

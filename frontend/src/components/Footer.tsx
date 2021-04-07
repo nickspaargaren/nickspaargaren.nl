@@ -27,8 +27,6 @@ const Footer = () => {
         <div className="inhoud">            
           <div className="tel">{telefoonnummer}</div>
           <p>Of toch eerst <a href="https://www.google.com/search?q=site%3Acmspecialist.nl+%22Nick+Spaargaren%22" rel="noopener noreferrer" target="_blank">meer projecten</a> zien?</p>
-        </div>
-        <div className="inhoud">
           {SocialData.map((social, key) =>
             <Button key={key} title={social.platform} subtitle="Account" icoon={social.icoon} url={social.url} external />
           )}

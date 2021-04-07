@@ -14,13 +14,15 @@ const StyledButton = styled.a`
   box-shadow: rgba(0, 0, 0, .1) 0px 1px 2px 0px inset;
   color: #fff;
   text-decoration: none;
+  text-align: left;
   margin: 0 10px 10px 0;
 
 
   &:hover {background: #221e25; color: #fff;}
 
  strong {display: block;}
- svg {margin: auto 0;}
+ .icoon {margin: auto 2px auto 0;}
+ .icoon svg {margin: 0;}
  span {
   display: inline-block;
   margin: auto 0 auto 5px;
@@ -47,7 +49,7 @@ const Button = (props: ButtonProps) => {
           <>
           {props.external ?
             <StyledButton href={props.url} rel="noopener noreferrer" target="_blank">
-              {props.icoon}
+              <div className="icoon">{props.icoon}</div>
               <span>
                 <strong>{props.title}</strong>
                 {props.subtitle}
@@ -55,7 +57,7 @@ const Button = (props: ButtonProps) => {
             </StyledButton>
             :
             <StyledButton as={Link} to={props.url} className="button">
-              {props.icoon}
+              <div className="icoon">{props.icoon}</div>
               <span>
                 <strong>{props.title}</strong>
                 {props.subtitle}

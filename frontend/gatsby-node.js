@@ -13,8 +13,8 @@ exports.createPages = async function ({ actions, graphql }) {
   data.paginas.nodes.forEach(node => {
     const slug = node.slug.current
     actions.createPage({
-      path: `/portfolio/${slug}`,
-      component: require.resolve(`./src/templates/PortfolioDetail.tsx`),
+      path: `/portfolio/projecten/${slug}`,
+      component: require.resolve(`./src/templates/ProjectDetail.tsx`),
       context: { slug: slug },
     })
   })

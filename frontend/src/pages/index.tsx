@@ -1,173 +1,133 @@
-import React from "react"
-import Layout from "../layout/layout"
-import { useStaticQuery, graphql, Link } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+import React from 'react';
+import Layout from '../layout/layout';
+import {Trail} from 'react-spring/renderprops'
 
+import {SocialData} from '../data/socials/SocialData';
 import {useSiteMetadata} from '../data/hooks/algemeen';
+import { Helmet } from 'react-helmet';
 
-import {Spring} from 'react-spring/renderprops'
-import Github from "../components/github/Github";
-
-import PortfolioItem from "../components/PortfolioItem";
-
-import {SiAdobe, SiSketch, SiVisualstudiocode, SiMaterialdesignicons, SiCodeclimate, SiAirbnb, SiDevDotTo, SiOneplus, SiRaspberrypi, SiLinux, SiApple, SiAdobepremiere, SiXbox, SiNetflix, SiSpotify} from 'react-icons/si';
-
-const Index = () => {
-
-  const data = useStaticQuery(graphql`
-
-  {
-    portfolio: allSanityPortfolio(
-      sort: {fields: samenwerking, order: ASC}
-      limit: 3
-    ) {
-      nodes {
-        titel
-        website
-        tags
-        id
-        github
-        beschrijving
-        samenwerking
-        afbeelding {
-          asset {
-            gatsbyImageData
-          }
-        }
-        slug {
-          current
-        }
-        skillsused {
-          titel
-          afbeelding {
-            asset {
-              gatsbyImageData( width: 37 )
-            }
-          }
-        }
-      }
-    }
-    skills: allSanitySkills(sort: {fields: percentage, order: DESC}) {
-      nodes {
-        id
-        titel
-        percentage
-        afbeelding {
-          asset {
-            gatsbyImageData
-          }
-        }
-        exclude
-      }
-    }
-  }
-  
-    `
-  )
-  
-  const {naam, functie, telefoonnummer} = useSiteMetadata();
-
-  return (
-        <Layout title={`Portfolio | ${naam}`} description={functie} noindex>
-          <header>
-          <div className="inhoud">
-            <div className="grid-2x">
-              <div className="links">
-                <h1>{functie}</h1>
-                <p>{naam}</p>
-                <div style={{ marginTop: 'auto' }}>
-                  <h3>Open Source project</h3>
-                  <p>met meeste contributors</p>
-                  <Github  />
-                </div>
-              </div>
-              <div className="rechts">
-                <div className="skills">
-                  {data.skills.nodes.map((item, key) => {
-                    if (!item.exclude) {
-                      return (
-                        <div key={key} className="skill">
-                          {item.afbeelding ? <GatsbyImage image={item.afbeelding.asset.gatsbyImageData} alt={item.titel} /> : <img src="https://placehold.it/35x35" alt="placeholder" />}
-                          <div>
-                            <div className="titel">
-                              {item.titel}
-                              <span>{item.percentage + '%'}</span>
-                            </div>
-                            <div className="percentage">
-                              <Spring config={{ tension: 280, friction: 60, delay: 300 }} from={{ width: '0%' }} to={{ width: item.percentage + '%' }}>
-                                {style => (
-                                  <div style={style} className="gevuld"></div>
-                                )}
-                              </Spring>
-                            </div>
-                          </div>
-                        </div>
-                      )
-                    }
-                  })}
-                </div>
-              </div>
-            </div>
-            </div>
-          </header>
-          <div className="inhoud">
-            <div className="hgroup">
-              <h2>Waar ik goed in ben</h2>
-              <p>Ervaring en interesse</p>
-            </div>
-            <div className="grid-3x">
-              <div>
-                <SiMaterialdesignicons/><SiAdobe/><SiSketch/>
-                <h4>Design</h4>
-                <p>Minimaal 10 jaar <span className="calc">27 - 10 = 17 ✓</span> ervaring met vormgeving, design, fotobewerking en dtp.</p>
-              </div>
-              <div>
-                <SiVisualstudiocode/><SiDevDotTo/>
-                <h4>Develop</h4>
-                <p>Front-end developer sinds 2013. Altijd zoekend naar nieuwe technieken waaronder op dit moment <i>Apollo en Graphql</i></p>
-              </div>
-              <div>
-                <SiCodeclimate/><SiAirbnb/>
-                <h4>Drone videography</h4>
-                <p>Vakantie en activiteitenvideo's, promotievideo's / inzamelingsacties, luchtopnames. <Link to="/drone">Naar video's</Link></p>
-              </div>
-              <div>
-                <SiOneplus/><SiApple/>
-                <h4>Device rooting/jailbreakscene</h4>
-                <p>Checkra1n, ADB debug, Unc0ver, Odin, Custom recoveries, TWRP, ClockwordMod, LineageOS, CarBridge</p>
-              </div>
-              <div>
-                <SiRaspberrypi/><SiLinux/>
-                <h4>Linux / Raspberry pi</h4>
-                <p>Pi-hole, Homebrige, Unbound DNS, openVPN, Domoticz, Wireguard</p>
-              </div>
-              <div>
-                <SiAdobe/><SiAdobepremiere/>
-                <h4>Videobewerking</h4>
-                <p>Premiere pro, Audacity, <span style={{ textDecoration: 'line-through' }}>Adobe Flash</span>, Proxies, GoPro timelapses</p>
-              </div>
-              <div>
-                <SiXbox/><SiNetflix/><SiSpotify/>
-                <h4>Overige</h4>
-                <p>Xbox ambassador, iOS Dev Beta, PSP Custom Firmware, SONOS fan, Testflight</p>
-              </div>
-              
-            </div>
-
-          </div>
-          <div className="inhoud">
-          <div className="hgroup">
-            <h2>Projecten</h2>
-            <p>Ervaring en interesse</p>
-          </div>
-          {data.portfolio.nodes.map((item, key) => {
-            return (
-              <PortfolioItem key={key} titel={item.titel} beschrijving={item.beschrijving} slug={item.slug.current} afbeelding={item.afbeelding} skillsused={item.skillsused} />
-            )
-          })}
-          </div>
-        </Layout>
-        )
+import { createGlobalStyle } from 'styled-components';
+ 
+const GlobalStyle = createGlobalStyle`
+:root {
+  --dribbble-color: #ea4c89;
+  --dribbble-color-tint: #fdedf3;
+  --github-color: #292a2c;
+  --github-color-tint: #e9e9e9;
+  --youtube-color: #ff0200;
+  --youtube-color-tint: #ffe9e8;
+  --linkedin-color: #2578b5;
+  --linkedin-color-tint: #e7f2f7;
 }
 
-export default Index
+html,
+body {height: 100%;}
+
+body {margin: 0;
+  color: #292a2c;
+  font-size: 17px;
+  -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fbfbfb;
+}
+
+.sitehouder {display: flex; height: 100vh;}
+
+.sitehouder .inhoud {margin: auto; padding: 40px; box-sizing: border-box; max-width: 1200px;}
+.sitehouder .inhoud .titel {margin-bottom: 30px;}
+.sitehouder .inhoud .titel h1 {margin: 0 0 10px;}
+.sitehouder .inhoud .titel h2 {margin: 0 0 10px; font-weight: normal; font-size: 1em;}
+.sitehouder .inhoud .titel h1 + h2 {margin-top: -10px; opacity: .7;}
+
+
+p {line-height: 1.5em; margin: 0 0 10px;}
+
+
+.klein {font-size: 14px;}
+
+/* Grid Templates */
+div[class*="grid"] {hyphens: auto; -webkit-hyphens: auto; display: grid; grid-gap: 30px; box-sizing: border-box;}
+div[class*="grid"].vertical-align-middle > div {margin: auto 0;}
+div[class*="grid"] img {max-width: 100%; height: auto !important;}
+.grid-2x {grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));}
+.grid-3x {grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));}
+.grid-4x {grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));}
+/* Einde Grid Templates */
+
+
+@media (max-width: 735px) {
+  div[class*="grid"] {grid-gap: 15px !important;}
+  .inhoud {padding: 40px 10px;}
+}
+
+.houder {display: grid; grid-gap: 10px; grid-template-columns: repeat(auto-fit, minmax(158px, 1fr)); max-width: 768px; margin: 0 auto;}
+
+.houder a.blok {transition: .3s all ease; transform: rotate(-1deg); color: inherit; text-decoration: none; white-space: nowrap; font-size: 30px; position: relative; border: 1px solid #e1e2e2; padding: 20px; border-bottom-width: 2px; border-bottom-color: #c3c3c3; background: #fff; border-radius: 5px;}
+
+.houder a.blok span {display: block; border-radius: 3px; white-space: nowrap; padding: 9px 11px; font-size: 12px; line-height: 1.25em; pointer-events: none; position: relative; margin-top: 10px; transition: .3s all ease; background: #aaa;}
+.houder a.blok span::before {border: solid; border-width: 0px 6px 6px 6px; top: -4px; content: ""; position: absolute; left: 50%; transform: translateX(-50%); transition: .3s all ease; border-color: #aaa transparent;}
+.houder a.blok span strong {display: block; font-size: 14px; text-transform: capitalize;}
+
+.houder a.blok.linkedin:hover {border-color: var(--linkedin-color); background-color: var(--linkedin-color-tint);}
+.houder a.blok.linkedin span {background: var(--linkedin-color-tint); color: var(--linkedin-color);}
+.houder a.blok.linkedin:hover span {background: var(--linkedin-color); color: #fff;}
+.houder a.blok.linkedin span::before {border-color: var(--linkedin-color-tint) transparent;}
+.houder a.blok.linkedin:hover span::before {border-color: var(--linkedin-color) transparent;}
+.houder a.blok.linkedin svg path {fill: var(--linkedin-color);}
+.houder a.blok.linkedin::before {content: ""; height: 13px; width: 13px; border-radius: 4px; top: -5px; position: absolute; right: -5px; background: #F54335; border: 2px solid rgba(255, 255, 255, 0.5); box-sizing: border-box;}
+
+.houder a.blok.github:hover {border-color: var(--github-color); background-color: var(--github-color-tint);}
+.houder a.blok.github span {background: var(--github-color); color: #fff;}
+.houder a.blok.github span::before {border-color: var(--github-color) transparent;}
+.houder a.blok.github svg path {fill:var(--github-color);}
+
+.houder a.blok.youtube:hover {border-color: var(--youtube-color); background-color: var(--youtube-color-tint);}
+.houder a.blok.youtube span {background: var(--youtube-color); color: #fff;}
+.houder a.blok.youtube span::before {border-color: var(--youtube-color) transparent;}
+.houder a.blok.youtube svg path {fill: var(--youtube-color);}
+
+.houder a.blok.dribbble:hover {border-color: var(--dribbble-color); background-color: var(--dribbble-color-tint);}
+.houder a.blok.dribbble span {background: var(--dribbble-color); color: #fff;}
+.houder a.blok.dribbble span::before {border-color: var(--dribbble-color) transparent;}
+.houder a.blok.dribbble svg path {fill: var(--dribbble-color);}
+`;
+ 
+
+const Home = () => {
+
+  const {naam, functie} = useSiteMetadata();
+
+  return (
+    <>
+    <Helmet>
+          <html lang="nl" />
+          <meta charSet="utf-8" />
+          <title>Nick Spaargaren</title>
+          <meta name="description" content="Designer & Front-End Developer" />
+      </Helmet>
+      <GlobalStyle/>
+      <div className="sitehouder">
+        <div className="inhoud" style={{textAlign: 'center', width: '100%'}}>
+          <div className="titel">
+            <h1 style={{fontSize: '2em'}}>{naam}</h1>
+            <h2>{functie}</h2>
+          </div>
+          <div className="houder">
+            <Trail items={SocialData} keys={social => social.id} from={{opacity: 0}} to={{opacity: 1}}>
+              {social => props => 
+                <a style={props} key={social.id} className={`blok ${social.class}`} rel="noopener noreferrer" target="_blank" href={social.url}>
+                  {social.icoon} 
+                  <span><strong>{social.platform}</strong>{naam}</span>
+                </a>
+              }
+            </Trail>
+          </div>
+        </div>
+      </div>
+      </>
+  )
+}
+
+export default Home

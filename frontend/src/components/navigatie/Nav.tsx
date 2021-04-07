@@ -51,9 +51,9 @@ const Nav = () => {
       </div>
 
       <ul className="menu">
-        <li><Link activeClassName="active" to="/">Home</Link></li>
-        <li><Link activeClassName="active" to="/portfolio/">Portfolio</Link></li>
-        <li><Link activeClassName="active" to="/drone/">Drone</Link></li>
+        <li><Link activeClassName="active" to="/portfolio/">Home</Link></li>
+        <li><Link activeClassName="active" to="/portfolio/projecten/">Projecten</Link></li>
+        <li><Link activeClassName="active" to="/portfolio/drone/">Drone</Link></li>
       </ul>
     </StyledNav>
 

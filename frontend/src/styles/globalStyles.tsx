@@ -34,7 +34,7 @@ const GlobalStyle = createGlobalStyle`
   .calc {display: inline-block; text-decoration: line-through; background: #d1d9e2; opacity: .5; padding: 0 7px; border-radius: 3px; font-size: 13px;}
 
   header {background: #221e25; color: #fff;}
-  header .links, header .rechts {padding: 20px;}
+  header .links, header .rechts {}
   header .links {display: flex; flex-direction: column;}
 
   .klein {font-size: 14px;}
