@@ -1,13 +1,13 @@
 import React from "react"
-import Layout from "../layout/layout"
+import Layout from "../../layout/layout"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 import { FaAngleDoubleRight, FaCode, FaCaretRight } from 'react-icons/fa';
 
-import PortfolioItem from "../components/PortfolioItem";
+import PortfolioItem from "../../components/PortfolioItem";
 
-const Portfolio = () => {
+const Projecten = () => {
 
   const data = useStaticQuery(graphql`
 
@@ -50,7 +50,7 @@ const Portfolio = () => {
               <ul className="bcrumbs">
                 <li><Link to="/">Home</Link></li>
                 <li><FaCaretRight/></li>
-                <li>Portfolio</li>
+                <li>Projecten</li>
               </ul>
             </small>
           </div>
@@ -63,4 +63,4 @@ const Portfolio = () => {
         )
 }
 
-export default Portfolio
+export default Projecten

@@ -1,10 +1,10 @@
 import React from "react"
-import Layout from "../layout/layout"
+import Layout from "../../layout/layout"
 import { Link } from "gatsby"
 
 import { FaAngleDoubleRight, FaCode, FaCaretRight } from 'react-icons/fa';
 
-import Youtube from "../components/Youtube";
+import Youtube from "../../components/Youtube";
 
 const Drone = () => {
   return (

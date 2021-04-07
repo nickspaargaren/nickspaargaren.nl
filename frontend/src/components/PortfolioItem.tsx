@@ -58,7 +58,7 @@ return (
 
       </div>
       <div className="plaatje">
-        {props.afbeelding && <Link to={`/portfolio/${props.slug}`}><GatsbyImage image={props.afbeelding.asset.gatsbyImageData} alt={props.titel} /></Link>}
+        {props.afbeelding && <Link to={`/portfolio/projecten/${props.slug}`}><GatsbyImage image={props.afbeelding.asset.gatsbyImageData} alt={props.titel} /></Link>}
       </div>
     </StyledPortfolioItem>
   </>
