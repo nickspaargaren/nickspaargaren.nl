@@ -7,7 +7,8 @@ module.exports = {
     naam: 'Nick Spaargaren',
     functie: 'Designer & Front-End Developer',
     telefoonnummer: process.env.TELEFOONNUMMER,
-    email: process.env.EMAIL
+    email: process.env.EMAIL,
+    siteUrl: `https://nickspaargaren.nl`,
   },
   plugins: [
     {
@@ -18,6 +19,8 @@ module.exports = {
         watchMode: true,
       }
     },
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -28,6 +31,9 @@ module.exports = {
         ],
         display: 'swap'
       }
+    },
+    {
+      resolve: `gatsby-plugin-styled-components`
     },
   ],
 }

@@ -22,6 +22,11 @@ export default {
       options: {
         hotspot: true
       }
+    },
+    {
+      name: 'exclude',
+      title: 'Niet tonen in overzicht',
+      type: 'boolean'
     }
   ]
 }
