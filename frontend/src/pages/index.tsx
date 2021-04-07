@@ -11,6 +11,7 @@ import Github from "../components/github/Github";
 import PortfolioItem from "../components/PortfolioItem";
 
 import {SiAdobe, SiSketch, SiVisualstudiocode, SiMaterialdesignicons, SiCodeclimate, SiAirbnb, SiDevDotTo, SiOneplus, SiRaspberrypi, SiLinux, SiApple, SiAdobepremiere, SiXbox, SiNetflix, SiSpotify} from 'react-icons/si';
+import { SimpleTabs, SimpleTab } from "../components/Tabs";
 
 const Index = () => {
 
@@ -165,6 +166,17 @@ const Index = () => {
               <PortfolioItem key={key} titel={item.titel} beschrijving={item.beschrijving} slug={item.slug.current} afbeelding={item.afbeelding} skillsused={item.skillsused} />
             )
           })}
+
+
+          <SimpleTabs>
+            {data.portfolio.nodes.map((item, key) => {
+              return (
+                <SimpleTab key={key} id={key} titel={item.titel} beschrijving={item.beschrijving}>
+                </SimpleTab>
+              )
+            })}
+          </SimpleTabs>
+
           </div>
         </Layout>
         )
