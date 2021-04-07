@@ -5,7 +5,7 @@ const GlobalStyle = createGlobalStyle`
   body {height: 100%;}
 
   body {margin: 0;
-    color: #292a2c;
+    color: #333e52;
     font-size: 17px;
     -webkit-text-size-adjust: 100%;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -21,10 +21,10 @@ const GlobalStyle = createGlobalStyle`
 
   .hgroup {margin-bottom: 40px;}
 
-  h1, h2, h3 {margin: 0 0 10px;}
-  h1 {font-size: 36px;}
-  h2 {font-size: 30px;}
-  h3 {font-size: 20px;}
+  h1, h2, h3, h4 {color: #292a2c;}
+  h1 {font-size: 36px; margin: 0 0 10px;}
+  h2 {font-size: 30px; margin: 0 0 10px;}
+  h3 {font-size: 20px; margin: 0 0 10px;}
   h4 {font-size: 18px; margin: 0 0 5px;}
 
   p {line-height: 1.5em; margin: 0 0 10px;}
@@ -36,6 +36,10 @@ const GlobalStyle = createGlobalStyle`
   header {background: #221e25; color: #fff;}
   header .links, header .rechts {}
   header .links {display: flex; flex-direction: column;}
+  header h1, 
+  header h2, 
+  header h3, 
+  header h4 {color: inherit;} 
 
   .klein {font-size: 14px;}
 

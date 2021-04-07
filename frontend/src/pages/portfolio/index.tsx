@@ -156,15 +156,15 @@ const Index = () => {
 
           </div>
           <div className="inhoud">
-          <div className="hgroup">
-            <h2>Projecten</h2>
-            <p>Ervaring en interesse</p>
-          </div>
-          {data.portfolio.nodes.map((item, key) => {
-            return (
-              <PortfolioItem key={key} titel={item.titel} beschrijving={item.beschrijving} slug={item.slug.current} afbeelding={item.afbeelding} skillsused={item.skillsused} />
-            )
-          })}
+            <div className="hgroup">
+              <h2 style={{margin: 0}}>Projecten</h2>
+              <p>Ervaring en interesse</p>
+            </div>
+            {data.portfolio.nodes.map((item, key) => {
+              return (
+                <PortfolioItem key={key} titel={item.titel} beschrijving={item.beschrijving} slug={item.slug.current} afbeelding={item.afbeelding} skillsused={item.skillsused} />
+              )
+            })}
           </div>
         </Layout>
         )
