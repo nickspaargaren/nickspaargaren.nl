@@ -119,7 +119,7 @@ const Index = () => {
               <div>
                 <SiMaterialdesignicons/><SiAdobe/><SiSketch/>
                 <h4>Design</h4>
-                <p>Minimaal 10 jaar <span className="calc">27 - 10 = 17 ✓</span> ervaring met vormgeving, design, fotobewerking en dtp.</p>
+                <p>Meer dan 10 jaar <span className="calc">27 - 10 = 17 ✓</span> ervaring met vormgeving, design, fotobewerking en dtp.</p>
               </div>
               <div>
                 <SiVisualstudiocode/><SiDevDotTo/>
