@@ -1,49 +1,88 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
+import { connect, Provider, } from 'react-redux';
+import { createStore } from 'redux';
+
+function mapStateToProps(state) {
+  return {
+    value: state.value
+  };
+}
+
+const initialState = {
+  value: ''
+};
+
+
+function reducer(state = initialState, action) {
+  state.value = 'bla';
+  return state;
+}
+
+
+const store = createStore(reducer);
 
 interface TabProps {
-  titel: string,
+  title: string,
   beschrijving: string,
   id: boolean,
-  children: React.ReactNode
+  children: any
 }
 
 export const SimpleTab = (props: TabProps) => {
 
-
-  console.log(props);
-
   const tab = useRef(null);
 
-  const tabManager = () => {
+  const tabManager = (props) => {
 
-    // [...document.querySelectorAll('.tabs .tab')].forEach((item, key) => {
-    //   item.classList.remove('active');
-    // });
+    [...document.querySelectorAll('.tabs .tab')].forEach((item, key) => {
+      item.classList.remove('active');
+    });
 
-    // tab.current.classList.add('active');
+    tab.current.classList.add('active');
+    
+    console.log(store.getState());
+    store.dispatch({ type: props.title });
+    console.log(store.getState());
 
+
+    
   };
 
+
+
+
+  const [SimpleTabsState, setSimpleTabsState] = useState({openTab: 0, openTabtitle: '', openTabContent: ''});
+
+  // console.log(SimpleTabsState);
+    
+  // useEffect(() => {
+  //   document.querySelector('#tabsContent').innerHTML = `You clicked ${SimpleTabsState.openTabtitle} times`;
+  // });
+
   return (
-    <div className="tab" ref={tab} onClick={() => {tabManager()}} data-key={props.id}><h3>{props.titel}</h3><p>{props.beschrijving}</p></div>
+    <div className="tab" ref={tab} onClick={() => {
+      tabManager(props);    
+    }}><h3>{props.title}</h3><p>{props.beschrijving}</p></div>
   )
 }
 
 
 
 export const SimpleTabs = ({children}) => {
-
-  const [SimpleTabsState, setSimpleTabsState] = useState({openTab: 0, openTabTitel: ''});
   
-  children.map((item, key) => {
-    console.log(item);
-  })
+  
+  
   
   return (
+    <Provider store={store}>
+  
+
     <div className="tabs">
-      {children}
+      <div className="tabsList">{children}</div>
+      <div className="tabsContent"></div>
     </div>
+    </Provider>
   )
 
 }

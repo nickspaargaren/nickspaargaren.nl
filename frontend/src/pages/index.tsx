@@ -171,7 +171,8 @@ const Index = () => {
           <SimpleTabs>
             {data.portfolio.nodes.map((item, key) => {
               return (
-                <SimpleTab key={key} id={key} titel={item.titel} beschrijving={item.beschrijving}>
+                <SimpleTab key={key} id={key} title={item.titel} beschrijving={item.beschrijving}>
+                  <GatsbyImage image={item.afbeelding.asset.gatsbyImageData} alt={item.titel} />
                 </SimpleTab>
               )
             })}

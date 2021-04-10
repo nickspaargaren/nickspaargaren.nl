@@ -97,6 +97,9 @@ const GlobalStyle = createGlobalStyle`
   height: 100%;
   border-radius: inherit;}
 
+
+.tabs {display: grid; grid-template-columns: 1fr 1fr;}
+
 `;
  
 export default GlobalStyle;
