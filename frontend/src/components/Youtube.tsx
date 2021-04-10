@@ -12,7 +12,6 @@ const StyledYoutube = styled.div`
     background: #fff;
     line-height: 0;
     box-shadow: 0 6px 35px -9px rgb(0 0 0 / 40%);
-    z-index: 1;
     background: #f3f3f3;
     width: 100%;
 
