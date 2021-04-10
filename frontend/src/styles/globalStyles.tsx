@@ -55,6 +55,8 @@ const GlobalStyle = createGlobalStyle`
   .bcrumbs {
     display: flex; list-style: none; margin: 0; padding: 0;
     li {margin-right: 5px;}
+    li a {color: inherit; text-decoration: none;}
+    li a:hover {text-decoration: underline;}
     li svg {display: inline-block; vertical-align: middle; margin: 0;}
   }
 
