@@ -31,11 +31,12 @@ const Skills = () => {
   const {email, telefoonnummer} = useSiteMetadata();
 
 
-  const [favorieten, setFavorieten] = useState(JSON.parse(localStorage.getItem('favorieten')));
+  const [favorieten, setFavorieten] = useState([]);
+  // const [favorieten, setFavorieten] = useState(JSON.parse(localStorage.getItem('favorieten')));
 
-  useEffect(() => {
-    localStorage.setItem('favorieten', JSON.stringify(favorieten))
-  },[favorieten])
+  // useEffect(() => {
+  //   localStorage.setItem('favorieten', JSON.stringify(favorieten))
+  // },[favorieten])
 
 
   const ActieveSkills = () => {
