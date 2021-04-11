@@ -30,14 +30,20 @@ const Skills = () => {
 
   const {email, telefoonnummer} = useSiteMetadata();
 
-
   const [favorieten, setFavorieten] = useState([]);
-  // const [favorieten, setFavorieten] = useState(JSON.parse(localStorage.getItem('favorieten')));
 
-  // useEffect(() => {
-  //   localStorage.setItem('favorieten', JSON.stringify(favorieten))
-  // },[favorieten])
+  if (typeof window !== 'undefined') {
 
+    useEffect(() => {
+      setFavorieten(JSON.parse(localStorage.getItem('favorieten')))
+    },[])
+  
+  
+    useEffect(() => {
+      localStorage.setItem('favorieten', JSON.stringify(favorieten))
+    },[favorieten])
+  
+  }
 
   const ActieveSkills = () => {
     if(favorieten.length > 0) {
@@ -55,16 +61,12 @@ const Skills = () => {
         <ButtonGroot primary title={telefoonnummer} url={`tel:${telefoonnummer}`}/>
         </>
     )
-      
     } else {
-      return false
+      return <></>
     }
-    
-    
+
   }
 
-
-  const skill = useRef(null);
 
   return (
     <div className="skills">
@@ -73,7 +75,7 @@ const Skills = () => {
       {data.skills.nodes.map((item, key) => {
         if (!item.exclude) {
           return (
-            <div key={key} className="skill" ref={skill}>
+            <div key={key} className="skill">
               {item.afbeelding ? <GatsbyImage image={item.afbeelding.asset.gatsbyImageData} alt={item.titel} /> : <img src="https://placehold.it/35x35" alt="placeholder" />}
               <div>
                 <div className="titel">
@@ -89,7 +91,7 @@ const Skills = () => {
                 </div>
               </div>
               <div className="opties">
-                
+
 
                 <div className="favoriet" onClick={() => {
 
@@ -114,12 +116,9 @@ const Skills = () => {
           )
         }
       })}
-      
-      <ActieveSkills />
-      
 
-      
-      
+      <ActieveSkills />
+
     </div>
   )
 }
