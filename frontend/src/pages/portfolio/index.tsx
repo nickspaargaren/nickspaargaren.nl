@@ -94,7 +94,7 @@ const Index = () => {
               <div>
                 <SiCodeclimate/><SiAirbnb/>
                 <h4>Drone videography</h4>
-                <p>Vakantie en activiteitenvideo's, promotievideo's / inzamelingsacties, luchtopnames. <Link to="/drone">Naar video's</Link></p>
+                <p>Vakantie en activiteitenvideo's, promotievideo's / inzamelingsacties, luchtopnames. <Link to="/portfolio/drone">Naar video's</Link></p>
               </div>
               <div>
                 <SiOneplus/><SiApple/>
