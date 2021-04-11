@@ -16,6 +16,8 @@ const StyledPortfolioItem = styled.div`
   .beschrijving ul.tags li span {position: absolute; bottom: 100%; background: #221e25; color: #fff; line-height: 1; white-space: nowrap; font-size: 12px; padding: 7px; position: absolute; transition: .3s all ease; left: 50%; transform: translateX(-50%); opacity: 0; pointer-events: none;}
   .beschrijving ul.tags li span::before {border: solid; border-color: #221e25 transparent; border-width: 6px 6px 0px 6px; bottom: -4px; content: ""; position: absolute; transition: .3s all ease; left: 50%; transform: translateX(-50%);}
   .beschrijving ul.tags li:hover span {opacity: 1; pointer-events: all; bottom: 115%;}
+  .beschrijving ul.tags .gatsby-image-wrapper {position: relative;}
+  .beschrijving ul.tags .gatsby-image-wrapper::after {content:""; position: absolute; z-index: 0; top: -10px; right: -10px; bottom: -10px; left: -10px; border-radius: 12px; transition: .3s all ease;}
 
   .plaatje {width: 65%;}
   .plaatje .info {display: flex; padding: 10px 15px; min-height: 40px; background: #fff; box-shadow: rgba(0, 0, 0, .1) 0px 1px 2px 0px;}

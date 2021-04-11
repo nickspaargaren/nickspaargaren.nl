@@ -26,6 +26,7 @@ const GlobalStyle = createGlobalStyle`
   h2 {font-size: 30px; margin: 0 0 10px;}
   h3 {font-size: 20px; margin: 0 0 10px;}
   h4 {font-size: 18px; margin: 0 0 5px;}
+  h5 {font-size: 16px; margin: 0 0 10px;}
 
   p {line-height: 1.5em; margin: 0 0 10px;}
 
@@ -60,6 +61,7 @@ const GlobalStyle = createGlobalStyle`
     li svg {display: inline-block; vertical-align: middle; margin: 0;}
   }
 
+  hr {margin: 30px 0; border-color: rgba(255,255,255,.2);}
 
   @media (max-width: 735px) {
     div[class*="grid"] {grid-gap: 15px !important;}
@@ -72,14 +74,13 @@ const GlobalStyle = createGlobalStyle`
 
 
 
-
-
-
-
-
-
-
-.skills .skill {display: grid; grid-gap: 10px; grid-template-columns: 35px 1fr; margin: 0 0 10px;}
+.skills {
+  background: #18151a;
+  padding: 30px;
+  margin-bottom: -100px;
+  box-shadow: 0 50px 75px -40px rgba(0, 0, 0,.6);
+}
+.skills .skill {display: grid; grid-gap: 10px; grid-template-columns: 35px 1fr 29px; margin: 0 0 10px; user-select: none;}
 .skills .skill > div {margin: auto 0;}
 .skills .skill .titel {
   display: flex;
@@ -103,6 +104,26 @@ const GlobalStyle = createGlobalStyle`
   height: 100%;
   border-radius: inherit;}
 
+
+.skills .skill .opties {}
+.skills .skill .opties .icoon {cursor: pointer; background: #221e25; line-height: 0; margin: auto; padding: 6px; border-radius: 5px;}
+.skills .skill .opties .icoon:hover {background: rgba(255,255,255,.2);}
+.skills .skill .opties .icoon.actief {background: rgba(255,255,255,.2); color: #f0a202;}
+.skills .skill .opties .icoon svg {margin: 0;}
+
+.skills .tags {margin: 0 0 15px; padding: 0;}
+.skills .tags .tag {
+  display: inline-flex;
+  background: #221e25;
+  padding: 5px 7px;
+  border-radius: 3px;
+  font-size: 13px;
+  margin: 0 5px 5px 0;
+  }
+.skills .tags .tag svg {margin: auto 5px auto 0; fill: #35ca88;}
+.skills .tags .tag.reset {cursor: pointer;}
+.skills .tags .tag.reset:hover {background: rgba(255,255,255,.2);}
+.skills .tags .tag.reset svg {fill: #f13f30;}
 `;
  
 export default GlobalStyle;

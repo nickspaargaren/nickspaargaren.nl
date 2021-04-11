@@ -11,6 +11,7 @@ import Github from "../../components/github/Github";
 import PortfolioItem from "../../components/PortfolioItem";
 
 import {SiAdobe, SiSketch, SiVisualstudiocode, SiMaterialdesignicons, SiCodeclimate, SiAirbnb, SiDevDotTo, SiOneplus, SiRaspberrypi, SiLinux, SiApple, SiAdobepremiere, SiXbox, SiNetflix, SiSpotify} from 'react-icons/si';
+import Skills from "../../components/Skills";
 
 const Index = () => {
 
@@ -47,19 +48,6 @@ const Index = () => {
         }
       }
     }
-    skills: allSanitySkills(sort: {fields: percentage, order: DESC}) {
-      nodes {
-        id
-        titel
-        percentage
-        afbeelding {
-          asset {
-            gatsbyImageData
-          }
-        }
-        exclude
-      }
-    }
   }
   
     `
@@ -82,30 +70,7 @@ const Index = () => {
                 </div>
               </div>
               <div className="rechts">
-                <div className="skills">
-                  {data.skills.nodes.map((item, key) => {
-                    if (!item.exclude) {
-                      return (
-                        <div key={key} className="skill">
-                          {item.afbeelding ? <GatsbyImage image={item.afbeelding.asset.gatsbyImageData} alt={item.titel} /> : <img src="https://placehold.it/35x35" alt="placeholder" />}
-                          <div>
-                            <div className="titel">
-                              {item.titel}
-                              <span>{item.percentage + '%'}</span>
-                            </div>
-                            <div className="percentage">
-                              <Spring config={{ tension: 280, friction: 60, delay: 300 }} from={{ width: '0%' }} to={{ width: item.percentage + '%' }}>
-                                {style => (
-                                  <div style={style} className="gevuld"></div>
-                                )}
-                              </Spring>
-                            </div>
-                          </div>
-                        </div>
-                      )
-                    }
-                  })}
-                </div>
+                <Skills />
               </div>
             </div>
             </div>
