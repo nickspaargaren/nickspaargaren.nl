@@ -79,6 +79,8 @@ const GlobalStyle = createGlobalStyle`
   padding: 30px;
   margin-bottom: -100px;
   box-shadow: 0 50px 75px -40px rgba(0, 0, 0,.6);
+  position: relative;
+  z-index: 0;
 }
 .skills .skill {display: grid; grid-gap: 10px; grid-template-columns: 35px 1fr 29px; margin: 0 0 10px; user-select: none;}
 .skills .skill > div {margin: auto 0;}
@@ -108,7 +110,7 @@ const GlobalStyle = createGlobalStyle`
 .skills .skill .opties {}
 .skills .skill .opties .icoon {cursor: pointer; background: #221e25; line-height: 0; margin: auto; padding: 6px; border-radius: 5px;}
 .skills .skill .opties .icoon:hover {background: rgba(255,255,255,.2);}
-.skills .skill .opties .icoon.actief {background: rgba(255,255,255,.2); color: #f0a202;}
+.skills .skill .opties .icoon.actief {background: rgba(255,255,255,.2); color: #35ca88;}
 .skills .skill .opties .icoon svg {margin: 0;}
 
 .skills .tags {margin: 0 0 15px; padding: 0;}
@@ -124,6 +126,14 @@ const GlobalStyle = createGlobalStyle`
 .skills .tags .tag.reset {cursor: pointer;}
 .skills .tags .tag.reset:hover {background: rgba(255,255,255,.2);}
 .skills .tags .tag.reset svg {fill: #f13f30;}
+
+.skills .skillTitel {font-size: 30px; margin: 0 0 20px; position: relative; color: #fff; font-weight: bold;}
+.skills .skillTitel::before {content: ""; background: #fff; height: 2px; left: 0; right: 13px; position: absolute; bottom: 15px; z-index: 0;}
+.skills .skillTitel::after {content: ""; background: #fff; width: 2px; bottom: 0; height: 15px; position: absolute; right: 13px;}
+.skills .skillTitel span {background: #18151a; z-index: 1; position: relative; padding-right: 20px; margin-right: 20px;}
+
+
+
 `;
  
 export default GlobalStyle;

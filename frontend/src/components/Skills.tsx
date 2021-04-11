@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from "gatsby-plugin-image"
 import {useState} from 'react';
 import {Spring} from 'react-spring/renderprops'
-import {MdClear, MdDone, MdStar, MdStarBorder} from 'react-icons/md';
+import {MdCheckBox, MdCheckBoxOutlineBlank, MdClear, MdDone} from 'react-icons/md';
 import {useSiteMetadata} from '../data/hooks/algemeen';
 import ButtonGroot from "./button/ButtonGroot";
 
@@ -69,7 +69,7 @@ const Skills = () => {
   return (
     <div className="skills">
       <p style={{marginBottom: '0px', opacity: '.75'}}>Skills</p>
-      <h2 style={{marginBottom: '20px'}}>Waar wilt u het graag over hebben?</h2>
+      <div className="skillTitel"><span>Waar wilt u het graag over hebben?</span></div>
       {data.skills.nodes.map((item, key) => {
         if (!item.exclude) {
           return (
@@ -106,7 +106,7 @@ const Skills = () => {
                     }
                   }}>
 
-                  {favorieten.find( i => i['id'] === item.id ) ? <div className={`icoon actief`}><MdStar/></div> : <div className={`icoon`}><MdStarBorder /></div>}
+                  {favorieten.find( i => i['id'] === item.id ) ? <div className={`icoon actief`}><MdCheckBox/></div> : <div className={`icoon`}><MdCheckBoxOutlineBlank /></div>}
 
                 </div>
               </div> 
