@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import {useSiteMetadata} from '../../data/hooks/algemeen';

@@ -1,11 +1,9 @@
 import React from "react"
 import Layout from "../../layout/layout"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
 
 import {useSiteMetadata} from '../../data/hooks/algemeen';
 
-import {Spring} from 'react-spring/renderprops'
 import Github from "../../components/github/Github";
 
 import PortfolioItem from "../../components/PortfolioItem";

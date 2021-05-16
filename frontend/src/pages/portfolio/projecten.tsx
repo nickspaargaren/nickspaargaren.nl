@@ -3,7 +3,7 @@ import Layout from "../../layout/layout"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-import { FaAngleDoubleRight, FaCode, FaCaretRight } from 'react-icons/fa';
+import { FaCaretRight } from 'react-icons/fa';
 
 import PortfolioItem from "../../components/PortfolioItem";
 
