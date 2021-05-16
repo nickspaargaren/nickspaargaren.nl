@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Layout from '../layout/layout';
 import {Trail} from 'react-spring/renderprops'
 
@@ -64,13 +64,13 @@ div[class*="grid"] img {max-width: 100%; height: auto !important;}
 
 .houder {display: grid; grid-gap: 10px; grid-template-columns: repeat(auto-fit, minmax(158px, 1fr)); max-width: 768px; margin: 0 auto;}
 
-.houder a.blok {transition: .3s all ease; transform: rotate(-1deg); color: inherit; text-decoration: none; white-space: nowrap; font-size: 30px; position: relative; border: 1px solid #e1e2e2; padding: 20px; border-bottom-width: 2px; border-bottom-color: #c3c3c3; background: #fff; border-radius: 5px;}
+.houder a.blok {transition: .3s all ease; color: inherit; text-decoration: none; white-space: nowrap; font-size: 30px; position: relative; padding: 20px; background: #fff; border-radius: 4px;}
 
 .houder a.blok span {display: block; border-radius: 3px; white-space: nowrap; padding: 9px 11px; font-size: 12px; line-height: 1.25em; pointer-events: none; position: relative; margin-top: 10px; transition: .3s all ease; background: #aaa;}
 .houder a.blok span::before {border: solid; border-width: 0px 6px 6px 6px; top: -4px; content: ""; position: absolute; left: 50%; transform: translateX(-50%); transition: .3s all ease; border-color: #aaa transparent;}
 .houder a.blok span strong {display: block; font-size: 14px; text-transform: capitalize;}
 
-.houder a.blok.linkedin:hover {border-color: var(--linkedin-color); background-color: var(--linkedin-color-tint);}
+
 .houder a.blok.linkedin span {background: var(--linkedin-color-tint); color: var(--linkedin-color);}
 .houder a.blok.linkedin:hover span {background: var(--linkedin-color); color: #fff;}
 .houder a.blok.linkedin span::before {border-color: var(--linkedin-color-tint) transparent;}
@@ -78,17 +78,14 @@ div[class*="grid"] img {max-width: 100%; height: auto !important;}
 .houder a.blok.linkedin svg path {fill: var(--linkedin-color);}
 .houder a.blok.linkedin::before {content: ""; height: 13px; width: 13px; border-radius: 4px; top: -5px; position: absolute; right: -5px; background: #F54335; border: 2px solid rgba(255, 255, 255, 0.5); box-sizing: border-box;}
 
-.houder a.blok.github:hover {border-color: var(--github-color); background-color: var(--github-color-tint);}
 .houder a.blok.github span {background: var(--github-color); color: #fff;}
 .houder a.blok.github span::before {border-color: var(--github-color) transparent;}
 .houder a.blok.github svg path {fill:var(--github-color);}
 
-.houder a.blok.youtube:hover {border-color: var(--youtube-color); background-color: var(--youtube-color-tint);}
 .houder a.blok.youtube span {background: var(--youtube-color); color: #fff;}
 .houder a.blok.youtube span::before {border-color: var(--youtube-color) transparent;}
 .houder a.blok.youtube svg path {fill: var(--youtube-color);}
 
-.houder a.blok.dribbble:hover {border-color: var(--dribbble-color); background-color: var(--dribbble-color-tint);}
 .houder a.blok.dribbble span {background: var(--dribbble-color); color: #fff;}
 .houder a.blok.dribbble span::before {border-color: var(--dribbble-color) transparent;}
 .houder a.blok.dribbble svg path {fill: var(--dribbble-color);}
@@ -99,6 +96,29 @@ const Home = () => {
 
   const {naam, functie} = useSiteMetadata();
 
+  const sitehouderRef = useRef(null);
+  const blokRef = useRef(null);
+  const limiet = 5;
+
+ useEffect(() => {
+
+  const width = sitehouderRef.current.clientWidth;
+  const height = sitehouderRef.current.clientHeight;
+
+  sitehouderRef.current.addEventListener('mousemove', (e) => {
+
+    const xWalk = (e.x / width * limiet) - (limiet / 2);
+    const yWalk = (e.y / height * limiet) - (limiet / 2);
+
+
+    document.querySelectorAll('a.blok').forEach((el) => {
+      el.style.boxShadow = `${xWalk}px ${yWalk}px 1px 2px rgba(0,0,0,.1)`;
+    })
+    
+  })
+
+ }), [sitehouderRef];
+
   return (
     <>
     <Helmet>
@@ -108,7 +128,7 @@ const Home = () => {
           <meta name="description" content="Designer & Front-End Developer" />
       </Helmet>
       <GlobalStyle/>
-      <div className="sitehouder">
+      <div className="sitehouder" ref={sitehouderRef}>
         <div className="inhoud" style={{textAlign: 'center', width: '100%'}}>
           <div className="titel">
             <h1 style={{fontSize: '2em'}}>{naam}</h1>
@@ -117,7 +137,7 @@ const Home = () => {
           <div className="houder">
             <Trail items={SocialData} keys={social => social.id} from={{opacity: 0}} to={{opacity: 1}}>
               {social => props => 
-                <a style={props} key={social.id} className={`blok ${social.class}`} rel="noopener noreferrer" target="_blank" href={social.url}>
+                <a style={props} key={social.id} className={`blok ${social.class}`} rel="noopener noreferrer" target="_blank" href={social.url} ref={blokRef}>
                   {social.icoon} 
                   <span><strong>{social.platform}</strong>{naam}</span>
                 </a>

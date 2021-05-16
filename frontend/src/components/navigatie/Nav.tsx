@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import {useSiteMetadata} from '../../data/hooks/algemeen';
@@ -17,40 +17,58 @@ const StyledNav = styled.div`
  > div {margin: auto 0;}
  > div a {color: inherit; text-decoration: none;}
  > .info {display: flex;}
- > .info .gatsby-image-wrapper {margin: auto 10px auto 0;}
- > .info .gatsby-image-wrapper picture {border-radius: 50px;}
+ > .info .gatsby-image-wrapper {margin: auto 10px auto 0; border-radius: 50px;}
 
   .switch {overflow: hidden; height: 17px;}
   .switch > div {position: relative; top: 0; transition: .3s all ease;}
 
   > .info:hover .switch > div {top: -17px;}
-
-  .menuKnop {margin: auto 0 auto auto; width: 30px; height: 30px; position: relative; cursor: pointer;}
-  .menuKnop::after {content:""; position: absolute; z-index: 0; top: -10px; right: -10px; bottom: -10px; left: -10px; border-radius: 12px; transition: .3s all ease;}
-  .menuKnop div {position: absolute; left: 0; right: 0; height: 4px; background-color: #221e25; transition: .3s all ease; border-radius: 3px; z-index: 1;}
-  .menuKnop div.boven  {top: 0; transform: translateY(2px); opacity: .7}
-  .menuKnop div.midden {top: 13px; opacity: .85}
-  .menuKnop div.onder  {bottom: 0; transform: translateY(-2px);}
   
-  .menuKnop:hover div.boven, .menuKnop:hover div.onder {right: 3px; left: 3px;}
-  .menuKnop.open::after {background: #eee;}
-  
-  .menuKnop.open div.boven  {top: 13px; transform: rotate(-45deg);}
-  .menuKnop.open div.midden {opacity: 0;}
-  .menuKnop.open div.onder  {bottom: 13px; transform: rotate(225deg);}
+  .menuHouder {margin: auto 0 auto auto; position: relative;}
+  .menuHouder ul.menu {margin: 0; padding: 4px 0; background: #eee; border-radius: 50px; text-align: right; list-style: none; display: flex; position: relative; box-shadow: 0 2px 7px -1px rgb(0 0 0 / 15%) inset;}
+  .menuHouder ul.menu li a {display: block; position: relative; margin: 0 5px; padding: 6px 12px; text-decoration: none; font-family: "GilroyRegular"; z-index: 2;}
+  .menuHouder .hover {top: 4px; bottom: 4px; background: #fff; position: absolute; transition: 0.3s all cubic-bezier(0.65, 0.05, 0.36, 1); border-radius: 50px; z-index: 1;}
 
-  .menuHouder {display: flex; position: fixed; z-index: 1; pointer-events: none; transition: .3s all ease; opacity:0; top: 77px; left: 0; right: 0; border: 0; bottom: 0; background: #221e25;}
-  .menuHouder.open {pointer-events: all; opacity: 1;}
-  ul.menu {margin: auto 0 auto auto; padding: 20px; text-align: right; list-style: none; font-size: 30px;}
-  ul.menu li a {display: block; position: relative; padding: 10px 0; margin: 0 10px; color: #fff; opacity:.7; text-decoration: none; font-weight: bold;}
-  ul.menu li a.active {opacity: 1;}
+  @media (max-width: 760px) {
+    flex-direction: column;
+    .menuHouder {margin: 10px 0 0;}
+    .menuHouder ul.menu {justify-content: center;}
+  }
 `;
 
 const Nav = () => {
 
-  const [menu, setMenu] = useState({toggle: false, class: ''});
-
   const {naam, functie, email} = useSiteMetadata();
+
+  const hoverRef = useRef();
+
+  const menuItemRef1 = useRef();
+  const menuItemRef2 = useRef();
+  const menuItemRef3 = useRef();
+  
+  const hover = (e) => {
+    hoverRef.current.style.left = `${e.target.offsetLeft}px`;
+    hoverRef.current.style.width = `${e.target.clientWidth}px`;
+  }
+
+  const leave = () => {
+    if(menuItemRef1.current.classList.contains('active')){
+      hoverRef.current.style.left = `${menuItemRef1.current.offsetLeft}px`;
+      hoverRef.current.style.width = `${menuItemRef1.current.clientWidth}px`;
+    }
+    if(menuItemRef2.current.classList.contains('active')){
+      hoverRef.current.style.left = `${menuItemRef2.current.offsetLeft}px`;
+      hoverRef.current.style.width = `${menuItemRef2.current.clientWidth}px`;
+    }
+    if(menuItemRef3.current.classList.contains('active')){
+      hoverRef.current.style.left = `${menuItemRef3.current.offsetLeft}px`;
+      hoverRef.current.style.width = `${menuItemRef3.current.clientWidth}px`;
+    }
+  }
+
+  useEffect(()=>{
+    leave()
+  })
 
   return (
     <StyledNav>
@@ -64,23 +82,13 @@ const Nav = () => {
           </div>
         </div>
       </div>
-      <div className={`menuKnop ${menu.class}`} onClick={() => {
-        if(menu.toggle === false) {
-          setMenu({toggle: true, class: 'open'});
-        } else {
-          setMenu({toggle: false, class: ''});
-        }
-      }}>
-        <div className="boven"></div>
-        <div className="midden"></div>
-        <div className="onder"></div>
-      </div>
-      <div className={`menuHouder ${menu.class}`}>
+      <div className="menuHouder">
         <ul className="menu">
-          <li><Link activeClassName="active" to="/portfolio/">Home</Link></li>
-          <li><Link activeClassName="active" to="/portfolio/projecten/">Projecten</Link></li>
-          <li><Link activeClassName="active" to="/portfolio/drone/">Drone</Link></li>
+          <li><Link activeClassName="active" onMouseEnter={hover} onMouseLeave={leave} ref={menuItemRef1} to="/portfolio/">Home</Link></li>
+          <li><Link activeClassName="active" onMouseEnter={hover} onMouseLeave={leave} ref={menuItemRef2} to="/portfolio/projecten/">Projecten</Link></li>
+          <li><Link activeClassName="active" onMouseEnter={hover} onMouseLeave={leave} ref={menuItemRef3} to="/portfolio/drone/">Drone</Link></li>
         </ul>
+        <div className="hover" ref={hoverRef}></div>
       </div>
     </StyledNav>
 
