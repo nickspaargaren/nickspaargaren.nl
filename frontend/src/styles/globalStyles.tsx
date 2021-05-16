@@ -1,6 +1,13 @@
 import { createGlobalStyle } from 'styled-components';
- 
+import GilroyRegularWoff2 from "../fonts/Gilroy-Regular.woff2";
+
 const GlobalStyle = createGlobalStyle`
+
+  @font-face {
+    font-family: "GilroyRegular";
+    src: url(${GilroyRegularWoff2});
+  }
+
   html,
   body {height: 100%;}
 
@@ -21,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
 
   .hgroup {margin-bottom: 40px;}
 
-  h1, h2, h3, h4 {color: #292a2c;}
+  h1, h2, h3, h4 {color: #292a2c; font-family: "GilroyRegular"; letter-spacing: .025em;}
   h1 {font-size: 36px; margin: 0 0 10px;}
   h2 {font-size: 30px; margin: 0 0 10px;}
   h3 {font-size: 20px; margin: 0 0 10px;}
@@ -76,6 +83,7 @@ const GlobalStyle = createGlobalStyle`
 
 .skills {
   background: #18151a;
+  color: #fff;
   padding: 30px;
   margin-bottom: -100px;
   box-shadow: 0 50px 75px -40px rgba(0, 0, 0,.6);
@@ -127,7 +135,7 @@ const GlobalStyle = createGlobalStyle`
 .skills .tags .tag.reset:hover {background: rgba(255,255,255,.2);}
 .skills .tags .tag.reset svg {fill: #f13f30;}
 
-.skills .skillTitel {font-size: 30px; margin: 0 0 20px; position: relative; color: #fff; font-weight: bold;}
+.skills .skillTitel {font-size: 30px; font-family: "GilroyRegular"; letter-spacing: .025em; margin: 0 0 20px; position: relative; color: #fff; font-weight: bold;}
 .skills .skillTitel::before {content: ""; background: #fff; height: 2px; left: 0; right: 13px; position: absolute; bottom: 15px; z-index: 0;}
 .skills .skillTitel::after {content: ""; background: #fff; width: 2px; bottom: 0; height: 15px; position: absolute; right: 13px;}
 .skills .skillTitel span {background: #18151a; z-index: 1; position: relative; padding-right: 20px; margin-right: 20px;}

@@ -61,13 +61,8 @@ const Index = () => {
           <div className="inhoud">
             <div className="grid-2x">
               <div className="links">
-                <h1 style={{margin: 0}}>{functie}</h1>
+                <h1 style={{margin: 'auto 0 0'}}>{functie}</h1>
                 <p>{naam}</p>
-                <div style={{ marginTop: 'auto' }}>
-                  <h3 style={{margin: 0}}>Open Source project</h3>
-                  <p>met meeste contributors</p>
-                  <Github  />
-                </div>
               </div>
               <div className="rechts">
                 <Skills />
@@ -131,6 +126,9 @@ const Index = () => {
               )
             })}
           </div>
+          <div className="inhoud" style={{textAlign: 'center'}}> <h3 style={{margin: 0}}>Open Source project</h3>
+            <p>met meeste contributors</p>
+            <Github  /></div>
         </Layout>
         )
 }
