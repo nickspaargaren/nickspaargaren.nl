@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../../layout/layout"
 import { Link } from "gatsby"
 
-import { FaAngleDoubleRight, FaCode, FaCaretRight } from 'react-icons/fa';
+import { FaCaretRight } from 'react-icons/fa';
 
 import Youtube from "../../components/Youtube";
 

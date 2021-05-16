@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import Layout from '../layout/layout';
 import {Trail} from 'react-spring/renderprops'
 
 import {SocialData} from '../data/socials/SocialData';
