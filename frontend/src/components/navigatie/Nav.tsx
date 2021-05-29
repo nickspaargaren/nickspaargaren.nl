@@ -135,7 +135,6 @@ const Nav = () => {
           <div className="switch">
             <div className="klein">{functie}</div>
             <div className="klein">
-              {' '}
               <a href={`mailto:${email}`}>{email}</a>
             </div>
           </div>
