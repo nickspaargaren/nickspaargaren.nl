@@ -1,12 +1,12 @@
-import React, { useEffect, useRef } from 'react';
-import {Trail} from 'react-spring/renderprops'
+import React, {useEffect, useRef} from 'react';
+import {Trail} from 'react-spring/renderprops';
 
 import {SocialData} from '../data/socials/SocialData';
 import {useSiteMetadata} from '../data/hooks/algemeen';
-import { Helmet } from 'react-helmet';
+import {Helmet} from 'react-helmet';
 
-import { createGlobalStyle } from 'styled-components';
- 
+import {createGlobalStyle} from 'styled-components';
+
 const GlobalStyle = createGlobalStyle`
 :root {
   --dribbble-color: #ea4c89;
@@ -89,44 +89,38 @@ div[class*="grid"] img {max-width: 100%; height: auto !important;}
 .houder a.blok.dribbble span::before {border-color: var(--dribbble-color) transparent;}
 .houder a.blok.dribbble svg path {fill: var(--dribbble-color);}
 `;
- 
 
 const Home = () => {
-
   const {naam, functie} = useSiteMetadata();
 
   const sitehouderRef = useRef(null);
   const blokRef = useRef(null);
   const limiet = 5;
 
- useEffect(() => {
+  useEffect(() => {
+    const width = sitehouderRef.current.clientWidth;
+    const height = sitehouderRef.current.clientHeight;
 
-  const width = sitehouderRef.current.clientWidth;
-  const height = sitehouderRef.current.clientHeight;
+    sitehouderRef.current.addEventListener('mousemove', e => {
+      const xWalk = (e.x / width) * limiet - limiet / 2;
+      const yWalk = (e.y / height) * limiet - limiet / 2;
 
-  sitehouderRef.current.addEventListener('mousemove', (e) => {
-
-    const xWalk = (e.x / width * limiet) - (limiet / 2);
-    const yWalk = (e.y / height * limiet) - (limiet / 2);
-
-
-    document.querySelectorAll('a.blok').forEach((el) => {
-      el.style.boxShadow = `${xWalk}px ${yWalk}px 1px 2px rgba(0,0,0,.1)`;
-    })
-    
-  })
-
- }), [sitehouderRef];
+      document.querySelectorAll('a.blok').forEach(el => {
+        el.style.boxShadow = `${xWalk}px ${yWalk}px 1px 2px rgba(0,0,0,.1)`;
+      });
+    });
+  }),
+    [sitehouderRef];
 
   return (
     <>
-    <Helmet>
-          <html lang="nl" />
-          <meta charSet="utf-8" />
-          <title>Nick Spaargaren</title>
-          <meta name="description" content="Designer & Front-End Developer" />
+      <Helmet>
+        <html lang="nl" />
+        <meta charSet="utf-8" />
+        <title>Nick Spaargaren</title>
+        <meta name="description" content="Designer & Front-End Developer" />
       </Helmet>
-      <GlobalStyle/>
+      <GlobalStyle />
       <div className="sitehouder" ref={sitehouderRef}>
         <div className="inhoud" style={{textAlign: 'center', width: '100%'}}>
           <div className="titel">
@@ -134,19 +128,36 @@ const Home = () => {
             <h2>{functie}</h2>
           </div>
           <div className="houder">
-            <Trail items={SocialData} keys={social => social.id} from={{opacity: 0}} to={{opacity: 1}}>
-              {social => props => 
-                <a style={props} key={social.id} className={`blok ${social.class}`} rel="noopener noreferrer" target="_blank" href={social.url} ref={blokRef}>
-                  {social.icoon} 
-                  <span><strong>{social.platform}</strong>{naam}</span>
-                </a>
-              }
+            <Trail
+              items={SocialData}
+              keys={social => social.id}
+              from={{opacity: 0}}
+              to={{opacity: 1}}
+            >
+              {social => props =>
+                (
+                  <a
+                    style={props}
+                    key={social.id}
+                    className={`blok ${social.class}`}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href={social.url}
+                    ref={blokRef}
+                  >
+                    {social.icoon}
+                    <span>
+                      <strong>{social.platform}</strong>
+                      {naam}
+                    </span>
+                  </a>
+                )}
             </Trail>
           </div>
         </div>
       </div>
-      </>
-  )
-}
+    </>
+  );
+};
 
-export default Home
+export default Home;
