@@ -25,19 +25,34 @@ const Drone = () => {
 
       <div className="inhoud">
         <div className="grid-2x">
-          <Youtube url="https://www.youtube-nocookie.com/embed/CI7je7P7ask" />
-          <Youtube url="https://www.youtube-nocookie.com/embed/06G-JPIPK0U" />
+          <Youtube
+            title="Zaanse schans"
+            url="https://www.youtube-nocookie.com/embed/CI7je7P7ask"
+          />
+          <Youtube
+            title="Naarden-Vesting | Muiderslot | Aug 2018"
+            url="https://www.youtube-nocookie.com/embed/06G-JPIPK0U"
+          />
         </div>
       </div>
       <div className="inhoud">
         <div className="grid-2x">
-          <Youtube url="https://www.youtube-nocookie.com/embed/Fp_LSgD7D9E" />
-          <Youtube url="https://www.youtube-nocookie.com/embed/zDiSkH9PPJg" />
+          <Youtube
+            title="Gooimeer - Flevoland - 26 July 2018"
+            url="https://www.youtube-nocookie.com/embed/Fp_LSgD7D9E"
+          />
+          <Youtube
+            title="Portugal Guincho - July 2018"
+            url="https://www.youtube-nocookie.com/embed/zDiSkH9PPJg"
+          />
         </div>
       </div>
       <div className="inhoud">
         <div className="grid-2x">
-          <Youtube url="https://www.youtube-nocookie.com/embed/mDX5lj4eepQ" />
+          <Youtube
+            title="Help Quintus de modder door | Actie Hersenstichting Mudmaster Marathon."
+            url="https://www.youtube-nocookie.com/embed/mDX5lj4eepQ"
+          />
         </div>
       </div>
     </Layout>

@@ -26,12 +26,14 @@ const StyledYoutube = styled.div`
 `;
 
 interface YoutubeProps {
+  title: string;
   url: string;
 }
 
 const Youtube = (props: YoutubeProps) => (
   <StyledYoutube>
     <iframe
+      title={props.title}
       src={props.url}
       allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
     ></iframe>

@@ -109,8 +109,7 @@ const Home = () => {
         el.style.boxShadow = `${xWalk}px ${yWalk}px 1px 2px rgba(0,0,0,.1)`;
       });
     });
-  }),
-    [sitehouderRef];
+  }, [sitehouderRef]);
 
   return (
     <>

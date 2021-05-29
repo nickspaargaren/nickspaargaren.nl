@@ -171,7 +171,6 @@ const Index = () => {
         })}
       </div>
       <div className="inhoud" style={{textAlign: 'center'}}>
-        {' '}
         <h3 style={{margin: 0}}>Open Source project</h3>
         <p>met meeste contributors</p>
         <Github />
