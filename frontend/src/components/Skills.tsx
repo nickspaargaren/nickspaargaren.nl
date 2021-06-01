@@ -88,8 +88,9 @@ const Skills = () => {
       <div className="skillTitel">
         <span>Waar wilt u het graag over hebben?</span>
       </div>
-      {data.skills.nodes.map((item, key) => {
-        if (!item.exclude) {
+      {data.skills.nodes
+        .filter(item => !item.exclude)
+        .map((item, key) => {
           return (
             <div key={key} className="skill">
               {item.afbeelding ? (
@@ -147,8 +148,7 @@ const Skills = () => {
               </div>
             </div>
           );
-        }
-      })}
+        })}
 
       <ActieveSkills />
     </div>
