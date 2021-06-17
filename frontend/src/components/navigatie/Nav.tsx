@@ -51,7 +51,7 @@ const StyledNav = styled.div`
     margin: 0;
     padding: 4px 0;
     background: #eee;
-    border-radius: 50px;
+    border-radius: 7px;
     text-align: right;
     list-style: none;
     display: flex;
@@ -73,7 +73,7 @@ const StyledNav = styled.div`
     background: #fff;
     position: absolute;
     transition: 0.3s all cubic-bezier(0.65, 0.05, 0.36, 1);
-    border-radius: 50px;
+    border-radius: 7px;
     z-index: 1;
   }
 
@@ -95,7 +95,6 @@ const Nav = () => {
 
   const menuItemRef1 = useRef(null);
   const menuItemRef2 = useRef(null);
-  const menuItemRef3 = useRef(null);
 
   const hover = e => {
     hoverRef.current.style.left = `${e.target.offsetLeft}px`;
@@ -110,10 +109,6 @@ const Nav = () => {
     if (menuItemRef2.current.classList.contains('active')) {
       hoverRef.current.style.left = `${menuItemRef2.current.offsetLeft}px`;
       hoverRef.current.style.width = `${menuItemRef2.current.clientWidth}px`;
-    }
-    if (menuItemRef3.current.classList.contains('active')) {
-      hoverRef.current.style.left = `${menuItemRef3.current.offsetLeft}px`;
-      hoverRef.current.style.width = `${menuItemRef3.current.clientWidth}px`;
     }
   };
 
@@ -159,17 +154,6 @@ const Nav = () => {
               onMouseEnter={hover}
               onMouseLeave={leave}
               ref={menuItemRef2}
-              to="/portfolio/projecten/"
-            >
-              Projecten
-            </Link>
-          </li>
-          <li>
-            <Link
-              activeClassName="active"
-              onMouseEnter={hover}
-              onMouseLeave={leave}
-              ref={menuItemRef3}
               to="/portfolio/drone/"
             >
               Drone

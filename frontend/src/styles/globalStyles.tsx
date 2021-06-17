@@ -30,7 +30,7 @@ const GlobalStyle = createGlobalStyle`
 
   h1, h2, h3, h4 {color: #292a2c; font-family: "GilroyRegular"; letter-spacing: .025em;}
   h1 {font-size: 36px; margin: 0 0 10px;}
-  h2 {font-size: 30px; margin: 0 0 10px;}
+  h2 {font-size: 24px; margin: 0 0 10px;}
   h3 {font-size: 20px; margin: 0 0 10px;}
   h4 {font-size: 18px; margin: 0 0 5px;}
   h5 {font-size: 16px; margin: 0 0 10px;}
@@ -41,8 +41,16 @@ const GlobalStyle = createGlobalStyle`
 
   .calc {display: inline-block; text-decoration: line-through; background: #d1d9e2; opacity: .5; padding: 0 7px; border-radius: 3px; font-size: 13px;}
 
-  header {background: #221e25; color: #fff;}
-  header .links, header .rechts {}
+  header {
+    background: #221e25; color: #fff;
+    overflow-x: auto;
+    -ms-scroll-snap-type: x mandatory;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    -ms-scroll-chaining: chained;
+    scroll-padding: 20px;
+  }
+
   header .links {display: flex; flex-direction: column;}
   header h1, 
   header h2, 
@@ -72,8 +80,6 @@ const GlobalStyle = createGlobalStyle`
 
   @media (max-width: 735px) {
     div[class*="grid"] {grid-gap: 15px !important;}
-    header {clip-path: ellipse(100% 100% at 50% 50%);}
-    header .links, header .rechts {padding: 40px 10px;}
     .inhoud {padding: 40px 10px;}
   }
 
@@ -85,7 +91,6 @@ const GlobalStyle = createGlobalStyle`
   background: #18151a;
   color: #fff;
   padding: 30px;
-  margin-bottom: -100px;
   box-shadow: 0 50px 75px -40px rgba(0, 0, 0,.6);
   position: relative;
   z-index: 0;

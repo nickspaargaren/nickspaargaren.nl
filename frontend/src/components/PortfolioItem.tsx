@@ -1,41 +1,95 @@
-import {Link} from 'gatsby';
 import React from 'react';
 import {GatsbyImage} from 'gatsby-plugin-image';
 import styled from 'styled-components';
+import {BsChevronUp} from 'react-icons/bs';
 
 const StyledPortfolioItem = styled.div`
-  margin: 80px 0;
-  display: flex;
-  :nth-child(even) {
-    flex-direction: row-reverse;
+  position: relative;
+  overflow: hidden;
+  min-width: 280px;
+  scroll-snap-align: center;
+
+  .plaatje .gatsby-image-wrapper {
+    width: 100%;
   }
-  :nth-child(even) .beschrijving {
-    padding: 0 0 0 50px;
+  .beschrijving {
+    position: absolute;
+    background: linear-gradient(transparent, #1d484f);
+    padding: 20px 20px 0;
+    text-align: center;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .beschrijving h2 {
+    font-size: 22px;
+    margin: 0;
+  }
+  .beschrijving p {
+    font-size: 15px;
+    opacity: 0.75;
   }
 
-  .beschrijving {
-    margin: auto 0;
-    width: 35%;
-    padding: 0 50px 0 0;
+  .beschrijving svg {
+    transition: 0.3s all ease;
+    margin: 0 auto 30px;
+    overflow: hidden;
   }
+
   .beschrijving ul.tags {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
+    justify-content: center;
+    height: 0;
+    opacity: 0;
+    transition: 0.3s all ease;
+  }
+  &:hover {
+    .beschrijving ul.tags {
+      height: 47px;
+      opacity: 1;
+      padding-bottom: 30px;
+    }
+    .beschrijving svg {
+      margin: 0 auto;
+      height: 0;
+      opacity: 0;
+    }
+    .beschrijving ul.tags li {
+      top: 0;
+      opacity: 1;
+    }
   }
   .beschrijving ul.tags li {
     display: inline-block;
-    margin: 10px 10px 0 0;
+    margin: 10px 5px 0 5px;
     position: relative;
-  }
-  .beschrijving ul.tags li {
-    opacity: 0.65;
     transition: 0.3s all ease;
   }
-  .beschrijving ul.tags li:hover {
-    opacity: 1;
+
+  .beschrijving ul.tags li {
+    top: 30px;
+    opacity: 0;
   }
+  .beschrijving ul.tags li:nth-child(2) {
+    transition: 0.4s;
+  }
+  .beschrijving ul.tags li:nth-child(3) {
+    transition: 0.5s;
+  }
+  .beschrijving ul.tags li:nth-child(4) {
+    transition: 0.5s;
+  }
+  .beschrijving ul.tags li:nth-child(5) {
+    transition: 0.6s;
+  }
+
   .beschrijving ul.tags li span {
     position: absolute;
     bottom: 100%;
@@ -82,41 +136,13 @@ const StyledPortfolioItem = styled.div`
     border-radius: 12px;
     transition: 0.3s all ease;
   }
-
-  .plaatje {
-    width: 65%;
-  }
-  .plaatje .info {
-    display: flex;
-    padding: 10px 15px;
-    min-height: 40px;
-    background: #fff;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
-  }
-  .plaatje .info .links {
-    display: flex;
-    margin-left: auto;
-  }
-  .plaatje .info .links > * {
-    margin-left: 15px;
-  }
-
-  @media (max-width: 735px) {
-    flex-direction: column !important;
-    .beschrijving {
-      width: 100%;
-      padding: 0 0 10px !important;
-    }
-    .plaatje {
-      width: 100%;
-    }
-  }
 `;
 
 interface PortfolioItemProps {
   titel: string;
+  subtitle: string;
   beschrijving: string;
-  slug: string;
+  slug?: string;
   afbeelding: any; // later bepalen,
   skillsused?: any;
 }
@@ -125,9 +151,18 @@ const PortfolioItem = (props: PortfolioItemProps) => {
   return (
     <>
       <StyledPortfolioItem>
+        <div className="plaatje">
+          {props.afbeelding && (
+            <GatsbyImage
+              image={props.afbeelding.asset.gatsbyImageData}
+              alt={props.titel}
+            />
+          )}
+        </div>
         <div className="beschrijving">
           <h2>{props.titel}</h2>
-          <p>{props.beschrijving}</p>
+          <p>{props.subtitle}</p>
+          <BsChevronUp />
           <ul className="tags">
             {props.skillsused.map((skill, key) => (
               <li key={key}>
@@ -139,16 +174,6 @@ const PortfolioItem = (props: PortfolioItemProps) => {
               </li>
             ))}
           </ul>
-        </div>
-        <div className="plaatje">
-          {props.afbeelding && (
-            <Link to={`/portfolio/projecten/${props.slug}`}>
-              <GatsbyImage
-                image={props.afbeelding.asset.gatsbyImageData}
-                alt={props.titel}
-              />
-            </Link>
-          )}
         </div>
       </StyledPortfolioItem>
     </>

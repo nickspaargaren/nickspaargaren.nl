@@ -12,6 +12,14 @@ export default {
       ]
     },
     {
+      name: 'subtitle',
+      title: 'Subtitle',
+      type: 'string',
+      validation: Rule => [
+        Rule.required()
+      ]
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
