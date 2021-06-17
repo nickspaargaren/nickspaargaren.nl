@@ -26,7 +26,10 @@ export default {
       options: {
         source: 'titel',
         slugify: input => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200)
-      }
+      },
+      validation: Rule => [
+        Rule.required()
+      ]
     },
     {
       name: 'beschrijving',
