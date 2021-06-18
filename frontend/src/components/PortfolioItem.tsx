@@ -49,7 +49,18 @@ const StyledPortfolioItem = styled.div`
     opacity: 0;
     transition: 0.3s all ease;
   }
+
+  .beschrijving .cm-specialist {
+    opacity: 0;
+    margin-bottom: 15px;
+    transition: 0.3s all ease;
+  }
+
   &:hover {
+    .beschrijving .cm-specialist {
+      opacity: 0.65;
+    }
+
     .beschrijving ul.tags {
       height: 47px;
       opacity: 1;
@@ -144,6 +155,7 @@ interface PortfolioItemProps {
   slug?: string;
   afbeelding: any; // later bepalen,
   skillsused?: any;
+  samenwerking: string;
 }
 
 const PortfolioItem = (props: PortfolioItemProps) => {
@@ -158,6 +170,15 @@ const PortfolioItem = (props: PortfolioItemProps) => {
         )}
       </div>
       <div className="beschrijving">
+        {props.samenwerking && (
+          <div className="cm-specialist">
+            <img
+              src="../../images/cm-specialist.png"
+              alt="CM Specialist"
+              width={57.5}
+            />
+          </div>
+        )}
         <h2>{props.titel}</h2>
         <p>{props.subtitle}</p>
         <BsChevronUp />
