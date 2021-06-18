@@ -8,9 +8,6 @@ const StyledNav = styled.div`
   background: #fff;
   color: #292a2c;
   display: flex;
-  position: sticky;
-  top: 0;
-  z-index: 1;
   padding: 20px;
   box-shadow: 0 6px 35px -9px rgb(0 0 0 / 20%);
 
