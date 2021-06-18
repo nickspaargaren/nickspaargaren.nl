@@ -43,12 +43,6 @@ const GlobalStyle = createGlobalStyle`
 
   header {
     background: #221e25; color: #fff;
-    overflow-x: auto;
-    -ms-scroll-snap-type: x mandatory;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    -ms-scroll-chaining: chained;
-    scroll-padding: 20px;
   }
 
   header .links {display: flex; flex-direction: column;}

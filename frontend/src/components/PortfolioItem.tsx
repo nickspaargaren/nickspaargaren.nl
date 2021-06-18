@@ -7,7 +7,6 @@ const StyledPortfolioItem = styled.div`
   position: relative;
   overflow: hidden;
   min-width: 280px;
-  scroll-snap-align: center;
 
   .plaatje .gatsby-image-wrapper {
     width: 100%;
@@ -149,34 +148,32 @@ interface PortfolioItemProps {
 
 const PortfolioItem = (props: PortfolioItemProps) => {
   return (
-    <>
-      <StyledPortfolioItem>
-        <div className="plaatje">
-          {props.afbeelding && (
-            <GatsbyImage
-              image={props.afbeelding.asset.gatsbyImageData}
-              alt={props.titel}
-            />
-          )}
-        </div>
-        <div className="beschrijving">
-          <h2>{props.titel}</h2>
-          <p>{props.subtitle}</p>
-          <BsChevronUp />
-          <ul className="tags">
-            {props.skillsused.map((skill, key) => (
-              <li key={key}>
-                <GatsbyImage
-                  image={skill.afbeelding.asset.gatsbyImageData}
-                  alt={skill.titel}
-                />
-                <span>{skill.titel}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </StyledPortfolioItem>
-    </>
+    <StyledPortfolioItem>
+      <div className="plaatje">
+        {props.afbeelding && (
+          <GatsbyImage
+            image={props.afbeelding.asset.gatsbyImageData}
+            alt={props.titel}
+          />
+        )}
+      </div>
+      <div className="beschrijving">
+        <h2>{props.titel}</h2>
+        <p>{props.subtitle}</p>
+        <BsChevronUp />
+        <ul className="tags">
+          {props.skillsused.map((skill, key) => (
+            <li key={key}>
+              <GatsbyImage
+                image={skill.afbeelding.asset.gatsbyImageData}
+                alt={skill.titel}
+              />
+              <span>{skill.titel}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </StyledPortfolioItem>
   );
 };
 
