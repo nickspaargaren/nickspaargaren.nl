@@ -7,6 +7,7 @@ import {useSiteMetadata} from '../../data/hooks/algemeen';
 import Github from '../../components/github/Github';
 
 import PortfolioItem from '../../components/PortfolioItem';
+import Marquee from 'react-fast-marquee';
 
 import {
   SiAdobe,
@@ -70,20 +71,22 @@ const Index = () => {
   return (
     <Layout title={`Portfolio | ${naam}`} description={functie} noindex>
       <header>
-        <StyledPortfolioItems>
-          {data.portfolio.nodes.map((item, key) => {
-            return (
-              <PortfolioItem
-                key={key}
-                titel={item.titel}
-                subtitle={item.subtitle}
-                beschrijving={item.beschrijving}
-                afbeelding={item.afbeelding}
-                skillsused={item.skillsused}
-              />
-            );
-          })}
-        </StyledPortfolioItems>
+        <Marquee gradient={false} pauseOnHover={true}>
+          <StyledPortfolioItems>
+            {data.portfolio.nodes.map((item, key) => {
+              return (
+                <PortfolioItem
+                  key={key}
+                  titel={item.titel}
+                  subtitle={item.subtitle}
+                  beschrijving={item.beschrijving}
+                  afbeelding={item.afbeelding}
+                  skillsused={item.skillsused}
+                />
+              );
+            })}
+          </StyledPortfolioItems>
+        </Marquee>
       </header>
 
       <div className="inhoud">
