@@ -82,6 +82,7 @@ const Index = () => {
                   beschrijving={item.beschrijving}
                   afbeelding={item.afbeelding}
                   skillsused={item.skillsused}
+                  samenwerking={item.samenwerking}
                 />
               );
             })}
