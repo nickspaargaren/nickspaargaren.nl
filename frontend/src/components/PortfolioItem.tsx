@@ -170,15 +170,6 @@ const PortfolioItem = (props: PortfolioItemProps) => {
         )}
       </div>
       <div className="beschrijving">
-        {props.samenwerking && (
-          <div className="cm-specialist">
-            <img
-              src="../../images/cm-specialist.png"
-              alt="CM Specialist"
-              width={57.5}
-            />
-          </div>
-        )}
         <h2>{props.titel}</h2>
         <p>{props.subtitle}</p>
         <BsChevronUp />
