@@ -43,18 +43,19 @@ interface ButtonProps {
 }
 
 const ButtonGroot = (props: ButtonProps) => {
-  if (props.primary) {
+  const {title, icoon, url, primary} = props;
+  if (primary) {
     return (
-      <StyledPrimaryButton href={props.url}>
-        <div className="icoon">{props.icoon}</div>
-        <span>{props.title}</span>
+      <StyledPrimaryButton href={url}>
+        <div className="icoon">{icoon}</div>
+        <span>{title}</span>
       </StyledPrimaryButton>
     );
   } else {
     return (
-      <StyledButton href={props.url}>
-        <div className="icoon">{props.icoon}</div>
-        <span>{props.title}</span>
+      <StyledButton href={url}>
+        <div className="icoon">{icoon}</div>
+        <span>{title}</span>
       </StyledButton>
     );
   }

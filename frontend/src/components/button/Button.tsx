@@ -54,26 +54,23 @@ interface ButtonProps {
 }
 
 const Button = (props: ButtonProps) => {
+  const {title, subtitle, icoon, url, external} = props;
   return (
     <>
-      {props.external ? (
-        <StyledButton
-          href={props.url}
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <div className="icoon">{props.icoon}</div>
+      {external ? (
+        <StyledButton href={url} rel="noopener noreferrer" target="_blank">
+          <div className="icoon">{icoon}</div>
           <span>
-            <strong>{props.title}</strong>
-            {props.subtitle}
+            <strong>{title}</strong>
+            {subtitle}
           </span>
         </StyledButton>
       ) : (
-        <StyledButton as={Link} to={props.url} className="button">
-          <div className="icoon">{props.icoon}</div>
+        <StyledButton as={Link} to={url} className="button">
+          <div className="icoon">{icoon}</div>
           <span>
-            <strong>{props.title}</strong>
-            {props.subtitle}
+            <strong>{title}</strong>
+            {subtitle}
           </span>
         </StyledButton>
       )}
