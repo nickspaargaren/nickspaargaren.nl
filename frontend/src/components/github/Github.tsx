@@ -48,21 +48,23 @@ const Github = () => {
   });
 
   useEffect(() => {
-    setGithub({data: null, loading: true, error: null});
-    fetch('https://api.github.com/repos/nickspaargaren/no-google')
-      .then(res => res.json())
-      .then(
-        result => {
-          setGithub({data: result, loading: false, error: null});
-        },
-        error => {
-          setGithub({data: null, loading: false, error: error});
-        },
-      );
+    const LoadData = async () => {
+      try {
+        const res = await fetch(
+          'https://api.github.com/repos/nickspaargaren/no-google',
+        );
+        const result = await res.json();
+        setGithub({data: result, loading: false, error: null});
+      } catch (err) {
+        setGithub({data: null, loading: false, error: err.message});
+      }
+    };
+
+    LoadData();
   }, []);
 
   if (github.error) {
-    return <>{github.error.message}</>;
+    return <>{github.error}</>;
   } else if (github.loading) {
     return <>Laden...</>;
   } else {
