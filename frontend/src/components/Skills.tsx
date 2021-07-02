@@ -37,7 +37,8 @@ const Skills = () => {
 
   if (typeof window !== 'undefined') {
     useEffect(() => {
-      setFavorieten(JSON.parse(localStorage.getItem('favorieten')));
+      localStorage.getItem('favorieten') &&
+        setFavorieten(JSON.parse(localStorage.getItem('favorieten')));
     }, []);
 
     useEffect(() => {
