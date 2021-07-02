@@ -71,7 +71,7 @@ const Index = () => {
   return (
     <Layout title={`Portfolio | ${naam}`} description={functie} noindex>
       <header>
-        <Marquee gradient={false} pauseOnHover={true}>
+        <Marquee gradient={false}>
           <StyledPortfolioItems>
             {data.portfolio.nodes.map((item, key) => {
               return (
