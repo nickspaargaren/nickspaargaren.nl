@@ -30,14 +30,18 @@ interface YoutubeProps {
   url: string;
 }
 
-const Youtube = (props: YoutubeProps) => (
-  <StyledYoutube>
-    <iframe
-      title={props.title}
-      src={props.url}
-      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
-    ></iframe>
-  </StyledYoutube>
-);
+const Youtube = (props: YoutubeProps) => {
+  const {title, url} = props;
+
+  return (
+    <StyledYoutube>
+      <iframe
+        title={title}
+        src={url}
+        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
+      ></iframe>
+    </StyledYoutube>
+  );
+};
 
 export default Youtube;
