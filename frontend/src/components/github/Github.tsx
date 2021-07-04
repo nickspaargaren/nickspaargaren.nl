@@ -41,7 +41,11 @@ const StyledGithub = styled.div`
 `;
 
 const Github = () => {
-  const [github, setGithub] = useState({
+  const [github, setGithub] = useState<{
+    data: any;
+    loading: boolean;
+    error: string | null;
+  }>({
     data: null,
     loading: true,
     error: null,
