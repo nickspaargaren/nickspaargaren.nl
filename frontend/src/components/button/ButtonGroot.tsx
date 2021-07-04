@@ -42,8 +42,7 @@ interface ButtonProps {
   primary?: boolean;
 }
 
-const ButtonGroot = (props: ButtonProps) => {
-  const {title, icoon, url, primary} = props;
+const ButtonGroot = ({title, icoon, url, primary}: ButtonProps) => {
   if (primary) {
     return (
       <StyledPrimaryButton href={url}>
