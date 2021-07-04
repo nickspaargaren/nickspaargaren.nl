@@ -53,8 +53,7 @@ interface ButtonProps {
   external?: boolean;
 }
 
-const Button = (props: ButtonProps) => {
-  const {title, subtitle, icoon, url, external} = props;
+const Button = ({title, subtitle, icoon, url, external}: ButtonProps) => {
   return (
     <>
       {external ? (

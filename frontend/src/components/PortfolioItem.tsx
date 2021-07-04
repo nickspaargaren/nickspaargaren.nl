@@ -158,23 +158,28 @@ interface PortfolioItemProps {
   samenwerking: string;
 }
 
-const PortfolioItem = (props: PortfolioItemProps) => {
+const PortfolioItem = ({
+  titel,
+  subtitle,
+  beschrijving,
+  slug,
+  afbeelding,
+  skillsused,
+  samenwerking,
+}: PortfolioItemProps) => {
   return (
     <StyledPortfolioItem>
       <div className="plaatje">
-        {props.afbeelding && (
-          <GatsbyImage
-            image={props.afbeelding.asset.gatsbyImageData}
-            alt={props.titel}
-          />
+        {afbeelding && (
+          <GatsbyImage image={afbeelding.asset.gatsbyImageData} alt={titel} />
         )}
       </div>
       <div className="beschrijving">
-        <h2>{props.titel}</h2>
-        <p>{props.subtitle}</p>
+        <h2>{titel}</h2>
+        <p>{subtitle}</p>
         <BsChevronUp />
         <ul className="tags">
-          {props.skillsused.map((skill, key) => (
+          {skillsused.map((skill, key) => (
             <li key={key}>
               <GatsbyImage
                 image={skill.afbeelding.asset.gatsbyImageData}

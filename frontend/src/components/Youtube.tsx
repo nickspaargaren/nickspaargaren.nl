@@ -30,9 +30,7 @@ interface YoutubeProps {
   url: string;
 }
 
-const Youtube = (props: YoutubeProps) => {
-  const {title, url} = props;
-
+const Youtube = ({title, url}: YoutubeProps) => {
   return (
     <StyledYoutube>
       <iframe
