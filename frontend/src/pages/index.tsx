@@ -93,8 +93,8 @@ div[class*="grid"] img {max-width: 100%; height: auto !important;}
 const Home = () => {
   const {naam, functie} = useSiteMetadata();
 
-  const sitehouderRef = useRef(null);
-  const blokRef = useRef(null);
+  const sitehouderRef = useRef<HTMLDivElement>(null);
+  const blokRef = useRef<HTMLAnchorElement>(null);
   const limiet = 5;
 
   useEffect(() => {
