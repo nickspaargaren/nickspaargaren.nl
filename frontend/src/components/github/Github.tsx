@@ -57,8 +57,8 @@ const Github = () => {
         const res = await fetch(
           'https://api.github.com/repos/nickspaargaren/no-google',
         );
-        const result = await res.json();
-        setGithub({data: result, loading: false, error: null});
+        const data = await res.json();
+        setGithub({data: data, loading: false, error: null});
       } catch (err) {
         setGithub({data: null, loading: false, error: err.message});
       }
@@ -68,36 +68,38 @@ const Github = () => {
   }, []);
 
   if (github.error) {
-    return <>{github.error}</>;
-  } else if (github.loading) {
-    return <>Laden...</>;
-  } else {
-    return (
-      <StyledGithub>
-        <div className="titel">{github.data.name}</div>
-        <p>{github.data.description}</p>
-        <p>
-          <a
-            href={github.data.html_url}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            {github.data.html_url}
-          </a>
-        </p>
-        <small>
-          <span className="stars">
-            <GoStar />
-            {github.data.stargazers_count}
-          </span>
-          <span>
-            <GoRepoForked />
-            {github.data.forks}
-          </span>
-        </small>
-      </StyledGithub>
-    );
+    return github.error;
   }
+
+  if (github.loading) {
+    return <>Laden...</>;
+  }
+
+  return (
+    <StyledGithub>
+      <div className="titel">{github.data.name}</div>
+      <p>{github.data.description}</p>
+      <p>
+        <a
+          href={github.data.html_url}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          {github.data.html_url}
+        </a>
+      </p>
+      <small>
+        <span className="stars">
+          <GoStar />
+          {github.data.stargazers_count}
+        </span>
+        <span>
+          <GoRepoForked />
+          {github.data.forks}
+        </span>
+      </small>
+    </StyledGithub>
+  );
 };
 
 export default Github;
