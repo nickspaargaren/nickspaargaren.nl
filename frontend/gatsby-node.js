@@ -1,5 +1,5 @@
-exports.createPages = async function ({ actions, graphql }) {
-  const { data } = await graphql(`
+exports.createPages = async function ({actions, graphql}) {
+  const {data} = await graphql(`
     {
       paginas: allSanityPortfolio {
         nodes {
@@ -9,13 +9,13 @@ exports.createPages = async function ({ actions, graphql }) {
         }
       }
     }
-  `)
+  `);
   data.paginas.nodes.forEach(node => {
-    const slug = node.slug.current
+    const slug = node.slug.current;
     actions.createPage({
       path: `/portfolio/projecten/${slug}`,
       component: require.resolve(`./src/templates/ProjectDetail.tsx`),
-      context: { slug: slug },
-    })
-  })
-}
+      context: {slug: slug},
+    });
+  });
+};

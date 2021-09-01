@@ -1,6 +1,6 @@
-require("dotenv").config({
+require('dotenv').config({
   path: `.env`,
-})
+});
 
 module.exports = {
   siteMetadata: {
@@ -17,7 +17,7 @@ module.exports = {
         projectId: '5mfdvpuc',
         dataset: 'production',
         watchMode: true,
-      }
+      },
     },
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-image`,
@@ -26,14 +26,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          `Lora`
-        ],
-        display: 'swap'
-      }
+        fonts: [`Lora`],
+        display: 'swap',
+      },
     },
     {
-      resolve: `gatsby-plugin-styled-components`
+      resolve: `gatsby-plugin-styled-components`,
     },
   ],
-}
+};
