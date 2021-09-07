@@ -1,6 +1,5 @@
 import React from 'react';
 
-import {useSiteMetadata} from '../data/hooks/algemeen';
 import {SocialData} from '../data/socials/SocialData';
 import Button from '../components/button/Button';
 import styled from 'styled-components';
@@ -30,13 +29,20 @@ const StyledFooter = styled.div`
 `;
 
 const Footer = () => {
-  const {telefoonnummer} = useSiteMetadata();
-
   return (
     <StyledFooter>
       <footer>
         <div className="inhoud">
-          <div className="tel">{telefoonnummer}</div>
+          {SocialData.map((social, key) => (
+            <Button
+              key={key}
+              title={social.platform}
+              subtitle="Account"
+              icoon={social.icoon}
+              url={social.url}
+              external
+            />
+          ))}
           <p>
             Of toch eerst{' '}
             <a
@@ -48,16 +54,6 @@ const Footer = () => {
             </a>{' '}
             zien?
           </p>
-          {SocialData.map((social, key) => (
-            <Button
-              key={key}
-              title={social.platform}
-              subtitle="Account"
-              icoon={social.icoon}
-              url={social.url}
-              external
-            />
-          ))}
         </div>
       </footer>
     </StyledFooter>

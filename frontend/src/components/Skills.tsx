@@ -35,16 +35,18 @@ const Skills = () => {
 
   const [favorieten, setFavorieten] = useState([]);
 
-  if (typeof window !== 'undefined') {
-    useEffect(() => {
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
       localStorage.getItem('favorieten') &&
         setFavorieten(JSON.parse(localStorage.getItem('favorieten')));
-    }, []);
+    }
+  }, []);
 
-    useEffect(() => {
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
       localStorage.setItem('favorieten', JSON.stringify(favorieten));
-    }, [favorieten]);
-  }
+    }
+  }, [favorieten]);
 
   const ActieveSkills = () => {
     if (favorieten.length > 0) {
