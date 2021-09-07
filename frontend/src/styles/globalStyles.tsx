@@ -23,6 +23,8 @@ const GlobalStyle = createGlobalStyle`
 
   .sitehouder {display: flex; height: 100vh;}
 
+  section {border-bottom: 1px solid #e6e6e6;}
+
   .inhoud {margin: 0 auto; padding: 40px; box-sizing: border-box; max-width: 1500px;}
   .inhoud svg {margin: 0 10px 5px 0;}
 
@@ -88,6 +90,8 @@ const GlobalStyle = createGlobalStyle`
   box-shadow: 0 50px 75px -40px rgba(0, 0, 0,.6);
   position: relative;
   z-index: 0;
+  max-width: 800px;
+  margin: 0 auto;
 }
 .skills .skill {display: grid; grid-gap: 10px; grid-template-columns: 35px 1fr 29px; margin: 0 0 10px; user-select: none;}
 .skills .skill > div {margin: auto 0;}
