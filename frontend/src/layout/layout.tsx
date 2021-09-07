@@ -12,9 +12,6 @@ interface LayoutProps {
 }
 
 const Layout = ({children, title, description, noindex}: LayoutProps) => {
-  if (noindex) {
-    var noindextag = <meta name="robots" content="noindex" />;
-  }
   return (
     <>
       <GlobalStyle />
@@ -24,7 +21,7 @@ const Layout = ({children, title, description, noindex}: LayoutProps) => {
         <meta charSet="utf-8" />
         <title>{title}</title>
         <meta name="description" content={description} />
-        {noindextag}
+        {noindex && <meta name="robots" content="noindex" />}
       </Helmet>
       <main>{children}</main>
       <Footer />
