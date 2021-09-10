@@ -47,9 +47,7 @@ const StyledMenu = styled.div`
 
 const Menu = () => {
   const hoverRef = useRef(null);
-
-  const menuItemRef1 = useRef(null);
-  const menuItemRef2 = useRef(null);
+  const menuItemRef = useRef(null);
 
   const hover = e => {
     hoverRef.current.style.left = `${e.target.offsetLeft}px`;
@@ -57,14 +55,12 @@ const Menu = () => {
   };
 
   const leave = () => {
-    if (menuItemRef1.current.classList.contains('active')) {
-      hoverRef.current.style.left = `${menuItemRef1.current.offsetLeft}px`;
-      hoverRef.current.style.width = `${menuItemRef1.current.clientWidth}px`;
-    }
-    if (menuItemRef2.current.classList.contains('active')) {
-      hoverRef.current.style.left = `${menuItemRef2.current.offsetLeft}px`;
-      hoverRef.current.style.width = `${menuItemRef2.current.clientWidth}px`;
-    }
+    Array.from(menuItemRef.current.children).map(item => {
+      if (item.children[0].classList.contains('active')) {
+        hoverRef.current.style.left = `${item.children[0].offsetLeft}px`;
+        hoverRef.current.style.width = `${item.children[0].clientWidth}px`;
+      }
+    });
   };
 
   useEffect(() => {
@@ -73,15 +69,9 @@ const Menu = () => {
 
   return (
     <StyledMenu>
-      <ul className="menu">
+      <ul className="menu" ref={menuItemRef} onMouseLeave={leave}>
         <li>
-          <Link
-            activeClassName="active"
-            onMouseEnter={hover}
-            onMouseLeave={leave}
-            ref={menuItemRef1}
-            to="/portfolio/"
-          >
+          <Link activeClassName="active" onMouseEnter={hover} to="/portfolio/">
             Home
           </Link>
         </li>
@@ -89,8 +79,6 @@ const Menu = () => {
           <Link
             activeClassName="active"
             onMouseEnter={hover}
-            onMouseLeave={leave}
-            ref={menuItemRef2}
             to="/portfolio/drone/"
           >
             Drone videos
