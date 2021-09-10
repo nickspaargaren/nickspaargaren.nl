@@ -31,7 +31,7 @@ const Nav = () => {
         subtitleHover={email}
         image={
           <StaticImage
-            src="../images/nick-spaargaren.jpeg"
+            src="../../images/nick-spaargaren.jpeg"
             width={37}
             height={37}
             alt={`${'Profielfoto'} ${naam}`}
