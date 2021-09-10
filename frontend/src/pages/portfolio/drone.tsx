@@ -5,10 +5,13 @@ import {Link} from 'gatsby';
 import {FaCaretRight} from 'react-icons/fa';
 
 import Youtube from '../../components/Youtube';
+import {useSiteMetadata} from '../../data/hooks/algemeen';
 
 const Drone = () => {
+  const {naam} = useSiteMetadata();
+
   return (
-    <Layout title={`Drone`} description="Drone videos" noindex>
+    <Layout title={`Drone videos | ${naam}`} description="Drone videos" noindex>
       <div className="inhoud">
         <small>
           <ul className="bcrumbs">
@@ -18,7 +21,7 @@ const Drone = () => {
             <li>
               <FaCaretRight />
             </li>
-            <li>Drone</li>
+            <li>Drone videos</li>
           </ul>
         </small>
       </div>

@@ -8,6 +8,8 @@ const StyledNav = styled.div`
   background: #fff;
   color: #292a2c;
   display: flex;
+  z-index: 2;
+  position: relative;
   padding: 20px;
   box-shadow: 0 6px 35px -9px rgb(0 0 0 / 20%);
 
@@ -48,7 +50,7 @@ const StyledNav = styled.div`
     margin: 0;
     padding: 4px 0;
     background: #eee;
-    border-radius: 7px;
+    border-radius: 5px;
     text-align: right;
     list-style: none;
     display: flex;
@@ -59,18 +61,19 @@ const StyledNav = styled.div`
     display: block;
     position: relative;
     margin: 0 5px;
-    padding: 6px 12px;
+    padding: 6px 15px 7px;
     text-decoration: none;
-    font-family: 'GilroyRegular';
     z-index: 2;
+    font-size: 15px;
   }
   .menuHouder .hover {
     top: 4px;
     bottom: 4px;
     background: #fff;
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.15);
     position: absolute;
     transition: 0.3s all cubic-bezier(0.65, 0.05, 0.36, 1);
-    border-radius: 7px;
+    border-radius: 5px;
     z-index: 1;
   }
 
@@ -153,7 +156,7 @@ const Nav = () => {
               ref={menuItemRef2}
               to="/portfolio/drone/"
             >
-              Drone
+              Drone videos
             </Link>
           </li>
         </ul>
