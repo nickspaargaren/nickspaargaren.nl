@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ["react-app", "prettier"],
+  extends: ["prettier"],
   plugins: ["prettier"],
   parser: "babel-eslint",
   env: {
