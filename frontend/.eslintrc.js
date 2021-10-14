@@ -1,17 +1,17 @@
 module.exports = {
-  extends: ['react-app', 'prettier'],
-  plugins: ['prettier'],
-  parser: 'babel-eslint',
+  extends: ["react-app", "prettier"],
+  plugins: ["prettier"],
+  parser: "babel-eslint",
   env: {
     browser: true,
     es6: true,
   },
   settings: {
     react: {
-      version: 'detect',
+      version: "detect",
     },
   },
   rules: {
-    'prettier/prettier': 'warn',
+    "prettier/prettier": "warn",
   },
 };
