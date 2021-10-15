@@ -1,6 +1,6 @@
-import React from 'react';
-import {Link} from 'gatsby';
-import styled from 'styled-components';
+import React from "react";
+import { Link } from "gatsby";
+import styled from "styled-components";
 
 const StyledButton = styled.a`
   position: relative;
@@ -53,7 +53,7 @@ interface ButtonProps {
   external?: boolean;
 }
 
-const Button = ({title, subtitle, icoon, url, external}: ButtonProps) => {
+const Button = ({ title, subtitle, icoon, url, external }: ButtonProps) => {
   return (
     <>
       {external ? (

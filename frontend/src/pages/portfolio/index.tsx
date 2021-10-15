@@ -1,14 +1,14 @@
-import React from 'react';
-import Layout from '../../layout/layout';
-import {useStaticQuery, graphql, Link} from 'gatsby';
+import React from "react";
+import Layout from "../../layout/layout";
+import { useStaticQuery, graphql, Link } from "gatsby";
 
-import {useSiteMetadata} from '../../data/hooks/algemeen';
+import { useSiteMetadata } from "../../data/hooks/algemeen";
 
-import Github from '../../components/github/Github';
-import Stats from '../../components/Stats';
+import Github from "../../components/github/Github";
+import Stats from "../../components/Stats";
 
-import PortfolioItem from '../../components/PortfolioItem';
-import Marquee from 'react-fast-marquee';
+import PortfolioItem from "../../components/PortfolioItem";
+import Marquee from "react-fast-marquee";
 
 import {
   SiAdobe,
@@ -26,11 +26,11 @@ import {
   SiXbox,
   SiNetflix,
   SiSpotify,
-} from 'react-icons/si';
+} from "react-icons/si";
 
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import Skills from '../../components/Skills';
+import Skills from "../../components/Skills";
 
 const StyledPortfolioItems = styled.div`
   display: flex;
@@ -39,7 +39,9 @@ const StyledPortfolioItems = styled.div`
 const Index = () => {
   const data = useStaticQuery(graphql`
     {
-      portfolio: allSanityPortfolio(sort: {fields: samenwerking, order: ASC}) {
+      portfolio: allSanityPortfolio(
+        sort: { fields: samenwerking, order: ASC }
+      ) {
         nodes {
           titel
           subtitle
@@ -67,7 +69,7 @@ const Index = () => {
     }
   `);
 
-  const {naam, functie} = useSiteMetadata();
+  const { naam, functie } = useSiteMetadata();
 
   return (
     <Layout title={`Portfolio | ${naam}`} description={functie} noindex>
@@ -113,7 +115,7 @@ const Index = () => {
       <section>
         <div className="inhoud">
           <div className="hgroup">
-            <h2 style={{margin: 0}}>Waar ik goed in ben</h2>
+            <h2 style={{ margin: 0 }}>Waar ik goed in ben</h2>
             <p>Ervaring en interesse</p>
           </div>
           <div className="grid-4x">
@@ -123,7 +125,7 @@ const Index = () => {
               <SiSketch />
               <h4>Design</h4>
               <p>
-                Meer dan 10 jaar <span className="calc">27 - 10 = 17 ✓</span>{' '}
+                Meer dan 10 jaar <span className="calc">27 - 10 = 17 ✓</span>{" "}
                 ervaring met vormgeving, design, fotobewerking en dtp.
               </p>
             </div>
@@ -142,7 +144,7 @@ const Index = () => {
               <h4>Drone videography</h4>
               <p>
                 Vakantie en activiteitenvideo's, promotievideo's /
-                inzamelingsacties, luchtopnames.{' '}
+                inzamelingsacties, luchtopnames.{" "}
                 <Link to="/portfolio/drone">Naar video's</Link>
               </p>
             </div>
@@ -168,8 +170,8 @@ const Index = () => {
               <SiAdobepremiere />
               <h4>Videobewerking</h4>
               <p>
-                Premiere pro, Audacity,{' '}
-                <span style={{textDecoration: 'line-through'}}>
+                Premiere pro, Audacity,{" "}
+                <span style={{ textDecoration: "line-through" }}>
                   Adobe Flash
                 </span>
                 , Proxies, GoPro timelapses

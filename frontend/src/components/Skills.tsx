@@ -1,21 +1,21 @@
-import React, {useEffect} from 'react';
-import {graphql, useStaticQuery} from 'gatsby';
-import {GatsbyImage} from 'gatsby-plugin-image';
-import {useState} from 'react';
-import {Spring} from 'react-spring/renderprops';
+import React, { useEffect } from "react";
+import { graphql, useStaticQuery } from "gatsby";
+import { GatsbyImage } from "gatsby-plugin-image";
+import { useState } from "react";
+import { Spring } from "react-spring/renderprops";
 import {
   MdCheckBox,
   MdCheckBoxOutlineBlank,
   MdClear,
   MdDone,
-} from 'react-icons/md';
-import {useSiteMetadata} from '../data/hooks/algemeen';
-import ButtonGroot from './button/ButtonGroot';
+} from "react-icons/md";
+import { useSiteMetadata } from "../data/hooks/algemeen";
+import ButtonGroot from "./button/ButtonGroot";
 
 const Skills = () => {
   const data = useStaticQuery(graphql`
     {
-      skills: allSanitySkills(sort: {fields: percentage, order: DESC}) {
+      skills: allSanitySkills(sort: { fields: percentage, order: DESC }) {
         nodes {
           id
           titel
@@ -31,20 +31,20 @@ const Skills = () => {
     }
   `);
 
-  const {telefoonnummer} = useSiteMetadata();
+  const { telefoonnummer } = useSiteMetadata();
 
   const [favorieten, setFavorieten] = useState([]);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      localStorage.getItem('favorieten') &&
-        setFavorieten(JSON.parse(localStorage.getItem('favorieten')));
+    if (typeof window !== "undefined") {
+      localStorage.getItem("favorieten") &&
+        setFavorieten(JSON.parse(localStorage.getItem("favorieten")));
     }
   }, []);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('favorieten', JSON.stringify(favorieten));
+    if (typeof window !== "undefined") {
+      localStorage.setItem("favorieten", JSON.stringify(favorieten));
     }
   }, [favorieten]);
 
@@ -87,12 +87,12 @@ const Skills = () => {
 
   return (
     <div className="skills">
-      <p style={{marginBottom: '0px', opacity: '.75'}}>Skills</p>
+      <p style={{ marginBottom: "0px", opacity: ".75" }}>Skills</p>
       <div className="skillTitel">
         <span>Waar wilt u het graag over hebben?</span>
       </div>
       {data.skills.nodes
-        .filter(item => !item.exclude)
+        .filter((item) => !item.exclude)
         .map((item, key) => {
           return (
             <div key={key} className="skill">
@@ -107,15 +107,15 @@ const Skills = () => {
               <div>
                 <div className="titel">
                   {item.titel}
-                  <span>{item.percentage + '%'}</span>
+                  <span>{item.percentage + "%"}</span>
                 </div>
                 <div className="percentage">
                   <Spring
-                    config={{tension: 280, friction: 60, delay: 300}}
-                    from={{width: '0%'}}
-                    to={{width: item.percentage + '%'}}
+                    config={{ tension: 280, friction: 60, delay: 300 }}
+                    from={{ width: "0%" }}
+                    to={{ width: item.percentage + "%" }}
                   >
-                    {style => <div style={style} className="gevuld"></div>}
+                    {(style) => <div style={style} className="gevuld"></div>}
                   </Spring>
                 </div>
               </div>
@@ -123,22 +123,22 @@ const Skills = () => {
                 <div
                   className="favoriet"
                   onClick={() => {
-                    const check = favorieten.find(i => i['id'] === item.id);
+                    const check = favorieten.find((i) => i["id"] === item.id);
 
                     if (!check) {
                       setFavorieten([
                         ...favorieten,
-                        {id: item.id, skill: item.titel},
+                        { id: item.id, skill: item.titel },
                       ]);
                     } else {
                       const nieuwfavorieten = favorieten.filter(
-                        i => i['id'] !== item.id,
+                        (i) => i["id"] !== item.id
                       );
                       setFavorieten(nieuwfavorieten);
                     }
                   }}
                 >
-                  {favorieten.find(i => i['id'] === item.id) ? (
+                  {favorieten.find((i) => i["id"] === item.id) ? (
                     <div className={`icoon actief`}>
                       <MdCheckBox />
                     </div>

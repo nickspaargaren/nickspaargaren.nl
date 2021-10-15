@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
-import {SocialData} from '../data/socials/SocialData';
-import Button from '../components/button/Button';
-import styled from 'styled-components';
+import { SocialData } from "../data/socials/SocialData";
+import Button from "../components/button/Button";
+import styled from "styled-components";
 
 const StyledFooter = styled.div`
   footer {
@@ -44,14 +44,14 @@ const Footer = () => {
             />
           ))}
           <p>
-            Of toch eerst{' '}
+            Of toch eerst{" "}
             <a
               href="https://www.google.com/search?q=site%3Acmspecialist.nl+%22Nick+Spaargaren%22"
               rel="noopener noreferrer"
               target="_blank"
             >
               meer projecten
-            </a>{' '}
+            </a>{" "}
             zien?
           </p>
         </div>

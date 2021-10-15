@@ -1,8 +1,8 @@
-import React from 'react';
-import {Helmet} from 'react-helmet';
-import GlobalStyle from '../styles/globalStyles';
-import Nav from '../components/navigatie/Nav';
-import Footer from '../components/Footer';
+import React from "react";
+import { Helmet } from "react-helmet";
+import GlobalStyle from "../styles/globalStyles";
+import Nav from "../components/navigatie/Nav";
+import Footer from "../components/Footer";
 
 interface LayoutProps {
   children: any;
@@ -11,7 +11,7 @@ interface LayoutProps {
   noindex?: boolean;
 }
 
-const Layout = ({children, title, description, noindex}: LayoutProps) => {
+const Layout = ({ children, title, description, noindex }: LayoutProps) => {
   return (
     <>
       <GlobalStyle />

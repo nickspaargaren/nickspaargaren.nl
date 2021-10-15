@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from 'react';
-import {GoStar, GoRepoForked} from 'react-icons/go';
-import styled from 'styled-components';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import { GoStar, GoRepoForked } from "react-icons/go";
+import styled from "styled-components";
+import axios from "axios";
 
 const StyledGithub = styled.div`
   display: inline-block;
@@ -56,12 +56,12 @@ const Github = () => {
     const LoadData = async () => {
       try {
         const res = await axios.get(
-          'https://api.github.com/repos/nickspaargaren/no-google',
+          "https://api.github.com/repos/nickspaargaren/no-google"
         );
-        const {data} = res;
-        setGithub({data: data, loading: false, error: null});
+        const { data } = res;
+        setGithub({ data: data, loading: false, error: null });
       } catch (err) {
-        setGithub({data: null, loading: false, error: err.message});
+        setGithub({ data: null, loading: false, error: err.message });
       }
     };
 

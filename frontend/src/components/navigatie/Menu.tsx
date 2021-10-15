@@ -1,6 +1,6 @@
-import React, {useEffect, useRef} from 'react';
-import styled from 'styled-components';
-import {Link} from 'gatsby';
+import React, { useEffect, useRef } from "react";
+import styled from "styled-components";
+import { Link } from "gatsby";
 
 const StyledMenu = styled.div`
   margin: auto 0 auto auto;
@@ -49,14 +49,14 @@ const Menu = () => {
   const hoverRef = useRef(null);
   const menuItemRef = useRef(null);
 
-  const hover = e => {
+  const hover = (e) => {
     hoverRef.current.style.left = `${e.target.offsetLeft}px`;
     hoverRef.current.style.width = `${e.target.clientWidth}px`;
   };
 
   const leave = () => {
-    Array.from(menuItemRef.current.children).map(item => {
-      if (item.children[0].classList.contains('active')) {
+    Array.from(menuItemRef.current.children).map((item) => {
+      if (item.children[0].classList.contains("active")) {
         hoverRef.current.style.left = `${item.children[0].offsetLeft}px`;
         hoverRef.current.style.width = `${item.children[0].clientWidth}px`;
       }

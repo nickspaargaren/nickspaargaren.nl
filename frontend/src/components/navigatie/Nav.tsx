@@ -1,9 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
-import Menu from './Menu';
-import User from '../User';
-import {useSiteMetadata} from '../../data/hooks/algemeen';
-import {StaticImage} from 'gatsby-plugin-image';
+import React from "react";
+import styled from "styled-components";
+import Menu from "./Menu";
+import User from "../User";
+import { useSiteMetadata } from "../../data/hooks/algemeen";
+import { StaticImage } from "gatsby-plugin-image";
 
 const StyledNav = styled.div`
   background: #fff;
@@ -22,7 +22,7 @@ const StyledNav = styled.div`
 `;
 
 const Nav = () => {
-  const {naam, functie, email} = useSiteMetadata();
+  const { naam, functie, email } = useSiteMetadata();
   return (
     <StyledNav>
       <User
@@ -34,7 +34,7 @@ const Nav = () => {
             src="../../images/nick-spaargaren.jpeg"
             width={37}
             height={37}
-            alt={`${'Profielfoto'} ${naam}`}
+            alt={`${"Profielfoto"} ${naam}`}
           />
         }
       />

@@ -1,5 +1,5 @@
-import {createGlobalStyle} from 'styled-components';
-import GilroyRegularWoff2 from '../fonts/Gilroy-Regular.woff2';
+import { createGlobalStyle } from "styled-components";
+import GilroyRegularWoff2 from "../fonts/Gilroy-Regular.woff2";
 
 const GlobalStyle = createGlobalStyle`
 

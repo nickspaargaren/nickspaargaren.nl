@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const StyledYoutube = styled.div`
   position: relative;
@@ -30,7 +30,7 @@ interface YoutubeProps {
   url: string;
 }
 
-const Youtube = ({title, url}: YoutubeProps) => {
+const Youtube = ({ title, url }: YoutubeProps) => {
   return (
     <StyledYoutube>
       <iframe

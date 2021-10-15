@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 interface StatsProps {
   title: string;
@@ -18,7 +18,7 @@ const StyledStats = styled.div`
     padding-right: 12px;
     line-height: 1;
     font-weight: bold;
-    font-family: 'GilroyRegular';
+    font-family: "GilroyRegular";
     position: relative;
   }
   .plus {
@@ -42,7 +42,7 @@ const StyledStats = styled.div`
   }
 `;
 
-const Stats = ({title, subtitle, amount, icoon}: StatsProps) => {
+const Stats = ({ title, subtitle, amount, icoon }: StatsProps) => {
   return (
     <StyledStats>
       <div className="amount">

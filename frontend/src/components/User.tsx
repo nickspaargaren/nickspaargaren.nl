@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const StyleUser = styled.div`
   display: flex;
@@ -31,7 +31,7 @@ interface UserProps {
   image?: object;
 }
 
-const User = ({title, subtitle, subtitleHover, image}: UserProps) => {
+const User = ({ title, subtitle, subtitleHover, image }: UserProps) => {
   return (
     <StyleUser>
       {image}

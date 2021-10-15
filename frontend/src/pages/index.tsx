@@ -1,11 +1,11 @@
-import React, {useEffect, useRef} from 'react';
-import {Trail} from 'react-spring/renderprops';
+import React, { useEffect, useRef } from "react";
+import { Trail } from "react-spring/renderprops";
 
-import {SocialData} from '../data/socials/SocialData';
-import {useSiteMetadata} from '../data/hooks/algemeen';
-import {Helmet} from 'react-helmet';
+import { SocialData } from "../data/socials/SocialData";
+import { useSiteMetadata } from "../data/hooks/algemeen";
+import { Helmet } from "react-helmet";
 
-import {createGlobalStyle} from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 :root {
@@ -91,7 +91,7 @@ div[class*="grid"] img {max-width: 100%; height: auto !important;}
 `;
 
 const Home = () => {
-  const {naam, functie} = useSiteMetadata();
+  const { naam, functie } = useSiteMetadata();
 
   const sitehouderRef = useRef<HTMLDivElement>(null);
   const blokRef = useRef<HTMLAnchorElement>(null);
@@ -101,11 +101,11 @@ const Home = () => {
     const width = sitehouderRef.current.clientWidth;
     const height = sitehouderRef.current.clientHeight;
 
-    sitehouderRef.current.addEventListener('mousemove', e => {
+    sitehouderRef.current.addEventListener("mousemove", (e) => {
       const xWalk = (e.x / width) * limiet - limiet / 2;
       const yWalk = (e.y / height) * limiet - limiet / 2;
 
-      document.querySelectorAll('a.blok').forEach(el => {
+      document.querySelectorAll("a.blok").forEach((el) => {
         el.style.boxShadow = `${xWalk}px ${yWalk}px 1px 2px rgba(0,0,0,.1)`;
       });
     });
@@ -121,19 +121,19 @@ const Home = () => {
       </Helmet>
       <GlobalStyle />
       <div className="sitehouder" ref={sitehouderRef}>
-        <div className="inhoud" style={{textAlign: 'center', width: '100%'}}>
+        <div className="inhoud" style={{ textAlign: "center", width: "100%" }}>
           <div className="titel">
-            <h1 style={{fontSize: '2em'}}>{naam}</h1>
+            <h1 style={{ fontSize: "2em" }}>{naam}</h1>
             <h2>{functie}</h2>
           </div>
           <div className="houder">
             <Trail
               items={SocialData}
-              keys={social => social.id}
-              from={{opacity: 0}}
-              to={{opacity: 1}}
+              keys={(social) => social.id}
+              from={{ opacity: 0 }}
+              to={{ opacity: 1 }}
             >
-              {social => props =>
+              {(social) => (props) =>
                 (
                   <a
                     style={props}
