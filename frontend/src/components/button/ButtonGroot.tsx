@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const StyledButton = styled.a`
   position: relative;
@@ -42,7 +42,7 @@ interface ButtonProps {
   primary?: boolean;
 }
 
-const ButtonGroot = ({title, icoon, url, primary}: ButtonProps) => {
+const ButtonGroot = ({ title, icoon, url, primary }: ButtonProps) => {
   if (primary) {
     return (
       <StyledPrimaryButton href={url}>

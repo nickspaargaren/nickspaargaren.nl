@@ -1,10 +1,10 @@
-import React from 'react';
-import Layout from '../layout/layout';
-import {graphql, Link} from 'gatsby';
-import {GatsbyImage} from 'gatsby-plugin-image';
-import styled from 'styled-components';
-import {FaAngleDoubleRight, FaCaretRight, FaCode} from 'react-icons/fa';
-import Button from '../components/button/Button';
+import React from "react";
+import Layout from "../layout/layout";
+import { graphql, Link } from "gatsby";
+import { GatsbyImage } from "gatsby-plugin-image";
+import styled from "styled-components";
+import { FaAngleDoubleRight, FaCaretRight, FaCode } from "react-icons/fa";
+import Button from "../components/button/Button";
 
 const PortfolioGrid = styled.div`
   width: 100%;
@@ -19,7 +19,7 @@ const PortfolioGrid = styled.div`
   }
 `;
 
-const ProjectDetail = ({data}) => {
+const ProjectDetail = ({ data }) => {
   return (
     <>
       <Layout
@@ -100,7 +100,7 @@ const ProjectDetail = ({data}) => {
 
 export const query = graphql`
   query ($slug: String!) {
-    pagina: sanityPortfolio(slug: {current: {eq: $slug}}) {
+    pagina: sanityPortfolio(slug: { current: { eq: $slug } }) {
       titel
       website
       tags

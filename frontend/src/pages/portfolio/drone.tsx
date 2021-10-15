@@ -1,14 +1,14 @@
-import React from 'react';
-import Layout from '../../layout/layout';
-import {Link} from 'gatsby';
+import React from "react";
+import Layout from "../../layout/layout";
+import { Link } from "gatsby";
 
-import {FaCaretRight} from 'react-icons/fa';
+import { FaCaretRight } from "react-icons/fa";
 
-import Youtube from '../../components/Youtube';
-import {useSiteMetadata} from '../../data/hooks/algemeen';
+import Youtube from "../../components/Youtube";
+import { useSiteMetadata } from "../../data/hooks/algemeen";
 
 const Drone = () => {
-  const {naam} = useSiteMetadata();
+  const { naam } = useSiteMetadata();
 
   return (
     <Layout title={`Drone videos | ${naam}`} description="Drone videos" noindex>

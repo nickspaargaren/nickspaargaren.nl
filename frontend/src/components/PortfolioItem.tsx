@@ -1,7 +1,7 @@
-import React from 'react';
-import {GatsbyImage} from 'gatsby-plugin-image';
-import styled from 'styled-components';
-import {BsChevronUp} from 'react-icons/bs';
+import React from "react";
+import { GatsbyImage } from "gatsby-plugin-image";
+import styled from "styled-components";
+import { BsChevronUp } from "react-icons/bs";
 
 const StyledPortfolioItem = styled.div`
   position: relative;
@@ -121,7 +121,7 @@ const StyledPortfolioItem = styled.div`
     border-color: #221e25 transparent;
     border-width: 6px 6px 0px 6px;
     bottom: -4px;
-    content: '';
+    content: "";
     position: absolute;
     transition: 0.3s all ease;
     left: 50%;
@@ -136,7 +136,7 @@ const StyledPortfolioItem = styled.div`
     position: relative;
   }
   .beschrijving ul.tags .gatsby-image-wrapper::after {
-    content: '';
+    content: "";
     position: absolute;
     z-index: 0;
     top: -10px;

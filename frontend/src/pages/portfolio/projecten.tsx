@@ -1,15 +1,17 @@
-import React from 'react';
-import Layout from '../../layout/layout';
-import {useStaticQuery, graphql, Link} from 'gatsby';
+import React from "react";
+import Layout from "../../layout/layout";
+import { useStaticQuery, graphql, Link } from "gatsby";
 
-import {FaCaretRight} from 'react-icons/fa';
+import { FaCaretRight } from "react-icons/fa";
 
-import PortfolioItem from '../../components/PortfolioItem';
+import PortfolioItem from "../../components/PortfolioItem";
 
 const Projecten = () => {
   const data = useStaticQuery(graphql`
     query {
-      portfolio: allSanityPortfolio(sort: {fields: samenwerking, order: ASC}) {
+      portfolio: allSanityPortfolio(
+        sort: { fields: samenwerking, order: ASC }
+      ) {
         nodes {
           titel
           website

@@ -1,6 +1,6 @@
-import React from 'react';
-import {Helmet} from 'react-helmet';
-import styled from 'styled-components';
+import React from "react";
+import { Helmet } from "react-helmet";
+import styled from "styled-components";
 
 const StyledvierNulVier = styled.div`
   position: absolute;
@@ -13,8 +13,8 @@ const StyledvierNulVier = styled.div`
   color: #292a2c;
   font-size: 17px;
   -webkit-text-size-adjust: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
