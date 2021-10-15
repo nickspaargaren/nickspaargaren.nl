@@ -17,12 +17,12 @@ import {
   SiMaterialdesignicons,
   SiCodeclimate,
   SiAirbnb,
-  SiDevDotTo,
+  SiDevdotto,
   SiOneplus,
   SiRaspberrypi,
   SiLinux,
   SiApple,
-  SiAdobepremiere,
+  SiAdobepremierepro,
   SiXbox,
   SiNetflix,
   SiSpotify,
@@ -131,7 +131,7 @@ const Index = () => {
             </div>
             <div>
               <SiVisualstudiocode />
-              <SiDevDotTo />
+              <SiDevdotto />
               <h4>Develop</h4>
               <p>
                 Front-end developer sinds 2013. Altijd zoekend naar nieuwe
@@ -167,7 +167,7 @@ const Index = () => {
             </div>
             <div>
               <SiAdobe />
-              <SiAdobepremiere />
+              <SiAdobepremierepro />
               <h4>Videobewerking</h4>
               <p>
                 Premiere pro, Audacity,{" "}
