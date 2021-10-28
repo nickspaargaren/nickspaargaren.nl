@@ -61,4 +61,11 @@ public
 # Mac files
 .DS_Store
 
-dist
+# Yarn
+yarn-error.log
+.pnp/
+.pnp.js
+# Yarn Integrity file
+.yarn-integrity
+
+backend/dist/

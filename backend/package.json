@@ -7,7 +7,7 @@
   "author": "Nick Spaargaren",
   "license": "UNLICENSED",
   "scripts": {
-    "start": "sanity start",
+    "start": "sanity start --host=0.0.0.0",
     "test": "sanity check",
     "build": "sanity build"
   },
@@ -15,17 +15,17 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/base": "^2.21.4",
+    "@sanity/base": "^2.21.7",
+    "@sanity/cli": "^2.21.7",
     "@sanity/components": "^2.14.0",
-    "@sanity/core": "^2.21.4",
-    "@sanity/default-layout": "^2.21.4",
-    "@sanity/default-login": "^2.21.4",
-    "@sanity/desk-tool": "^2.21.4",
-    "@sanity/vision": "^2.21.4",
+    "@sanity/core": "^2.21.7",
+    "@sanity/default-layout": "^2.21.7",
+    "@sanity/default-login": "^2.21.7",
+    "@sanity/desk-tool": "^2.21.7",
+    "@sanity/vision": "^2.21.7",
     "prop-types": "^15.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "styled-components": "^5.2.0"
-  },
-  "devDependencies": {}
+    "styled-components": "^5.3.3"
+  }
 }
