@@ -1,6 +1,6 @@
-FROM node:14.15
+FROM node:14.18-alpine
+RUN apk add g++ make python
 WORKDIR /app
-COPY ["package.json", "yarn.lock", "gatsby-config.js", "./"]
+COPY ./ /app
 RUN yarn install
-COPY . .
 CMD ["yarn", "develop"]
