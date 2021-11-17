@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { GoStar, GoRepoForked } from "react-icons/go";
 import styled from "styled-components";
-import axios from "axios";
+import useGithub from "../../hooks/useGithub";
 
 const StyledGithub = styled.div`
   display: inline-block;
@@ -42,31 +42,7 @@ const StyledGithub = styled.div`
 `;
 
 const Github = () => {
-  const [github, setGithub] = useState<{
-    data: any;
-    loading: boolean;
-    error: string | null;
-  }>({
-    data: null,
-    loading: true,
-    error: null,
-  });
-
-  useEffect(() => {
-    const LoadData = async () => {
-      try {
-        const res = await axios.get(
-          "https://api.github.com/repos/nickspaargaren/no-google"
-        );
-        const { data } = res;
-        setGithub({ data: data, loading: false, error: null });
-      } catch (err) {
-        setGithub({ data: null, loading: false, error: err.message });
-      }
-    };
-
-    LoadData();
-  }, []);
+  const github = useGithub();
 
   if (github.error) {
     return github.error;
