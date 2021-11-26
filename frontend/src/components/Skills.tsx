@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { useState } from "react";
-import { Spring } from "react-spring/renderprops";
+import { motion } from "framer-motion";
 import {
   MdCheckBox,
   MdCheckBoxOutlineBlank,
@@ -110,13 +110,12 @@ const Skills = () => {
                   <span>{item.percentage + "%"}</span>
                 </div>
                 <div className="percentage">
-                  <Spring
-                    config={{ tension: 280, friction: 60, delay: 300 }}
-                    from={{ width: "0%" }}
-                    to={{ width: item.percentage + "%" }}
-                  >
-                    {(style) => <div style={style} className="gevuld"></div>}
-                  </Spring>
+                  <motion.div
+                    initial={{ width: "0%" }}
+                    whileInView={{ width: item.percentage + "%" }}
+                    viewport={{ once: true }}
+                    className="gevuld"
+                  ></motion.div>
                 </div>
               </div>
               <div className="opties">

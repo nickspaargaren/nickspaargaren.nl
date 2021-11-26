@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { Trail } from "react-spring/renderprops";
+import { motion } from "framer-motion";
 
 import { SocialData } from "../data/socials/SocialData";
 import { useSiteMetadata } from "../data/hooks/algemeen";
@@ -90,6 +90,19 @@ div[class*="grid"] img {max-width: 100%; height: auto !important;}
 .houder a.blok.dribbble svg path {fill: var(--dribbble-color);}
 `;
 
+const containerAnimation = {
+  show: {
+    transition: {
+      staggerChildren: 0.05,
+    },
+  },
+};
+
+const itemAnimation = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1 },
+};
+
 const Home = () => {
   const { naam, functie } = useSiteMetadata();
 
@@ -126,33 +139,32 @@ const Home = () => {
             <h1 style={{ fontSize: "2em" }}>{naam}</h1>
             <h2>{functie}</h2>
           </div>
-          <div className="houder">
-            <Trail
-              items={SocialData}
-              keys={(social) => social.id}
-              from={{ opacity: 0 }}
-              to={{ opacity: 1 }}
-            >
-              {(social) => (props) =>
-                (
-                  <a
-                    style={props}
-                    key={social.id}
-                    className={`blok ${social.class}`}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    href={social.url}
-                    ref={blokRef}
-                  >
-                    {social.icoon}
-                    <span>
-                      <strong>{social.platform}</strong>
-                      {naam}
-                    </span>
-                  </a>
-                )}
-            </Trail>
-          </div>
+
+          <motion.div
+            variants={containerAnimation}
+            initial="hidden"
+            animate="show"
+          >
+            <div className="houder">
+              {SocialData.map((social) => (
+                <motion.a
+                  variants={itemAnimation}
+                  key={social.id}
+                  className={`blok ${social.class}`}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href={social.url}
+                  ref={blokRef}
+                >
+                  {social.icoon}
+                  <span>
+                    <strong>{social.platform}</strong>
+                    {naam}
+                  </span>
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </div>
     </>
