@@ -8,7 +8,6 @@ import Github from "../../components/github/Github";
 import Stats from "../../components/Stats";
 
 import PortfolioItem from "../../components/PortfolioItem";
-import Marquee from "react-fast-marquee";
 
 import {
   SiAdobe,
@@ -34,6 +33,7 @@ import Skills from "../../components/Skills";
 
 const StyledPortfolioItems = styled.div`
   display: flex;
+  animation: portfolio 40s linear both infinite;
 `;
 
 const Index = () => {
@@ -74,23 +74,21 @@ const Index = () => {
   return (
     <Layout title={`Portfolio | ${naam}`} description={functie} noindex>
       <header>
-        <Marquee gradient={false}>
-          <StyledPortfolioItems>
-            {data.portfolio.nodes.map((item, key) => {
-              return (
-                <PortfolioItem
-                  key={key}
-                  titel={item.titel}
-                  subtitle={item.subtitle}
-                  beschrijving={item.beschrijving}
-                  afbeelding={item.afbeelding}
-                  skillsused={item.skillsused}
-                  samenwerking={item.samenwerking}
-                />
-              );
-            })}
-          </StyledPortfolioItems>
-        </Marquee>
+        <StyledPortfolioItems>
+          {data.portfolio.nodes.map((item, key) => {
+            return (
+              <PortfolioItem
+                key={key}
+                titel={item.titel}
+                subtitle={item.subtitle}
+                beschrijving={item.beschrijving}
+                afbeelding={item.afbeelding}
+                skillsused={item.skillsused}
+                samenwerking={item.samenwerking}
+              />
+            );
+          })}
+        </StyledPortfolioItems>
       </header>
       <section>
         <div className="inhoud">
