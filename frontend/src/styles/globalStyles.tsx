@@ -80,7 +80,10 @@ const GlobalStyle = createGlobalStyle`
   }
 
 
-
+  @keyframes portfolio {
+    from {transform: translateX(0);}
+    to {transform: translateX(-350px);}
+  }
 
 
 .skills {
@@ -132,7 +135,7 @@ const GlobalStyle = createGlobalStyle`
   border-radius: 3px;
   font-size: 13px;
   margin: 0 5px 5px 0;
-  }
+}
 .skills .tags .tag svg {margin: auto 5px auto 0; fill: #35ca88;}
 .skills .tags .tag.reset {cursor: pointer;}
 .skills .tags .tag.reset:hover {background: rgba(255,255,255,.2);}
