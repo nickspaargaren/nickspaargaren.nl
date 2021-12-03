@@ -21,7 +21,9 @@ const useGithub = () => {
         const { data } = res;
         setGithub({ data: data, loading: false, error: null });
       } catch (err) {
-        setGithub({ data: null, loading: false, error: err.message });
+        if (axios.isAxiosError(err)) {
+          setGithub({ data: null, loading: false, error: err.message });
+        }
       }
     };
 
