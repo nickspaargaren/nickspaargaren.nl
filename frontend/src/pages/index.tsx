@@ -63,7 +63,7 @@ div[class*="grid"] img {max-width: 100%; height: auto !important;}
 
 .houder {display: grid; grid-gap: 10px; grid-template-columns: repeat(auto-fit, minmax(158px, 1fr)); max-width: 768px; margin: 0 auto;}
 
-.houder a.blok {transition: .3s all ease; color: inherit; text-decoration: none; white-space: nowrap; font-size: 30px; position: relative; padding: 20px; background: #fff; border-radius: 4px;}
+.houder a.blok {transition: .3s all ease; color: inherit; text-decoration: none; white-space: nowrap; font-size: 30px; position: relative; padding: 20px; background: #fff; border-radius: 4px; box-shadow: 2px 2px 1px 2px rgba(0,0,0,.1);}
 
 .houder a.blok span {display: block; border-radius: 3px; white-space: nowrap; padding: 9px 11px; font-size: 12px; line-height: 1.25em; pointer-events: none; position: relative; margin-top: 10px; transition: .3s all ease; background: #aaa;}
 .houder a.blok span::before {border: solid; border-width: 0px 6px 6px 6px; top: -4px; content: ""; position: absolute; left: 50%; transform: translateX(-50%); transition: .3s all ease; border-color: #aaa transparent;}
