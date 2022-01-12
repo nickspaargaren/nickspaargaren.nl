@@ -22,19 +22,19 @@ const StyledNav = styled.div`
 `;
 
 const Nav = () => {
-  const { naam, functie, email } = useSiteMetadata();
+  const { name, position, email } = useSiteMetadata();
   return (
     <StyledNav>
       <User
-        title={naam}
-        subtitle={functie}
+        title={name}
+        subtitle={position}
         subtitleHover={email}
         image={
           <StaticImage
             src="../../images/nick-spaargaren.jpeg"
             width={37}
             height={37}
-            alt={`${"Profielfoto"} ${naam}`}
+            alt={`${"Profielfoto"} ${name}`}
           />
         }
       />

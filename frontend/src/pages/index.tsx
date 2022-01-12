@@ -35,10 +35,10 @@ body {margin: 0;
 .sitehouder {display: flex; height: 100vh;}
 
 .sitehouder .inhoud {margin: auto; padding: 40px; box-sizing: border-box; max-width: 1200px;}
-.sitehouder .inhoud .titel {margin-bottom: 30px;}
-.sitehouder .inhoud .titel h1 {margin: 0 0 10px;}
-.sitehouder .inhoud .titel h2 {margin: 0 0 10px; font-weight: normal; font-size: 1em;}
-.sitehouder .inhoud .titel h1 + h2 {margin-top: -10px; opacity: .7;}
+.sitehouder .inhoud .title {margin-bottom: 30px;}
+.sitehouder .inhoud .title h1 {margin: 0 0 10px;}
+.sitehouder .inhoud .title h2 {margin: 0 0 10px; font-weight: normal; font-size: 1em;}
+.sitehouder .inhoud .title h1 + h2 {margin-top: -10px; opacity: .7;}
 
 
 p {line-height: 1.5em; margin: 0 0 10px;}
@@ -104,7 +104,7 @@ const itemAnimation = {
 };
 
 const Home = () => {
-  const { naam, functie } = useSiteMetadata();
+  const { name, position } = useSiteMetadata();
 
   const sitehouderRef = useRef<HTMLDivElement>(null);
   const blokRef = useRef<HTMLAnchorElement>(null);
@@ -137,9 +137,9 @@ const Home = () => {
       <GlobalStyle />
       <div className="sitehouder" ref={sitehouderRef}>
         <div className="inhoud" style={{ textAlign: "center", width: "100%" }}>
-          <div className="titel">
-            <h1 style={{ fontSize: "2em" }}>{naam}</h1>
-            <h2>{functie}</h2>
+          <div className="title">
+            <h1 style={{ fontSize: "2em" }}>{name}</h1>
+            <h2>{position}</h2>
           </div>
 
           <motion.div
@@ -158,10 +158,10 @@ const Home = () => {
                   href={social.url}
                   ref={blokRef}
                 >
-                  {social.icoon}
+                  {social.icon}
                   <span>
                     <strong>{social.platform}</strong>
-                    {naam}
+                    {name}
                   </span>
                 </motion.a>
               ))}

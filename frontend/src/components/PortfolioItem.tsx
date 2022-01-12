@@ -8,10 +8,10 @@ const StyledPortfolioItem = styled.div`
   overflow: hidden;
   min-width: 280px;
 
-  .plaatje .gatsby-image-wrapper {
+  .image .gatsby-image-wrapper {
     width: 100%;
   }
-  .beschrijving {
+  .description {
     position: absolute;
     background: linear-gradient(transparent, #1d484f);
     padding: 20px 20px 0;
@@ -24,22 +24,22 @@ const StyledPortfolioItem = styled.div`
     flex-direction: column;
     justify-content: flex-end;
   }
-  .beschrijving h2 {
+  .description h2 {
     font-size: 22px;
     margin: 0;
   }
-  .beschrijving p {
+  .description p {
     font-size: 15px;
     opacity: 0.75;
   }
 
-  .beschrijving svg {
+  .description svg {
     transition: 0.3s all ease;
     margin: 0 auto 30px;
     overflow: hidden;
   }
 
-  .beschrijving ul.tags {
+  .description ul.tags {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -50,57 +50,57 @@ const StyledPortfolioItem = styled.div`
     transition: 0.3s all ease;
   }
 
-  .beschrijving .cm-specialist {
+  .description .cm-specialist {
     opacity: 0;
     margin-bottom: 15px;
     transition: 0.3s all ease;
   }
 
   &:hover {
-    .beschrijving .cm-specialist {
+    .description .cm-specialist {
       opacity: 0.65;
     }
 
-    .beschrijving ul.tags {
+    .description ul.tags {
       height: 47px;
       opacity: 1;
       padding-bottom: 30px;
     }
-    .beschrijving svg {
+    .description svg {
       margin: 0 auto;
       height: 0;
       opacity: 0;
     }
-    .beschrijving ul.tags li {
+    .description ul.tags li {
       top: 0;
       opacity: 1;
     }
   }
-  .beschrijving ul.tags li {
+  .description ul.tags li {
     display: inline-block;
     margin: 10px 5px 0 5px;
     position: relative;
     transition: 0.3s all ease;
   }
 
-  .beschrijving ul.tags li {
+  .description ul.tags li {
     top: 30px;
     opacity: 0;
   }
-  .beschrijving ul.tags li:nth-child(2) {
+  .description ul.tags li:nth-child(2) {
     transition: 0.4s;
   }
-  .beschrijving ul.tags li:nth-child(3) {
+  .description ul.tags li:nth-child(3) {
     transition: 0.5s;
   }
-  .beschrijving ul.tags li:nth-child(4) {
+  .description ul.tags li:nth-child(4) {
     transition: 0.5s;
   }
-  .beschrijving ul.tags li:nth-child(5) {
+  .description ul.tags li:nth-child(5) {
     transition: 0.6s;
   }
 
-  .beschrijving ul.tags li span {
+  .description ul.tags li span {
     position: absolute;
     bottom: 100%;
     background: #221e25;
@@ -116,7 +116,7 @@ const StyledPortfolioItem = styled.div`
     opacity: 0;
     pointer-events: none;
   }
-  .beschrijving ul.tags li span::before {
+  .description ul.tags li span::before {
     border: solid;
     border-color: #221e25 transparent;
     border-width: 6px 6px 0px 6px;
@@ -127,15 +127,15 @@ const StyledPortfolioItem = styled.div`
     left: 50%;
     transform: translateX(-50%);
   }
-  .beschrijving ul.tags li:hover span {
+  .description ul.tags li:hover span {
     opacity: 1;
     pointer-events: all;
     bottom: 115%;
   }
-  .beschrijving ul.tags .gatsby-image-wrapper {
+  .description ul.tags .gatsby-image-wrapper {
     position: relative;
   }
-  .beschrijving ul.tags .gatsby-image-wrapper::after {
+  .description ul.tags .gatsby-image-wrapper::after {
     content: "";
     position: absolute;
     z-index: 0;
@@ -149,43 +149,43 @@ const StyledPortfolioItem = styled.div`
 `;
 
 interface PortfolioItemProps {
-  titel: string;
+  title: string;
   subtitle: string;
-  beschrijving: string;
+  description: string;
   slug?: string;
-  afbeelding: any; // later bepalen,
+  image: any; // later bepalen,
   skillsused?: any;
-  samenwerking: string;
+  collaboration: string;
 }
 
 const PortfolioItem = ({
-  titel,
+  title,
   subtitle,
-  beschrijving,
+  description,
   slug,
-  afbeelding,
+  image,
   skillsused,
-  samenwerking,
+  collaboration,
 }: PortfolioItemProps) => {
   return (
     <StyledPortfolioItem>
-      <div className="plaatje">
-        {afbeelding && (
-          <GatsbyImage image={afbeelding.asset.gatsbyImageData} alt={titel} />
+      <div className="image">
+        {image && (
+          <GatsbyImage image={image.asset.gatsbyImageData} alt={title} />
         )}
       </div>
-      <div className="beschrijving">
-        <h2>{titel}</h2>
+      <div className="description">
+        <h2>{title}</h2>
         <p>{subtitle}</p>
         <BsChevronUp />
         <ul className="tags">
           {skillsused.map((skill, key) => (
             <li key={key}>
               <GatsbyImage
-                image={skill.afbeelding.asset.gatsbyImageData}
-                alt={skill.titel}
+                image={skill.image.asset.gatsbyImageData}
+                alt={skill.title}
               />
-              <span>{skill.titel}</span>
+              <span>{skill.title}</span>
             </li>
           ))}
         </ul>

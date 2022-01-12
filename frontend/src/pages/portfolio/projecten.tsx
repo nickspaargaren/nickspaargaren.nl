@@ -10,17 +10,17 @@ const Projecten = () => {
   const data = useStaticQuery(graphql`
     query {
       portfolio: allSanityPortfolio(
-        sort: { fields: samenwerking, order: ASC }
+        sort: { fields: collaboration, order: ASC }
       ) {
         nodes {
-          titel
+          title
           website
           tags
           id
           github
-          beschrijving
-          samenwerking
-          afbeelding {
+          description
+          collaboration
+          image {
             asset {
               gatsbyImageData
             }
@@ -29,8 +29,8 @@ const Projecten = () => {
             current
           }
           skillsused {
-            titel
-            afbeelding {
+            title
+            image {
               asset {
                 gatsbyImageData(width: 37)
               }
@@ -60,10 +60,10 @@ const Projecten = () => {
         {data.portfolio.nodes.map((item, key) => (
           <PortfolioItem
             key={key}
-            titel={item.titel}
-            beschrijving={item.beschrijving}
+            title={item.title}
+            description={item.description}
             slug={item.slug.current}
-            afbeelding={item.afbeelding}
+            image={item.image}
             skillsused={item.skillsused}
           />
         ))}

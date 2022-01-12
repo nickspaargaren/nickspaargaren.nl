@@ -38,7 +38,7 @@ const Footer = () => {
               key={key}
               title={social.platform}
               subtitle="Account"
-              icoon={social.icoon}
+              icon={social.icon}
               url={social.url}
               external
             />

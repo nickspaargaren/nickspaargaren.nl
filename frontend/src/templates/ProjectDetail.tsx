@@ -12,7 +12,7 @@ const PortfolioGrid = styled.div`
   grid-gap: 10px;
   grid-template-columns: 1fr 1fr;
 
-  .afbeelding > div {
+  .image > div {
     height: 100% !important;
     object-fit: cover;
     width: 100% !important;
@@ -23,8 +23,8 @@ const ProjectDetail = ({ data }) => {
   return (
     <>
       <Layout
-        title={`Projecten | ${data.pagina.titel}`}
-        description={data.pagina.beschrijving}
+        title={`Projecten | ${data.pagina.title}`}
+        description={data.pagina.description}
         noindex
       >
         <div className="inhoud">
@@ -42,22 +42,22 @@ const ProjectDetail = ({ data }) => {
               <li>
                 <FaCaretRight />
               </li>
-              <li>{data.pagina.titel}</li>
+              <li>{data.pagina.title}</li>
             </ul>
           </small>
         </div>
         <div className="inhoud">
           <div className="grid-2x">
             <div>
-              <h1>{data.pagina.titel}</h1>
-              <p>{data.pagina.beschrijving}</p>
+              <h1>{data.pagina.title}</h1>
+              <p>{data.pagina.description}</p>
 
               <div className="links">
                 {data.pagina.website && (
                   <Button
                     title="Website"
                     subtitle="Bekijken"
-                    icoon={<FaAngleDoubleRight />}
+                    icon={<FaAngleDoubleRight />}
                     url={data.pagina.website}
                     external
                   />
@@ -66,7 +66,7 @@ const ProjectDetail = ({ data }) => {
                   <Button
                     title="Source"
                     subtitle="Bekijken"
-                    icoon={<FaCode />}
+                    icon={<FaCode />}
                     url={data.pagina.github}
                     external
                   />
@@ -74,19 +74,16 @@ const ProjectDetail = ({ data }) => {
               </div>
             </div>
             <div>
-              <div className="afbeelding groot">
+              <div className="image groot">
                 <GatsbyImage
-                  image={data.pagina.afbeelding.asset.gatsbyImageData}
+                  image={data.pagina.image.asset.gatsbyImageData}
                   alt=""
                 />
               </div>
               <PortfolioGrid>
-                {data.pagina.afbeeldingen.map((afbeelding, key) => (
-                  <div key={key} className="afbeelding">
-                    <GatsbyImage
-                      image={afbeelding.asset.gatsbyImageData}
-                      alt=""
-                    />
+                {data.pagina.image.map((image, key) => (
+                  <div key={key} className="image">
+                    <GatsbyImage image={image.asset.gatsbyImageData} alt="" />
                   </div>
                 ))}
               </PortfolioGrid>
@@ -101,24 +98,24 @@ const ProjectDetail = ({ data }) => {
 export const query = graphql`
   query ($slug: String!) {
     pagina: sanityPortfolio(slug: { current: { eq: $slug } }) {
-      titel
+      title
       website
       tags
       github
-      beschrijving
-      samenwerking
-      afbeelding {
+      description
+      collaboration
+      image {
         asset {
           gatsbyImageData
         }
       }
-      afbeeldingen {
+      image {
         asset {
           gatsbyImageData
         }
       }
       skillsused {
-        titel
+        title
       }
     }
   }

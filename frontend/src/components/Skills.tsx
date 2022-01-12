@@ -18,9 +18,9 @@ const Skills = () => {
       skills: allSanitySkills(sort: { fields: percentage, order: DESC }) {
         nodes {
           id
-          titel
+          title
           percentage
-          afbeelding {
+          image {
             asset {
               gatsbyImageData
             }
@@ -31,31 +31,31 @@ const Skills = () => {
     }
   `);
 
-  const { telefoonnummer } = useSiteMetadata();
+  const { phone } = useSiteMetadata();
 
-  const [favorieten, setFavorieten] = useState([]);
+  const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      localStorage.getItem("favorieten") &&
-        setFavorieten(JSON.parse(localStorage.getItem("favorieten")));
+      localStorage.getItem("favorites") &&
+        setFavorites(JSON.parse(localStorage.getItem("favorites")));
     }
   }, []);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      localStorage.setItem("favorieten", JSON.stringify(favorieten));
+      localStorage.setItem("favorites", JSON.stringify(favorites));
     }
-  }, [favorieten]);
+  }, [favorites]);
 
   const ActieveSkills = () => {
-    if (favorieten.length > 0) {
+    if (favorites.length > 0) {
       return (
         <>
           <hr />
           <h5>Uw selectie</h5>
           <ul className="tags">
-            {favorieten.map((i, key) => {
+            {favorites.map((i, key) => {
               return (
                 <li key={key} className="tag">
                   <MdDone />
@@ -66,18 +66,14 @@ const Skills = () => {
             <li
               className="tag reset"
               onClick={() => {
-                setFavorieten([]);
+                setFavorites([]);
               }}
             >
               <MdClear />
               Alle verwijderen
             </li>
           </ul>
-          <ButtonGroot
-            primary
-            title={telefoonnummer}
-            url={`tel:${telefoonnummer}`}
-          />
+          <ButtonGroot primary title={phone} url={`tel:${phone}`} />
         </>
       );
     } else {
@@ -88,7 +84,7 @@ const Skills = () => {
   return (
     <div className="skills">
       <p style={{ marginBottom: "0px", opacity: ".75" }}>Skills</p>
-      <div className="skillTitel">
+      <div className="skillTitle">
         <span>Waar wilt u het graag over hebben?</span>
       </div>
       {data.skills.nodes
@@ -96,17 +92,17 @@ const Skills = () => {
         .map((item, key) => {
           return (
             <div key={key} className="skill">
-              {item.afbeelding ? (
+              {item.image ? (
                 <GatsbyImage
-                  image={item.afbeelding.asset.gatsbyImageData}
-                  alt={item.titel}
+                  image={item.image.asset.gatsbyImageData}
+                  alt={item.title}
                 />
               ) : (
                 <img src="https://placehold.it/35x35" alt="placeholder" />
               )}
               <div>
-                <div className="titel">
-                  {item.titel}
+                <div className="title">
+                  {item.title}
                   <span>{item.percentage + "%"}</span>
                 </div>
                 <div className="percentage">
@@ -120,29 +116,29 @@ const Skills = () => {
               </div>
               <div className="opties">
                 <div
-                  className="favoriet"
+                  className="favorite"
                   onClick={() => {
-                    const check = favorieten.find((i) => i["id"] === item.id);
+                    const check = favorites.find((i) => i["id"] === item.id);
 
                     if (!check) {
-                      setFavorieten([
-                        ...favorieten,
-                        { id: item.id, skill: item.titel },
+                      setFavorites([
+                        ...favorites,
+                        { id: item.id, skill: item.title },
                       ]);
                     } else {
-                      const nieuwfavorieten = favorieten.filter(
+                      const nieuwfavorites = favorites.filter(
                         (i) => i["id"] !== item.id
                       );
-                      setFavorieten(nieuwfavorieten);
+                      setFavorites(nieuwfavorites);
                     }
                   }}
                 >
-                  {favorieten.find((i) => i["id"] === item.id) ? (
-                    <div className={`icoon actief`}>
+                  {favorites.find((i) => i["id"] === item.id) ? (
+                    <div className={`icon actief`}>
                       <MdCheckBox />
                     </div>
                   ) : (
-                    <div className={`icoon`}>
+                    <div className={`icon`}>
                       <MdCheckBoxOutlineBlank />
                     </div>
                   )}

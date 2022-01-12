@@ -40,25 +40,25 @@ const Index = () => {
   const data = useStaticQuery(graphql`
     {
       portfolio: allSanityPortfolio(
-        sort: { fields: samenwerking, order: ASC }
+        sort: { fields: collaboration, order: ASC }
       ) {
         nodes {
-          titel
+          title
           subtitle
           website
           tags
           id
           github
-          beschrijving
-          samenwerking
-          afbeelding {
+          description
+          collaboration
+          image {
             asset {
               gatsbyImageData(width: 255, height: 450)
             }
           }
           skillsused {
-            titel
-            afbeelding {
+            title
+            image {
               asset {
                 gatsbyImageData(width: 37)
               }
@@ -68,31 +68,31 @@ const Index = () => {
       }
       stats: allSanityStats {
         nodes {
-          titel
-          subtitel
+          title
+          subtitle
           amount
-          icoon
+          icon
         }
       }
     }
   `);
 
-  const { naam, functie } = useSiteMetadata();
+  const { name, position } = useSiteMetadata();
 
   return (
-    <Layout title={`Portfolio | ${naam}`} description={functie} noindex>
+    <Layout title={`Portfolio | ${name}`} description={position} noindex>
       <header>
         <StyledPortfolioItems>
           {data.portfolio.nodes.map((item, key) => {
             return (
               <PortfolioItem
                 key={key}
-                titel={item.titel}
+                title={item.title}
                 subtitle={item.subtitle}
-                beschrijving={item.beschrijving}
-                afbeelding={item.afbeelding}
+                description={item.description}
+                image={item.image}
                 skillsused={item.skillsused}
-                samenwerking={item.samenwerking}
+                collaboration={item.collaboration}
               />
             );
           })}
@@ -104,10 +104,10 @@ const Index = () => {
             {data.stats.nodes.map((item, key) => (
               <Stats
                 key={key}
-                title={item.titel}
-                subtitle={item.subtitel}
+                title={item.title}
+                subtitle={item.subtitle}
                 amount={item.amount}
-                icoon={item.icoon}
+                icon={item.icon}
               />
             ))}
           </div>

@@ -5,9 +5,9 @@ export const useSiteMetadata = () => {
       query SiteMetaData {
         site {
           siteMetadata {
-            naam
-            functie
-            telefoonnummer
+            name
+            position
+            phone
             email
           }
         }

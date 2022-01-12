@@ -4,8 +4,8 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'titel',
-      title: 'Titel',
+      name: 'title',
+      title: 'Title',
       type: 'string',
     },
     {
@@ -16,8 +16,8 @@ export default {
       validation: Rule => Rule.required().min(0).max(100)
     },
     {
-      name: 'afbeelding',
-      title: 'Afbeelding',
+      name: 'image',
+      title: 'Image',
       type: 'image',
       options: {
         hotspot: true

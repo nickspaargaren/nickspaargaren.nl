@@ -98,7 +98,7 @@ const GlobalStyle = createGlobalStyle`
 }
 .skills .skill {display: grid; grid-gap: 10px; grid-template-columns: 35px 1fr 29px; margin: 0 0 10px; user-select: none;}
 .skills .skill > div {margin: auto 0;}
-.skills .skill .titel {
+.skills .skill .title {
   display: flex;
   color: rgba(255,255,255,.6);
   margin-bottom: 4px;
@@ -106,7 +106,7 @@ const GlobalStyle = createGlobalStyle`
   text-transform: uppercase;
   font-weight: bold;
 }
-.skills .skill .titel span {margin-left: auto;}
+.skills .skill .title span {margin-left: auto;}
 
 .skills .skill .percentage {
   height: 6px;
@@ -122,10 +122,10 @@ const GlobalStyle = createGlobalStyle`
 
 
 .skills .skill .opties {}
-.skills .skill .opties .icoon {cursor: pointer; background: #221e25; line-height: 0; margin: auto; padding: 6px; border-radius: 5px;}
-.skills .skill .opties .icoon:hover {background: rgba(255,255,255,.2);}
-.skills .skill .opties .icoon.actief {background: rgba(255,255,255,.2); color: #35ca88;}
-.skills .skill .opties .icoon svg {margin: 0;}
+.skills .skill .opties .icon {cursor: pointer; background: #221e25; line-height: 0; margin: auto; padding: 6px; border-radius: 5px;}
+.skills .skill .opties .icon:hover {background: rgba(255,255,255,.2);}
+.skills .skill .opties .icon.actief {background: rgba(255,255,255,.2); color: #35ca88;}
+.skills .skill .opties .icon svg {margin: 0;}
 
 .skills .tags {margin: 0 0 15px; padding: 0;}
 .skills .tags .tag {
@@ -141,10 +141,10 @@ const GlobalStyle = createGlobalStyle`
 .skills .tags .tag.reset:hover {background: rgba(255,255,255,.2);}
 .skills .tags .tag.reset svg {fill: #f13f30;}
 
-.skills .skillTitel {font-size: 30px; font-family: "GilroyRegular"; letter-spacing: .025em; margin: 0 0 20px; position: relative; color: #fff; font-weight: bold;}
-.skills .skillTitel::before {content: ""; background: #fff; height: 2px; left: 0; right: 13px; position: absolute; bottom: 15px; z-index: 0;}
-.skills .skillTitel::after {content: ""; background: #fff; width: 2px; bottom: 0; height: 15px; position: absolute; right: 13px;}
-.skills .skillTitel span {background: #18151a; z-index: 1; position: relative; padding-right: 20px; margin-right: 20px;}
+.skills .skillTitle {font-size: 30px; font-family: "GilroyRegular"; letter-spacing: .025em; margin: 0 0 20px; position: relative; color: #fff; font-weight: bold;}
+.skills .skillTitle::before {content: ""; background: #fff; height: 2px; left: 0; right: 13px; position: absolute; bottom: 15px; z-index: 0;}
+.skills .skillTitle::after {content: ""; background: #fff; width: 2px; bottom: 0; height: 15px; position: absolute; right: 13px;}
+.skills .skillTitle span {background: #18151a; z-index: 1; position: relative; padding-right: 20px; margin-right: 20px;}
 
 
 

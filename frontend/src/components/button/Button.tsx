@@ -24,10 +24,10 @@ const StyledButton = styled.a`
   strong {
     display: block;
   }
-  .icoon {
+  .icon {
     margin: auto 2px auto 0;
   }
-  .icoon svg {
+  .icon svg {
     margin: 0;
   }
   span {
@@ -48,17 +48,17 @@ const StyledButton = styled.a`
 interface ButtonProps {
   title: string;
   subtitle: string;
-  icoon: any;
+  icon: any;
   url: string;
   external?: boolean;
 }
 
-const Button = ({ title, subtitle, icoon, url, external }: ButtonProps) => {
+const Button = ({ title, subtitle, icon, url, external }: ButtonProps) => {
   return (
     <>
       {external ? (
         <StyledButton href={url} rel="noopener noreferrer" target="_blank">
-          <div className="icoon">{icoon}</div>
+          <div className="icon">{icon}</div>
           <span>
             <strong>{title}</strong>
             {subtitle}
@@ -66,7 +66,7 @@ const Button = ({ title, subtitle, icoon, url, external }: ButtonProps) => {
         </StyledButton>
       ) : (
         <StyledButton as={Link} to={url} className="button">
-          <div className="icoon">{icoon}</div>
+          <div className="icon">{icon}</div>
           <span>
             <strong>{title}</strong>
             {subtitle}

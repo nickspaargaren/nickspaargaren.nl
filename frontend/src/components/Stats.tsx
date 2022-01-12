@@ -5,7 +5,7 @@ interface StatsProps {
   title: string;
   subtitle: string;
   amount: number;
-  icoon: string;
+  icon: string;
 }
 
 const StyledStats = styled.div`
@@ -42,12 +42,12 @@ const StyledStats = styled.div`
   }
 `;
 
-const Stats = ({ title, subtitle, amount, icoon }: StatsProps) => {
+const Stats = ({ title, subtitle, amount, icon }: StatsProps) => {
   return (
     <StyledStats>
       <div className="amount">
         {amount}
-        <div className="plus">{icoon}</div>
+        <div className="plus">{icon}</div>
       </div>
       <div className="content">
         <div>{title}</div>
