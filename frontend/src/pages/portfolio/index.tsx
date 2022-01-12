@@ -66,6 +66,14 @@ const Index = () => {
           }
         }
       }
+      stats: allSanityStats {
+        nodes {
+          titel
+          subtitel
+          amount
+          icoon
+        }
+      }
     }
   `);
 
@@ -93,20 +101,15 @@ const Index = () => {
       <section>
         <div className="inhoud">
           <div className="grid-4x">
-            <Stats
-              title="Websites"
-              subtitle="Front-end"
-              amount={100}
-              icoon="~"
-            />
-            <Stats
-              title="Webwinkels"
-              subtitle="Front-end"
-              amount={40}
-              icoon="~"
-            />
-            <Stats title="Designs" subtitle="Gemaakt" amount={50} icoon="~" />
-            <Stats title="Jaar" subtitle="Ervaring" amount={10} icoon="+" />
+            {data.stats.nodes.map((item, key) => (
+              <Stats
+                key={key}
+                title={item.titel}
+                subtitle={item.subtitel}
+                amount={item.amount}
+                icoon={item.icoon}
+              />
+            ))}
           </div>
         </div>
       </section>
