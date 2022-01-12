@@ -80,13 +80,6 @@ const ProjectDetail = ({ data }) => {
                   alt=""
                 />
               </div>
-              <PortfolioGrid>
-                {data.pagina.image.map((image, key) => (
-                  <div key={key} className="image">
-                    <GatsbyImage image={image.asset.gatsbyImageData} alt="" />
-                  </div>
-                ))}
-              </PortfolioGrid>
             </div>
           </div>
         </div>
@@ -104,11 +97,6 @@ export const query = graphql`
       github
       description
       collaboration
-      image {
-        asset {
-          gatsbyImageData
-        }
-      }
       image {
         asset {
           gatsbyImageData
