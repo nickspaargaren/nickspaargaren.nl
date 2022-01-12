@@ -8,10 +8,10 @@ import Youtube from "../../components/Youtube";
 import { useSiteMetadata } from "../../data/hooks/algemeen";
 
 const Drone = () => {
-  const { naam } = useSiteMetadata();
+  const { name } = useSiteMetadata();
 
   return (
-    <Layout title={`Drone videos | ${naam}`} description="Drone videos" noindex>
+    <Layout title={`Drone videos | ${name}`} description="Drone videos" noindex>
       <div className="inhoud">
         <small>
           <ul className="bcrumbs">

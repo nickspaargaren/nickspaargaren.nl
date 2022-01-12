@@ -4,13 +4,13 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'titel',
-      title: 'Titel',
+      name: 'title',
+      title: 'Title',
       type: 'string',
     },
     {
-      name: 'subtitel',
-      title: 'Subtitel',
+      name: 'subtitle',
+      title: 'Subtitle',
       type: 'string',
     },
     {
@@ -19,8 +19,8 @@ export default {
       type: 'number',
     },
     {
-      name: 'icoon',
-      title: 'Icoon',
+      name: 'icon',
+      title: 'Icon',
       type: 'string',
     },
   ]

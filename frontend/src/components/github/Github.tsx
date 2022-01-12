@@ -12,7 +12,7 @@ const StyledGithub = styled.div`
   border-radius: 6px;
   text-align: left;
 
-  .titel {
+  .title {
     font-weight: 600;
     line-height: 1.25em;
   }
@@ -54,7 +54,7 @@ const Github = () => {
 
   return (
     <StyledGithub>
-      <div className="titel">{github.data.name}</div>
+      <div className="title">{github.data.name}</div>
       <p>{github.data.description}</p>
       <p>
         <a

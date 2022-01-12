@@ -20,10 +20,10 @@ const StyledButton = styled.a`
     color: #fff;
   }
 
-  .icoon {
+  .icon {
     margin: auto 2px auto 0;
   }
-  .icoon svg {
+  .icon svg {
     margin: 0;
   }
 `;
@@ -37,23 +37,23 @@ const StyledPrimaryButton = styled(StyledButton)`
 
 interface ButtonProps {
   title: string;
-  icoon?: any;
+  icon?: any;
   url: string;
   primary?: boolean;
 }
 
-const ButtonGroot = ({ title, icoon, url, primary }: ButtonProps) => {
+const ButtonGroot = ({ title, icon, url, primary }: ButtonProps) => {
   if (primary) {
     return (
       <StyledPrimaryButton href={url}>
-        <div className="icoon">{icoon}</div>
+        <div className="icon">{icon}</div>
         <span>{title}</span>
       </StyledPrimaryButton>
     );
   } else {
     return (
       <StyledButton href={url}>
-        <div className="icoon">{icoon}</div>
+        <div className="icon">{icon}</div>
         <span>{title}</span>
       </StyledButton>
     );

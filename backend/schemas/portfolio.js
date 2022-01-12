@@ -4,8 +4,8 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'titel',
-      title: 'Titel',
+      name: 'title',
+      title: 'Title',
       type: 'string',
       validation: Rule => [
         Rule.required()
@@ -24,7 +24,7 @@ export default {
       title: 'Slug',
       type: 'slug',
       options: {
-        source: 'titel',
+        source: 'title',
         slugify: input => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200)
       },
       validation: Rule => [
@@ -32,8 +32,8 @@ export default {
       ]
     },
     {
-      name: 'beschrijving',
-      title: 'Beschrijving',
+      name: 'description',
+      title: 'Description',
       type: 'text',
     },
     {
@@ -64,8 +64,8 @@ export default {
       }),
     },
     {
-      name: 'afbeelding',
-      title: 'Afbeelding',
+      name: 'image',
+      title: 'Image',
       type: 'image',
       options: {
         hotspot: true
@@ -75,8 +75,8 @@ export default {
       ]
     },
     {
-      name: 'afbeeldingen',
-      title: 'Extra afbeeldingen',
+      name: 'image',
+      title: 'Extra image',
       type: 'array',
       of: [{type: 'image'}]
     },
@@ -87,14 +87,14 @@ export default {
       of: [{type: 'string'}],
     },
     {
-      name: 'samenwerking',
-      title: 'In samenwerking met CM Specialist',
+      name: 'collaboration',
+      title: 'In collaboration met CM Specialist',
       type: 'boolean'
     }
   ],
   preview: {
     select: {
-      title: 'titel',
+      title: 'title',
       subtitle: 'website'
     }
   }
