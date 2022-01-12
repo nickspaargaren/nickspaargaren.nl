@@ -75,12 +75,6 @@ export default {
       ]
     },
     {
-      name: 'image',
-      title: 'Extra image',
-      type: 'array',
-      of: [{type: 'image'}]
-    },
-    {
       name: 'tags',
       title: 'Tags',
       type: 'array',
