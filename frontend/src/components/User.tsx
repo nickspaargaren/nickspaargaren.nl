@@ -31,21 +31,19 @@ interface UserProps {
   image?: object;
 }
 
-const User = ({ title, subtitle, subtitleHover, image }: UserProps) => {
-  return (
-    <StyleUser>
-      {image}
-      <div>
-        <strong>{title}</strong>
-        <div className="switch">
-          <div className="klein">{subtitle}</div>
-          <div className="klein">
-            <a href={`mailto:${subtitleHover}`}>{subtitleHover}</a>
-          </div>
+const User = ({ title, subtitle, subtitleHover, image }: UserProps) => (
+  <StyleUser>
+    {image}
+    <div>
+      <strong>{title}</strong>
+      <div className="switch">
+        <div className="klein">{subtitle}</div>
+        <div className="klein">
+          <a href={`mailto:${subtitleHover}`}>{subtitleHover}</a>
         </div>
       </div>
-    </StyleUser>
-  );
-};
+    </div>
+  </StyleUser>
+);
 
 export default User;

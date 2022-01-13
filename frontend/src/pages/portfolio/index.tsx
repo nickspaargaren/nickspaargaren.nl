@@ -83,19 +83,17 @@ const Index = () => {
     <Layout title={`Portfolio | ${name}`} description={position} noindex>
       <header>
         <StyledPortfolioItems>
-          {data.portfolio.nodes.map((item, key) => {
-            return (
-              <PortfolioItem
-                key={key}
-                title={item.title}
-                subtitle={item.subtitle}
-                description={item.description}
-                image={item.image}
-                skillsused={item.skillsused}
-                collaboration={item.collaboration}
-              />
-            );
-          })}
+          {data.portfolio.nodes.map((item, key) => (
+            <PortfolioItem
+              key={key}
+              title={item.title}
+              subtitle={item.subtitle}
+              description={item.description}
+              image={item.image}
+              skillsused={item.skillsused}
+              collaboration={item.collaboration}
+            />
+          ))}
         </StyledPortfolioItems>
       </header>
       <section>

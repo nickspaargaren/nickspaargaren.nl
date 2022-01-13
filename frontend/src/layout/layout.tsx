@@ -11,22 +11,20 @@ interface LayoutProps {
   noindex?: boolean;
 }
 
-const Layout = ({ children, title, description, noindex }: LayoutProps) => {
-  return (
-    <>
-      <GlobalStyle />
-      <Nav />
-      <Helmet>
-        <html lang="nl" />
-        <meta charSet="utf-8" />
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        {noindex && <meta name="robots" content="noindex" />}
-      </Helmet>
-      <main>{children}</main>
-      <Footer />
-    </>
-  );
-};
+const Layout = ({ children, title, description, noindex }: LayoutProps) => (
+  <>
+    <GlobalStyle />
+    <Nav />
+    <Helmet>
+      <html lang="nl" />
+      <meta charSet="utf-8" />
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      {noindex && <meta name="robots" content="noindex" />}
+    </Helmet>
+    <main>{children}</main>
+    <Footer />
+  </>
+);
 
 export default Layout;

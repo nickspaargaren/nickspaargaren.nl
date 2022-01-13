@@ -10,7 +10,6 @@ import {
   MdDone,
 } from "react-icons/md";
 import { useSiteMetadata } from "../data/hooks/algemeen";
-import ButtonGroot from "./button/ButtonGroot";
 
 const Skills = () => {
   const data = useStaticQuery(graphql`
@@ -55,14 +54,12 @@ const Skills = () => {
           <hr />
           <h5>Uw selectie</h5>
           <ul className="tags">
-            {favorites.map((i, key) => {
-              return (
-                <li key={key} className="tag">
-                  <MdDone />
-                  {i.skill}
-                </li>
-              );
-            })}
+            {favorites.map(({ skill }, key) => (
+              <li key={key} className="tag">
+                <MdDone />
+                {skill}
+              </li>
+            ))}
             <li
               className="tag reset"
               onClick={() => {
@@ -73,7 +70,6 @@ const Skills = () => {
               Alle verwijderen
             </li>
           </ul>
-          <ButtonGroot primary title={phone} url={`tel:${phone}`} />
         </>
       );
     } else {
@@ -89,64 +85,62 @@ const Skills = () => {
       </div>
       {data.skills.nodes
         .filter((item) => !item.exclude)
-        .map((item, key) => {
-          return (
-            <div key={key} className="skill">
-              {item.image ? (
-                <GatsbyImage
-                  image={item.image.asset.gatsbyImageData}
-                  alt={item.title}
-                />
-              ) : (
-                <img src="https://placehold.it/35x35" alt="placeholder" />
-              )}
-              <div>
-                <div className="title">
-                  {item.title}
-                  <span>{item.percentage + "%"}</span>
-                </div>
-                <div className="percentage">
-                  <motion.div
-                    initial={{ width: "0%" }}
-                    whileInView={{ width: item.percentage + "%" }}
-                    viewport={{ once: true }}
-                    className="gevuld"
-                  ></motion.div>
-                </div>
+        .map((item, key) => (
+          <div key={key} className="skill">
+            {item.image ? (
+              <GatsbyImage
+                image={item.image.asset.gatsbyImageData}
+                alt={item.title}
+              />
+            ) : (
+              <img src="https://placehold.it/35x35" alt="placeholder" />
+            )}
+            <div>
+              <div className="title">
+                {item.title}
+                <span>{item.percentage + "%"}</span>
               </div>
-              <div className="opties">
-                <div
-                  className="favorite"
-                  onClick={() => {
-                    const check = favorites.find((i) => i["id"] === item.id);
-
-                    if (!check) {
-                      setFavorites([
-                        ...favorites,
-                        { id: item.id, skill: item.title },
-                      ]);
-                    } else {
-                      const nieuwfavorites = favorites.filter(
-                        (i) => i["id"] !== item.id
-                      );
-                      setFavorites(nieuwfavorites);
-                    }
-                  }}
-                >
-                  {favorites.find((i) => i["id"] === item.id) ? (
-                    <div className={`icon actief`}>
-                      <MdCheckBox />
-                    </div>
-                  ) : (
-                    <div className={`icon`}>
-                      <MdCheckBoxOutlineBlank />
-                    </div>
-                  )}
-                </div>
+              <div className="percentage">
+                <motion.div
+                  initial={{ width: "0%" }}
+                  whileInView={{ width: item.percentage + "%" }}
+                  viewport={{ once: true }}
+                  className="gevuld"
+                ></motion.div>
               </div>
             </div>
-          );
-        })}
+            <div className="opties">
+              <div
+                className="favorite"
+                onClick={() => {
+                  const check = favorites.find((i) => i["id"] === item.id);
+
+                  if (!check) {
+                    setFavorites([
+                      ...favorites,
+                      { id: item.id, skill: item.title },
+                    ]);
+                  } else {
+                    const nieuwfavorites = favorites.filter(
+                      (i) => i["id"] !== item.id
+                    );
+                    setFavorites(nieuwfavorites);
+                  }
+                }}
+              >
+                {favorites.find((i) => i["id"] === item.id) ? (
+                  <div className={`icon actief`}>
+                    <MdCheckBox />
+                  </div>
+                ) : (
+                  <div className={`icon`}>
+                    <MdCheckBoxOutlineBlank />
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
 
       <ActieveSkills />
     </div>
