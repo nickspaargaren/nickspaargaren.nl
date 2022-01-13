@@ -53,28 +53,26 @@ interface ButtonProps {
   external?: boolean;
 }
 
-const Button = ({ title, subtitle, icon, url, external }: ButtonProps) => {
-  return (
-    <>
-      {external ? (
-        <StyledButton href={url} rel="noopener noreferrer" target="_blank">
-          <div className="icon">{icon}</div>
-          <span>
-            <strong>{title}</strong>
-            {subtitle}
-          </span>
-        </StyledButton>
-      ) : (
-        <StyledButton as={Link} to={url} className="button">
-          <div className="icon">{icon}</div>
-          <span>
-            <strong>{title}</strong>
-            {subtitle}
-          </span>
-        </StyledButton>
-      )}
-    </>
-  );
-};
+const Button = ({ title, subtitle, icon, url, external }: ButtonProps) => (
+  <>
+    {external ? (
+      <StyledButton href={url} rel="noopener noreferrer" target="_blank">
+        <div className="icon">{icon}</div>
+        <span>
+          <strong>{title}</strong>
+          {subtitle}
+        </span>
+      </StyledButton>
+    ) : (
+      <StyledButton as={Link} to={url} className="button">
+        <div className="icon">{icon}</div>
+        <span>
+          <strong>{title}</strong>
+          {subtitle}
+        </span>
+      </StyledButton>
+    )}
+  </>
+);
 
 export default Button;

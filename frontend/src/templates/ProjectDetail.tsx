@@ -19,74 +19,72 @@ const PortfolioGrid = styled.div`
   }
 `;
 
-const ProjectDetail = ({ data }) => {
-  return (
-    <>
-      <Layout
-        title={`Projecten | ${data.pagina.title}`}
-        description={data.pagina.description}
-        noindex
-      >
-        <div className="inhoud">
-          <small>
-            <ul className="bcrumbs">
-              <li>
-                <Link to="/portfolio">Home</Link>
-              </li>
-              <li>
-                <FaCaretRight />
-              </li>
-              <li>
-                <Link to="/portfolio/projecten/">Projecten</Link>
-              </li>
-              <li>
-                <FaCaretRight />
-              </li>
-              <li>{data.pagina.title}</li>
-            </ul>
-          </small>
-        </div>
-        <div className="inhoud">
-          <div className="grid-2x">
-            <div>
-              <h1>{data.pagina.title}</h1>
-              <p>{data.pagina.description}</p>
+const ProjectDetail = ({ data }) => (
+  <>
+    <Layout
+      title={`Projecten | ${data.pagina.title}`}
+      description={data.pagina.description}
+      noindex
+    >
+      <div className="inhoud">
+        <small>
+          <ul className="bcrumbs">
+            <li>
+              <Link to="/portfolio">Home</Link>
+            </li>
+            <li>
+              <FaCaretRight />
+            </li>
+            <li>
+              <Link to="/portfolio/projecten/">Projecten</Link>
+            </li>
+            <li>
+              <FaCaretRight />
+            </li>
+            <li>{data.pagina.title}</li>
+          </ul>
+        </small>
+      </div>
+      <div className="inhoud">
+        <div className="grid-2x">
+          <div>
+            <h1>{data.pagina.title}</h1>
+            <p>{data.pagina.description}</p>
 
-              <div className="links">
-                {data.pagina.website && (
-                  <Button
-                    title="Website"
-                    subtitle="Bekijken"
-                    icon={<FaAngleDoubleRight />}
-                    url={data.pagina.website}
-                    external
-                  />
-                )}
-                {data.pagina.github && (
-                  <Button
-                    title="Source"
-                    subtitle="Bekijken"
-                    icon={<FaCode />}
-                    url={data.pagina.github}
-                    external
-                  />
-                )}
-              </div>
-            </div>
-            <div>
-              <div className="image groot">
-                <GatsbyImage
-                  image={data.pagina.image.asset.gatsbyImageData}
-                  alt=""
+            <div className="links">
+              {data.pagina.website && (
+                <Button
+                  title="Website"
+                  subtitle="Bekijken"
+                  icon={<FaAngleDoubleRight />}
+                  url={data.pagina.website}
+                  external
                 />
-              </div>
+              )}
+              {data.pagina.github && (
+                <Button
+                  title="Source"
+                  subtitle="Bekijken"
+                  icon={<FaCode />}
+                  url={data.pagina.github}
+                  external
+                />
+              )}
+            </div>
+          </div>
+          <div>
+            <div className="image groot">
+              <GatsbyImage
+                image={data.pagina.image.asset.gatsbyImageData}
+                alt=""
+              />
             </div>
           </div>
         </div>
-      </Layout>
-    </>
-  );
-};
+      </div>
+    </Layout>
+  </>
+);
 
 export const query = graphql`
   query ($slug: String!) {

@@ -42,19 +42,17 @@ const StyledStats = styled.div`
   }
 `;
 
-const Stats = ({ title, subtitle, amount, icon }: StatsProps) => {
-  return (
-    <StyledStats>
-      <div className="amount">
-        {amount}
-        <div className="plus">{icon}</div>
-      </div>
-      <div className="content">
-        <div>{title}</div>
-        <div className="subtitle">{subtitle}</div>
-      </div>
-    </StyledStats>
-  );
-};
+const Stats = ({ title, subtitle, amount, icon }: StatsProps) => (
+  <StyledStats>
+    <div className="amount">
+      {amount}
+      <div className="plus">{icon}</div>
+    </div>
+    <div className="content">
+      <div>{title}</div>
+      <div className="subtitle">{subtitle}</div>
+    </div>
+  </StyledStats>
+);
 
 export default Stats;

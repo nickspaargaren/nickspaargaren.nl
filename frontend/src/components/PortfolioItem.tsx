@@ -166,32 +166,28 @@ const PortfolioItem = ({
   image,
   skillsused,
   collaboration,
-}: PortfolioItemProps) => {
-  return (
-    <StyledPortfolioItem>
-      <div className="image">
-        {image && (
-          <GatsbyImage image={image.asset.gatsbyImageData} alt={title} />
-        )}
-      </div>
-      <div className="description">
-        <h2>{title}</h2>
-        <p>{subtitle}</p>
-        <BsChevronUp />
-        <ul className="tags">
-          {skillsused.map((skill, key) => (
-            <li key={key}>
-              <GatsbyImage
-                image={skill.image.asset.gatsbyImageData}
-                alt={skill.title}
-              />
-              <span>{skill.title}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </StyledPortfolioItem>
-  );
-};
+}: PortfolioItemProps) => (
+  <StyledPortfolioItem>
+    <div className="image">
+      {image && <GatsbyImage image={image.asset.gatsbyImageData} alt={title} />}
+    </div>
+    <div className="description">
+      <h2>{title}</h2>
+      <p>{subtitle}</p>
+      <BsChevronUp />
+      <ul className="tags">
+        {skillsused.map((skill, key) => (
+          <li key={key}>
+            <GatsbyImage
+              image={skill.image.asset.gatsbyImageData}
+              alt={skill.title}
+            />
+            <span>{skill.title}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </StyledPortfolioItem>
+);
 
 export default PortfolioItem;

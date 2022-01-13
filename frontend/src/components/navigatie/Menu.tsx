@@ -17,6 +17,7 @@ const StyledMenu = styled.div`
     position: relative;
     box-shadow: 0 2px 7px -1px rgb(0 0 0 / 15%) inset;
   }
+
   ul.menu li a {
     display: block;
     position: relative;
@@ -38,7 +39,6 @@ const StyledMenu = styled.div`
   }
 
   @media (max-width: 760px) {
-    margin: 10px 0 0;
     ul.menu {
       justify-content: center;
     }
@@ -81,7 +81,7 @@ const Menu = () => {
             onMouseEnter={hover}
             to="/portfolio/drone/"
           >
-            Drone videos
+            Drone
           </Link>
         </li>
       </ul>
