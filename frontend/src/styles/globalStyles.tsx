@@ -57,6 +57,7 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     font-family: "Articulat CF", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     background-color: #fff;
+    line-height: 1.25em;
   }
 
   .sitehouder {display: flex; height: 100vh;}
@@ -68,7 +69,7 @@ const GlobalStyle = createGlobalStyle`
 
   .hgroup {margin-bottom: 40px;}
 
-  h1, h2, h3, h4 {color: #292a2c; font-family: "Articulat CF";}
+  h1, h2, h3, h4 {color: #292a2c; font-family: "Articulat CF"; line-height: 1.25em;}
   h1 {font-size: 36px; margin: 0 0 10px; font-weight: 700;}
   h2 {font-size: 24px; margin: 0 0 10px; font-weight: 600;}
   h3 {font-size: 20px; margin: 0 0 10px; font-weight: 600;}

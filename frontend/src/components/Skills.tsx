@@ -79,7 +79,7 @@ const Skills = () => {
 
   return (
     <div className="skills">
-      <p style={{ marginBottom: "0px", opacity: ".75" }}>Skills</p>
+      <p style={{ opacity: ".75" }}>Skills</p>
       <div className="skillTitle">
         <span>Waar wilt u het graag over hebben?</span>
       </div>
