@@ -29,7 +29,6 @@ const StyledPortfolioItem = styled.div`
     margin: 0;
   }
   .description p {
-    font-size: 15px;
     opacity: 0.75;
   }
 
@@ -107,7 +106,7 @@ const StyledPortfolioItem = styled.div`
     color: #fff;
     line-height: 1;
     white-space: nowrap;
-    font-size: 12px;
+    font-size: 14px;
     padding: 7px;
     position: absolute;
     transition: 0.3s all ease;

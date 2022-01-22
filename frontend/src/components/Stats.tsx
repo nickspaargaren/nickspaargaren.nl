@@ -14,11 +14,10 @@ const StyledStats = styled.div`
   grid-gap: 10px;
 
   .amount {
-    font-size: 38px;
-    padding-right: 12px;
+    font-size: 44px;
+    padding-right: 9px;
     line-height: 1;
     font-weight: bold;
-    font-family: "GilroyRegular";
     position: relative;
   }
   .plus {
@@ -33,11 +32,18 @@ const StyledStats = styled.div`
     display: flex;
     justify-content: center;
     border-radius: 17px;
-    font-size: 19px;
+    font-size: 18px;
     border: 2px solid #fff;
+    font-family: Arial;
+    font-weight: normal;
   }
+
+  .content h4 {
+    margin: 0;
+  }
+
   .content .subtitle {
-    font-size: 15px;
+    font-size: 16px;
     opacity: 0.75;
   }
 `;
@@ -49,7 +55,7 @@ const Stats = ({ title, subtitle, amount, icon }: StatsProps) => (
       <div className="plus">{icon}</div>
     </div>
     <div className="content">
-      <div>{title}</div>
+      <h4>{title}</h4>
       <div className="subtitle">{subtitle}</div>
     </div>
   </StyledStats>

@@ -13,17 +13,15 @@ const Drone = () => {
   return (
     <Layout title={`Drone videos | ${name}`} description="Drone videos" noindex>
       <div className="inhoud">
-        <small>
-          <ul className="bcrumbs">
-            <li>
-              <Link to="/portfolio">Home</Link>
-            </li>
-            <li>
-              <FaCaretRight />
-            </li>
-            <li>Drone videos</li>
-          </ul>
-        </small>
+        <ul className="bcrumbs">
+          <li>
+            <Link to="/portfolio">Home</Link>
+          </li>
+          <li>
+            <FaCaretRight />
+          </li>
+          <li>Drone videos</li>
+        </ul>
       </div>
 
       <div className="inhoud">

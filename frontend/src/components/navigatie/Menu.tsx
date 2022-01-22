@@ -22,10 +22,10 @@ const StyledMenu = styled.div`
     display: block;
     position: relative;
     margin: 0 5px;
-    padding: 6px 15px 7px;
+    padding: 7px 15px;
     text-decoration: none;
     z-index: 2;
-    font-size: 15px;
+    font-weight: 400;
   }
   .hover {
     top: 4px;
