@@ -27,23 +27,21 @@ const ProjectDetail = ({ data }) => (
       noindex
     >
       <div className="inhoud">
-        <small>
-          <ul className="bcrumbs">
-            <li>
-              <Link to="/portfolio">Home</Link>
-            </li>
-            <li>
-              <FaCaretRight />
-            </li>
-            <li>
-              <Link to="/portfolio/projecten/">Projecten</Link>
-            </li>
-            <li>
-              <FaCaretRight />
-            </li>
-            <li>{data.pagina.title}</li>
-          </ul>
-        </small>
+        <ul className="bcrumbs">
+          <li>
+            <Link to="/portfolio">Home</Link>
+          </li>
+          <li>
+            <FaCaretRight />
+          </li>
+          <li>
+            <Link to="/portfolio/projecten/">Projecten</Link>
+          </li>
+          <li>
+            <FaCaretRight />
+          </li>
+          <li>{data.pagina.title}</li>
+        </ul>
       </div>
       <div className="inhoud">
         <div className="grid-2x">

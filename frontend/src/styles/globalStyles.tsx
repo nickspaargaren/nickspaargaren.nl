@@ -1,23 +1,61 @@
 import { createGlobalStyle } from "styled-components";
-import GilroyRegularWoff2 from "../fonts/Gilroy-Regular.woff2";
+
+import ArticulatCFNormal from "../fonts/ArticulatCF-Normal.woff";
+import ArticulatCFNormal2 from "../fonts/ArticulatCF-Normal.woff2";
+
+import ArticulatCFMedium from "../fonts/ArticulatCF-Medium.woff";
+import ArticulatCFMedium2 from "../fonts/ArticulatCF-Medium.woff2";
+
+import ArticulatCFDemiBold from "../fonts/ArticulatCF-DemiBold.woff";
+import ArticulatCFDemiBold2 from "../fonts/ArticulatCF-DemiBold.woff2";
+
+import ArticulatCFBold from "../fonts/ArticulatCF-Bold.woff";
+import ArticulatCFBold2 from "../fonts/ArticulatCF-Bold.woff2";
 
 const GlobalStyle = createGlobalStyle`
 
   @font-face {
-    font-family: "GilroyRegular";
-    src: url(${GilroyRegularWoff2});
+      font-display: swap;
+      font-family: Articulat CF;
+      font-style: normal;
+      font-weight: 400;
+      src: url(${ArticulatCFNormal2}) format("woff2"), url(${ArticulatCFNormal}) format("woff")
   }
+
+  @font-face {
+      font-display: swap;
+      font-family: Articulat CF;
+      font-style: normal;
+      font-weight: 500;
+      src: url(${ArticulatCFMedium2}) format("woff2"), url(${ArticulatCFMedium}) format("woff")
+  }
+
+  @font-face {
+      font-display: swap;
+      font-family: Articulat CF;
+      font-style: normal;
+      font-weight: 600;
+      src: url(${ArticulatCFDemiBold2}) format("woff2"), url(${ArticulatCFDemiBold}) format("woff")
+  }
+
+  @font-face {
+      font-display: swap;
+      font-family: Articulat CF;
+      font-style: normal;
+      font-weight: 700;
+      src: url(${ArticulatCFBold2}) format("woff2"), url(${ArticulatCFBold}) format("woff")
+  }
+
 
   html,
   body {height: 100%;}
 
-  body {margin: 0;
-    color: #333e52;
+  body {
+    margin: 0;
+    color: #2e3239;
     font-size: 17px;
-    -webkit-text-size-adjust: 100%;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-family: "Articulat CF", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     background-color: #fff;
   }
 
@@ -30,12 +68,12 @@ const GlobalStyle = createGlobalStyle`
 
   .hgroup {margin-bottom: 40px;}
 
-  h1, h2, h3, h4 {color: #292a2c; font-family: "GilroyRegular"; letter-spacing: .025em;}
-  h1 {font-size: 36px; margin: 0 0 10px;}
-  h2 {font-size: 24px; margin: 0 0 10px;}
-  h3 {font-size: 20px; margin: 0 0 10px;}
-  h4 {font-size: 18px; margin: 0 0 5px;}
-  h5 {font-size: 16px; margin: 0 0 10px;}
+  h1, h2, h3, h4 {color: #292a2c; font-family: "Articulat CF";}
+  h1 {font-size: 36px; margin: 0 0 10px; font-weight: 700;}
+  h2 {font-size: 24px; margin: 0 0 10px; font-weight: 600;}
+  h3 {font-size: 20px; margin: 0 0 10px; font-weight: 600;}
+  h4 {font-size: 18px; margin: 0 0 5px; font-weight: 500;}
+  h5 {font-size: 16px; margin: 0 0 10px; font-weight: 400;}
 
   p {line-height: 1.5em; margin: 0 0 10px;}
 
@@ -102,9 +140,10 @@ const GlobalStyle = createGlobalStyle`
   display: flex;
   color: rgba(255,255,255,.6);
   margin-bottom: 4px;
-  font-size: 12px;
+  font-size: 13px;
   text-transform: uppercase;
   font-weight: bold;
+  letter-spacing: .7px;
 }
 .skills .skill .title span {margin-left: auto;}
 
@@ -141,7 +180,7 @@ const GlobalStyle = createGlobalStyle`
 .skills .tags .tag.reset:hover {background: rgba(255,255,255,.2);}
 .skills .tags .tag.reset svg {fill: #f13f30;}
 
-.skills .skillTitle {font-size: 30px; font-family: "GilroyRegular"; letter-spacing: .025em; margin: 0 0 20px; position: relative; color: #fff; font-weight: bold;}
+.skills .skillTitle {font-size: 30px; margin: 0 0 20px; position: relative; color: #fff; font-weight: bold;}
 .skills .skillTitle::before {content: ""; background: #fff; height: 2px; left: 0; right: 13px; position: absolute; bottom: 15px; z-index: 0;}
 .skills .skillTitle::after {content: ""; background: #fff; width: 2px; bottom: 0; height: 15px; position: absolute; right: 13px;}
 .skills .skillTitle span {background: #18151a; z-index: 1; position: relative; padding-right: 20px; margin-right: 20px;}

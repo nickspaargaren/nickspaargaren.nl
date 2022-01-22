@@ -44,17 +44,15 @@ const Projecten = () => {
   return (
     <Layout title={`Portfolio`} description="Portfolio overzicht" noindex>
       <div className="inhoud">
-        <small>
-          <ul className="bcrumbs">
-            <li>
-              <Link to="/portfolio">Home</Link>
-            </li>
-            <li>
-              <FaCaretRight />
-            </li>
-            <li>Projecten</li>
-          </ul>
-        </small>
+        <ul className="bcrumbs">
+          <li>
+            <Link to="/portfolio">Home</Link>
+          </li>
+          <li>
+            <FaCaretRight />
+          </li>
+          <li>Projecten</li>
+        </ul>
       </div>
       <div className="inhoud">
         {data.portfolio.nodes.map((item, key) => (
