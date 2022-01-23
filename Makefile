@@ -5,6 +5,13 @@ info:
 	@echo "  make dev         Start the project containers including dev output."
 	@echo "  make reset     Reset the project containers & volumes."
 build:
+	@echo "Installing local dependencies.."
+	yarn install
+	@echo "Installing local dependencies for frontend.."
+	cd frontend && yarn install
+	@echo "Installing local dependencies for backend.."
+	cd backend && yarn install
+	@echo ""
 	@docker-compose build
 start:
 	@docker-compose up -d
