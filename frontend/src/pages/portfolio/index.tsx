@@ -32,8 +32,7 @@ import styled from "styled-components";
 import Skills from "../../components/Skills";
 
 const StyledPortfolioItems = styled.div`
-  display: flex;
-  animation: portfolio 40s linear both infinite;
+  padding: 30px;
 `;
 
 const Index = () => {
@@ -83,17 +82,21 @@ const Index = () => {
     <Layout title={`Portfolio | ${name}`} description={position} noindex>
       <header>
         <StyledPortfolioItems>
-          {data.portfolio.nodes.map((item, key) => (
-            <PortfolioItem
-              key={key}
-              title={item.title}
-              subtitle={item.subtitle}
-              description={item.description}
-              image={item.image}
-              skillsused={item.skillsused}
-              collaboration={item.collaboration}
-            />
-          ))}
+          <div className="inhoud">
+            <div className="grid-4x">
+              {data.portfolio.nodes.map((item, key) => (
+                <PortfolioItem
+                  key={key}
+                  title={item.title}
+                  subtitle={item.subtitle}
+                  description={item.description}
+                  image={item.image}
+                  skillsused={item.skillsused}
+                  collaboration={item.collaboration}
+                />
+              ))}
+            </div>
+          </div>
         </StyledPortfolioItems>
       </header>
       <section>

@@ -119,12 +119,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
 
-  @keyframes portfolio {
-    from {transform: translateX(0);}
-    to {transform: translateX(-350px);}
-  }
-
-
 .skills {
   background: #18151a;
   color: #fff;
