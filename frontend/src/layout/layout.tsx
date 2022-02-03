@@ -4,12 +4,12 @@ import GlobalStyle from "@src/styles/globalStyles";
 import Nav from "@src/components/navigatie/Nav";
 import Footer from "@src/components/Footer";
 
-interface LayoutProps {
+type LayoutProps = {
   children: any;
   title: string;
   description: string;
   noindex?: boolean;
-}
+};
 
 const Layout = ({ children, title, description, noindex }: LayoutProps) => (
   <>

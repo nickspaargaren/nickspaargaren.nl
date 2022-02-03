@@ -45,13 +45,13 @@ const StyledButton = styled.a`
   }
 `;
 
-interface ButtonProps {
+type ButtonProps = {
   title: string;
   subtitle: string;
   icon: any;
   url: string;
   external?: boolean;
-}
+};
 
 const Button = ({ title, subtitle, icon, url, external }: ButtonProps) => (
   <>

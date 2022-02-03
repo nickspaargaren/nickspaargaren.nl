@@ -57,7 +57,7 @@ const StyledPortfolioItem = styled.div`
   }
 `;
 
-interface PortfolioItemProps {
+type PortfolioItemProps = {
   title: string;
   subtitle: string;
   description: string;
@@ -65,7 +65,7 @@ interface PortfolioItemProps {
   image: any; // later bepalen,
   skillsused?: any;
   collaboration: string;
-}
+};
 
 const PortfolioItem = ({
   title,

@@ -25,10 +25,10 @@ const StyledYoutube = styled.div`
   }
 `;
 
-interface YoutubeProps {
+type YoutubeProps = {
   title: string;
   url: string;
-}
+};
 
 const Youtube = ({ title, url }: YoutubeProps) => (
   <StyledYoutube>

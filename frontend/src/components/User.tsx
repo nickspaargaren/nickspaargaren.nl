@@ -24,12 +24,12 @@ const StyleUser = styled.div`
   }
 `;
 
-interface UserProps {
+type UserProps = {
   title: string;
   subtitle: string;
   subtitleHover: string;
   image?: object;
-}
+};
 
 const User = ({ title, subtitle, subtitleHover, image }: UserProps) => (
   <StyleUser>
