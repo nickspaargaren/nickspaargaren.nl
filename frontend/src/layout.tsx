@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import { Helmet } from "react-helmet";
 import GlobalStyle from "@src/styles/globalStyles";
-import Nav from "@src/components/navigatie/Nav";
+import Nav from "@src/components/navigation/Nav";
 import Footer from "@src/components/Footer";
 
 type LayoutProps = {
