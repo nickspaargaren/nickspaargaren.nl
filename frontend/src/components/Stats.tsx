@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-interface StatsProps {
+type StatsProps = {
   title: string;
   subtitle: string;
   amount: number;
   icon: string;
-}
+};
 
 const StyledStats = styled.div`
   display: grid;

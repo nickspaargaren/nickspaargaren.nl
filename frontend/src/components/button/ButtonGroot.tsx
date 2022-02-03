@@ -35,12 +35,12 @@ const StyledPrimaryButton = styled(StyledButton)`
   }
 `;
 
-interface ButtonProps {
+type ButtonProps = {
   title: string;
   icon?: any;
   url: string;
   primary?: boolean;
-}
+};
 
 const ButtonGroot = ({ title, icon, url, primary }: ButtonProps) => {
   if (primary) {
