@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
-import { SocialData } from "../data/socials/SocialData";
-import { useSiteMetadata } from "../data/hooks/algemeen";
+import { useSocialData } from "@src/hooks/useSocialData";
+import { useSiteMetadata } from "@src/hooks/useSiteMetadata";
 import { Helmet } from "react-helmet";
 
 import { createGlobalStyle } from "styled-components";
@@ -105,6 +105,7 @@ const itemAnimation = {
 
 const Home = () => {
   const { name, position } = useSiteMetadata();
+  const SocialData = useSocialData();
 
   const sitehouderRef = useRef<HTMLDivElement>(null);
   const blokRef = useRef<HTMLAnchorElement>(null);

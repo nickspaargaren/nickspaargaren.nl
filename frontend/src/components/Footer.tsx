@@ -1,7 +1,7 @@
 import React from "react";
 
-import { SocialData } from "../data/socials/SocialData";
-import Button from "../components/button/Button";
+import { useSocialData } from "@src/hooks/useSocialData";
+import Button from "@src/components/button/Button";
 import styled from "styled-components";
 
 const StyledFooter = styled.div`
@@ -28,34 +28,38 @@ const StyledFooter = styled.div`
   }
 `;
 
-const Footer = () => (
-  <StyledFooter>
-    <footer>
-      <div className="inhoud">
-        {SocialData.map((social, key) => (
-          <Button
-            key={key}
-            title={social.platform}
-            subtitle="Account"
-            icon={social.icon}
-            url={social.url}
-            external
-          />
-        ))}
-        <p>
-          Of toch eerst{" "}
-          <a
-            href="https://www.google.com/search?q=site%3Acmspecialist.nl+%22Nick+Spaargaren%22"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            meer projecten
-          </a>{" "}
-          zien?
-        </p>
-      </div>
-    </footer>
-  </StyledFooter>
-);
+const Footer = () => {
+  const SocialData = useSocialData();
+
+  return (
+    <StyledFooter>
+      <footer>
+        <div className="inhoud">
+          {SocialData.map((social, key) => (
+            <Button
+              key={key}
+              title={social.platform}
+              subtitle="Account"
+              icon={social.icon}
+              url={social.url}
+              external
+            />
+          ))}
+          <p>
+            Of toch eerst{" "}
+            <a
+              href="https://www.google.com/search?q=site%3Acmspecialist.nl+%22Nick+Spaargaren%22"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              meer projecten
+            </a>{" "}
+            zien?
+          </p>
+        </div>
+      </footer>
+    </StyledFooter>
+  );
+};
 
 export default Footer;

@@ -9,7 +9,7 @@ import {
   MdClear,
   MdDone,
 } from "react-icons/md";
-import { useSiteMetadata } from "../data/hooks/algemeen";
+import { useSiteMetadata } from "@src/hooks/useSiteMetadata";
 
 const Skills = () => {
   const data = useStaticQuery(graphql`
