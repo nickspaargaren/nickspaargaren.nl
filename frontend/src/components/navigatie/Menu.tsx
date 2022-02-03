@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, ReactElement } from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
 
@@ -45,7 +45,7 @@ const StyledMenu = styled.div`
   }
 `;
 
-const Menu = () => {
+const Menu = (): ReactElement => {
   const hoverRef = useRef(null);
   const menuItemRef = useRef(null);
 

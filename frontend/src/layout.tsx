@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import { Helmet } from "react-helmet";
 import GlobalStyle from "@src/styles/globalStyles";
 import Nav from "@src/components/navigatie/Nav";
@@ -11,7 +11,12 @@ type LayoutProps = {
   noindex?: boolean;
 };
 
-const Layout = ({ children, title, description, noindex }: LayoutProps) => (
+const Layout = ({
+  children,
+  title,
+  description,
+  noindex,
+}: LayoutProps): ReactElement => (
   <>
     <GlobalStyle />
     <Nav />

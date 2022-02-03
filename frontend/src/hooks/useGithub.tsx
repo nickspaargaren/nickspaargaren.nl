@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const useGithub = () => {
-  const [github, setGithub] = useState<{
-    data: any;
-    loading: boolean;
-    error: string | null;
-  }>({
+type GithubType = {
+  data: any;
+  loading: boolean;
+  error: string | null;
+};
+const useGithub = (): GithubType => {
+  const [github, setGithub] = useState<GithubType>({
     data: null,
     loading: true,
     error: null,

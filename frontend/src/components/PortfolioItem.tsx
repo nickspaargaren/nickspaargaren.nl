@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 import { BsChevronUp } from "react-icons/bs";
@@ -75,7 +75,7 @@ const PortfolioItem = ({
   image,
   skillsused,
   collaboration,
-}: PortfolioItemProps) => (
+}: PortfolioItemProps): ReactElement => (
   <StyledPortfolioItem>
     <div className="image">
       {image && <GatsbyImage image={image.asset.gatsbyImageData} alt={title} />}

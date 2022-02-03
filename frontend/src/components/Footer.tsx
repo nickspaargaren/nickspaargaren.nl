@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 
 import { useSocialData } from "@src/hooks/useSocialData";
 import Button from "@src/components/button/Button";
@@ -28,7 +28,7 @@ const StyledFooter = styled.div`
   }
 `;
 
-const Footer = () => {
+const Footer = (): ReactElement => {
   const SocialData = useSocialData();
 
   return (

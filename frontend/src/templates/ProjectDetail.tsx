@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import Layout from "@src/layout";
 import { graphql, Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
@@ -19,7 +19,7 @@ const PortfolioGrid = styled.div`
   }
 `;
 
-const ProjectDetail = ({ data }) => (
+const ProjectDetail = ({ data }): ReactElement => (
   <>
     <Layout
       title={`Projecten | ${data.pagina.title}`}

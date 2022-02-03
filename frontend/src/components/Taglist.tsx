@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import styled from "styled-components";
 import { GatsbyImage } from "gatsby-plugin-image";
 
@@ -80,7 +80,7 @@ type TaglistType = {
   ];
 };
 
-const Taglist = ({ tags }: TaglistType) => (
+const Taglist = ({ tags }: TaglistType): ReactElement => (
   <StyledTaglist>
     {tags.map(({ title, image }, key: any) => (
       <li key={key}>

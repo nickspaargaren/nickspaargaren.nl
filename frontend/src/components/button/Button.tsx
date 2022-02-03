@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 
@@ -53,7 +53,13 @@ type ButtonProps = {
   external?: boolean;
 };
 
-const Button = ({ title, subtitle, icon, url, external }: ButtonProps) => (
+const Button = ({
+  title,
+  subtitle,
+  icon,
+  url,
+  external,
+}: ButtonProps): ReactElement => (
   <>
     {external ? (
       <StyledButton href={url} rel="noopener noreferrer" target="_blank">
