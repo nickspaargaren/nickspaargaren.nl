@@ -1,8 +1,8 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import GlobalStyle from "../styles/globalStyles";
-import Nav from "../components/navigatie/Nav";
-import Footer from "../components/Footer";
+import GlobalStyle from "@src/styles/globalStyles";
+import Nav from "@src/components/navigatie/Nav";
+import Footer from "@src/components/Footer";
 
 interface LayoutProps {
   children: any;

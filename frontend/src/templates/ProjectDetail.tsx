@@ -1,10 +1,10 @@
 import React from "react";
-import Layout from "../layout/layout";
+import Layout from "@src/layout/Layout";
 import { graphql, Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 import { FaAngleDoubleRight, FaCaretRight, FaCode } from "react-icons/fa";
-import Button from "../components/button/Button";
+import Button from "@src/components/button/Button";
 
 const PortfolioGrid = styled.div`
   width: 100%;

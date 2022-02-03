@@ -1,13 +1,13 @@
 import React from "react";
-import Layout from "../../layout/layout";
+import Layout from "@src/layout/Layout";
 import { useStaticQuery, graphql, Link } from "gatsby";
 
-import { useSiteMetadata } from "../../data/hooks/algemeen";
+import { useSiteMetadata } from "@src/hooks/useSiteMetadata";
 
-import Github from "../../components/github/Github";
-import Stats from "../../components/Stats";
+import Github from "@src/components/Github";
+import Stats from "@src/components/Stats";
 
-import PortfolioItem from "../../components/PortfolioItem";
+import PortfolioItem from "@src/components/PortfolioItem";
 
 import {
   SiAdobe,
@@ -29,7 +29,7 @@ import {
 
 import styled from "styled-components";
 
-import Skills from "../../components/Skills";
+import Skills from "@src/components/Skills";
 
 const StyledPortfolioItems = styled.div`
   padding: 30px;

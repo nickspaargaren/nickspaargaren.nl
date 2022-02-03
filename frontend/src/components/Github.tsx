@@ -1,7 +1,7 @@
 import React from "react";
 import { GoStar, GoRepoForked } from "react-icons/go";
 import styled from "styled-components";
-import useGithub from "../../hooks/useGithub";
+import useGithub from "@src/hooks/useGithub";
 
 const StyledGithub = styled.div`
   display: inline-block;

@@ -1,10 +1,10 @@
 import React from "react";
-import Layout from "../../layout/layout";
+import Layout from "@src/layout/Layout";
 import { useStaticQuery, graphql, Link } from "gatsby";
 
 import { FaCaretRight } from "react-icons/fa";
 
-import PortfolioItem from "../../components/PortfolioItem";
+import PortfolioItem from "@src/components/PortfolioItem";
 
 const Projecten = () => {
   const data = useStaticQuery(graphql`

@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import Menu from "./Menu";
-import User from "../User";
-import { useSiteMetadata } from "../../data/hooks/algemeen";
+import Menu from "@src/components/navigatie/Menu";
+import User from "@src/components/User";
+import { useSiteMetadata } from "@src/hooks/useSiteMetadata";
 import { StaticImage } from "gatsby-plugin-image";
 
 const StyledNav = styled.div`
