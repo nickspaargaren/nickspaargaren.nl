@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "@src/layout/Layout";
+import Layout from "@src/layout";
 import { useStaticQuery, graphql, Link } from "gatsby";
 
 import { useSiteMetadata } from "@src/hooks/useSiteMetadata";
