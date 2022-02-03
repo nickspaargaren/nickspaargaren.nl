@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import styled from "styled-components";
 import Menu from "@src/components/navigatie/Menu";
 import User from "@src/components/User";
@@ -21,7 +21,7 @@ const StyledNav = styled.div`
   }
 `;
 
-const Nav = () => {
+const Nav = (): ReactElement => {
   const { name, position, email } = useSiteMetadata();
   return (
     <StyledNav>

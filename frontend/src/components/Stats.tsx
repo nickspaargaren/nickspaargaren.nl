@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import styled from "styled-components";
 
 type StatsProps = {
@@ -48,7 +48,7 @@ const StyledStats = styled.div`
   }
 `;
 
-const Stats = ({ title, subtitle, amount, icon }: StatsProps) => (
+const Stats = ({ title, subtitle, amount, icon }: StatsProps): ReactElement => (
   <StyledStats>
     <div className="amount">
       {amount}

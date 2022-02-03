@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import styled from "styled-components";
 
 const StyleUser = styled.div`
@@ -31,7 +31,12 @@ type UserProps = {
   image?: object;
 };
 
-const User = ({ title, subtitle, subtitleHover, image }: UserProps) => (
+const User = ({
+  title,
+  subtitle,
+  subtitleHover,
+  image,
+}: UserProps): ReactElement => (
   <StyleUser>
     {image}
     <div>

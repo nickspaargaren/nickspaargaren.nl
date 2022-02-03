@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, ReactElement } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { useState } from "react";
@@ -11,7 +11,7 @@ import {
 } from "react-icons/md";
 import { useSiteMetadata } from "@src/hooks/useSiteMetadata";
 
-const Skills = () => {
+const Skills = (): ReactElement => {
   const data = useStaticQuery(graphql`
     {
       skills: allSanitySkills(sort: { fields: percentage, order: DESC }) {
@@ -47,7 +47,7 @@ const Skills = () => {
     }
   }, [favorites]);
 
-  const ActieveSkills = () => {
+  const ActieveSkills = (): ReactElement => {
     if (favorites.length > 0) {
       return (
         <>

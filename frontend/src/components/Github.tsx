@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import { GoStar, GoRepoForked } from "react-icons/go";
 import styled from "styled-components";
 import useGithub from "@src/hooks/useGithub";
@@ -41,11 +41,11 @@ const StyledGithub = styled.div`
   }
 `;
 
-const Github = () => {
+const Github = (): ReactElement => {
   const github = useGithub();
 
   if (github.error) {
-    return github.error;
+    return <>{github.error}</>;
   }
 
   if (github.loading) {

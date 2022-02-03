@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import styled from "styled-components";
 
 const StyledButton = styled.a`
@@ -42,7 +42,12 @@ type ButtonProps = {
   primary?: boolean;
 };
 
-const ButtonGroot = ({ title, icon, url, primary }: ButtonProps) => {
+const ButtonGroot = ({
+  title,
+  icon,
+  url,
+  primary,
+}: ButtonProps): ReactElement => {
   if (primary) {
     return (
       <StyledPrimaryButton href={url}>
