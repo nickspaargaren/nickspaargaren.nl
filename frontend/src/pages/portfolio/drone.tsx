@@ -1,11 +1,9 @@
-import React from "react";
-import Layout from "@src/layout";
-import { Link } from "gatsby";
-
-import { FaCaretRight } from "react-icons/fa";
-
 import Youtube from "@src/components/Youtube";
 import { useSiteMetadata } from "@src/hooks/useSiteMetadata";
+import Layout from "@src/layout";
+import { Link } from "gatsby";
+import React from "react";
+import { FaCaretRight } from "react-icons/fa";
 
 const Drone = () => {
   const { name } = useSiteMetadata();

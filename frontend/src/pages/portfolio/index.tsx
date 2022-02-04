@@ -1,35 +1,29 @@
-import React from "react";
-import Layout from "@src/layout";
-import { useStaticQuery, graphql, Link } from "gatsby";
-
-import { useSiteMetadata } from "@src/hooks/useSiteMetadata";
-
 import Github from "@src/components/Github";
-import Stats from "@src/components/Stats";
-
 import PortfolioItem from "@src/components/PortfolioItem";
-
+import Skills from "@src/components/Skills";
+import Stats from "@src/components/Stats";
+import { useSiteMetadata } from "@src/hooks/useSiteMetadata";
+import Layout from "@src/layout";
+import { graphql, Link, useStaticQuery } from "gatsby";
+import React from "react";
 import {
   SiAdobe,
-  SiSketch,
-  SiVisualstudiocode,
-  SiMaterialdesignicons,
-  SiCodeclimate,
+  SiAdobepremierepro,
   SiAirbnb,
+  SiApple,
+  SiCodeclimate,
   SiDevdotto,
+  SiLinux,
+  SiMaterialdesignicons,
+  SiNetflix,
   SiOneplus,
   SiRaspberrypi,
-  SiLinux,
-  SiApple,
-  SiAdobepremierepro,
-  SiXbox,
-  SiNetflix,
+  SiSketch,
   SiSpotify,
+  SiVisualstudiocode,
+  SiXbox,
 } from "react-icons/si";
-
 import styled from "styled-components";
-
-import Skills from "@src/components/Skills";
 
 const StyledPortfolioItems = styled.div`
   padding: 30px;

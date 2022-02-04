@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import { FaDribbble, FaGithub, FaYoutube, FaLinkedin } from "react-icons/fa";
+import { FaDribbble, FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
 
 type SocialDataType = {
   id: number;

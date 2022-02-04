@@ -1,7 +1,6 @@
-import React, { ReactElement } from "react";
-
-import { useSocialData } from "@src/hooks/useSocialData";
 import Button from "@src/components/button/Button";
+import { useSocialData } from "@src/hooks/useSocialData";
+import React, { ReactElement } from "react";
 import styled from "styled-components";
 
 const StyledFooter = styled.div`

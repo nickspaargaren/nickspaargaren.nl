@@ -1,10 +1,8 @@
-import React, { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
-
-import { useSocialData } from "@src/hooks/useSocialData";
 import { useSiteMetadata } from "@src/hooks/useSiteMetadata";
+import { useSocialData } from "@src/hooks/useSocialData";
+import { motion } from "framer-motion";
+import React, { useEffect, useRef } from "react";
 import { Helmet } from "react-helmet";
-
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
