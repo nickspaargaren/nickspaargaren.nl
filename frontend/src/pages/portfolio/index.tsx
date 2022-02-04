@@ -4,9 +4,11 @@ import PortfolioItem from "@src/components/PortfolioItem";
 import Skills from "@src/components/Skills";
 import Stats from "@src/components/Stats";
 import Timeline from "@src/components/Timeline";
+import { usePortfolioData } from "@src/hooks/usePortfolioData";
 import { useSiteMetadata } from "@src/hooks/useSiteMetadata";
+import { useStatsData } from "@src/hooks/useStatsData";
 import Layout from "@src/layout";
-import { graphql, Link, useStaticQuery } from "gatsby";
+import { Link } from "gatsby";
 import React from "react";
 import { FaLinkedin } from "react-icons/fa";
 import {
@@ -33,46 +35,8 @@ const StyledPortfolioItems = styled.div`
 `;
 
 const Index = () => {
-  const { stats, portfolio } = useStaticQuery(graphql`
-    {
-      portfolio: allSanityPortfolio(
-        sort: { fields: collaboration, order: ASC }
-      ) {
-        nodes {
-          title
-          subtitle
-          website
-          tags
-          id
-          github
-          description
-          collaboration
-          image {
-            asset {
-              gatsbyImageData(width: 255, height: 450)
-            }
-          }
-          skillsused {
-            title
-            image {
-              asset {
-                gatsbyImageData(width: 37)
-              }
-            }
-          }
-        }
-      }
-      stats: allSanityStats {
-        nodes {
-          title
-          subtitle
-          amount
-          icon
-        }
-      }
-    }
-  `);
-
+  const portfolio = usePortfolioData();
+  const stats = useStatsData();
   const { name, position } = useSiteMetadata();
 
   return (
@@ -81,7 +45,7 @@ const Index = () => {
         <StyledPortfolioItems>
           <div className="inhoud">
             <div className="grid-4x">
-              {portfolio.nodes.map((item, key) => (
+              {portfolio.map((item, key) => (
                 <PortfolioItem
                   key={key}
                   title={item.title}
@@ -99,7 +63,7 @@ const Index = () => {
       <section>
         <div className="inhoud">
           <div className="grid-4x">
-            {stats.nodes.map((item, key) => (
+            {stats.map((item, key) => (
               <Stats
                 key={key}
                 title={item.title}
