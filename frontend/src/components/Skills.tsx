@@ -10,6 +10,97 @@ import {
   MdClear,
   MdDone,
 } from "react-icons/md";
+import styled from "styled-components";
+
+const StyledSkills = styled.div`
+  background: #18151a;
+  color: #fff;
+  padding: 30px;
+  box-shadow: 0 50px 75px -40px rgba(0, 0, 0, 0.6);
+  position: relative;
+  z-index: 0;
+  max-width: 800px;
+  margin: 0 auto;
+  h2 {
+    color: #fff;
+  }
+  .skill {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 35px 1fr 29px;
+    margin: 0 0 10px;
+    user-select: none;
+  }
+  .skill > div {
+    margin: auto 0;
+  }
+  .skill .title {
+    display: flex;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 4px;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.7px;
+  }
+  .skill .title span {
+    margin-left: auto;
+  }
+  .skill .percentage {
+    height: 6px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 2px;
+    border-radius: 10px;
+  }
+  .skill .percentage .gevuld {
+    background: #009bff;
+    height: 100%;
+    border-radius: inherit;
+  }
+  .skill .opties .icon {
+    cursor: pointer;
+    background: #221e25;
+    line-height: 0;
+    margin: auto;
+    padding: 6px;
+    border-radius: 5px;
+  }
+  .skill .opties .icon:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  .skill .opties .icon.actief {
+    background: rgba(255, 255, 255, 0.2);
+    color: #35ca88;
+  }
+  .skill .opties .icon svg {
+    margin: 0;
+  }
+  .tags {
+    margin: 0 0 15px;
+    padding: 0;
+  }
+  .tags .tag {
+    display: inline-flex;
+    background: #221e25;
+    padding: 5px 7px;
+    border-radius: 3px;
+    font-size: 13px;
+    margin: 0 5px 5px 0;
+  }
+  .tags .tag svg {
+    margin: auto 5px auto 0;
+    fill: #35ca88;
+  }
+  .tags .tag.reset {
+    cursor: pointer;
+  }
+  .tags .tag.reset:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  .tags .tag.reset svg {
+    fill: #f13f30;
+  }
+`;
 
 const Skills = (): ReactElement => {
   const data = useStaticQuery(graphql`
@@ -78,11 +169,9 @@ const Skills = (): ReactElement => {
   };
 
   return (
-    <div className="skills">
-      <p style={{ opacity: ".75" }}>Skills</p>
-      <div className="skillTitle">
-        <span>Waar wilt u het graag over hebben?</span>
-      </div>
+    <StyledSkills>
+      <h2>Waar wilt u het graag over hebben?</h2>
+
       {data.skills.nodes
         .filter((item) => !item.exclude)
         .map((item, key) => (
@@ -143,7 +232,7 @@ const Skills = (): ReactElement => {
         ))}
 
       <ActieveSkills />
-    </div>
+    </StyledSkills>
   );
 };
 
