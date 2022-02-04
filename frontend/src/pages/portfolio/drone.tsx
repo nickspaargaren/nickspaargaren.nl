@@ -1,3 +1,4 @@
+import Breadcrumbs from "@src/components/Breadcrumbs";
 import Youtube from "@src/components/Youtube";
 import { useSiteMetadata } from "@src/hooks/useSiteMetadata";
 import Layout from "@src/layout";
@@ -11,15 +12,7 @@ const Drone = () => {
   return (
     <Layout title={`Drone videos | ${name}`} description="Drone videos" noindex>
       <div className="inhoud">
-        <ul className="bcrumbs">
-          <li>
-            <Link to="/portfolio">Home</Link>
-          </li>
-          <li>
-            <FaCaretRight />
-          </li>
-          <li>Drone videos</li>
-        </ul>
+        <Breadcrumbs list={["Drone videos"]} />
       </div>
 
       <div className="inhoud">
