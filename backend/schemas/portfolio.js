@@ -84,6 +84,21 @@ export default {
       name: 'collaboration',
       title: 'In collaboration met CM Specialist',
       type: 'boolean'
+    },
+    {
+      name: "order",
+      title: "Order",
+      type: "number",
+      hidden: true,
+    }
+  ],
+  orderings: [
+    {
+      title: 'Handmatig',
+      name: 'Handmatig',
+      by: [
+        {field: 'order', direction: 'asc'}
+      ]
     }
   ],
   preview: {

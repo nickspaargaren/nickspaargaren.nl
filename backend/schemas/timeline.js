@@ -13,5 +13,20 @@ export default {
       title: 'Subtitle',
       type: 'string',
     },
+    {
+      name: "order",
+      title: "Order",
+      type: "number",
+      hidden: true,
+    }
+  ],
+  orderings: [
+    {
+      title: 'Handmatig',
+      name: 'Handmatig',
+      by: [
+        {field: 'order', direction: 'asc'}
+      ]
+    }
   ]
 }
