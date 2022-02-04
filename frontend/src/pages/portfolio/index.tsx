@@ -33,7 +33,7 @@ const StyledPortfolioItems = styled.div`
 `;
 
 const Index = () => {
-  const data = useStaticQuery(graphql`
+  const { stats, portfolio } = useStaticQuery(graphql`
     {
       portfolio: allSanityPortfolio(
         sort: { fields: collaboration, order: ASC }
@@ -81,7 +81,7 @@ const Index = () => {
         <StyledPortfolioItems>
           <div className="inhoud">
             <div className="grid-4x">
-              {data.portfolio.nodes.map((item, key) => (
+              {portfolio.nodes.map((item, key) => (
                 <PortfolioItem
                   key={key}
                   title={item.title}
@@ -99,7 +99,7 @@ const Index = () => {
       <section>
         <div className="inhoud">
           <div className="grid-4x">
-            {data.stats.nodes.map((item, key) => (
+            {stats.nodes.map((item, key) => (
               <Stats
                 key={key}
                 title={item.title}
