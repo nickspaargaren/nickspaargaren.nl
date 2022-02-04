@@ -59,12 +59,12 @@ const StyledPortfolioItem = styled.div`
 
 type PortfolioItemProps = {
   title: string;
-  subtitle: string;
+  subtitle?: string;
   description: string;
   slug?: string;
   image: any; // later bepalen,
   skillsused?: any;
-  collaboration: string;
+  collaboration?: string;
 };
 
 const PortfolioItem = ({
