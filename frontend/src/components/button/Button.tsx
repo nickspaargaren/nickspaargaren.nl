@@ -7,7 +7,7 @@ const StyledButton = styled.a`
   display: inline-flex;
   line-height: 10px;
   background: #221e25;
-  padding: 9px 12px 9px 11px;
+  padding: 7px 12px 7px 10px;
   border-radius: 3px;
   transition: 0.3s all ease;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px inset;
@@ -25,7 +25,7 @@ const StyledButton = styled.a`
     display: block;
   }
   .icon {
-    margin: auto 2px auto 0;
+    margin: auto 4px auto 0;
   }
   .icon svg {
     margin: 0;

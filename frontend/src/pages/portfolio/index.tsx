@@ -1,11 +1,14 @@
+import Button from "@src/components/button/Button";
 import Github from "@src/components/Github";
 import PortfolioItem from "@src/components/PortfolioItem";
 import Skills from "@src/components/Skills";
 import Stats from "@src/components/Stats";
+import Timeline from "@src/components/Timeline";
 import { useSiteMetadata } from "@src/hooks/useSiteMetadata";
 import Layout from "@src/layout";
 import { graphql, Link, useStaticQuery } from "gatsby";
 import React from "react";
+import { FaLinkedin } from "react-icons/fa";
 import {
   SiAdobe,
   SiAdobepremierepro,
@@ -108,7 +111,7 @@ const Index = () => {
           </div>
         </div>
       </section>
-      <section>
+      <section className="full">
         <div className="inhoud">
           <div className="hgroup">
             <h2 style={{ margin: 0 }}>Waar ik goed in ben</h2>
@@ -185,6 +188,22 @@ const Index = () => {
             </div>
             <Github />
           </div>
+        </div>
+      </section>
+      <section className="full">
+        <div className="inhoud">
+          <div className="hgroup">
+            <h2 style={{ margin: 0 }}>Timeline</h2>
+            <p>Ervaring en technieken</p>
+          </div>
+          <Timeline />
+          <Button
+            title="Linkedin"
+            subtitle="Account"
+            icon={<FaLinkedin />}
+            url="https://www.linkedin.com/in/nickspaargaren"
+            external
+          />
         </div>
       </section>
       <section>
