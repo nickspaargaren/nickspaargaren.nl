@@ -1,8 +1,8 @@
-import React, { ReactElement } from "react";
-import { GatsbyImage } from "gatsby-plugin-image";
-import styled from "styled-components";
-import { BsChevronUp } from "react-icons/bs";
 import Taglist from "@src/components/Taglist";
+import { GatsbyImage } from "gatsby-plugin-image";
+import React, { ReactElement } from "react";
+import { BsChevronUp } from "react-icons/bs";
+import styled from "styled-components";
 
 const StyledPortfolioItem = styled.div`
   position: relative;

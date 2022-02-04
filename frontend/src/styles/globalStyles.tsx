@@ -1,16 +1,13 @@
 import { createGlobalStyle } from "styled-components";
 
-import ArticulatCFNormal from "../fonts/ArticulatCF-Normal.woff";
-import ArticulatCFNormal2 from "../fonts/ArticulatCF-Normal.woff2";
-
-import ArticulatCFMedium from "../fonts/ArticulatCF-Medium.woff";
-import ArticulatCFMedium2 from "../fonts/ArticulatCF-Medium.woff2";
-
-import ArticulatCFDemiBold from "../fonts/ArticulatCF-DemiBold.woff";
-import ArticulatCFDemiBold2 from "../fonts/ArticulatCF-DemiBold.woff2";
-
 import ArticulatCFBold from "../fonts/ArticulatCF-Bold.woff";
 import ArticulatCFBold2 from "../fonts/ArticulatCF-Bold.woff2";
+import ArticulatCFDemiBold from "../fonts/ArticulatCF-DemiBold.woff";
+import ArticulatCFDemiBold2 from "../fonts/ArticulatCF-DemiBold.woff2";
+import ArticulatCFMedium from "../fonts/ArticulatCF-Medium.woff";
+import ArticulatCFMedium2 from "../fonts/ArticulatCF-Medium.woff2";
+import ArticulatCFNormal from "../fonts/ArticulatCF-Normal.woff";
+import ArticulatCFNormal2 from "../fonts/ArticulatCF-Normal.woff2";
 
 const GlobalStyle = createGlobalStyle`
 

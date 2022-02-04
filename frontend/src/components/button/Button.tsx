@@ -1,5 +1,5 @@
-import React, { ReactElement } from "react";
 import { Link } from "gatsby";
+import React, { ReactElement } from "react";
 import styled from "styled-components";
 
 const StyledButton = styled.a`

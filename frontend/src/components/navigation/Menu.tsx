@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, ReactElement } from "react";
-import styled from "styled-components";
 import { Link } from "gatsby";
+import React, { ReactElement, useEffect, useRef } from "react";
+import styled from "styled-components";
 
 const StyledMenu = styled.div`
   margin: auto 0 auto auto;

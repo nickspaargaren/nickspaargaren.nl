@@ -1,15 +1,15 @@
-import React, { useEffect, ReactElement } from "react";
+import { useSiteMetadata } from "@src/hooks/useSiteMetadata";
+import { motion } from "framer-motion";
 import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
+import React, { ReactElement, useEffect } from "react";
 import { useState } from "react";
-import { motion } from "framer-motion";
 import {
   MdCheckBox,
   MdCheckBoxOutlineBlank,
   MdClear,
   MdDone,
 } from "react-icons/md";
-import { useSiteMetadata } from "@src/hooks/useSiteMetadata";
 
 const Skills = (): ReactElement => {
   const data = useStaticQuery(graphql`

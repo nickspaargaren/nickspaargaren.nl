@@ -1,6 +1,6 @@
+import { GatsbyImage } from "gatsby-plugin-image";
 import React, { ReactElement } from "react";
 import styled from "styled-components";
-import { GatsbyImage } from "gatsby-plugin-image";
 
 const StyledTaglist = styled.ul`
   list-style: none;

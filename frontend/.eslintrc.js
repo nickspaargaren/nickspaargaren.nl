@@ -1,6 +1,6 @@
 module.exports = {
   extends: ["prettier"],
-  plugins: ["prettier"],
+  plugins: ["prettier", "simple-import-sort"],
   parser: "babel-eslint",
   env: {
     browser: true,
@@ -13,5 +13,6 @@ module.exports = {
   },
   rules: {
     "prettier/prettier": "warn",
+    "simple-import-sort/imports": "error",
   },
 };

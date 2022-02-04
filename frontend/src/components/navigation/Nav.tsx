@@ -1,9 +1,9 @@
-import React, { ReactElement } from "react";
-import styled from "styled-components";
 import Menu from "@src/components/navigation/Menu";
 import User from "@src/components/User";
 import { useSiteMetadata } from "@src/hooks/useSiteMetadata";
 import { StaticImage } from "gatsby-plugin-image";
+import React, { ReactElement } from "react";
+import styled from "styled-components";
 
 const StyledNav = styled.div`
   background: #fff;
