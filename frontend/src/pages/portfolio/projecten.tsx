@@ -1,8 +1,8 @@
+import Breadcrumbs from "@src/components/Breadcrumbs";
 import PortfolioItem from "@src/components/PortfolioItem";
 import Layout from "@src/layout";
-import { graphql, Link, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
-import { FaCaretRight } from "react-icons/fa";
 
 const Projecten = () => {
   const data = useStaticQuery(graphql`
@@ -42,15 +42,7 @@ const Projecten = () => {
   return (
     <Layout title={`Portfolio`} description="Portfolio overzicht" noindex>
       <div className="inhoud">
-        <ul className="bcrumbs">
-          <li>
-            <Link to="/portfolio">Home</Link>
-          </li>
-          <li>
-            <FaCaretRight />
-          </li>
-          <li>Projecten</li>
-        </ul>
+        <Breadcrumbs list={["Projecten"]} />
       </div>
       <div className="inhoud">
         {data.portfolio.nodes.map((item, key) => (

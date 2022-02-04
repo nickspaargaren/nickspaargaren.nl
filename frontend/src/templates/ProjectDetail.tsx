@@ -1,3 +1,4 @@
+import Breadcrumbs from "@src/components/Breadcrumbs";
 import Button from "@src/components/button/Button";
 import Layout from "@src/layout";
 import { graphql, Link } from "gatsby";
@@ -27,21 +28,7 @@ const ProjectDetail = ({ data }): ReactElement => (
       noindex
     >
       <div className="inhoud">
-        <ul className="bcrumbs">
-          <li>
-            <Link to="/portfolio">Home</Link>
-          </li>
-          <li>
-            <FaCaretRight />
-          </li>
-          <li>
-            <Link to="/portfolio/projecten/">Projecten</Link>
-          </li>
-          <li>
-            <FaCaretRight />
-          </li>
-          <li>{data.pagina.title}</li>
-        </ul>
+        <Breadcrumbs list={["Projecten", data.pagina.title]} />
       </div>
       <div className="inhoud">
         <div className="grid-2x">

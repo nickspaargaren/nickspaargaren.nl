@@ -100,14 +100,6 @@ const GlobalStyle = createGlobalStyle`
   .grid-4x {grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));}
   /* Einde Grid Templates */
 
-  .bcrumbs {
-    display: flex; list-style: none; margin: 0; padding: 0;
-    li {margin-right: 5px;}
-    li a {color: inherit; text-decoration: none;}
-    li a:hover {text-decoration: underline;}
-    li svg {display: inline-block; vertical-align: middle; margin: 0;}
-  }
-
   hr {margin: 30px 0; border-color: rgba(255,255,255,.2);}
 
   @media (max-width: 735px) {
