@@ -24,9 +24,7 @@ export const usePortfolioData = (): usePortfolioDataType[] => {
   } = useStaticQuery(
     graphql`
       {
-        portfolio: allSanityPortfolio(
-          sort: { fields: collaboration, order: ASC }
-        ) {
+        portfolio: allSanityPortfolio(sort: { fields: order, order: ASC }) {
           nodes {
             title
             subtitle
