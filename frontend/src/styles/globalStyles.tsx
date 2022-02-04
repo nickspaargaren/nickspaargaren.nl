@@ -60,6 +60,9 @@ const GlobalStyle = createGlobalStyle`
   .sitehouder {display: flex; height: 100vh;}
 
   section {border-bottom: 1px solid #e6e6e6;}
+  section.full {min-height: 100vh; display: flex;}
+  section.full .inhoud {margin: auto;}
+  section.full .inhoud .hgroup {text-align: center;}
 
   .inhoud {margin: 0 auto; padding: 40px; box-sizing: border-box; max-width: 1500px;}
   .inhoud svg {margin: 0 10px 5px 0;}
