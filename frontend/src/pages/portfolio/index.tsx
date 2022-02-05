@@ -168,7 +168,7 @@ const Index = () => {
           <SlideAnimation>
             <div className="hgroup">
               <h2 style={{ margin: 0 }}>Timeline</h2>
-              <p>Ervaring en technieken</p>
+              <p>Werkervaring en technieken</p>
             </div>
           </SlideAnimation>
           <SlideAnimation>
