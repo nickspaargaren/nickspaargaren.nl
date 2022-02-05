@@ -2,6 +2,7 @@ import Button from "@src/components/button/Button";
 import Github from "@src/components/Github";
 import PortfolioItem from "@src/components/PortfolioItem";
 import Skills from "@src/components/Skills";
+import SlideAnimation from "@src/components/SlideAnimation";
 import Stats from "@src/components/Stats";
 import Timeline from "@src/components/Timeline";
 import { usePortfolioData } from "@src/hooks/usePortfolioData";
@@ -46,15 +47,17 @@ const Index = () => {
           <div className="inhoud">
             <div className="grid-4x">
               {portfolio.map((item, key) => (
-                <PortfolioItem
-                  key={key}
-                  title={item.title}
-                  subtitle={item.subtitle}
-                  description={item.description}
-                  image={item.image}
-                  skillsused={item.skillsused}
-                  collaboration={item.collaboration}
-                />
+                <SlideAnimation>
+                  <PortfolioItem
+                    key={key}
+                    title={item.title}
+                    subtitle={item.subtitle}
+                    description={item.description}
+                    image={item.image}
+                    skillsused={item.skillsused}
+                    collaboration={item.collaboration}
+                  />
+                </SlideAnimation>
               ))}
             </div>
           </div>
@@ -64,25 +67,29 @@ const Index = () => {
         <div className="inhoud">
           <div className="grid-4x">
             {stats.map((item, key) => (
-              <Stats
-                key={key}
-                title={item.title}
-                subtitle={item.subtitle}
-                amount={item.amount}
-                icon={item.icon}
-              />
+              <SlideAnimation>
+                <Stats
+                  key={key}
+                  title={item.title}
+                  subtitle={item.subtitle}
+                  amount={item.amount}
+                  icon={item.icon}
+                />
+              </SlideAnimation>
             ))}
           </div>
         </div>
       </section>
       <section className="full">
         <div className="inhoud">
-          <div className="hgroup">
-            <h2 style={{ margin: 0 }}>Waar ik goed in ben</h2>
-            <p>Ervaring en interesse</p>
-          </div>
+          <SlideAnimation>
+            <div className="hgroup">
+              <h2 style={{ margin: 0 }}>Waar ik goed in ben</h2>
+              <p>Ervaring en interesse</p>
+            </div>
+          </SlideAnimation>
           <div className="grid-4x">
-            <div>
+            <SlideAnimation>
               <SiMaterialdesignicons />
               <SiAdobe />
               <SiSketch />
@@ -91,8 +98,8 @@ const Index = () => {
                 Meer dan 10 jaar <span className="calc">27 - 10 = 17 ✓</span>{" "}
                 ervaring met vormgeving, design, fotobewerking en dtp.
               </p>
-            </div>
-            <div>
+            </SlideAnimation>
+            <SlideAnimation>
               <SiVisualstudiocode />
               <SiDevdotto />
               <h4>Develop</h4>
@@ -100,8 +107,8 @@ const Index = () => {
                 Front-end developer sinds 2013. Altijd zoekend naar nieuwe
                 technieken waaronder op dit moment <i>Apollo en Graphql</i>
               </p>
-            </div>
-            <div>
+            </SlideAnimation>
+            <SlideAnimation>
               <SiCodeclimate />
               <SiAirbnb />
               <h4>Drone videography</h4>
@@ -110,8 +117,8 @@ const Index = () => {
                 inzamelingsacties, luchtopnames.{" "}
                 <Link to="/portfolio/drone">Naar video's</Link>
               </p>
-            </div>
-            <div>
+            </SlideAnimation>
+            <SlideAnimation>
               <SiOneplus />
               <SiApple />
               <h4>Device rooting/jailbreakscene</h4>
@@ -119,16 +126,16 @@ const Index = () => {
                 Checkra1n, ADB debug, Unc0ver, Odin, Custom recoveries, TWRP,
                 ClockwordMod, LineageOS, CarBridge
               </p>
-            </div>
-            <div>
+            </SlideAnimation>
+            <SlideAnimation>
               <SiRaspberrypi />
               <SiLinux />
               <h4>Linux / Raspberry pi</h4>
               <p>
                 Pi-hole, Homebrige, Unbound DNS, openVPN, Domoticz, Wireguard
               </p>
-            </div>
-            <div>
+            </SlideAnimation>
+            <SlideAnimation>
               <SiAdobe />
               <SiAdobepremierepro />
               <h4>Videobewerking</h4>
@@ -139,8 +146,8 @@ const Index = () => {
                 </span>
                 , Proxies, GoPro timelapses
               </p>
-            </div>
-            <div>
+            </SlideAnimation>
+            <SlideAnimation>
               <SiXbox />
               <SiNetflix />
               <SiSpotify />
@@ -149,18 +156,24 @@ const Index = () => {
                 Xbox ambassador, iOS Dev Beta, PSP Custom Firmware, SONOS fan,
                 Testflight
               </p>
-            </div>
-            <Github />
+            </SlideAnimation>
+            <SlideAnimation>
+              <Github />
+            </SlideAnimation>
           </div>
         </div>
       </section>
       <section className="full">
         <div className="inhoud">
-          <div className="hgroup">
-            <h2 style={{ margin: 0 }}>Timeline</h2>
-            <p>Ervaring en technieken</p>
-          </div>
-          <Timeline />
+          <SlideAnimation>
+            <div className="hgroup">
+              <h2 style={{ margin: 0 }}>Timeline</h2>
+              <p>Ervaring en technieken</p>
+            </div>
+          </SlideAnimation>
+          <SlideAnimation>
+            <Timeline />
+          </SlideAnimation>
           <Button
             title="Linkedin"
             subtitle="Account"
@@ -172,7 +185,9 @@ const Index = () => {
       </section>
       <section>
         <div className="inhoud">
-          <Skills />
+          <SlideAnimation>
+            <Skills />
+          </SlideAnimation>
         </div>
       </section>
     </Layout>
