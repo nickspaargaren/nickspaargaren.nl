@@ -35,22 +35,21 @@ const StyledTimelineItem = styled.div`
     }
   }
   &:last-child .check {
-    border-color: #f0a828;
+    border-color: #6dd401;
     svg {
-      fill: #f0a828;
-      opacity: 0.15;
+      fill: #6dd401;
     }
     animation: check 1.2s infinite;
   }
   @keyframes check {
     0% {
-      box-shadow: 0 0 0 3px rgba(240, 168, 40, 0.2);
+      box-shadow: 0 0 0 3px rgba(109, 212, 1, 0.2);
     }
     50% {
-      box-shadow: 0 0 0 5px rgba(240, 168, 40, 0.2);
+      box-shadow: 0 0 0 5px rgba(109, 212, 1, 0.2);
     }
     100% {
-      box-shadow: 0 0 0 3px rgba(240, 168, 40, 0.2);
+      box-shadow: 0 0 0 3px rgba(109, 212, 1, 0.2);
     }
   }
 `;
