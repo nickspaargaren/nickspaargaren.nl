@@ -1,3 +1,4 @@
+import { TagType } from "@src/types";
 import { GatsbyImage } from "gatsby-plugin-image";
 import React, { ReactElement } from "react";
 import styled from "styled-components";
@@ -72,17 +73,12 @@ const StyledTaglist = styled.ul`
 `;
 
 type TaglistType = {
-  tags: [
-    {
-      title: string;
-      image: any;
-    }
-  ];
+  tags: TagType[];
 };
 
 const Taglist = ({ tags }: TaglistType): ReactElement => (
   <StyledTaglist>
-    {tags.map(({ title, image }, key: any) => (
+    {tags.map(({ title, image }, key) => (
       <li key={key}>
         <GatsbyImage image={image.asset.gatsbyImageData} alt={title} />
         <span>{title}</span>
@@ -90,4 +86,5 @@ const Taglist = ({ tags }: TaglistType): ReactElement => (
     ))}
   </StyledTaglist>
 );
+
 export default Taglist;

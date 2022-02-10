@@ -37,7 +37,7 @@ const StyledPrimaryButton = styled(StyledButton)`
 
 type ButtonProps = {
   title: string;
-  icon?: any;
+  icon?: ReactElement;
   url: string;
   primary?: boolean;
 };

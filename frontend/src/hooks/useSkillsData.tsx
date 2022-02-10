@@ -1,32 +1,10 @@
+import { GatsbyImageType } from "@src/types";
 import { graphql, useStaticQuery } from "gatsby";
 
 type useSkillsDataType = {
   exclude: boolean;
   id: string;
-  image: {
-    asset: {
-      gatsbyImageData: {
-        backgroundColor: string;
-        height: number;
-        images: {
-          fallback: {
-            sizes: string;
-            src: string;
-            srcSet: string;
-          };
-          sources: [
-            {
-              sizes: string;
-              srcSet: string;
-              type: string;
-            }
-          ];
-        };
-        layout: "fixed" | "fullWidth" | "constrained";
-        width: number;
-      };
-    };
-  };
+  image: GatsbyImageType;
   percentage: number;
   title: string;
 };

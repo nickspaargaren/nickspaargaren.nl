@@ -1,4 +1,5 @@
 import Taglist from "@src/components/Taglist";
+import { GatsbyImageType, TagType } from "@src/types";
 import { GatsbyImage } from "gatsby-plugin-image";
 import React, { ReactElement } from "react";
 import { BsChevronUp } from "react-icons/bs";
@@ -62,8 +63,8 @@ type PortfolioItemProps = {
   subtitle?: string;
   description: string;
   slug?: string;
-  image: any; // later bepalen,
-  skillsused?: any;
+  image: GatsbyImageType;
+  skillsused?: TagType[];
   collaboration?: string;
 };
 
@@ -84,7 +85,7 @@ const PortfolioItem = ({
       <h2>{title}</h2>
       <p>{subtitle}</p>
       <BsChevronUp />
-      <Taglist tags={skillsused} />
+      <Taglist tags={skillsused ? skillsused : []} />
     </div>
   </StyledPortfolioItem>
 );
