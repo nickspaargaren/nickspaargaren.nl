@@ -76,8 +76,8 @@ const Timeline = (): ReactElement => {
 
   return (
     <StyledTimeline>
-      {timeline.map((item) => (
-        <TimelineItem title={item.title} subtitle={item.subtitle} />
+      {timeline.map((item, key) => (
+        <TimelineItem title={item.title} subtitle={item.subtitle} key={key} />
       ))}
     </StyledTimeline>
   );

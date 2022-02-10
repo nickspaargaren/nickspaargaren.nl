@@ -34,13 +34,13 @@ const Breadcrumbs = ({ list }: BreadcrumbsType): ReactElement => (
     <li>
       <Link to="/portfolio">Home</Link>
     </li>
-    {list.map((title) => (
-      <>
+    {list.map((title, key) => (
+      <React.Fragment key={key}>
         <li>
           <FaCaretRight />
         </li>
         <li>{title}</li>
-      </>
+      </React.Fragment>
     ))}
   </StyledBreadcrumbs>
 );
