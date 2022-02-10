@@ -1,6 +1,6 @@
 import { useSiteMetadata } from "@src/hooks/useSiteMetadata";
+import { useSkillsData } from "@src/hooks/useSkillsData";
 import { motion } from "framer-motion";
-import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import React, { ReactElement, useEffect } from "react";
 import { useState } from "react";
@@ -103,23 +103,7 @@ const StyledSkills = styled.div`
 `;
 
 const Skills = (): ReactElement => {
-  const data = useStaticQuery(graphql`
-    {
-      skills: allSanitySkills(sort: { fields: percentage, order: DESC }) {
-        nodes {
-          id
-          title
-          percentage
-          image {
-            asset {
-              gatsbyImageData
-            }
-          }
-          exclude
-        }
-      }
-    }
-  `);
+  const skills = useSkillsData();
 
   const { phone } = useSiteMetadata();
 
@@ -174,7 +158,7 @@ const Skills = (): ReactElement => {
     <StyledSkills>
       <h2>Waar wilt u het graag over hebben?</h2>
 
-      {data.skills.nodes
+      {skills
         .filter((item) => !item.exclude)
         .map((item, key) => (
           <div key={key} className="skill">
