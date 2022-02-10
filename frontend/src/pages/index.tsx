@@ -106,24 +106,28 @@ const Home = () => {
   const SocialData = useSocialData();
 
   const sitehouderRef = useRef<HTMLDivElement>(null);
-  const blokRef = useRef<HTMLAnchorElement>(null);
+  const socialsRef = useRef<HTMLDivElement>(null);
   const limiet = 5;
 
   useEffect(() => {
-    const canvas = sitehouderRef.current?.getBoundingClientRect();
+    if (!sitehouderRef.current) {
+      return;
+    }
 
-    const width = canvas?.width || 0;
-    const height = canvas?.height || 0;
+    const canvas = sitehouderRef.current.getBoundingClientRect();
 
-    sitehouderRef.current?.addEventListener("mousemove", (e) => {
+    const width = canvas.width || 0;
+    const height = canvas.height || 0;
+
+    sitehouderRef.current.addEventListener("mousemove", (e) => {
       const xWalk = (e.x / width) * limiet - limiet / 2;
       const yWalk = (e.y / height) * limiet - limiet / 2;
 
-      document.querySelectorAll("a.blok").forEach((el) => {
-        el.style.boxShadow = `${xWalk}px ${yWalk}px 1px 2px rgba(0,0,0,.1)`;
+      socialsRef.current?.childNodes.forEach((blok) => {
+        blok.style.boxShadow = `${xWalk}px ${yWalk}px 1px 2px rgba(0,0,0,.1)`;
       });
     });
-  }, [sitehouderRef]);
+  }, []);
 
   return (
     <>
@@ -146,7 +150,7 @@ const Home = () => {
             initial="hidden"
             animate="show"
           >
-            <div className="houder">
+            <div className="houder" ref={socialsRef}>
               {SocialData.map((social) => (
                 <motion.a
                   variants={itemAnimation}
@@ -155,7 +159,6 @@ const Home = () => {
                   rel="noopener noreferrer"
                   target="_blank"
                   href={social.url}
-                  ref={blokRef}
                 >
                   {social.icon}
                   <span>
