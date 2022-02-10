@@ -1,3 +1,4 @@
+import { GatsbyImageType, TagType } from "@src/types";
 import { graphql, useStaticQuery } from "gatsby";
 
 type usePortfolioDataType = {
@@ -9,13 +10,8 @@ type usePortfolioDataType = {
   github: string;
   description: string;
   collaboration: string;
-  image: any;
-  skillsused: [
-    {
-      title: string;
-      image: any;
-    }
-  ];
+  image: GatsbyImageType;
+  skillsused: TagType[];
 };
 
 export const usePortfolioData = (): usePortfolioDataType[] => {

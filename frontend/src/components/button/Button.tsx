@@ -48,7 +48,7 @@ const StyledButton = styled.a`
 type ButtonProps = {
   title: string;
   subtitle: string;
-  icon: any;
+  icon: ReactElement;
   url: string;
   external?: boolean;
 };

@@ -102,14 +102,14 @@ const StyledSkills = styled.div`
   }
 `;
 
+type SkillsType = { id: string; skill: string };
+
 const Skills = (): ReactElement => {
   const skills = useSkillsData();
 
   const { phone } = useSiteMetadata();
 
-  const [favorites, setFavorites] = useState<{ id: string; skill: string }[]>(
-    []
-  );
+  const [favorites, setFavorites] = useState<SkillsType[]>([]);
 
   useEffect(() => {
     if (typeof window !== "undefined") {

@@ -4,8 +4,8 @@ import GlobalStyle from "@src/styles/globalStyles";
 import React, { ReactElement } from "react";
 import { Helmet } from "react-helmet";
 
-type LayoutProps = {
-  children: any;
+type LayoutType = {
+  children: ReactElement | ReactElement[];
   title: string;
   description: string;
   noindex?: boolean;
@@ -16,7 +16,7 @@ const Layout = ({
   title,
   description,
   noindex,
-}: LayoutProps): ReactElement => (
+}: LayoutType): ReactElement => (
   <>
     <GlobalStyle />
     <Nav />
