@@ -123,7 +123,9 @@ const Skills = (): ReactElement => {
 
   const { phone } = useSiteMetadata();
 
-  const [favorites, setFavorites] = useState([]);
+  const [favorites, setFavorites] = useState<{ id: string; skill: string }[]>(
+    []
+  );
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -139,33 +141,33 @@ const Skills = (): ReactElement => {
   }, [favorites]);
 
   const ActieveSkills = (): ReactElement => {
-    if (favorites.length > 0) {
-      return (
-        <>
-          <hr />
-          <h5>Uw selectie</h5>
-          <ul className="tags">
-            {favorites.map(({ skill }, key) => (
-              <li key={key} className="tag">
-                <MdDone />
-                {skill}
-              </li>
-            ))}
-            <li
-              className="tag reset"
-              onClick={() => {
-                setFavorites([]);
-              }}
-            >
-              <MdClear />
-              Alle verwijderen
-            </li>
-          </ul>
-        </>
-      );
-    } else {
+    if (!favorites.length) {
       return <></>;
     }
+
+    return (
+      <>
+        <hr />
+        <h5>Uw selectie</h5>
+        <ul className="tags">
+          {favorites.map(({ skill }, key) => (
+            <li key={key} className="tag">
+              <MdDone />
+              {skill}
+            </li>
+          ))}
+          <li
+            className="tag reset"
+            onClick={() => {
+              setFavorites([]);
+            }}
+          >
+            <MdClear />
+            Alle verwijderen
+          </li>
+        </ul>
+      </>
+    );
   };
 
   return (
