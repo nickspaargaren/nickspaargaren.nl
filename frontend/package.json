@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "axios": "^0.25.0",
-    "framer-motion": "^6.2.4",
+    "framer-motion": "^6.2.6",
     "gatsby": "^4.7.1",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-image": "^2.7.0",
