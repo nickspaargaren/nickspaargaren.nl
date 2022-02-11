@@ -24,7 +24,7 @@ const StyleUser = styled.div`
   }
 `;
 
-type UserProps = {
+type UserType = {
   title: string;
   subtitle: string;
   subtitleHover: string;
@@ -36,7 +36,7 @@ const User = ({
   subtitle,
   subtitleHover,
   image,
-}: UserProps): ReactElement => (
+}: UserType): ReactElement => (
   <StyleUser>
     {image}
     <div>

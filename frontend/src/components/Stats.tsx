@@ -1,13 +1,6 @@
 import React, { ReactElement } from "react";
 import styled from "styled-components";
 
-type StatsProps = {
-  title: string;
-  subtitle: string;
-  amount: number;
-  icon: string;
-};
-
 const StyledStats = styled.div`
   display: grid;
   grid-template-columns: auto 1fr;
@@ -48,7 +41,14 @@ const StyledStats = styled.div`
   }
 `;
 
-const Stats = ({ title, subtitle, amount, icon }: StatsProps): ReactElement => (
+type StatsType = {
+  title: string;
+  subtitle: string;
+  amount: number;
+  icon: string;
+};
+
+const Stats = ({ title, subtitle, amount, icon }: StatsType): ReactElement => (
   <StyledStats>
     <div className="amount">
       {amount}

@@ -25,12 +25,12 @@ const StyledYoutube = styled.div`
   }
 `;
 
-type YoutubeProps = {
+type YoutubeType = {
   title: string;
   url: string;
 };
 
-const Youtube = ({ title, url }: YoutubeProps): ReactElement => (
+const Youtube = ({ title, url }: YoutubeType): ReactElement => (
   <StyledYoutube>
     <iframe
       title={title}
