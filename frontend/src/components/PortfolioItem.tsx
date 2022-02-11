@@ -58,25 +58,19 @@ const StyledPortfolioItem = styled.div`
   }
 `;
 
-type PortfolioItemProps = {
+type PortfolioItemType = {
   title: string;
   subtitle?: string;
-  description: string;
-  slug?: string;
   image: GatsbyImageType;
   skillsused?: TagType[];
-  collaboration?: string;
 };
 
 const PortfolioItem = ({
   title,
   subtitle,
-  description,
-  slug,
   image,
   skillsused,
-  collaboration,
-}: PortfolioItemProps): ReactElement => (
+}: PortfolioItemType): ReactElement => (
   <StyledPortfolioItem>
     <div className="image">
       {image && <GatsbyImage image={image.asset.gatsbyImageData} alt={title} />}
