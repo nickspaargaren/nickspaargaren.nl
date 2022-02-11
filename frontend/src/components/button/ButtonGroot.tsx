@@ -35,7 +35,7 @@ const StyledPrimaryButton = styled(StyledButton)`
   }
 `;
 
-type ButtonProps = {
+type ButtonType = {
   title: string;
   icon?: ReactElement;
   url: string;
@@ -47,7 +47,7 @@ const ButtonGroot = ({
   icon,
   url,
   primary,
-}: ButtonProps): ReactElement => {
+}: ButtonType): ReactElement => {
   if (primary) {
     return (
       <StyledPrimaryButton href={url}>

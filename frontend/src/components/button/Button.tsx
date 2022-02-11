@@ -45,7 +45,7 @@ const StyledButton = styled.a`
   }
 `;
 
-type ButtonProps = {
+type ButtonType = {
   title: string;
   subtitle: string;
   icon: ReactElement;
@@ -59,7 +59,7 @@ const Button = ({
   icon,
   url,
   external,
-}: ButtonProps): ReactElement => (
+}: ButtonType): ReactElement => (
   <>
     {external ? (
       <StyledButton href={url} rel="noopener noreferrer" target="_blank">
