@@ -25,10 +25,12 @@ const StyledPortfolioItem = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    color: #fff;
   }
   .description h2 {
     font-size: 22px;
     margin: 0;
+    color: inherit;
   }
   .description p {
     opacity: 0.75;

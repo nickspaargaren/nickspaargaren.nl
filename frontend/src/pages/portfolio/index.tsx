@@ -31,10 +31,6 @@ import {
 } from "react-icons/si";
 import styled from "styled-components";
 
-const StyledPortfolioItems = styled.div`
-  padding: 30px;
-`;
-
 const Index = () => {
   const portfolio = usePortfolioData();
   const stats = useStatsData();
@@ -42,27 +38,23 @@ const Index = () => {
 
   return (
     <Layout title={`Portfolio | ${name}`} description={position} noindex>
-      <header>
-        <StyledPortfolioItems>
-          <div className="inhoud">
-            <div className="grid-4x">
-              {portfolio.map((item, key) => (
-                <SlideAnimation>
-                  <PortfolioItem
-                    key={key}
-                    title={item.title}
-                    subtitle={item.subtitle}
-                    description={item.description}
-                    image={item.image}
-                    skillsused={item.skillsused}
-                    collaboration={item.collaboration}
-                  />
-                </SlideAnimation>
-              ))}
-            </div>
+      <section>
+        <div className="inhoud">
+          <div className="grid-4x">
+            {portfolio.map((item, key) => (
+              <SlideAnimation>
+                <PortfolioItem
+                  key={key}
+                  title={item.title}
+                  subtitle={item.subtitle}
+                  image={item.image}
+                  skillsused={item.skillsused}
+                />
+              </SlideAnimation>
+            ))}
           </div>
-        </StyledPortfolioItems>
-      </header>
+        </div>
+      </section>
       <section>
         <div className="inhoud">
           <div className="grid-4x">
