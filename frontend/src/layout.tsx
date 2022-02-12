@@ -19,7 +19,11 @@ const Layout = ({
 }: LayoutType): ReactElement => (
   <>
     <GlobalStyle />
-    <Nav />
+    <section>
+      <div className="inhoud">
+        <Nav />
+      </div>
+    </section>
     <Helmet>
       <html lang="nl" />
       <meta charSet="utf-8" />
