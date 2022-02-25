@@ -15,6 +15,8 @@ start:
 	@docker-compose up -d
 	@echo ""
 	@echo "  The frontend is running on http://localhost:3000/."
+	@echo "  The frontend GraphQL playground is running on http://localhost:3000/___graphql."
+	@echo ""
 	@echo "  The backend  is running on http://localhost:3333/."
 	@echo ""
 
