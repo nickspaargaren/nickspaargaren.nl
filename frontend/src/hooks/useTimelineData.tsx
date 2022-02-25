@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from "gatsby";
 type TimelineItemType = {
   title: string;
   subtitle: string;
+  date: number;
 };
 
 export const useTimelineData = (): TimelineItemType[] => {
@@ -15,6 +16,7 @@ export const useTimelineData = (): TimelineItemType[] => {
           nodes {
             title
             subtitle
+            date
           }
         }
       }
