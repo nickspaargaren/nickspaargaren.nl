@@ -14,6 +14,11 @@ export default {
       type: 'string',
     },
     {
+      name: "date",
+      title: "Date",
+      type: "number",
+    },
+    {
       name: "order",
       title: "Order",
       type: "number",
