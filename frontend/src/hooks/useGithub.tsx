@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
 type GithubType = {
   data: any;
@@ -13,23 +13,20 @@ const useGithub = (): GithubType => {
     error: null,
   });
 
-  useEffect(() => {
-    const LoadData = async () => {
-      try {
-        const res = await axios.get(
-          "https://api.github.com/repos/nickspaargaren/no-google"
-        );
-        const { data } = res;
-        setGithub({ data: data, loading: false, error: null });
-      } catch (err) {
-        if (axios.isAxiosError(err)) {
-          setGithub({ data: null, loading: false, error: err.message });
-        }
-      }
-    };
-
-    LoadData();
+  const LoadData = useCallback(() => {
+    axios
+      .get("https://api.github.com/repos/nickspaargaren/no-google")
+      .then((res) => {
+        setGithub({ data: res.data, loading: false, error: null });
+      })
+      .catch((err) => {
+        setGithub({ data: null, loading: false, error: err.message });
+      });
   }, []);
+
+  useEffect(() => {
+    LoadData();
+  }, [LoadData]);
 
   return github;
 };
