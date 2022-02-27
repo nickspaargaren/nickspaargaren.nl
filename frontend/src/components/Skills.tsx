@@ -1,5 +1,6 @@
 import { useSiteMetadata } from "@src/hooks/useSiteMetadata";
 import { useSkillsData } from "@src/hooks/useSkillsData";
+import { useLocalStorage } from "@src/utils/localStorage";
 import { motion } from "framer-motion";
 import { GatsbyImage } from "gatsby-plugin-image";
 import React, { ReactElement, useEffect } from "react";
@@ -109,20 +110,7 @@ const Skills = (): ReactElement => {
 
   const { phone } = useSiteMetadata();
 
-  const [favorites, setFavorites] = useState<SkillsType[]>([]);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      localStorage.getItem("favorites") &&
-        setFavorites(JSON.parse(localStorage.getItem("favorites")));
-    }
-  }, []);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      localStorage.setItem("favorites", JSON.stringify(favorites));
-    }
-  }, [favorites]);
+  const [favorites, setFavorites] = useLocalStorage("favorites");
 
   const ActieveSkills = (): ReactElement => {
     if (!favorites.length) {
@@ -188,18 +176,13 @@ const Skills = (): ReactElement => {
               <div
                 className="favorite"
                 onClick={() => {
-                  const check = favorites.find((i) => i["id"] === item.id);
-
-                  if (!check) {
+                  if (!favorites.find((i) => i["id"] === item.id)) {
                     setFavorites([
                       ...favorites,
                       { id: item.id, skill: item.title },
                     ]);
                   } else {
-                    const nieuwfavorites = favorites.filter(
-                      (i) => i["id"] !== item.id
-                    );
-                    setFavorites(nieuwfavorites);
+                    setFavorites(favorites.filter((i) => i["id"] !== item.id));
                   }
                 }}
               >
