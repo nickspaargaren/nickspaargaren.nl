@@ -1,4 +1,4 @@
-import Button from "@src/components/button/Button";
+import Button from "@src/components/Button";
 import { useSocialData } from "@src/hooks/useSocialData";
 import React, { ReactElement } from "react";
 import styled from "styled-components";

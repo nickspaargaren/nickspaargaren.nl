@@ -1,4 +1,4 @@
-import Button from "@src/components/button/Button";
+import Button from "@src/components/Button";
 import Github from "@src/components/Github";
 import PortfolioItem from "@src/components/PortfolioItem";
 import Skills from "@src/components/Skills";
