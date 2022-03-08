@@ -12,8 +12,6 @@ const StyledNav = styled.div`
   justify-content: space-between;
   z-index: 2;
   position: relative;
-  // padding: 20px;
-  // box-shadow: 0 6px 35px -9px rgb(0 0 0 / 20%);
 
   a {
     color: inherit;
