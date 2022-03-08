@@ -3,7 +3,7 @@ var path = require("path");
 exports.createPages = async function ({ actions, graphql }) {
   const { data } = await graphql(`
     {
-      paginas: allSanityPortfolio {
+      pages: allSanityPortfolio {
         nodes {
           slug {
             current
@@ -12,11 +12,11 @@ exports.createPages = async function ({ actions, graphql }) {
       }
     }
   `);
-  data.paginas.nodes.forEach((node) => {
+  data.pages.nodes.forEach((node) => {
     const slug = node.slug.current;
     actions.createPage({
       path: `/portfolio/projecten/${slug}`,
-      component: require.resolve(`./src/templates/ProjectDetail.tsx`),
+      component: require.resolve(`./src/templates/PortfolioPage.tsx`),
       context: { slug: slug },
     });
   });
