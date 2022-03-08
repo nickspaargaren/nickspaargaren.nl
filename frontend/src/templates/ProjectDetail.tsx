@@ -1,5 +1,5 @@
 import Breadcrumbs from "@src/components/Breadcrumbs";
-import Button from "@src/components/button/Button";
+import Button from "@src/components/Button";
 import Layout from "@src/layout";
 import { graphql, Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
