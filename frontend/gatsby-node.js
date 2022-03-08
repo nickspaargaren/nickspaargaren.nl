@@ -1,7 +1,9 @@
 var path = require("path");
 
-exports.createPages = async function ({ actions, graphql }) {
-  const { data } = await graphql(`
+exports.createPages = async ({ actions, graphql }) => {
+  const {
+    data: { pages },
+  } = await graphql(`
     {
       pages: allSanityPortfolio {
         nodes {
@@ -12,17 +14,20 @@ exports.createPages = async function ({ actions, graphql }) {
       }
     }
   `);
-  data.pages.nodes.forEach((node) => {
+
+  pages.nodes.forEach((node) => {
     const slug = node.slug.current;
     actions.createPage({
       path: `/portfolio/projecten/${slug}`,
       component: require.resolve(`./src/templates/PortfolioPage.tsx`),
-      context: { slug: slug },
+      context: {
+        slug,
+      },
     });
   });
 };
 
-exports.onCreateWebpackConfig = function ({ actions }) {
+exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
       alias: {
