@@ -1,8 +1,10 @@
+import type { GatsbyConfig } from "gatsby";
+
 require("dotenv").config({
   path: `.env`,
 });
 
-module.exports = {
+const config: GatsbyConfig = {
   siteMetadata: {
     name: "Nick Spaargaren",
     position: "Designer & Front-End Developer",
@@ -35,3 +37,5 @@ module.exports = {
     },
   ],
 };
+
+export default config;
