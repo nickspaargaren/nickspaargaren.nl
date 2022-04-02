@@ -26,6 +26,9 @@ stop:
 dev:
 	@docker-compose up
 
+test: start \
+	do-frontend-tests
+
 update: \
 	do-update-root-dependencies \
 	do-update-frontend-dependencies \
@@ -87,3 +90,7 @@ do-remove-cache:
 	cd frontend && sudo rm -rf .cache/
 	@echo ""
 	@echo "Cache folder removed.."
+
+do-frontend-tests:
+	@echo "Starting frontend tests.."
+	cd frontend && yarn test

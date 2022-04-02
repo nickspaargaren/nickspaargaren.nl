@@ -11,7 +11,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "lint": "eslint \"**/*.{ts,tsx}\""
+    "lint": "eslint \"**/*.{ts,tsx}\"",
+    "test": "npx cypress run"
   },
   "dependencies": {
     "axios": "^0.26.1",
@@ -36,6 +37,7 @@
     "@types/styled-components": "^5.1.24",
     "babel-eslint": "^10.1.0",
     "babel-plugin-styled-components": "^2.0.6",
+    "cypress": "^9.5.3",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
