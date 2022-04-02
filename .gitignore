@@ -70,3 +70,4 @@ yarn-error.log
 
 backend/dist/
 /frontend/cypress/videos
+/frontend/cypress/screenshots
