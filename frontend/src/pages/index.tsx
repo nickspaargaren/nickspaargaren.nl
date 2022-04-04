@@ -110,16 +110,13 @@ const Home = () => {
   const limiet = 5;
 
   useEffect(() => {
-    if (!sitehouderRef.current) {
-      return;
-    }
+    if (!sitehouderRef.current) return;
 
-    const canvas = sitehouderRef.current.getBoundingClientRect();
+    const canvas = sitehouderRef.current;
 
-    const width = canvas.width || 0;
-    const height = canvas.height || 0;
+    const { width, height } = canvas.getBoundingClientRect();
 
-    sitehouderRef.current.addEventListener("mousemove", (e) => {
+    canvas.addEventListener("mousemove", (e) => {
       const xWalk = (e.x / width) * limiet - limiet / 2;
       const yWalk = (e.y / height) * limiet - limiet / 2;
 
