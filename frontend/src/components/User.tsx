@@ -20,7 +20,7 @@ const User = ({ title, subtitle, image }: UserType): ReactElement => (
     {image}
     <div>
       <strong>{title}</strong>
-      <div className="klein">{subtitle}</div>
+      <div className="small">{subtitle}</div>
     </div>
   </StyleUser>
 );
