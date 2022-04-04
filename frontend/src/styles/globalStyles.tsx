@@ -92,7 +92,7 @@ const GlobalStyle = createGlobalStyle`
   header h3, 
   header h4 {color: inherit;} 
 
-  .klein {font-size: 14px;}
+  .small {font-size: 14px;}
 
   /* Grid Templates */
   div[class*="grid"] {display: grid; grid-gap: 30px; box-sizing: border-box;}
