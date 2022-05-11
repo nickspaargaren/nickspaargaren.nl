@@ -1,17 +1,13 @@
 info: 
-	@echo "  make build			Build the project images."
-	@echo "  make start			Start the project containers."
-	@echo "  make stop			Stop the project containers."
-	@echo "  make dev			Start the project containers including dev output."
-	@echo "  make update			Update all dependencies in root, frontend and backend folders."
-	@echo "  make reset			Reset the project containers, volumes, local dependencies and cache files."
+	@echo "\n=== Available commands ===\n"
+	@egrep '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) |  awk 'BEGIN {FS = ":.*?## "}; {printf "\033[33m%-15s\033[0m %s\n", $$1, $$2}'
 
-build: \
-	do-install-dependencies
+build: ## Build the project images.
+	@make do-install-dependencies
 	@echo ""
 	@docker-compose build
 
-start:
+start: ## Start the project containers.
 	@docker-compose up -d
 	@echo ""
 	@echo "  The frontend is running on http://localhost:3000/."
@@ -20,76 +16,79 @@ start:
 	@echo "  The backend  is running on http://localhost:3333/."
 	@echo ""
 
-stop:
+stop: ## Stop the project containers.
 	@docker-compose stop
 
-dev:
+dev: ## Start the project containers including dev output.
 	@docker-compose up
 
-test: start \
-	do-frontend-tests
+test: ## Run the project tests.
+	@make start
+	@make do-frontend-tests
 
-update: \
-	do-update-root-dependencies \
-	do-update-frontend-dependencies \
-	do-update-backend-dependencies
+update: ## Update all dependencies in root, frontend and backend folders.
+	@make do-update-root-dependencies
+	@make do-update-frontend-dependencies
+	@make do-update-backend-dependencies
 
-reset: do-remove-nodemodules \
-	do-remove-cache
+reset: ## Reset the project containers, volumes, local dependencies and cache files.
+	@make do-remove-nodemodules
+	@make do-remove-cache
 	@docker-compose down -v
 
 # Installing dependencies
-do-install-dependencies: \
-	do-install-root-dependencies \
-	do-install-frontend-dependencies \
-	do-install-backend-dependencies
+do-install-dependencies:
+	@make do-install-root-dependencies
+	@make do-install-frontend-dependencies
+	@make do-install-backend-dependencies
 
 do-install-root-dependencies:
 	@echo ""
 	@echo "Installing local dependencies.."
-	yarn install
+	@yarn install
 
 do-install-frontend-dependencies:
 	@echo ""
 	@echo "Installing local dependencies for frontend.."
-	cd frontend && yarn install
+	@cd frontend && yarn install
 
 do-install-backend-dependencies:
 	@echo ""
 	@echo "Installing local dependencies for backend.."
-	cd backend && yarn install
+	@cd backend && yarn install
 
 # Upgrade dependencies
 do-update-root-dependencies:
 	@echo ""
 	@echo "Updating dependencies.."
-	yarn upgrade-interactive --latest
+	@yarn upgrade-interactive --latest
 
 do-update-frontend-dependencies:
 	@echo ""
 	@echo "Updating dependencies for frontend.."
-	cd frontend && yarn upgrade-interactive --latest
+	@cd frontend && yarn upgrade-interactive --latest
 
 do-update-backend-dependencies:
 	@echo ""
 	@echo "Updating dependencies for backend.."
-	cd backend && yarn upgrade-interactive --latest
+	@cd backend && yarn upgrade-interactive --latest
 
 # Remove dependencies & cache
 do-remove-nodemodules:
 	@echo ""
 	@echo "Removing all node_modules folders.."
-	sudo rm -rf node_modules
-	cd frontend && sudo rm -rf node_modules
-	cd backend && sudo rm -rf node_modules
+	@sudo rm -rf node_modules
+	@cd frontend && sudo rm -rf node_modules
+	@cd backend && sudo rm -rf node_modules
 	@echo ""
 	@echo "All node_modules folders removed.."
+
 do-remove-cache:
 	@echo ""
 	@echo "Removing frontend cache folder.."
-	cd frontend && sudo rm -rf .cache/
+	@cd frontend && sudo rm -rf .cache/ && sudo rm -rf public/
 	@echo ""
-	@echo "Cache folder removed.."
+	@echo "Cache folders removed.."
 
 do-frontend-tests:
 	@echo "Starting frontend tests.."
