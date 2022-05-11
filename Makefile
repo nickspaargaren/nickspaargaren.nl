@@ -26,6 +26,10 @@ test: ## Run the project tests.
 	@make start
 	@make do-frontend-tests
 
+lint: ## Run the project codestyle check.
+	@make start
+	@make do-frontend-lint
+
 update: ## Update all dependencies in root, frontend and backend folders.
 	@make do-update-root-dependencies
 	@make do-update-frontend-dependencies
@@ -93,3 +97,7 @@ do-remove-cache:
 do-frontend-tests:
 	@echo "Starting frontend tests.."
 	cd frontend && yarn test
+
+do-frontend-lint:
+	@echo "Starting frontend codestyle check.."
+	@docker-compose exec frontend sh -c "yarn lint"
