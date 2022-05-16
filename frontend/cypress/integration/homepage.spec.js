@@ -2,7 +2,7 @@
 
 describe("Homepage tests", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:3000");
+    cy.visit("/");
   });
 
   it("displays shows expected h1 title", () => {
