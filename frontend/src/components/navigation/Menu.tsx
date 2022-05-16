@@ -46,8 +46,8 @@ const StyledMenu = styled.div`
 `;
 
 const Menu = (): ReactElement => {
-  const hoverRef = useRef(null);
-  const menuItemRef = useRef(null);
+  const hoverRef = useRef<HTMLDivElement>(null);
+  const menuItemRef = useRef<HTMLUListElement>(null);
 
   const hover = (e) => {
     hoverRef.current.style.left = `${e.target.offsetLeft}px`;
@@ -55,17 +55,21 @@ const Menu = (): ReactElement => {
   };
 
   const leave = () => {
-    Array.from(menuItemRef.current.children).map((item) => {
-      if (item.children[0].classList.contains("active")) {
-        hoverRef.current.style.left = `${item.children[0].offsetLeft}px`;
-        hoverRef.current.style.width = `${item.children[0].clientWidth}px`;
+    menuItemRef.current?.childNodes.forEach((item) => {
+      const {
+        children: [box],
+      } = item;
+
+      if (box.classList.contains("active")) {
+        hoverRef.current.style.left = `${box.offsetLeft}px`;
+        hoverRef.current.style.width = `${box.clientWidth}px`;
       }
     });
   };
 
   useEffect(() => {
     leave();
-  });
+  }, []);
 
   return (
     <StyledMenu>
