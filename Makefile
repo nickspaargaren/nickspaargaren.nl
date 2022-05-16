@@ -70,12 +70,12 @@ do-update-root-dependencies:
 do-update-frontend-dependencies:
 	@echo ""
 	@echo "Updating dependencies for frontend.."
-	@cd frontend && yarn upgrade-interactive --latest
+	@docker-compose exec frontend sh -c "yarn upgrade-interactive --latest"
 
 do-update-backend-dependencies:
 	@echo ""
 	@echo "Updating dependencies for backend.."
-	@cd backend && yarn upgrade-interactive --latest
+	@docker-compose exec backend sh -c "yarn upgrade-interactive --latest"
 
 # Remove dependencies & cache
 do-remove-nodemodules:
@@ -90,7 +90,7 @@ do-remove-nodemodules:
 do-remove-cache:
 	@echo ""
 	@echo "Removing frontend cache folder.."
-	@cd frontend && sudo rm -rf .cache/ && sudo rm -rf public/
+	@docker-compose exec frontend sh -c "rm -rf .cache/ && rm -rf public/"
 	@echo ""
 	@echo "Cache folders removed.."
 
