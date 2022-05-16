@@ -1,15 +1,7 @@
-import React, { ReactElement } from "react";
+import React from "react";
 import { FaDribbble, FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
 
-type SocialDataType = {
-  id: number;
-  platform: string;
-  class: string;
-  icon: ReactElement;
-  url: string;
-};
-
-export const useSocialData = (): SocialDataType[] => [
+export const SocialData = [
   {
     id: 1,
     platform: "Dribbble",

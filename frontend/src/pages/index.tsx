@@ -1,5 +1,5 @@
 import { useSiteMetadata } from "@src/hooks/useSiteMetadata";
-import { useSocialData } from "@src/hooks/useSocialData";
+import { SocialData } from "@src/hooks/useSocialData";
 import { motion } from "framer-motion";
 import React, { ReactElement, useEffect, useRef } from "react";
 import { Helmet } from "react-helmet";
@@ -104,7 +104,6 @@ const itemAnimation = {
 
 const Home = (): ReactElement => {
   const { name, position } = useSiteMetadata();
-  const SocialData = useSocialData();
 
   const siteholderRef = useRef<HTMLDivElement>(null);
   const socialsRef = useRef<HTMLDivElement>(null);
