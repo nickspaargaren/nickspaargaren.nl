@@ -3,4 +3,3 @@
 
 cd frontend
 yarn lint
-yarn test
