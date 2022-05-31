@@ -1,0 +1,26 @@
+name: CI/CD
+on: push
+jobs:
+  cypress:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run tests
+      uses: cypress-io/github-action@v2
+      with:
+        working-directory: frontend
+        browser: chrome
+        build: yarn build
+        start: yarn serve --port 3000
+
+  eslint:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./frontend
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install modules
+      run: yarn install
+    - name: Run ESLint
+      run: yarn run lint
