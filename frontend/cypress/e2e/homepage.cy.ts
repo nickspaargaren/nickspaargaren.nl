@@ -9,3 +9,5 @@ describe("Homepage tests", () => {
     cy.get("h1").should("have.text", "Nick Spaargaren");
   });
 });
+
+export {};
