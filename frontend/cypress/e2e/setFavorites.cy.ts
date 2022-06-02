@@ -12,3 +12,5 @@ describe("Set favorites test", () => {
     cy.get("li.tag.reset").should("have.text", "Alle verwijderen");
   });
 });
+
+export {};
