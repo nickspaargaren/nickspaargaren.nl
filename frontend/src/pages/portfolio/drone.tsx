@@ -2,9 +2,7 @@ import Breadcrumbs from "@src/components/Breadcrumbs";
 import Youtube from "@src/components/Youtube";
 import { useSiteMetadata } from "@src/hooks/useSiteMetadata";
 import Layout from "@src/layout";
-import { Link } from "gatsby";
 import React from "react";
-import { FaCaretRight } from "react-icons/fa";
 
 const Drone = () => {
   const { name } = useSiteMetadata();

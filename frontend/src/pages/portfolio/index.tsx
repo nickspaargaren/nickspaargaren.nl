@@ -29,7 +29,6 @@ import {
   SiVisualstudiocode,
   SiXbox,
 } from "react-icons/si";
-import styled from "styled-components";
 
 const Index = () => {
   const portfolio = usePortfolioData();
