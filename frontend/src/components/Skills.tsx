@@ -1,10 +1,8 @@
-import { useSiteMetadata } from "@src/hooks/useSiteMetadata";
 import { useSkillsData } from "@src/hooks/useSkillsData";
 import { useLocalStorage } from "@src/utils/localStorage";
 import { motion } from "framer-motion";
 import { GatsbyImage } from "gatsby-plugin-image";
-import React, { ReactElement, useEffect } from "react";
-import { useState } from "react";
+import React, { ReactElement } from "react";
 import {
   MdCheckBox,
   MdCheckBoxOutlineBlank,
@@ -103,12 +101,8 @@ const StyledSkills = styled.div`
   }
 `;
 
-type SkillsType = { id: string; skill: string };
-
 const Skills = (): ReactElement => {
   const skills = useSkillsData();
-
-  const { phone } = useSiteMetadata();
 
   const [favorites, setFavorites] = useLocalStorage("favorites");
 

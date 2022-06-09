@@ -5,20 +5,6 @@ import { graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import React, { ReactElement } from "react";
 import { FaAngleDoubleRight, FaCode } from "react-icons/fa";
-import styled from "styled-components";
-
-const PortfolioGrid = styled.div`
-  width: 100%;
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: 1fr 1fr;
-
-  .image > div {
-    height: 100% !important;
-    object-fit: cover;
-    width: 100% !important;
-  }
-`;
 
 const PortfolioPage = ({ data: { page } }): ReactElement => (
   <Layout
