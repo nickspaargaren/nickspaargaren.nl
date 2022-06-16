@@ -1,8 +1,3 @@
-```
-make build
-make start
-make stop
-make dev
-make update
-make reset
-```
+### Development
+
+Run `task` to view all available commands for this project.
