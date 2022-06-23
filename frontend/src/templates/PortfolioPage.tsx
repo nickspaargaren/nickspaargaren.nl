@@ -2,11 +2,29 @@ import Breadcrumbs from "@src/components/Breadcrumbs";
 import Button from "@src/components/Button";
 import Layout from "@src/layout";
 import { graphql } from "gatsby";
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 import React, { ReactElement } from "react";
 import { FaAngleDoubleRight, FaCode } from "react-icons/fa";
 
-const PortfolioPage = ({ data: { page } }): ReactElement => (
+type PortfolioPageProps = {
+  data: {
+    page: {
+      title: string;
+      website: string;
+      github: string;
+      description: string;
+      image: {
+        asset: {
+          gatsbyImageData: IGatsbyImageData;
+        };
+      };
+    };
+  };
+};
+
+const PortfolioPage = ({
+  data: { page },
+}: PortfolioPageProps): ReactElement => (
   <Layout
     title={`Projecten | ${page.title}`}
     description={page.description}
