@@ -65,6 +65,7 @@ tasks:
       - docker-compose exec backend sh -c "yarn upgrade-interactive --latest"
 
   reset:
+    desc: Reset the project containers, volumes, local dependencies and cache files.
     cmds:
       - echo Removing all node_modules folders..
       - sudo rm -rf node_modules
@@ -75,4 +76,5 @@ tasks:
       - echo Removing frontend cache folder..
       - docker-compose exec frontend sh -c "rm -rf .cache/ && rm -rf public/"
       - echo Cache folders removed.
+      - docker-compose down -v
     silent: true
