@@ -156,6 +156,7 @@ const Home = (): ReactElement => {
                   rel="noopener noreferrer"
                   target="_blank"
                   href={social.url}
+                  aria-label={`Nick's ${social.platform} account`}
                 >
                   {social.icon}
                   <span>

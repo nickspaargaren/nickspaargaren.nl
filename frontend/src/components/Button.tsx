@@ -50,6 +50,7 @@ type ButtonType = {
   subtitle: string;
   icon: ReactElement;
   url: string;
+  ariaLabel?: string;
   external?: boolean;
 };
 
@@ -58,11 +59,17 @@ const Button = ({
   subtitle,
   icon,
   url,
+  ariaLabel,
   external,
 }: ButtonType): ReactElement => (
   <>
     {external ? (
-      <StyledButton href={url} rel="noopener noreferrer" target="_blank">
+      <StyledButton
+        href={url}
+        rel="noopener noreferrer"
+        target="_blank"
+        aria-label={ariaLabel}
+      >
         <div className="icon">{icon}</div>
         <span>
           <strong>{title}</strong>
@@ -70,7 +77,12 @@ const Button = ({
         </span>
       </StyledButton>
     ) : (
-      <StyledButton as={Link} to={url} className="button">
+      <StyledButton
+        as={Link}
+        to={url}
+        className="button"
+        aria-label={ariaLabel}
+      >
         <div className="icon">{icon}</div>
         <span>
           <strong>{title}</strong>

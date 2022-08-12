@@ -5,7 +5,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import React, { ReactElement } from "react";
 import styled from "styled-components";
 
-const StyledNav = styled.div`
+const StyledNav = styled.nav`
   background: #fff;
   color: #292a2c;
   display: flex;

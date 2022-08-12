@@ -1,14 +1,10 @@
+import ActiveSkills from "@src/components/ActiveSkills";
 import { useSkillsData } from "@src/hooks/useSkillsData";
 import { useLocalStorage } from "@src/utils/localStorage";
 import { motion } from "framer-motion";
 import { GatsbyImage } from "gatsby-plugin-image";
 import React, { ReactElement } from "react";
-import {
-  MdCheckBox,
-  MdCheckBoxOutlineBlank,
-  MdClear,
-  MdDone,
-} from "react-icons/md";
+import { MdCheckBox, MdCheckBoxOutlineBlank } from "react-icons/md";
 import styled from "styled-components";
 
 const StyledSkills = styled.div`
@@ -56,6 +52,9 @@ const StyledSkills = styled.div`
     height: 100%;
     border-radius: inherit;
   }
+  .skill .opties {
+    position: relative;
+  }
   .skill .opties .icon {
     cursor: pointer;
     background: #221e25;
@@ -74,30 +73,13 @@ const StyledSkills = styled.div`
   .skill .opties .icon svg {
     margin: 0;
   }
-  .tags {
-    margin: 0 0 15px;
-    padding: 0;
-  }
-  .tags .tag {
-    display: inline-flex;
-    background: #221e25;
-    padding: 5px 7px;
-    border-radius: 3px;
-    font-size: 13px;
-    margin: 0 5px 5px 0;
-  }
-  .tags .tag svg {
-    margin: auto 5px auto 0;
-    fill: #35ca88;
-  }
-  .tags .tag.reset {
-    cursor: pointer;
-  }
-  .tags .tag.reset:hover {
-    background: rgba(255, 255, 255, 0.2);
-  }
-  .tags .tag.reset svg {
-    fill: #f13f30;
+  .skill .opties input {
+    position: absolute;
+    opacity: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
   }
 `;
 
@@ -106,34 +88,12 @@ const Skills = (): ReactElement => {
 
   const [favorites, setFavorites] = useLocalStorage("favorites");
 
-  const ActieveSkills = (): ReactElement => {
-    if (!favorites.length) {
-      return <></>;
+  const handleChangeChk = (item) => {
+    if (!favorites.find((i) => i["id"] === item.id)) {
+      setFavorites([...favorites, { id: item.id, skill: item.title }]);
+    } else {
+      setFavorites(favorites.filter((i) => i["id"] !== item.id));
     }
-
-    return (
-      <>
-        <hr />
-        <h5>Uw selectie</h5>
-        <ul className="tags">
-          {favorites.map(({ skill }, key) => (
-            <li key={key} className="tag">
-              <MdDone />
-              {skill}
-            </li>
-          ))}
-          <li
-            className="tag reset"
-            onClick={() => {
-              setFavorites([]);
-            }}
-          >
-            <MdClear />
-            Alle verwijderen
-          </li>
-        </ul>
-      </>
-    );
   };
 
   return (
@@ -167,25 +127,24 @@ const Skills = (): ReactElement => {
               </div>
             </div>
             <div className="opties">
-              <div
-                className="favorite"
-                onClick={() => {
-                  if (!favorites.find((i) => i["id"] === item.id)) {
-                    setFavorites([
-                      ...favorites,
-                      { id: item.id, skill: item.title },
-                    ]);
-                  } else {
-                    setFavorites(favorites.filter((i) => i["id"] !== item.id));
+              <div className="favorite" onClick={() => handleChangeChk(item)}>
+                <input
+                  type="checkbox"
+                  aria-label={item.title}
+                  onChange={() => handleChangeChk(item)}
+                  onKeyDown={({ key }) =>
+                    key === "Enter" && handleChangeChk(item)
                   }
-                }}
-              >
+                  checked={
+                    favorites.find((i) => i["id"] === item.id) ? true : false
+                  }
+                />
                 {favorites.find((i) => i["id"] === item.id) ? (
-                  <div className={`icon actief`}>
+                  <div className="icon actief">
                     <MdCheckBox />
                   </div>
                 ) : (
-                  <div className={`icon`}>
+                  <div className="icon">
                     <MdCheckBoxOutlineBlank />
                   </div>
                 )}
@@ -194,7 +153,7 @@ const Skills = (): ReactElement => {
           </div>
         ))}
 
-      <ActieveSkills />
+      <ActiveSkills favorites={favorites} setFavorites={setFavorites} />
     </StyledSkills>
   );
 };

@@ -61,6 +61,7 @@ const Github = (): ReactElement => {
           href={github.data.html_url}
           rel="noopener noreferrer"
           target="_blank"
+          aria-label={`No Google, Completely block Google and its services Github repository with ${github.data.stargazers_count} stars and ${github.data.forks_count} forks`}
         >
           {github.data.html_url}
         </a>
