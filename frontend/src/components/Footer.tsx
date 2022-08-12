@@ -39,6 +39,7 @@ const Footer = (): ReactElement => (
             icon={social.icon}
             url={social.url}
             external
+            ariaLabel={`Nick's ${social.platform} account`}
           />
         ))}
         <p>

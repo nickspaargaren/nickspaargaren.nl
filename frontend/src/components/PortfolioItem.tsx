@@ -80,7 +80,7 @@ const PortfolioItem = ({
     <div className="description">
       <h2>{title}</h2>
       <p>{subtitle}</p>
-      <BsChevronUp />
+      <BsChevronUp aria-hidden="true" />
       <Taglist tags={skillsused ? skillsused : []} />
     </div>
   </StyledPortfolioItem>

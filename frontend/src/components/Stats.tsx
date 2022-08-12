@@ -52,7 +52,9 @@ const Stats = ({ title, subtitle, amount, icon }: StatsType): ReactElement => (
   <StyledStats>
     <div className="amount">
       {amount}
-      <div className="plus">{icon}</div>
+      <div className="plus" aria-hidden="true">
+        {icon}
+      </div>
     </div>
     <div className="content">
       <h4>{title}</h4>

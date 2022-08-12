@@ -81,18 +81,21 @@ const Index = () => {
           </SlideAnimation>
           <div className="grid-4x">
             <SlideAnimation>
-              <SiMaterialdesignicons />
-              <SiAdobe />
-              <SiSketch />
+              <SiMaterialdesignicons aria-hidden="true" />
+              <SiAdobe aria-hidden="true" />
+              <SiSketch aria-hidden="true" />
               <h4>Design</h4>
               <p>
-                Meer dan 10 jaar <span className="calc">27 - 10 = 17 ✓</span>{" "}
+                Meer dan 10 jaar{" "}
+                <span className="calc" aria-hidden="true">
+                  27 - 10 = 17 ✓
+                </span>{" "}
                 ervaring met vormgeving, design, fotobewerking en dtp.
               </p>
             </SlideAnimation>
             <SlideAnimation>
-              <SiVisualstudiocode />
-              <SiDevdotto />
+              <SiVisualstudiocode aria-hidden="true" />
+              <SiDevdotto aria-hidden="true" />
               <h4>Develop</h4>
               <p>
                 Front-end developer sinds 2013. Altijd zoekend naar nieuwe
@@ -100,18 +103,20 @@ const Index = () => {
               </p>
             </SlideAnimation>
             <SlideAnimation>
-              <SiCodeclimate />
-              <SiAirbnb />
+              <SiCodeclimate aria-hidden="true" />
+              <SiAirbnb aria-hidden="true" />
               <h4>Drone videography</h4>
               <p>
                 Vakantie en activiteitenvideo's, promotievideo's /
                 inzamelingsacties, luchtopnames.{" "}
-                <Link to="/portfolio/drone">Naar video's</Link>
+                <Link to="/portfolio/drone" aria-label="Drone video's">
+                  Naar video's
+                </Link>
               </p>
             </SlideAnimation>
             <SlideAnimation>
-              <SiOneplus />
-              <SiApple />
+              <SiOneplus aria-hidden="true" />
+              <SiApple aria-hidden="true" />
               <h4>Device rooting/jailbreakscene</h4>
               <p>
                 Checkra1n, ADB debug, Unc0ver, Odin, Custom recoveries, TWRP,
@@ -119,16 +124,16 @@ const Index = () => {
               </p>
             </SlideAnimation>
             <SlideAnimation>
-              <SiRaspberrypi />
-              <SiLinux />
+              <SiRaspberrypi aria-hidden="true" />
+              <SiLinux aria-hidden="true" />
               <h4>Linux / Raspberry pi</h4>
               <p>
                 Pi-hole, Homebrige, Unbound DNS, openVPN, Domoticz, Wireguard
               </p>
             </SlideAnimation>
             <SlideAnimation>
-              <SiAdobe />
-              <SiAdobepremierepro />
+              <SiAdobe aria-hidden="true" />
+              <SiAdobepremierepro aria-hidden="true" />
               <h4>Videobewerking</h4>
               <p>
                 Premiere pro, Audacity,{" "}
@@ -139,9 +144,9 @@ const Index = () => {
               </p>
             </SlideAnimation>
             <SlideAnimation>
-              <SiXbox />
-              <SiNetflix />
-              <SiSpotify />
+              <SiXbox aria-hidden="true" />
+              <SiNetflix aria-hidden="true" />
+              <SiSpotify aria-hidden="true" />
               <h4>Overige</h4>
               <p>
                 Xbox ambassador, iOS Dev Beta, PSP Custom Firmware, SONOS fan,
@@ -170,6 +175,7 @@ const Index = () => {
             subtitle="Account"
             icon={<FaLinkedin />}
             url="https://www.linkedin.com/in/nickspaargaren"
+            ariaLabel={`Nick's Linkedin account`}
             external
           />
         </div>
