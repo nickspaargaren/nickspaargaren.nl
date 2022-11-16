@@ -10,6 +10,7 @@ export const onRenderBody: GatsbySSR["onRenderBody"] = ({
       defer
       src="/stats/script.js"
       data-website-id="c5bd98d9-afa7-444d-b50f-500b2883d316"
+      data-domains="nickspaargaren.nl"
     ></script>,
   ]);
 };
