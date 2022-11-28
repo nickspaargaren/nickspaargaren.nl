@@ -26,23 +26,23 @@ const StyledBreadcrumbs = styled.ul`
 `;
 
 type BreadcrumbsType = {
-  list: string[];
+	list: string[];
 };
 
 const Breadcrumbs = ({ list }: BreadcrumbsType): ReactElement => (
-  <StyledBreadcrumbs>
-    <li>
-      <Link to="/portfolio">Home</Link>
-    </li>
-    {list.map((title, key) => (
-      <React.Fragment key={key}>
-        <li>
-          <FaCaretRight />
-        </li>
-        <li>{title}</li>
-      </React.Fragment>
-    ))}
-  </StyledBreadcrumbs>
+	<StyledBreadcrumbs>
+		<li>
+			<Link to="/portfolio">Home</Link>
+		</li>
+		{list.map((title, key) => (
+			<React.Fragment key={key}>
+				<li>
+					<FaCaretRight />
+				</li>
+				<li>{title}</li>
+			</React.Fragment>
+		))}
+	</StyledBreadcrumbs>
 );
 
 export default Breadcrumbs;

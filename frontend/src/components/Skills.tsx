@@ -84,78 +84,78 @@ const StyledSkills = styled.div`
 `;
 
 const Skills = (): ReactElement => {
-  const skills = useSkillsData();
+	const skills = useSkillsData();
 
-  const [favorites, setFavorites] = useLocalStorage("favorites");
+	const [favorites, setFavorites] = useLocalStorage("favorites");
 
-  const handleChangeChk = (item) => {
-    if (!favorites.find((i) => i["id"] === item.id)) {
-      setFavorites([...favorites, { id: item.id, skill: item.title }]);
-    } else {
-      setFavorites(favorites.filter((i) => i["id"] !== item.id));
-    }
-  };
+	const handleChangeChk = (item) => {
+		if (favorites.find((i) => i["id"] === item.id)) {
+			setFavorites(favorites.filter((i) => i["id"] !== item.id));
+		} else {
+			setFavorites([...favorites, { id: item.id, skill: item.title }]);
+		}
+	};
 
-  return (
-    <StyledSkills>
-      <h2>Waar wilt u het graag over hebben?</h2>
+	return (
+		<StyledSkills>
+			<h2>Waar wilt u het graag over hebben?</h2>
 
-      {skills
-        .filter((item) => !item.exclude)
-        .map((item, key) => (
-          <div key={key} className="skill">
-            {item.image ? (
-              <GatsbyImage
-                image={item.image.asset.gatsbyImageData}
-                alt={item.title}
-              />
-            ) : (
-              <img src="https://placehold.it/35x35" alt="placeholder" />
-            )}
-            <div>
-              <div className="title">
-                {item.title}
-                <span>{item.percentage + "%"}</span>
-              </div>
-              <div className="percentage">
-                <motion.div
-                  initial={{ width: "0%" }}
-                  whileInView={{ width: item.percentage + "%" }}
-                  viewport={{ once: true }}
-                  className="gevuld"
-                ></motion.div>
-              </div>
-            </div>
-            <div className="opties">
-              <div className="favorite" onClick={() => handleChangeChk(item)}>
-                <input
-                  type="checkbox"
-                  aria-label={item.title}
-                  onChange={() => handleChangeChk(item)}
-                  onKeyDown={({ key }) =>
-                    key === "Enter" && handleChangeChk(item)
-                  }
-                  checked={
-                    favorites.find((i) => i["id"] === item.id) ? true : false
-                  }
-                />
-                {favorites.find((i) => i["id"] === item.id) ? (
-                  <div className="icon actief">
-                    <MdCheckBox />
-                  </div>
-                ) : (
-                  <div className="icon">
-                    <MdCheckBoxOutlineBlank />
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-        ))}
+			{skills
+				.filter((item) => !item.exclude)
+				.map((item, key) => (
+					<div key={key} className="skill">
+						{item.image ? (
+							<GatsbyImage
+								image={item.image.asset.gatsbyImageData}
+								alt={item.title}
+							/>
+						) : (
+							<img src="https://placehold.it/35x35" alt="placeholder" />
+						)}
+						<div>
+							<div className="title">
+								{item.title}
+								<span>{`${item.percentage}%`}</span>
+							</div>
+							<div className="percentage">
+								<motion.div
+									initial={{ width: "0%" }}
+									whileInView={{ width: `${item.percentage}%` }}
+									viewport={{ once: true }}
+									className="gevuld"
+								/>
+							</div>
+						</div>
+						<div className="opties">
+							<div className="favorite" onClick={() => handleChangeChk(item)}>
+								<input
+									type="checkbox"
+									aria-label={item.title}
+									onChange={() => handleChangeChk(item)}
+									onKeyDown={({ key }) =>
+										key === "Enter" && handleChangeChk(item)
+									}
+									checked={
+										favorites.find((i) => i["id"] === item.id) ? true : false
+									}
+								/>
+								{favorites.find((i) => i["id"] === item.id) ? (
+									<div className="icon actief">
+										<MdCheckBox />
+									</div>
+								) : (
+									<div className="icon">
+										<MdCheckBoxOutlineBlank />
+									</div>
+								)}
+							</div>
+						</div>
+					</div>
+				))}
 
-      <ActiveSkills favorites={favorites} setFavorites={setFavorites} />
-    </StyledSkills>
-  );
+			<ActiveSkills favorites={favorites} setFavorites={setFavorites} />
+		</StyledSkills>
+	);
 };
 
 export default Skills;

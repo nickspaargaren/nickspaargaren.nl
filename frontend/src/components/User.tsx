@@ -10,19 +10,19 @@ const StyleUser = styled.div`
 `;
 
 type UserType = {
-  title: string;
-  subtitle: string;
-  image?: object;
+	title: string;
+	subtitle: string;
+	image?: object;
 };
 
 const User = ({ title, subtitle, image }: UserType): ReactElement => (
-  <StyleUser>
-    {image}
-    <div>
-      <strong>{title}</strong>
-      <div className="small">{subtitle}</div>
-    </div>
-  </StyleUser>
+	<StyleUser>
+		{image}
+		<div>
+			<strong>{title}</strong>
+			<div className="small">{subtitle}</div>
+		</div>
+	</StyleUser>
 );
 
 export default User;

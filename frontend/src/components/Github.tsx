@@ -42,42 +42,42 @@ const StyledGithub = styled.div`
 `;
 
 const Github = (): ReactElement => {
-  const github = useGithub();
+	const github = useGithub();
 
-  if (github.error) {
-    return <>{github.error}</>;
-  }
+	if (github.error) {
+		return <>{github.error}</>;
+	}
 
-  if (github.loading) {
-    return <>Laden...</>;
-  }
+	if (github.loading) {
+		return <>Laden...</>;
+	}
 
-  return (
-    <StyledGithub>
-      <div className="title">{github.data.name}</div>
-      <p>{github.data.description}</p>
-      <p>
-        <a
-          href={github.data.html_url}
-          rel="noopener noreferrer"
-          target="_blank"
-          aria-label={`No Google, Completely block Google and its services Github repository with ${github.data.stargazers_count} stars and ${github.data.forks_count} forks`}
-        >
-          {github.data.html_url}
-        </a>
-      </p>
-      <small>
-        <span className="stars">
-          <GoStar />
-          {github.data.stargazers_count}
-        </span>
-        <span>
-          <GoRepoForked />
-          {github.data.forks}
-        </span>
-      </small>
-    </StyledGithub>
-  );
+	return (
+		<StyledGithub>
+			<div className="title">{github.data.name}</div>
+			<p>{github.data.description}</p>
+			<p>
+				<a
+					href={github.data.html_url}
+					rel="noopener noreferrer"
+					target="_blank"
+					aria-label={`No Google, Completely block Google and its services Github repository with ${github.data.stargazers_count} stars and ${github.data.forks_count} forks`}
+				>
+					{github.data.html_url}
+				</a>
+			</p>
+			<small>
+				<span className="stars">
+					<GoStar />
+					{github.data.stargazers_count}
+				</span>
+				<span>
+					<GoRepoForked />
+					{github.data.forks}
+				</span>
+			</small>
+		</StyledGithub>
+	);
 };
 
 export default Github;

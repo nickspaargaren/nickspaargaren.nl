@@ -61,29 +61,29 @@ const StyledPortfolioItem = styled.div`
 `;
 
 type PortfolioItemType = {
-  title: string;
-  subtitle?: string;
-  image: GatsbyImageType;
-  skillsused?: TagType[];
+	title: string;
+	subtitle?: string;
+	image: GatsbyImageType;
+	skillsused?: TagType[];
 };
 
 const PortfolioItem = ({
-  title,
-  subtitle,
-  image,
-  skillsused,
+	title,
+	subtitle,
+	image,
+	skillsused,
 }: PortfolioItemType): ReactElement => (
-  <StyledPortfolioItem>
-    <div className="image">
-      {image && <GatsbyImage image={image.asset.gatsbyImageData} alt={title} />}
-    </div>
-    <div className="description">
-      <h2>{title}</h2>
-      <p>{subtitle}</p>
-      <BsChevronUp aria-hidden="true" />
-      <Taglist tags={skillsused ? skillsused : []} />
-    </div>
-  </StyledPortfolioItem>
+	<StyledPortfolioItem>
+		<div className="image">
+			{image && <GatsbyImage image={image.asset.gatsbyImageData} alt={title} />}
+		</div>
+		<div className="description">
+			<h2>{title}</h2>
+			<p>{subtitle}</p>
+			<BsChevronUp aria-hidden="true" />
+			<Taglist tags={skillsused ? skillsused : []} />
+		</div>
+	</StyledPortfolioItem>
 );
 
 export default PortfolioItem;

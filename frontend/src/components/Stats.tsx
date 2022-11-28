@@ -42,25 +42,25 @@ const StyledStats = styled.div`
 `;
 
 type StatsType = {
-  title: string;
-  subtitle: string;
-  amount: number;
-  icon: string;
+	title: string;
+	subtitle: string;
+	amount: number;
+	icon: string;
 };
 
 const Stats = ({ title, subtitle, amount, icon }: StatsType): ReactElement => (
-  <StyledStats>
-    <div className="amount">
-      {amount}
-      <div className="plus" aria-hidden="true">
-        {icon}
-      </div>
-    </div>
-    <div className="content">
-      <h4>{title}</h4>
-      <div className="subtitle">{subtitle}</div>
-    </div>
-  </StyledStats>
+	<StyledStats>
+		<div className="amount">
+			{amount}
+			<div className="plus" aria-hidden="true">
+				{icon}
+			</div>
+		</div>
+		<div className="content">
+			<h4>{title}</h4>
+			<div className="subtitle">{subtitle}</div>
+		</div>
+	</StyledStats>
 );
 
 export default Stats;

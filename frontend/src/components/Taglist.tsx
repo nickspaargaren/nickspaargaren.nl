@@ -73,18 +73,18 @@ const StyledTaglist = styled.ul`
 `;
 
 type TaglistType = {
-  tags: TagType[];
+	tags: TagType[];
 };
 
 const Taglist = ({ tags }: TaglistType): ReactElement => (
-  <StyledTaglist>
-    {tags.map(({ title, image }, key) => (
-      <li key={key}>
-        <GatsbyImage image={image.asset.gatsbyImageData} alt={title} />
-        <span>{title}</span>
-      </li>
-    ))}
-  </StyledTaglist>
+	<StyledTaglist>
+		{tags.map(({ title, image }, key) => (
+			<li key={key}>
+				<GatsbyImage image={image.asset.gatsbyImageData} alt={title} />
+				<span>{title}</span>
+			</li>
+		))}
+	</StyledTaglist>
 );
 
 export default Taglist;

@@ -5,7 +5,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
 
 const Projecten = () => {
-  const data = useStaticQuery(graphql`
+	const data = useStaticQuery(graphql`
     query {
       portfolio: allSanityPortfolio(
         sort: { fields: collaboration, order: ASC }
@@ -39,25 +39,29 @@ const Projecten = () => {
     }
   `);
 
-  return (
-    <Layout title={`Portfolio`} description="Portfolio overzicht" noindex>
-      <div className="inhoud">
-        <Breadcrumbs list={["Projecten"]} />
-      </div>
-      <div className="inhoud">
-        {data.portfolio.nodes.map((item, key) => (
-          <PortfolioItem
-            key={key}
-            title={item.title}
-            description={item.description}
-            slug={item.slug.current}
-            image={item.image}
-            skillsused={item.skillsused}
-          />
-        ))}
-      </div>
-    </Layout>
-  );
+	return (
+		<Layout
+			title={"Portfolio"}
+			description="Portfolio overzicht"
+			noindex={true}
+		>
+			<div className="inhoud">
+				<Breadcrumbs list={["Projecten"]} />
+			</div>
+			<div className="inhoud">
+				{data.portfolio.nodes.map((item, key) => (
+					<PortfolioItem
+						key={key}
+						title={item.title}
+						description={item.description}
+						slug={item.slug.current}
+						image={item.image}
+						skillsused={item.skillsused}
+					/>
+				))}
+			</div>
+		</Layout>
+	);
 };
 
 export default Projecten;

@@ -1,17 +1,17 @@
 import { graphql, useStaticQuery } from "gatsby";
 
 type useStatsDataType = {
-  title: string;
-  subtitle: string;
-  amount: number;
-  icon: string;
+	title: string;
+	subtitle: string;
+	amount: number;
+	icon: string;
 };
 
 export const useStatsData = (): useStatsDataType[] => {
-  const {
-    stats: { nodes },
-  } = useStaticQuery(
-    graphql`
+	const {
+		stats: { nodes },
+	} = useStaticQuery(
+		graphql`
       {
         stats: allSanityStats {
           nodes {
@@ -22,8 +22,8 @@ export const useStatsData = (): useStatsDataType[] => {
           }
         }
       }
-    `
-  );
+    `,
+	);
 
-  return nodes;
+	return nodes;
 };

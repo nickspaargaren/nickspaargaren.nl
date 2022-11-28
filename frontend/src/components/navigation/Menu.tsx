@@ -46,51 +46,51 @@ const StyledMenu = styled.div`
 `;
 
 const Menu = (): ReactElement => {
-  const hoverRef = useRef<HTMLDivElement>(null);
-  const menuItemRef = useRef<HTMLUListElement>(null);
+	const hoverRef = useRef<HTMLDivElement>(null);
+	const menuItemRef = useRef<HTMLUListElement>(null);
 
-  const hover = (e) => {
-    hoverRef.current.style.left = `${e.target.offsetLeft}px`;
-    hoverRef.current.style.width = `${e.target.clientWidth}px`;
-  };
+	const hover = (e) => {
+		hoverRef.current.style.left = `${e.target.offsetLeft}px`;
+		hoverRef.current.style.width = `${e.target.clientWidth}px`;
+	};
 
-  const leave = () => {
-    menuItemRef.current?.childNodes.forEach((item) => {
-      const {
-        children: [box],
-      } = item;
+	const leave = () => {
+		menuItemRef.current?.childNodes.forEach((item) => {
+			const {
+				children: [box],
+			} = item;
 
-      if (box.classList.contains("active")) {
-        hoverRef.current.style.left = `${box.offsetLeft}px`;
-        hoverRef.current.style.width = `${box.clientWidth}px`;
-      }
-    });
-  };
+			if (box.classList.contains("active")) {
+				hoverRef.current.style.left = `${box.offsetLeft}px`;
+				hoverRef.current.style.width = `${box.clientWidth}px`;
+			}
+		});
+	};
 
-  useEffect(() => {
-    leave();
-  }, []);
+	useEffect(() => {
+		leave();
+	}, []);
 
-  return (
-    <StyledMenu>
-      <ul className="menu" ref={menuItemRef} onMouseLeave={leave}>
-        <li>
-          <Link activeClassName="active" onMouseEnter={hover} to="/portfolio/">
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link
-            activeClassName="active"
-            onMouseEnter={hover}
-            to="/portfolio/drone/"
-          >
-            Drone
-          </Link>
-        </li>
-      </ul>
-      <div className="hover" ref={hoverRef}></div>
-    </StyledMenu>
-  );
+	return (
+		<StyledMenu>
+			<ul className="menu" ref={menuItemRef} onMouseLeave={leave}>
+				<li>
+					<Link activeClassName="active" onMouseEnter={hover} to="/portfolio/">
+						Home
+					</Link>
+				</li>
+				<li>
+					<Link
+						activeClassName="active"
+						onMouseEnter={hover}
+						to="/portfolio/drone/"
+					>
+						Drone
+					</Link>
+				</li>
+			</ul>
+			<div className="hover" ref={hoverRef} />
+		</StyledMenu>
+	);
 };
 export default Menu;

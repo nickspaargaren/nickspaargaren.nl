@@ -11,16 +11,16 @@ const StyledYoutube = styled.iframe`
 `;
 
 type YoutubeType = {
-  title: string;
-  url: string;
+	title: string;
+	url: string;
 };
 
 const Youtube = ({ title, url }: YoutubeType): ReactElement => (
-  <StyledYoutube
-    title={title}
-    src={url}
-    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
-  />
+	<StyledYoutube
+		title={title}
+		src={url}
+		allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
+	/>
 );
 
 export default Youtube;

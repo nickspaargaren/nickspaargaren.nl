@@ -90,87 +90,89 @@ div[class*="grid"] img {max-width: 100%; height: auto !important;}
 `;
 
 const containerAnimation = {
-  show: {
-    transition: {
-      staggerChildren: 0.05,
-    },
-  },
+	show: {
+		transition: {
+			staggerChildren: 0.05,
+		},
+	},
 };
 
 const itemAnimation = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1 },
+	hidden: { opacity: 0 },
+	show: { opacity: 1 },
 };
 
 const Home = (): ReactElement => {
-  const { name, position } = useSiteMetadata();
+	const { name, position } = useSiteMetadata();
 
-  const siteholderRef = useRef<HTMLDivElement>(null);
-  const socialsRef = useRef<HTMLDivElement>(null);
+	const siteholderRef = useRef<HTMLDivElement>(null);
+	const socialsRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (!siteholderRef.current) return;
+	useEffect(() => {
+		if (!siteholderRef.current) {
+			return;
+		}
 
-    const canvas = siteholderRef.current;
+		const canvas = siteholderRef.current;
 
-    const { width, height } = canvas.getBoundingClientRect();
-    const limit = 5;
+		const { width, height } = canvas.getBoundingClientRect();
+		const limit = 5;
 
-    canvas.addEventListener("mousemove", (mousemove) => {
-      const xWalk = (mousemove.x / width) * limit - limit / 2;
-      const yWalk = (mousemove.y / height) * limit - limit / 2;
+		canvas.addEventListener("mousemove", (mousemove) => {
+			const xWalk = (mousemove.x / width) * limit - limit / 2;
+			const yWalk = (mousemove.y / height) * limit - limit / 2;
 
-      socialsRef.current?.childNodes.forEach((block) => {
-        block.style.boxShadow = `${xWalk}px ${yWalk}px 1px 2px rgba(0,0,0,.1)`;
-      });
-    });
-  }, []);
+			socialsRef.current?.childNodes.forEach((block) => {
+				block.style.boxShadow = `${xWalk}px ${yWalk}px 1px 2px rgba(0,0,0,.1)`;
+			});
+		});
+	}, []);
 
-  return (
-    <>
-      <Helmet>
-        <html lang="nl" />
-        <meta charSet="utf-8" />
-        <title>Nick Spaargaren</title>
-        <meta name="description" content="Designer & Front-End Developer" />
-      </Helmet>
-      <GlobalStyle />
-      <div className="siteholder" ref={siteholderRef}>
-        <div className="content" style={{ textAlign: "center", width: "100%" }}>
-          <div className="title">
-            <h1 style={{ fontSize: "2em" }}>{name}</h1>
-            <h2>{position}</h2>
-          </div>
+	return (
+		<>
+			<Helmet>
+				<html lang="nl" />
+				<meta charSet="utf-8" />
+				<title>Nick Spaargaren</title>
+				<meta name="description" content="Designer & Front-End Developer" />
+			</Helmet>
+			<GlobalStyle />
+			<div className="siteholder" ref={siteholderRef}>
+				<div className="content" style={{ textAlign: "center", width: "100%" }}>
+					<div className="title">
+						<h1 style={{ fontSize: "2em" }}>{name}</h1>
+						<h2>{position}</h2>
+					</div>
 
-          <motion.div
-            variants={containerAnimation}
-            initial="hidden"
-            animate="show"
-          >
-            <div className="holder" ref={socialsRef}>
-              {SocialData.map((social) => (
-                <motion.a
-                  variants={itemAnimation}
-                  key={social.id}
-                  className={`block ${social.class}`}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  href={social.url}
-                  aria-label={`Nick's ${social.platform} account`}
-                >
-                  {social.icon}
-                  <span>
-                    <strong>{social.platform}</strong>
-                    {name}
-                  </span>
-                </motion.a>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </div>
-    </>
-  );
+					<motion.div
+						variants={containerAnimation}
+						initial="hidden"
+						animate="show"
+					>
+						<div className="holder" ref={socialsRef}>
+							{SocialData.map((social) => (
+								<motion.a
+									variants={itemAnimation}
+									key={social.id}
+									className={`block ${social.class}`}
+									rel="noopener noreferrer"
+									target="_blank"
+									href={social.url}
+									aria-label={`Nick's ${social.platform} account`}
+								>
+									{social.icon}
+									<span>
+										<strong>{social.platform}</strong>
+										{name}
+									</span>
+								</motion.a>
+							))}
+						</div>
+					</motion.div>
+				</div>
+			</div>
+		</>
+	);
 };
 
 export default Home;

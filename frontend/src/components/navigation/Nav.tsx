@@ -20,24 +20,24 @@ const StyledNav = styled.nav`
 `;
 
 const Nav = (): ReactElement => {
-  const { name, position } = useSiteMetadata();
-  return (
-    <StyledNav>
-      <User
-        title={name}
-        subtitle={position}
-        image={
-          <StaticImage
-            src="../../images/nick-spaargaren.jpeg"
-            width={37}
-            height={37}
-            alt={`${"Profielfoto"} ${name}`}
-          />
-        }
-      />
-      <Menu />
-    </StyledNav>
-  );
+	const { name, position } = useSiteMetadata();
+	return (
+		<StyledNav>
+			<User
+				title={name}
+				subtitle={position}
+				image={
+					<StaticImage
+						src="../../images/nick-spaargaren.jpeg"
+						width={37}
+						height={37}
+						alt={`${"Profielfoto"} ${name}`}
+					/>
+				}
+			/>
+			<Menu />
+		</StyledNav>
+	);
 };
 
 export default Nav;

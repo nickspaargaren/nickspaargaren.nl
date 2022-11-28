@@ -2,23 +2,23 @@ import { GatsbyImageType, TagType } from "@src/types";
 import { graphql, useStaticQuery } from "gatsby";
 
 type usePortfolioDataType = {
-  title: string;
-  subtitle: string;
-  website: string;
-  tags: string;
-  id: string;
-  github: string;
-  description: string;
-  collaboration: string;
-  image: GatsbyImageType;
-  skillsused: TagType[];
+	title: string;
+	subtitle: string;
+	website: string;
+	tags: string;
+	id: string;
+	github: string;
+	description: string;
+	collaboration: string;
+	image: GatsbyImageType;
+	skillsused: TagType[];
 };
 
 export const usePortfolioData = (): usePortfolioDataType[] => {
-  const {
-    portfolio: { nodes },
-  } = useStaticQuery(
-    graphql`
+	const {
+		portfolio: { nodes },
+	} = useStaticQuery(
+		graphql`
       {
         portfolio: allSanityPortfolio(sort: { fields: order, order: ASC }) {
           nodes {
@@ -46,8 +46,8 @@ export const usePortfolioData = (): usePortfolioDataType[] => {
           }
         }
       }
-    `
-  );
+    `,
+	);
 
-  return nodes;
+	return nodes;
 };

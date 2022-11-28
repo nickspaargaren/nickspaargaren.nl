@@ -46,51 +46,51 @@ const StyledButton = styled.a`
 `;
 
 type ButtonType = {
-  title: string;
-  subtitle: string;
-  icon: ReactElement;
-  url: string;
-  ariaLabel?: string;
-  external?: boolean;
+	title: string;
+	subtitle: string;
+	icon: ReactElement;
+	url: string;
+	ariaLabel?: string;
+	external?: boolean;
 };
 
 const Button = ({
-  title,
-  subtitle,
-  icon,
-  url,
-  ariaLabel,
-  external,
+	title,
+	subtitle,
+	icon,
+	url,
+	ariaLabel,
+	external,
 }: ButtonType): ReactElement => (
-  <>
-    {external ? (
-      <StyledButton
-        href={url}
-        rel="noopener noreferrer"
-        target="_blank"
-        aria-label={ariaLabel}
-      >
-        <div className="icon">{icon}</div>
-        <span>
-          <strong>{title}</strong>
-          {subtitle}
-        </span>
-      </StyledButton>
-    ) : (
-      <StyledButton
-        as={Link}
-        to={url}
-        className="button"
-        aria-label={ariaLabel}
-      >
-        <div className="icon">{icon}</div>
-        <span>
-          <strong>{title}</strong>
-          {subtitle}
-        </span>
-      </StyledButton>
-    )}
-  </>
+	<>
+		{external ? (
+			<StyledButton
+				href={url}
+				rel="noopener noreferrer"
+				target="_blank"
+				aria-label={ariaLabel}
+			>
+				<div className="icon">{icon}</div>
+				<span>
+					<strong>{title}</strong>
+					{subtitle}
+				</span>
+			</StyledButton>
+		) : (
+			<StyledButton
+				as={Link}
+				to={url}
+				className="button"
+				aria-label={ariaLabel}
+			>
+				<div className="icon">{icon}</div>
+				<span>
+					<strong>{title}</strong>
+					{subtitle}
+				</span>
+			</StyledButton>
+		)}
+	</>
 );
 
 export default Button;

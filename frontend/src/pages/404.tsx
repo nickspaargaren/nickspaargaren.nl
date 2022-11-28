@@ -26,16 +26,16 @@ const StyledvierNulVier = styled.div`
 `;
 
 const vierNulVier = () => (
-  <>
-    <Helmet>
-      <html lang="nl" />
-      <meta charSet="utf-8" />
-      <title>Nick Spaargaren | 404</title>
-      <meta name="description" content="404" />
-    </Helmet>
-    <StyledvierNulVier>
-      <div className="inhoud">404</div>
-    </StyledvierNulVier>
-  </>
+	<>
+		<Helmet>
+			<html lang="nl" />
+			<meta charSet="utf-8" />
+			<title>Nick Spaargaren | 404</title>
+			<meta name="description" content="404" />
+		</Helmet>
+		<StyledvierNulVier>
+			<div className="inhoud">404</div>
+		</StyledvierNulVier>
+	</>
 );
 export default vierNulVier;

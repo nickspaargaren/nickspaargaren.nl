@@ -31,50 +31,50 @@ const StyledTags = styled.div`
 `;
 
 type ActiveSkillsType = {
-  favorites: any;
-  setFavorites: (item: any) => void;
+	favorites: any;
+	setFavorites: (item: any) => void;
 };
 
 const ActiveSkills = ({
-  favorites,
-  setFavorites,
+	favorites,
+	setFavorites,
 }: ActiveSkillsType): ReactElement => {
-  if (!favorites.length) {
-    return <></>;
-  }
+	if (!favorites.length) {
+		return <></>;
+	}
 
-  const formatter = new Intl.ListFormat("nl", {
-    style: "long",
-    type: "conjunction",
-  });
+	const formatter = new Intl.ListFormat("nl", {
+		style: "long",
+		type: "conjunction",
+	});
 
-  const favoriteList = favorites.map(({ skill }) => skill);
+	const favoriteList = favorites.map(({ skill }) => skill);
 
-  return (
-    <>
-      <hr />
-      <h5>Uw selectie</h5>
-      <StyledTags>
-        {favorites.map(({ skill }, key) => (
-          <div key={key} className="tag">
-            <MdDone />
-            {skill}
-          </div>
-        ))}
-        <button
-          className="tag reset"
-          onClick={() => {
-            setFavorites([]);
-          }}
-          aria-label={`Uw selectie (${formatter.format(
-            favoriteList
-          )}) verwijderen`}
-        >
-          <MdClear />
-          Alle verwijderen
-        </button>
-      </StyledTags>
-    </>
-  );
+	return (
+		<>
+			<hr />
+			<h5>Uw selectie</h5>
+			<StyledTags>
+				{favorites.map(({ skill }, key) => (
+					<div key={key} className="tag">
+						<MdDone />
+						{skill}
+					</div>
+				))}
+				<button
+					className="tag reset"
+					onClick={() => {
+						setFavorites([]);
+					}}
+					aria-label={`Uw selectie (${formatter.format(
+						favoriteList,
+					)}) verwijderen`}
+				>
+					<MdClear />
+					Alle verwijderen
+				</button>
+			</StyledTags>
+		</>
+	);
 };
 export default ActiveSkills;

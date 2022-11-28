@@ -65,45 +65,45 @@ const StyledTitle = styled.div`
 `;
 
 type TimelineItemType = {
-  title: string;
-  subtitle: string;
-  date: number;
+	title: string;
+	subtitle: string;
+	date: number;
 };
 
 const TimelineItem = ({
-  title,
-  subtitle,
-  date,
+	title,
+	subtitle,
+	date,
 }: TimelineItemType): ReactElement => {
-  return (
-    <StyledTimelineItem>
-      <div className="check">
-        <GiCheckMark />
-      </div>
-      <StyledTitle>
-        <h4>{title}</h4>
-        <p>{date}</p>
-      </StyledTitle>
-      <p>{subtitle}</p>
-    </StyledTimelineItem>
-  );
+	return (
+		<StyledTimelineItem>
+			<div className="check">
+				<GiCheckMark />
+			</div>
+			<StyledTitle>
+				<h4>{title}</h4>
+				<p>{date}</p>
+			</StyledTitle>
+			<p>{subtitle}</p>
+		</StyledTimelineItem>
+	);
 };
 
 const Timeline = (): ReactElement => {
-  const timeline = useTimelineData();
+	const timeline = useTimelineData();
 
-  return (
-    <StyledTimeline>
-      {timeline.map((item, key) => (
-        <TimelineItem
-          title={item.title}
-          subtitle={item.subtitle}
-          key={key}
-          date={item.date}
-        />
-      ))}
-    </StyledTimeline>
-  );
+	return (
+		<StyledTimeline>
+			{timeline.map((item, key) => (
+				<TimelineItem
+					title={item.title}
+					subtitle={item.subtitle}
+					key={key}
+					date={item.date}
+				/>
+			))}
+		</StyledTimeline>
+	);
 };
 
 export default Timeline;

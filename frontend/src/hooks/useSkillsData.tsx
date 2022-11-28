@@ -2,17 +2,17 @@ import { GatsbyImageType } from "@src/types";
 import { graphql, useStaticQuery } from "gatsby";
 
 type useSkillsDataType = {
-  exclude: boolean;
-  id: string;
-  image: GatsbyImageType;
-  percentage: number;
-  title: string;
+	exclude: boolean;
+	id: string;
+	image: GatsbyImageType;
+	percentage: number;
+	title: string;
 };
 
 export const useSkillsData = (): useSkillsDataType[] => {
-  const {
-    skills: { nodes },
-  } = useStaticQuery(graphql`
+	const {
+		skills: { nodes },
+	} = useStaticQuery(graphql`
     {
       skills: allSanitySkills(sort: { fields: percentage, order: DESC }) {
         nodes {
@@ -30,5 +30,5 @@ export const useSkillsData = (): useSkillsDataType[] => {
     }
   `);
 
-  return nodes;
+	return nodes;
 };

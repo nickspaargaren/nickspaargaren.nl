@@ -28,34 +28,34 @@ const StyledFooter = styled.div`
 `;
 
 const Footer = (): ReactElement => (
-  <StyledFooter>
-    <footer>
-      <div className="inhoud">
-        {SocialData.map((social, key) => (
-          <Button
-            key={key}
-            title={social.platform}
-            subtitle="Account"
-            icon={social.icon}
-            url={social.url}
-            external
-            ariaLabel={`Nick's ${social.platform} account`}
-          />
-        ))}
-        <p>
-          Of toch eerst{" "}
-          <a
-            href="https://www.google.com/search?q=site%3Acmspecialist.nl+%22Nick+Spaargaren%22"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            meer projecten
-          </a>{" "}
-          zien?
-        </p>
-      </div>
-    </footer>
-  </StyledFooter>
+	<StyledFooter>
+		<footer>
+			<div className="inhoud">
+				{SocialData.map((social, key) => (
+					<Button
+						key={key}
+						title={social.platform}
+						subtitle="Account"
+						icon={social.icon}
+						url={social.url}
+						external={true}
+						ariaLabel={`Nick's ${social.platform} account`}
+					/>
+				))}
+				<p>
+					Of toch eerst{" "}
+					<a
+						href="https://www.google.com/search?q=site%3Acmspecialist.nl+%22Nick+Spaargaren%22"
+						rel="noopener noreferrer"
+						target="_blank"
+					>
+						meer projecten
+					</a>{" "}
+					zien?
+				</p>
+			</div>
+		</footer>
+	</StyledFooter>
 );
 
 export default Footer;

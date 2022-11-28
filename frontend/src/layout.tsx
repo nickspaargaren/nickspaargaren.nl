@@ -5,35 +5,35 @@ import React, { ReactElement } from "react";
 import { Helmet } from "react-helmet";
 
 type LayoutType = {
-  children: ReactElement | ReactElement[];
-  title: string;
-  description: string;
-  noindex?: boolean;
+	children: ReactElement | ReactElement[];
+	title: string;
+	description: string;
+	noindex?: boolean;
 };
 
 const Layout = ({
-  children,
-  title,
-  description,
-  noindex,
+	children,
+	title,
+	description,
+	noindex,
 }: LayoutType): ReactElement => (
-  <>
-    <GlobalStyle />
-    <section>
-      <div className="inhoud">
-        <Nav />
-      </div>
-    </section>
-    <Helmet>
-      <html lang="nl" />
-      <meta charSet="utf-8" />
-      <title>{title}</title>
-      <meta name="description" content={description} />
-      {noindex && <meta name="robots" content="noindex" />}
-    </Helmet>
-    <main>{children}</main>
-    <Footer />
-  </>
+	<>
+		<GlobalStyle />
+		<section>
+			<div className="inhoud">
+				<Nav />
+			</div>
+		</section>
+		<Helmet>
+			<html lang="nl" />
+			<meta charSet="utf-8" />
+			<title>{title}</title>
+			<meta name="description" content={description} />
+			{noindex && <meta name="robots" content="noindex" />}
+		</Helmet>
+		<main>{children}</main>
+		<Footer />
+	</>
 );
 
 export default Layout;
