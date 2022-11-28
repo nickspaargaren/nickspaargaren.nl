@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "lint:frontend": "yarn rome check frontend",
+    "lint:backend": "yarn rome check backend",
+    "format:frontend": "yarn rome format frontend",
+    "format:backend": "yarn rome format backend"
+  },
+  "dependencies": {
+    "rome": "^10.0.1"
+  }
+}
