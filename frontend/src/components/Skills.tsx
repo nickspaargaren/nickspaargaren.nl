@@ -127,7 +127,13 @@ const Skills = (): ReactElement => {
 							</div>
 						</div>
 						<div className="opties">
-							<div className="favorite" onClick={() => handleChangeChk(item)}>
+							<div
+								className="favorite"
+								onClick={() => handleChangeChk(item)}
+								onKeyDown={({ key }) =>
+									key === "Enter" && handleChangeChk(item)
+								}
+							>
 								<input
 									type="checkbox"
 									aria-label={item.title}
