@@ -4,7 +4,7 @@ jobs:
   cypress:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Run tests
       uses: cypress-io/github-action@v4
       with:
@@ -16,10 +16,10 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Install modules
       run: yarn install
-    - name: Run frontend linter
+    - name: Frontend style check
       run: yarn lint:frontend
-    - name: Run backend linter
+    - name: Backend style check
       run: yarn lint:backend
