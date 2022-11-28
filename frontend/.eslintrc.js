@@ -1,6 +1,6 @@
 module.exports = {
   parser: "@typescript-eslint/parser",
-  plugins: ["prettier", "simple-import-sort", "@typescript-eslint"],
+  plugins: ["prettier", "@typescript-eslint"],
   extends: ["prettier", "plugin:@typescript-eslint/recommended"],
   env: {
     browser: true,
@@ -13,7 +13,6 @@ module.exports = {
   },
   rules: {
     "prettier/prettier": "warn",
-    "simple-import-sort/imports": "error",
     "@typescript-eslint/no-unused-vars": ["error"],
   },
 };
