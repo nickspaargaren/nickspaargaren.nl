@@ -12,8 +12,6 @@ tasks:
   build:
     desc: Build the project images.
     cmds:
-      - yarn install
-      - echo ""
       - cd frontend && yarn install
       - echo ""
       - cd backend && yarn install
@@ -59,8 +57,6 @@ tasks:
   update:
     desc: Update all dependencies in root, frontend and backend folders.
     cmds:
-      - echo Updating dependencies..
-      - yarn upgrade-interactive --latest
       - docker-compose exec frontend sh -c "yarn upgrade-interactive --latest"
       - docker-compose exec backend sh -c "yarn upgrade-interactive --latest"
 
@@ -68,7 +64,6 @@ tasks:
     desc: Reset the project containers, volumes, local dependencies and cache files.
     cmds:
       - echo Removing all node_modules folders..
-      - sudo rm -rf node_modules
       - cd frontend && sudo rm -rf node_modules
       - cd backend && sudo rm -rf node_modules
       - echo All node_modules folders removed.
