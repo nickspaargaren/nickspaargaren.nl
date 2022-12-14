@@ -47,6 +47,13 @@ tasks:
       - cd frontend && yarn test
     silent: true
 
+  test-ui:
+    desc: Open the Cypress UI and run the project tests.
+    cmds:
+      - echo Opening Cypress UI..
+      - cd frontend && yarn test:ui
+    silent: true
+
   lint:
     desc: Run the project codestyle check.
     cmds:

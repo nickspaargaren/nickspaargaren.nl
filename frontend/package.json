@@ -10,7 +10,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "lint": "eslint \"**/*.{ts,tsx}\"",
-    "test": "npx cypress run"
+    "test": "npx cypress run",
+    "test:ui": "npx cypress open"
   },
   "dependencies": {
     "axios": "^1.1.3",
