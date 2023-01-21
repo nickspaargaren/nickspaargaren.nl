@@ -22,13 +22,6 @@ const config: GatsbyConfig = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [`Lora`],
-        display: "swap",
-      },
-    },
-    {
       resolve: `gatsby-plugin-styled-components`,
     },
   ],

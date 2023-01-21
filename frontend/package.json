@@ -17,7 +17,6 @@
     "axios": "^1.2.1",
     "framer-motion": "^7.9.0",
     "gatsby": "^4.22.0",
-    "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-image": "^2.22.0",
     "gatsby-plugin-sharp": "^4.22.0",
     "gatsby-plugin-sitemap": "^5.22.0",
