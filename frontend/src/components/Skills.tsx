@@ -1,5 +1,6 @@
 import ActiveSkills from "@src/components/ActiveSkills";
 import { useSkillsData } from "@src/hooks/useSkillsData";
+import { useSkillsDataType } from "@src/types";
 import { useLocalStorage } from "@src/utils/localStorage";
 import { motion } from "framer-motion";
 import { GatsbyImage } from "gatsby-plugin-image";
@@ -86,9 +87,10 @@ const StyledSkills = styled.div`
 const Skills = (): ReactElement => {
   const skills = useSkillsData();
 
-  const [favorites, setFavorites] = useLocalStorage("favorites");
+  const [favorites, setFavorites] =
+    useLocalStorage<{ id: string; skill: string }[]>("favorites");
 
-  const handleChangeChk = (item) => {
+  const handleChangeChk = (item: useSkillsDataType) => {
     if (!favorites.find((i) => i["id"] === item.id)) {
       setFavorites([...favorites, { id: item.id, skill: item.title }]);
     } else {
