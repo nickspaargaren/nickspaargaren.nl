@@ -1,4 +1,6 @@
-export default {
+import { defineType, defineField } from 'sanity'
+
+export default defineType({
   name: 'timeline',
   title: 'Timeline',
   type: 'document',
@@ -17,21 +19,6 @@ export default {
       name: "date",
       title: "Date",
       type: "number",
-    },
-    {
-      name: "order",
-      title: "Order",
-      type: "number",
-      hidden: true,
-    }
-  ],
-  orderings: [
-    {
-      title: 'Handmatig',
-      name: 'Handmatig',
-      by: [
-        {field: 'order', direction: 'asc'}
-      ]
     }
   ]
-}
+});

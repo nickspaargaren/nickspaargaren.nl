@@ -1,4 +1,6 @@
-export default {
+import { defineType } from 'sanity'
+
+export default defineType({
   name: 'portfolio',
   title: 'Portfolio',
   type: 'document',
@@ -84,21 +86,6 @@ export default {
       name: 'collaboration',
       title: 'In collaboration met CM Specialist',
       type: 'boolean'
-    },
-    {
-      name: "order",
-      title: "Order",
-      type: "number",
-      hidden: true,
-    }
-  ],
-  orderings: [
-    {
-      title: 'Handmatig',
-      name: 'Handmatig',
-      by: [
-        {field: 'order', direction: 'asc'}
-      ]
     }
   ],
   preview: {
@@ -107,4 +94,4 @@ export default {
       subtitle: 'website'
     }
   }
-}
+});

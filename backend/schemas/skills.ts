@@ -1,4 +1,6 @@
-export default {
+import { defineType } from 'sanity'
+
+export default defineType({
   name: 'skills',
   title: 'Skills',
   type: 'document',
@@ -29,4 +31,4 @@ export default {
       type: 'boolean'
     }
   ]
-}
+});
