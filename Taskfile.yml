@@ -67,6 +67,16 @@ tasks:
       - docker-compose exec frontend sh -c "yarn upgrade-interactive --latest"
       - docker-compose exec backend sh -c "yarn upgrade-interactive --latest"
 
+  shell-backend:
+    desc: Exec into backend container
+    cmds:
+      - docker-compose exec backend sh
+
+  shell-frontend:
+    desc: Exec into frontend container
+    cmds:
+      - docker-compose exec frontend sh
+
   reset:
     desc: Reset the project containers, volumes, local dependencies and cache files.
     cmds:
