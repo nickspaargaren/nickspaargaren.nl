@@ -4,17 +4,17 @@ jobs:
   cypress:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 18
-    - name: Run tests
-      uses: cypress-io/github-action@v4
-      with:
-        working-directory: frontend
-        browser: chrome
-        build: yarn build
-        start: yarn serve --port 3000
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Run tests
+        uses: cypress-io/github-action@v4
+        with:
+          working-directory: frontend
+          browser: firefox
+          build: yarn build
+          start: yarn serve --port 3000
 
   eslint:
     runs-on: ubuntu-latest
@@ -22,11 +22,11 @@ jobs:
       run:
         working-directory: ./frontend
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 18
-    - name: Install modules
-      run: yarn install
-    - name: Run ESLint
-      run: yarn run lint
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install modules
+        run: yarn install
+      - name: Run ESLint
+        run: yarn run lint
