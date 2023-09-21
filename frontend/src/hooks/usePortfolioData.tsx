@@ -20,16 +20,10 @@ export const usePortfolioData = (): usePortfolioDataType[] => {
   } = useStaticQuery(
     graphql`
       {
-        portfolio: allSanityPortfolio(sort: { fields: order, order: ASC }) {
+        portfolio: allSanityPortfolio {
           nodes {
             title
             subtitle
-            website
-            tags
-            id
-            github
-            description
-            collaboration
             image {
               asset {
                 gatsbyImageData(width: 255, height: 450)

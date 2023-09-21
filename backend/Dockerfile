@@ -1,5 +1,5 @@
-FROM node:16-alpine
+FROM node:18-alpine
 WORKDIR /app
 COPY ./ /app
 RUN yarn install
-CMD ["yarn", "start"]
+CMD ["yarn", "dev"]

@@ -12,7 +12,7 @@ export const useTimelineData = (): TimelineItemType[] => {
   } = useStaticQuery(
     graphql`
       query TimelineData {
-        allSanityTimeline(sort: { fields: order, order: ASC }) {
+        allSanityTimeline(sort: { fields: date, order: ASC }) {
           nodes {
             title
             subtitle
