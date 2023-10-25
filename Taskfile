@@ -1,0 +1,116 @@
+#!/bin/bash
+set -eo pipefail
+
+# =========================================================
+# Taskfile gives you a set of quick tasks for your project
+# More info: https://enri.se/taskfile
+# =========================================================
+
+PATH=./node_modules/.bin:$PATH
+
+# =========================================================
+## Tasks
+# =========================================================
+
+function task:build { ## Build the project images
+	title "Building the project images.."
+	(cd frontend && yarn install)
+	echo ""
+	(cd backend && yarn install)
+	echo ""
+	docker-compose build
+	echo ""
+	echo "You are ready to start the project, run [ task start ] to start the project."
+}
+
+function task:start { ## Start the project containers
+	title "Starting the project containers.."
+	docker-compose up -d
+	echo ""
+	echo "All project containers are running:"
+	echo - The frontend is running on http://localhost:3000/.
+	echo - The frontend GraphQL playground is running on http://localhost:3000/___graphql.
+	echo - The backend is running on http://localhost:3333/.
+}
+
+function task:stop { ## Stop the project containers
+	title "Stopping the project containers.."
+	docker-compose stop
+	echo ""
+	echo All project containers are stopped.
+}
+
+function task:test { ## Run the project tests
+	title "Running the project tests.."
+	cd frontend && yarn test
+}
+
+function task:test-ui { ## Open the Cypress UI and run the project tests.
+	title "Opening the Cypress UI.."
+	cd frontend && yarn test:ui
+}
+
+function task:lint { ## Run the project codestyle check
+	title "Running the frontend codestyle check.."
+	docker-compose exec frontend sh -c "yarn lint"
+}
+
+function task:update { ## Update all dependencies in root, frontend and backend folders
+	docker-compose exec frontend sh -c "yarn upgrade-interactive --latest"
+	docker-compose exec backend sh -c "yarn upgrade-interactive --latest"
+}
+
+function task:shell-backend { ## Exec into backend container
+	docker-compose exec backend sh
+}
+
+function task:shell-frontend { ## Exec into frontend container
+	docker-compose exec frontend sh
+}
+
+function task:reset { ## Reset the project containers, volumes, local dependencies and cache files
+	echo Removing all node_modules folders..
+	(cd frontend && sudo rm -rf node_modules)
+	(cd backend && sudo rm -rf node_modules)
+	echo All node_modules folders removed.
+	echo ""
+	echo Removing frontend cache folder..
+	docker-compose exec frontend sh -c "rm -rf .cache/ && rm -rf public/"
+	echo Cache folders removed.
+	docker-compose down -v
+}
+
+# =========================================================
+## Taskfile
+# =========================================================
+
+BLUE=$(printf '\033[36m')
+YELLOW=$(printf '\033[33m')
+RESET=$(printf '\033[0m')
+
+function title {
+	echo -e "\n${BLUE}=>${RESET} $1\n"
+}
+
+function task:help { ## Show all available tasks
+	awk 'BEGIN {FS = " { [#][#][ ]?"} /^([a-zA-Z_-]*:?.*)(\{ )?[#][#][ ]?/ \
+		{printf "\033[33m%-34s\033[0m %s\n", $1, $2}' $0 |\
+		sed -E "s/[#]{2,}[ ]*/${RESET}/g" |\
+		sed -E "s/function task:*/  /g"
+}
+
+function task:shorthand { ## Create CLI shorthand task instead of ./Taskfile
+	title "Creating task shorthand"
+	if [ -f /usr/local/bin/task ]
+	then
+		echo "/usr/local/bin/task already exists."
+	else
+		echo -e "You are about to create /usr/local/bin/task that requires root permission..."
+		sudo curl --location --silent --output /usr/local/bin/task https://enri.se/taskfile-bin
+		sudo chmod +x /usr/local/bin/task
+	fi
+	echo -e "${BLUE}You can now use:${RESET} task ${YELLOW}<task>${RESET} <args>"
+}
+
+# Execute tasks (defaults to help)
+"task:${@:-help}"

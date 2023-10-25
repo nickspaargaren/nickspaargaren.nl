@@ -1,3 +1,3 @@
 ### Development
 
-Run `task` to view all available commands for this project.
+Run `./Taskfile` to view all available commands for this project.
