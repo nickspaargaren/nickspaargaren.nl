@@ -42,17 +42,6 @@ const Footer = (): ReactElement => (
             ariaLabel={`Nick's ${social.platform} account`}
           />
         ))}
-        <p>
-          Of toch eerst{" "}
-          <a
-            href="https://www.google.com/search?q=site%3Acmspecialist.nl+%22Nick+Spaargaren%22"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            meer projecten
-          </a>{" "}
-          zien?
-        </p>
       </div>
     </footer>
   </StyledFooter>
