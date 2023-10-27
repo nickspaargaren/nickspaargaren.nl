@@ -19,7 +19,7 @@ export type GatsbyImageType = {
             sizes: string;
             srcSet: string;
             type: string;
-          }
+          },
         ];
       };
       layout: "fixed" | "fullWidth" | "constrained";

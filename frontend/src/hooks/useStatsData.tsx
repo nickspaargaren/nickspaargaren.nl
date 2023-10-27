@@ -10,20 +10,18 @@ type useStatsDataType = {
 export const useStatsData = (): useStatsDataType[] => {
   const {
     stats: { nodes },
-  } = useStaticQuery(
-    graphql`
-      {
-        stats: allSanityStats {
-          nodes {
-            title
-            subtitle
-            amount
-            icon
-          }
+  } = useStaticQuery(graphql`
+    {
+      stats: allSanityStats {
+        nodes {
+          title
+          subtitle
+          amount
+          icon
         }
       }
-    `
-  );
+    }
+  `);
 
   return nodes;
 };
