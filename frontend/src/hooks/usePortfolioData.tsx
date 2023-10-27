@@ -17,31 +17,29 @@ type usePortfolioDataType = {
 export const usePortfolioData = (): usePortfolioDataType[] => {
   const {
     portfolio: { nodes },
-  } = useStaticQuery(
-    graphql`
-      {
-        portfolio: allSanityPortfolio {
-          nodes {
+  } = useStaticQuery(graphql`
+    {
+      portfolio: allSanityPortfolio {
+        nodes {
+          title
+          subtitle
+          image {
+            asset {
+              gatsbyImageData(width: 255, height: 450)
+            }
+          }
+          skillsused {
             title
-            subtitle
             image {
               asset {
-                gatsbyImageData(width: 255, height: 450)
-              }
-            }
-            skillsused {
-              title
-              image {
-                asset {
-                  gatsbyImageData(width: 37)
-                }
+                gatsbyImageData(width: 37)
               }
             }
           }
         }
       }
-    `
-  );
+    }
+  `);
 
   return nodes;
 };

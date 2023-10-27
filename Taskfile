@@ -55,6 +55,11 @@ function task:lint { ## Run the project codestyle check
 	docker-compose exec frontend sh -c "yarn lint"
 }
 
+function task:lint-fix { ## Run the project codestyle fix
+	title "Running the frontend codestyle fix.."
+	docker-compose exec frontend sh -c "yarn lint --fix"
+}
+
 function task:update { ## Update all dependencies in root, frontend and backend folders
 	docker-compose exec frontend sh -c "yarn upgrade-interactive --latest"
 	docker-compose exec backend sh -c "yarn upgrade-interactive --latest"

@@ -15,5 +15,6 @@ module.exports = {
     "prettier/prettier": "warn",
     "simple-import-sort/imports": "error",
     "@typescript-eslint/no-unused-vars": ["error"],
+    "@typescript-eslint/no-explicit-any": "warn",
   },
 };

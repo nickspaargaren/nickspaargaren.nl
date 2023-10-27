@@ -6,7 +6,7 @@ export const useSkillsData = (): useSkillsDataType[] => {
     skills: { nodes },
   } = useStaticQuery(graphql`
     {
-      skills: allSanitySkills(sort: { fields: percentage, order: DESC }) {
+      skills: allSanitySkills(sort: { percentage: DESC }) {
         nodes {
           id
           title

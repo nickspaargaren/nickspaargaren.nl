@@ -8,19 +8,17 @@ type useSiteMetadataType = {
 };
 
 export const useSiteMetadata = (): useSiteMetadataType => {
-  const { site } = useStaticQuery(
-    graphql`
-      query SiteMetaData {
-        site {
-          siteMetadata {
-            name
-            position
-            phone
-            email
-          }
+  const { site } = useStaticQuery(graphql`
+    query SiteMetaData {
+      site {
+        siteMetadata {
+          name
+          position
+          phone
+          email
         }
       }
-    `
-  );
+    }
+  `);
   return site.siteMetadata;
 };

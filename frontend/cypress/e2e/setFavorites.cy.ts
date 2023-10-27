@@ -9,7 +9,7 @@ describe("Set favorites test", () => {
     cy.wait(4000);
     cy.get("li.tag.reset").should("not.exist");
     cy.get(
-      ':nth-child(2) > .opties > .favorite > input[type="checkbox"]'
+      ':nth-child(2) > .opties > .favorite > input[type="checkbox"]',
     ).click();
     cy.get("button.tag.reset").should("exist");
   });

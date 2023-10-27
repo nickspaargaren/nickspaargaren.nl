@@ -67,7 +67,7 @@ const ActiveSkills = ({
             setFavorites([]);
           }}
           aria-label={`Uw selectie (${formatter.format(
-            favoriteList
+            favoriteList,
           )}) verwijderen`}
         >
           <MdClear />

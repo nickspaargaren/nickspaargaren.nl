@@ -9,19 +9,17 @@ type TimelineItemType = {
 export const useTimelineData = (): TimelineItemType[] => {
   const {
     allSanityTimeline: { nodes },
-  } = useStaticQuery(
-    graphql`
-      query TimelineData {
-        allSanityTimeline(sort: { fields: date, order: ASC }) {
-          nodes {
-            title
-            subtitle
-            date
-          }
+  } = useStaticQuery(graphql`
+    query TimelineData {
+      allSanityTimeline(sort: { date: ASC }) {
+        nodes {
+          title
+          subtitle
+          date
         }
       }
-    `
-  );
+    }
+  `);
 
   return nodes;
 };

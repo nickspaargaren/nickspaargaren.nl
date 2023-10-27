@@ -21,13 +21,13 @@ const SlideAnimation = ({
     scrollY,
     [elementTop - windowHeight, elementTop - windowHeight + 70],
     [0, 1],
-    easing
+    easing,
   );
   const y = useTransform(
     scrollY,
     [elementTop - windowHeight, elementTop - windowHeight + 70],
     [20, 0],
-    easing
+    easing,
   );
 
   return (
