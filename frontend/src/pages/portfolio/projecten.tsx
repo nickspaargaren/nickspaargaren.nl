@@ -7,9 +7,7 @@ import React from "react";
 const Projecten = () => {
   const data = useStaticQuery(graphql`
     query {
-      portfolio: allSanityPortfolio(
-        sort: { fields: collaboration, order: ASC }
-      ) {
+      portfolio: allSanityPortfolio(sort: { collaboration: ASC }) {
         nodes {
           title
           website
