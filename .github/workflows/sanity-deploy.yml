@@ -10,10 +10,9 @@ jobs:
         working-directory: ./backend
     steps:
       - uses: actions/checkout@v2
-      - uses: sanity-io/github-action-sanity@v0.4-alpha
       - name: Install modules
         run: yarn install
       - name: Deploy Sanity
         env:
           SANITY_AUTH_TOKEN: ${{ secrets.SANITY_AUTH_TOKEN }}
-        run: yarn sanity deploy
+        run: npx @sanity/cli deploy
