@@ -1,8 +1,10 @@
+import Button from "@src/components/Button";
 import { useSiteMetadata } from "@src/hooks/useSiteMetadata";
 import { SocialData } from "@src/hooks/useSocialData";
 import { motion } from "framer-motion";
 import React, { ReactElement, useEffect, useRef } from "react";
 import { Helmet } from "react-helmet";
+import { FaEnvelopeOpen } from "react-icons/fa";
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
@@ -103,7 +105,7 @@ const itemAnimation = {
 };
 
 const Home = (): ReactElement => {
-  const { name, position } = useSiteMetadata();
+  const { name, position, email } = useSiteMetadata();
 
   const siteholderRef = useRef<HTMLDivElement>(null);
   const socialsRef = useRef<HTMLDivElement>(null);
@@ -140,6 +142,14 @@ const Home = (): ReactElement => {
           <div className="title">
             <h1 style={{ fontSize: "2em" }}>{name}</h1>
             <h2>{position}</h2>
+            <p style={{ marginTop: "20px" }}>
+              <Button
+                url={`mailto:${email}`}
+                title="Contact"
+                subtitle="Send me mail"
+                icon={<FaEnvelopeOpen />}
+              />
+            </p>
           </div>
 
           <motion.div
