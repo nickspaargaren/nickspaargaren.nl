@@ -123,7 +123,8 @@ const Home = (): ReactElement => {
       const yWalk = (mousemove.y / height) * limit - limit / 2;
 
       socialsRef.current?.childNodes.forEach((block) => {
-        block.style.boxShadow = `${xWalk}px ${yWalk}px 1px 2px rgba(0,0,0,.1)`;
+        const { style } = block as HTMLLIElement;
+        style.boxShadow = `${xWalk}px ${yWalk}px 1px 2px rgba(0,0,0,.1)`;
       });
     });
   }, []);
