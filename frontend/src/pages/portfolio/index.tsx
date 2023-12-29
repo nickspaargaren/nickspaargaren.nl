@@ -45,9 +45,8 @@ const Index = () => {
         <div className="inhoud">
           <div className="grid-4x">
             {portfolio.map((item, key) => (
-              <SlideAnimation>
+              <SlideAnimation key={key}>
                 <PortfolioItem
-                  key={key}
                   title={item.title || ""}
                   image={item.image?.asset?.gatsbyImageData}
                   skillsused={item.skillsused}
@@ -61,9 +60,8 @@ const Index = () => {
         <div className="inhoud">
           <div className="grid-4x">
             {stats.map((item, key) => (
-              <SlideAnimation>
+              <SlideAnimation key={key}>
                 <Stats
-                  key={key}
                   title={item.title || ""}
                   subtitle={item.subtitle || ""}
                   amount={item.amount || 0}
@@ -170,9 +168,7 @@ const Index = () => {
               <p>Werkervaring en technieken</p>
             </div>
           </SlideAnimation>
-          <SlideAnimation>
-            <Timeline />
-          </SlideAnimation>
+          <Timeline />
           <Button
             title="Linkedin"
             subtitle="Account"

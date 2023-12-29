@@ -3,6 +3,8 @@ import React, { ReactElement } from "react";
 import { GiCheckMark } from "react-icons/gi";
 import styled from "styled-components";
 
+import SlideAnimation from "./SlideAnimation";
+
 const StyledTimeline = styled.div`
   border-left: 3px dashed #bababa;
   padding-left: 31px;
@@ -95,12 +97,13 @@ const Timeline = (): ReactElement => {
   return (
     <StyledTimeline>
       {timeline.map((item, key) => (
-        <TimelineItem
-          title={item.title || ""}
-          subtitle={item.subtitle || ""}
-          key={key}
-          date={item.date || 0}
-        />
+        <SlideAnimation key={key}>
+          <TimelineItem
+            title={item.title || ""}
+            subtitle={item.subtitle || ""}
+            date={item.date || 0}
+          />
+        </SlideAnimation>
       ))}
     </StyledTimeline>
   );
