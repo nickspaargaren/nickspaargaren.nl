@@ -16,7 +16,7 @@ jobs:
           build: yarn build
           start: yarn serve --port 3000
 
-  eslint:
+  code-style:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -30,3 +30,5 @@ jobs:
         run: yarn install
       - name: Run ESLint
         run: yarn run lint
+      - name: Run TypeScript Check
+        run: tsc --noEmit
