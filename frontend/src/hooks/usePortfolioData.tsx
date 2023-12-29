@@ -16,7 +16,7 @@ export const usePortfolioData = () => {
           collaboration
           image {
             asset {
-              gatsbyImageData
+              gatsbyImageData(width: 255, height: 450)
             }
           }
           slug {
