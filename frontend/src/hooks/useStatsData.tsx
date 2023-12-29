@@ -1,17 +1,10 @@
 import { graphql, useStaticQuery } from "gatsby";
 
-type useStatsDataType = {
-  title: string;
-  subtitle: string;
-  amount: number;
-  icon: string;
-};
-
-export const useStatsData = (): useStatsDataType[] => {
+export const useStatsData = () => {
   const {
     stats: { nodes },
-  } = useStaticQuery(graphql`
-    {
+  } = useStaticQuery<Queries.statsQuery>(graphql`
+    query stats {
       stats: allSanityStats {
         nodes {
           title

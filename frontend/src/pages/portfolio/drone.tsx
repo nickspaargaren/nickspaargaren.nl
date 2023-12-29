@@ -5,10 +5,14 @@ import Layout from "@src/layout";
 import React from "react";
 
 const Drone = () => {
-  const { name } = useSiteMetadata();
+  const siteMetadata = useSiteMetadata();
 
   return (
-    <Layout title={`Drone videos | ${name}`} description="Drone videos" noindex>
+    <Layout
+      title={`Drone videos | ${siteMetadata?.name}`}
+      description="Drone videos"
+      noindex
+    >
       <div className="inhoud">
         <Breadcrumbs list={["Drone videos"]} />
       </div>

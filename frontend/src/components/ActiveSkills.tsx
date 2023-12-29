@@ -1,3 +1,4 @@
+import { favoriteListType } from "@src/types";
 import React, { ReactElement } from "react";
 import { MdClear, MdDone } from "react-icons/md";
 import styled from "styled-components";
@@ -31,7 +32,7 @@ const StyledTags = styled.div`
 `;
 
 type ActiveSkillsType = {
-  favorites: any;
+  favorites: favoriteListType;
   setFavorites: (item: any) => void;
 };
 

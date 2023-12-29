@@ -1,7 +1,5 @@
 import Menu from "@src/components/navigation/Menu";
 import User from "@src/components/User";
-import { useSiteMetadata } from "@src/hooks/useSiteMetadata";
-import { StaticImage } from "gatsby-plugin-image";
 import React, { ReactElement } from "react";
 import styled from "styled-components";
 
@@ -20,21 +18,9 @@ const StyledNav = styled.nav`
 `;
 
 const Nav = (): ReactElement => {
-  const { name, position } = useSiteMetadata();
   return (
     <StyledNav>
-      <User
-        title={name}
-        subtitle={position}
-        image={
-          <StaticImage
-            src="../../images/nick-spaargaren.jpeg"
-            width={37}
-            height={37}
-            alt={`${"Profielfoto"} ${name}`}
-          />
-        }
-      />
+      <User />
       <Menu />
     </StyledNav>
   );

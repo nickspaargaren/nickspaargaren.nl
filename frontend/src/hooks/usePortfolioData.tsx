@@ -1,32 +1,26 @@
-import { GatsbyImageType, TagType } from "@src/types";
 import { graphql, useStaticQuery } from "gatsby";
 
-type usePortfolioDataType = {
-  title: string;
-  subtitle: string;
-  website: string;
-  tags: string;
-  id: string;
-  github: string;
-  description: string;
-  collaboration: string;
-  image: GatsbyImageType;
-  skillsused: TagType[];
-};
-
-export const usePortfolioData = (): usePortfolioDataType[] => {
+export const usePortfolioData = () => {
   const {
     portfolio: { nodes },
-  } = useStaticQuery(graphql`
-    {
+  } = useStaticQuery<Queries.portfolioQuery>(graphql`
+    query portfolio {
       portfolio: allSanityPortfolio {
         nodes {
           title
-          subtitle
+          website
+          tags
+          id
+          github
+          description
+          collaboration
           image {
             asset {
               gatsbyImageData(width: 255, height: 450)
             }
+          }
+          slug {
+            current
           }
           skillsused {
             title

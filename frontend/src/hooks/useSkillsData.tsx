@@ -1,11 +1,10 @@
-import { useSkillsDataType } from "@src/types";
 import { graphql, useStaticQuery } from "gatsby";
 
-export const useSkillsData = (): useSkillsDataType[] => {
+export const useSkillsData = () => {
   const {
     skills: { nodes },
-  } = useStaticQuery(graphql`
-    {
+  } = useStaticQuery<Queries.skillsQuery>(graphql`
+    query skills {
       skills: allSanitySkills(sort: { percentage: DESC }) {
         nodes {
           id

@@ -7,7 +7,7 @@ import { Helmet } from "react-helmet";
 type LayoutType = {
   children: ReactElement | ReactElement[];
   title: string;
-  description: string;
+  description?: string | null;
   noindex?: boolean;
 };
 
@@ -28,7 +28,7 @@ const Layout = ({
       <html lang="nl" />
       <meta charSet="utf-8" />
       <title>{title}</title>
-      <meta name="description" content={description} />
+      {description && <meta name="description" content={description} />}
       {noindex && <meta name="robots" content="noindex" />}
     </Helmet>
     <main>{children}</main>

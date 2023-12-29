@@ -10,6 +10,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "lint": "eslint \"**/*.{ts,tsx}\"",
+    "tsc": "tsc --noEmit",
     "test": "npx cypress run",
     "test:ui": "npx cypress open"
   },

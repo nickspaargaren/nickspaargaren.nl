@@ -1,5 +1,11 @@
 import { Link } from "gatsby";
-import React, { ReactElement, useEffect, useRef } from "react";
+import React, {
+  CSSProperties,
+  ReactElement,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import styled from "styled-components";
 
 const StyledMenu = styled.div`
@@ -46,23 +52,31 @@ const StyledMenu = styled.div`
 `;
 
 const Menu = (): ReactElement => {
-  const hoverRef = useRef<HTMLDivElement>(null);
   const menuItemRef = useRef<HTMLUListElement>(null);
 
-  const hover = (e) => {
-    hoverRef.current.style.left = `${e.target.offsetLeft}px`;
-    hoverRef.current.style.width = `${e.target.clientWidth}px`;
-  };
+  const [hoverObject, setHoverObject] = useState<
+    Pick<CSSProperties, "left" | "width">
+  >({
+    left: 0,
+    width: 0,
+  });
+
+  const hover = (e: any) =>
+    setHoverObject({
+      left: e.target.offsetLeft,
+      width: e.target.clientWidth,
+    });
 
   const leave = () => {
     menuItemRef.current?.childNodes.forEach((item) => {
-      const {
-        children: [box],
-      } = item;
+      const { children } = item as HTMLLIElement;
+      const div = children[0] as HTMLElement;
 
-      if (box.classList.contains("active")) {
-        hoverRef.current.style.left = `${box.offsetLeft}px`;
-        hoverRef.current.style.width = `${box.clientWidth}px`;
+      if (div.classList.contains("active")) {
+        setHoverObject({
+          left: div.offsetLeft,
+          width: div.clientWidth,
+        });
       }
     });
   };
@@ -89,7 +103,7 @@ const Menu = (): ReactElement => {
           </Link>
         </li>
       </ul>
-      <div className="hover" ref={hoverRef}></div>
+      <div className="hover" style={hoverObject}></div>
     </StyledMenu>
   );
 };
