@@ -47,8 +47,6 @@ const Projecten = () => {
           <PortfolioItem
             key={key}
             title={item.title}
-            description={item.description}
-            slug={item.slug.current}
             image={item.image}
             skillsused={item.skillsused}
           />

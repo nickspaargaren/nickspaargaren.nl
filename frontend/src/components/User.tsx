@@ -1,4 +1,6 @@
-import React, { ReactElement } from "react";
+import { useSiteMetadata } from "@src/hooks/useSiteMetadata";
+import { StaticImage } from "gatsby-plugin-image";
+import React from "react";
 import styled from "styled-components";
 
 const StyleUser = styled.div`
@@ -9,20 +11,23 @@ const StyleUser = styled.div`
   }
 `;
 
-type UserType = {
-  title: string;
-  subtitle: string;
-  image?: object;
-};
+const User = () => {
+  const { name, position } = useSiteMetadata();
 
-const User = ({ title, subtitle, image }: UserType): ReactElement => (
-  <StyleUser>
-    {image}
-    <div>
-      <strong>{title}</strong>
-      <div className="small">{subtitle}</div>
-    </div>
-  </StyleUser>
-);
+  return (
+    <StyleUser>
+      <StaticImage
+        src="../images/nick-spaargaren.jpeg"
+        width={37}
+        height={37}
+        alt={`${"Profielfoto"} ${name}`}
+      />
+      <div>
+        <strong>{name}</strong>
+        <div className="small">{position}</div>
+      </div>
+    </StyleUser>
+  );
+};
 
 export default User;
