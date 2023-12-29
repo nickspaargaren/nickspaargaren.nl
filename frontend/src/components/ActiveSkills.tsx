@@ -51,8 +51,6 @@ const ActiveSkills = ({
 
   const favoriteList = favorites.map(({ skill }) => skill);
 
-  console.log({ favoriteList, favorites });
-
   return (
     <>
       <hr />
