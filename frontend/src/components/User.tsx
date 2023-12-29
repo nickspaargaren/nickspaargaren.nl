@@ -12,7 +12,7 @@ const StyleUser = styled.div`
 `;
 
 const User = () => {
-  const { name, position } = useSiteMetadata();
+  const siteMetadata = useSiteMetadata();
 
   return (
     <StyleUser>
@@ -20,11 +20,11 @@ const User = () => {
         src="../images/nick-spaargaren.jpeg"
         width={37}
         height={37}
-        alt={`${"Profielfoto"} ${name}`}
+        alt={`${"Profielfoto"} ${siteMetadata?.name}`}
       />
       <div>
-        <strong>{name}</strong>
-        <div className="small">{position}</div>
+        <strong>{siteMetadata?.name}</strong>
+        <div className="small">{siteMetadata?.position}</div>
       </div>
     </StyleUser>
   );

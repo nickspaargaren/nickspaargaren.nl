@@ -1,6 +1,6 @@
 import Taglist from "@src/components/Taglist";
-import { GatsbyImageType, TagType } from "@src/types";
-import { GatsbyImage } from "gatsby-plugin-image";
+import { TagType } from "@src/types";
+import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 import React, { ReactElement } from "react";
 import { BsChevronUp } from "react-icons/bs";
 import styled from "styled-components";
@@ -62,26 +62,23 @@ const StyledPortfolioItem = styled.div`
 
 type PortfolioItemType = {
   title: string;
-  subtitle?: string;
-  image: GatsbyImageType;
-  skillsused?: TagType[];
+  image?: IGatsbyImageData;
+  skillsused?: Queries.portfolioQuery["portfolio"]["nodes"][0]["skillsused"];
 };
 
 const PortfolioItem = ({
   title,
-  subtitle,
   image,
   skillsused,
 }: PortfolioItemType): ReactElement => (
   <StyledPortfolioItem>
     <div className="image">
-      {image && <GatsbyImage image={image.asset.gatsbyImageData} alt={title} />}
+      {image && <GatsbyImage image={image} alt={title} />}
     </div>
     <div className="description">
       <h2>{title}</h2>
-      <p>{subtitle}</p>
       <BsChevronUp aria-hidden="true" />
-      <Taglist tags={skillsused ? skillsused : []} />
+      <Taglist tags={skillsused || []} />
     </div>
   </StyledPortfolioItem>
 );

@@ -96,10 +96,10 @@ const Timeline = (): ReactElement => {
     <StyledTimeline>
       {timeline.map((item, key) => (
         <TimelineItem
-          title={item.title}
-          subtitle={item.subtitle}
+          title={item.title || ""}
+          subtitle={item.subtitle || ""}
           key={key}
-          date={item.date}
+          date={item.date || 0}
         />
       ))}
     </StyledTimeline>

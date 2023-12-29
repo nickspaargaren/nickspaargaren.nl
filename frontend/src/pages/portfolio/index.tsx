@@ -33,10 +33,14 @@ import {
 const Index = () => {
   const portfolio = usePortfolioData();
   const stats = useStatsData();
-  const { name, position } = useSiteMetadata();
+  const siteMetadata = useSiteMetadata();
 
   return (
-    <Layout title={`Portfolio | ${name}`} description={position} noindex>
+    <Layout
+      title={`Portfolio | ${siteMetadata?.name}`}
+      description={siteMetadata?.position}
+      noindex
+    >
       <section>
         <div className="inhoud">
           <div className="grid-4x">
@@ -44,9 +48,8 @@ const Index = () => {
               <SlideAnimation>
                 <PortfolioItem
                   key={key}
-                  title={item.title}
-                  subtitle={item.subtitle}
-                  image={item.image}
+                  title={item.title || ""}
+                  image={item.image?.asset?.gatsbyImageData}
                   skillsused={item.skillsused}
                 />
               </SlideAnimation>
@@ -61,10 +64,10 @@ const Index = () => {
               <SlideAnimation>
                 <Stats
                   key={key}
-                  title={item.title}
-                  subtitle={item.subtitle}
-                  amount={item.amount}
-                  icon={item.icon}
+                  title={item.title || ""}
+                  subtitle={item.subtitle || ""}
+                  amount={item.amount || 0}
+                  icon={item.icon || ""}
                 />
               </SlideAnimation>
             ))}

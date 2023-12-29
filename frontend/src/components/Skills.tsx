@@ -1,6 +1,6 @@
 import ActiveSkills from "@src/components/ActiveSkills";
 import { useSkillsData } from "@src/hooks/useSkillsData";
-import { useSkillsDataType } from "@src/types";
+import { favoriteListType } from "@src/types";
 import { useLocalStorage } from "@src/utils/localStorage";
 import { motion } from "framer-motion";
 import { GatsbyImage } from "gatsby-plugin-image";
@@ -88,11 +88,13 @@ const Skills = (): ReactElement => {
   const skills = useSkillsData();
 
   const [favorites, setFavorites] =
-    useLocalStorage<{ id: string; skill: string }[]>("favorites");
+    useLocalStorage<favoriteListType>("favorites");
 
-  const handleChangeChk = (item: useSkillsDataType) => {
+  const handleChangeChk = (
+    item: Queries.skillsQuery["skills"]["nodes"][number],
+  ) => {
     if (!favorites.find((i) => i["id"] === item.id)) {
-      setFavorites([...favorites, { id: item.id, skill: item.title }]);
+      setFavorites([...favorites, { id: item.id, skill: item.title || "" }]);
     } else {
       setFavorites(favorites.filter((i) => i["id"] !== item.id));
     }
@@ -106,10 +108,10 @@ const Skills = (): ReactElement => {
         .filter((item) => !item.exclude)
         .map((item, key) => (
           <div key={key} className="skill">
-            {item.image ? (
+            {item.image?.asset ? (
               <GatsbyImage
                 image={item.image.asset.gatsbyImageData}
-                alt={item.title}
+                alt={item.title || ""}
               />
             ) : (
               <img src="https://placehold.it/35x35" alt="placeholder" />
@@ -132,7 +134,7 @@ const Skills = (): ReactElement => {
               <div className="favorite" onClick={() => handleChangeChk(item)}>
                 <input
                   type="checkbox"
-                  aria-label={item.title}
+                  aria-label={item.title || ""}
                   onChange={() => handleChangeChk(item)}
                   onKeyDown={({ key }) =>
                     key === "Enter" && handleChangeChk(item)

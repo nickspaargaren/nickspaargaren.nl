@@ -1,16 +1,10 @@
 import { graphql, useStaticQuery } from "gatsby";
 
-type TimelineItemType = {
-  title: string;
-  subtitle: string;
-  date: number;
-};
-
-export const useTimelineData = (): TimelineItemType[] => {
+export const useTimelineData = () => {
   const {
     allSanityTimeline: { nodes },
-  } = useStaticQuery(graphql`
-    query TimelineData {
+  } = useStaticQuery<Queries.timelineDataQuery>(graphql`
+    query timelineData {
       allSanityTimeline(sort: { date: ASC }) {
         nodes {
           title

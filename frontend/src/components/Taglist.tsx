@@ -73,18 +73,23 @@ const StyledTaglist = styled.ul`
 `;
 
 type TaglistType = {
-  tags: TagType[];
+  tags: Queries.portfolioQuery["portfolio"]["nodes"][0]["skillsused"];
 };
 
 const Taglist = ({ tags }: TaglistType): ReactElement => (
   <StyledTaglist>
-    {tags.map(({ title, image }, key) => (
-      <li key={key}>
-        <GatsbyImage image={image.asset.gatsbyImageData} alt={title} />
-        <span>{title}</span>
-      </li>
-    ))}
+    {tags?.map(
+      (item, key) =>
+        item?.image?.asset && (
+          <li key={key}>
+            <GatsbyImage
+              image={item.image.asset.gatsbyImageData}
+              alt={item.title || ""}
+            />
+            <span>{item.title}</span>
+          </li>
+        ),
+    )}
   </StyledTaglist>
 );
-
 export default Taglist;

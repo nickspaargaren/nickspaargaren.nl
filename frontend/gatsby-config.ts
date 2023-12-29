@@ -1,6 +1,9 @@
 import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
+  graphqlTypegen: {
+    generateOnBuild: true,
+  },
   siteMetadata: {
     name: "Nick Spaargaren",
     position: "Designer & Front-End Developer",

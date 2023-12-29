@@ -28,10 +28,4 @@ export type GatsbyImageType = {
   };
 };
 
-export type useSkillsDataType = {
-  exclude: boolean;
-  id: string;
-  image: GatsbyImageType;
-  percentage: number;
-  title: string;
-};
+export type favoriteListType = { id: string; skill: string }[];

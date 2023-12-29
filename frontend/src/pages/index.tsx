@@ -105,7 +105,7 @@ const itemAnimation = {
 };
 
 const Home = (): ReactElement => {
-  const { name, position, email } = useSiteMetadata();
+  const siteMetadata = useSiteMetadata();
 
   const siteholderRef = useRef<HTMLDivElement>(null);
   const socialsRef = useRef<HTMLDivElement>(null);
@@ -140,11 +140,11 @@ const Home = (): ReactElement => {
       <div className="siteholder" ref={siteholderRef}>
         <div className="content" style={{ textAlign: "center", width: "100%" }}>
           <div className="title">
-            <h1 style={{ fontSize: "2em" }}>{name}</h1>
-            <h2>{position}</h2>
+            <h1 style={{ fontSize: "2em" }}>{siteMetadata?.name}</h1>
+            <h2>{siteMetadata?.position}</h2>
             <p style={{ marginTop: "20px" }}>
               <Button
-                url={`mailto:${email}`}
+                url={`mailto:${siteMetadata?.email}`}
                 title="Contact"
                 subtitle="Send me mail"
                 icon={<FaEnvelopeOpen />}
@@ -171,7 +171,7 @@ const Home = (): ReactElement => {
                   {social.icon}
                   <span>
                     <strong>{social.platform}</strong>
-                    {name}
+                    {siteMetadata?.name}
                   </span>
                 </motion.a>
               ))}
