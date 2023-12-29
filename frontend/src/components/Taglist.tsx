@@ -1,4 +1,3 @@
-import { TagType } from "@src/types";
 import { GatsbyImage } from "gatsby-plugin-image";
 import React, { ReactElement } from "react";
 import styled from "styled-components";

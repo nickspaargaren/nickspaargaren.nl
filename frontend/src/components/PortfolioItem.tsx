@@ -1,5 +1,4 @@
 import Taglist from "@src/components/Taglist";
-import { TagType } from "@src/types";
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 import React, { ReactElement } from "react";
 import { BsChevronUp } from "react-icons/bs";
