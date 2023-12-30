@@ -66,17 +66,11 @@ const StyledTitle = styled.div`
   }
 `;
 
-type TimelineItemType = {
-  title: string;
-  subtitle: string;
-  date: number;
-};
-
 const TimelineItem = ({
   title,
   subtitle,
   date,
-}: TimelineItemType): ReactElement => {
+}: Queries.timelineDataQuery["allSanityTimeline"]["nodes"][number]): ReactElement => {
   return (
     <StyledTimelineItem>
       <div className="check">
