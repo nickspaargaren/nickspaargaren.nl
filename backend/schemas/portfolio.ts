@@ -81,11 +81,6 @@ export default defineType({
       title: 'Tags',
       type: 'array',
       of: [{type: 'string'}],
-    },
-    {
-      name: 'collaboration',
-      title: 'In collaboration met CM Specialist',
-      type: 'boolean'
     }
   ],
   preview: {

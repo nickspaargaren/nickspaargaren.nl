@@ -41,14 +41,12 @@ const StyledStats = styled.div`
   }
 `;
 
-type StatsType = {
-  title: string;
-  subtitle: string;
-  amount: number;
-  icon: string;
-};
-
-const Stats = ({ title, subtitle, amount, icon }: StatsType): ReactElement => (
+const Stats = ({
+  title,
+  subtitle,
+  amount,
+  icon,
+}: Queries.statsQuery["stats"]["nodes"][number]): ReactElement => (
   <StyledStats>
     <div className="amount">
       {amount}

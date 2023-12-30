@@ -13,7 +13,6 @@ export const usePortfolioData = () => {
           id
           github
           description
-          collaboration
           image {
             asset {
               gatsbyImageData(width: 255, height: 450)
