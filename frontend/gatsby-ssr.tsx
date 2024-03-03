@@ -8,9 +8,8 @@ export const onRenderBody: GatsbySSR["onRenderBody"] = ({
     <script
       key="stats"
       defer
-      src="/stats/js/script.js"
-      data-api="/stats/api/event"
       data-domain="nickspaargaren.nl"
+      src="https://plausible.io/js/script.js"
     />,
   ]);
 };
