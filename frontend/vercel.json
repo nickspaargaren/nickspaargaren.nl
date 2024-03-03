@@ -1,8 +1,12 @@
 {
   "rewrites": [
     {
-      "source": "/stats/:match*",
-      "destination": "https://eu.umami.is/:match*"
+      "source": "/stats/js/script.js",
+      "destination": "https://plausible.io/js/script.js"
+    },
+    {
+      "source": "/stats/api/event",
+      "destination": "https://plausible.io/api/event"
     }
   ]
 }
