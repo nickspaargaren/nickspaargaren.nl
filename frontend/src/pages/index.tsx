@@ -143,14 +143,14 @@ const Home = (): ReactElement => {
           <div className="title">
             <h1 style={{ fontSize: "2em" }}>{siteMetadata?.name}</h1>
             <h2>{siteMetadata?.position}</h2>
-            <p style={{ marginTop: "20px" }}>
+            <div style={{ marginTop: "20px" }}>
               <Button
                 url={`mailto:${siteMetadata?.email}`}
                 title="Contact"
                 subtitle="Send me mail"
                 icon={<FaEnvelopeOpen />}
               />
-            </p>
+            </div>
           </div>
 
           <motion.div
