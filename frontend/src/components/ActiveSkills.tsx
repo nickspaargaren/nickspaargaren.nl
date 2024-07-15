@@ -33,7 +33,7 @@ const StyledTags = styled.div`
 
 type ActiveSkillsType = {
   favorites: favoriteListType;
-  setFavorites: (item: any) => void;
+  setFavorites: (item: favoriteListType) => void;
 };
 
 const ActiveSkills = ({

@@ -1,6 +1,6 @@
 import ActiveSkills from "@src/components/ActiveSkills";
 import { useSkillsData } from "@src/hooks/useSkillsData";
-import { favoriteListType } from "@src/types";
+import { favoriteListSchema, favoriteListType } from "@src/types";
 import { useLocalStorage } from "@src/utils/localStorage";
 import { motion } from "framer-motion";
 import { GatsbyImage } from "gatsby-plugin-image";
@@ -87,8 +87,11 @@ const StyledSkills = styled.div`
 const Skills = (): ReactElement => {
   const skills = useSkillsData();
 
-  const [favorites, setFavorites] =
-    useLocalStorage<favoriteListType>("favorites");
+  const [favorites, setFavorites] = useLocalStorage<favoriteListType>(
+    "favorites",
+    favoriteListSchema,
+    [],
+  );
 
   const handleChangeChk = (
     item: Queries.skillsQuery["skills"]["nodes"][number],
