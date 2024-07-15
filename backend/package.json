@@ -12,17 +12,14 @@
     "test": "sanity check",
     "build": "sanity build"
   },
-  "keywords": [
-    "sanity"
-  ],
   "dependencies": {
-    "@sanity/cli": "^3.16.7",
+    "@sanity/cli": "^3.50.0",
     "@sanity/components": "^2.14.0",
-    "@sanity/vision": "^3.16.7",
+    "@sanity/vision": "^3.50.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sanity": "^3.16.7",
-    "styled-components": "^6.0.8"
+    "sanity": "^3.50.0",
+    "styled-components": "^6.1.11"
   }
 }
