@@ -44,7 +44,7 @@ const StyledGithub = styled.div`
 const Github = (): ReactElement => {
   const github = useGithub();
 
-  if (github.error) {
+  if (!github.data || github.error) {
     return <>{github.error}</>;
   }
 

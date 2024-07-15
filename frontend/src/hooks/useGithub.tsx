@@ -1,10 +1,12 @@
+import { Endpoints } from "@octokit/types";
 import { useEffect, useState } from "react";
 
 type GithubType = {
-  data: any;
+  data: Endpoints["GET /repos/{owner}/{repo}"]["response"]["data"] | null;
   loading: boolean;
   error: string | null;
 };
+
 const useGithub = (): GithubType => {
   const [github, setGithub] = useState<GithubType>({
     data: null,
