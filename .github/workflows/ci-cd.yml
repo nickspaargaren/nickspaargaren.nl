@@ -9,7 +9,7 @@ jobs:
         with:
           node-version: 20
       - name: Run tests
-        uses: cypress-io/github-action@v4
+        uses: cypress-io/github-action@v6
         with:
           working-directory: frontend
           browser: firefox
