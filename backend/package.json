@@ -13,7 +13,7 @@
     "build": "sanity build"
   },
   "dependencies": {
-    "@sanity/cli": "^3.52.4",
+    "@sanity/cli": "^3.53.0",
     "@sanity/components": "^2.14.0",
     "@sanity/vision": "^3.52.4",
     "prop-types": "^15.8.1",
