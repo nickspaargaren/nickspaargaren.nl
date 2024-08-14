@@ -134,8 +134,8 @@ const Home = (): ReactElement => {
       <Helmet>
         <html lang="nl" />
         <meta charSet="utf-8" />
-        <title>Nick Spaargaren</title>
-        <meta name="description" content="Designer & Front-End Developer" />
+        <title>{siteMetadata?.name}</title>
+        <meta name="description" content={siteMetadata?.position || ""} />
       </Helmet>
       <GlobalStyle />
       <div className="siteholder" ref={siteholderRef}>
