@@ -1,14 +1,7 @@
 import React from "react";
-import { FaDribbble, FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
 
 export const SocialData = [
-  {
-    id: 1,
-    platform: "Dribbble",
-    class: "dribbble",
-    icon: <FaDribbble />,
-    url: "https://dribbble.com/nickspaargaren",
-  },
   {
     id: 2,
     platform: "Github",
