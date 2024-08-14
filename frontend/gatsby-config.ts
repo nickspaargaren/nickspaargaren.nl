@@ -6,7 +6,7 @@ const config: GatsbyConfig = {
   },
   siteMetadata: {
     name: "Nick Spaargaren",
-    position: "Designer & Front-End Developer",
+    position: "Full Stack Developer",
     email: process.env.EMAIL || "EMAIL",
     siteUrl: `https://nickspaargaren.nl`,
   },
