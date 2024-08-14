@@ -9,8 +9,6 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 :root {
-  --dribbble-color: #ea4c89;
-  --dribbble-color-tint: #fdedf3;
   --github-color: #292a2c;
   --github-color-tint: #e9e9e9;
   --youtube-color: #ff0200;
@@ -85,10 +83,6 @@ div[class*="grid"] img {max-width: 100%; height: auto !important;}
 .holder a.block.youtube span {background: var(--youtube-color); color: #fff;}
 .holder a.block.youtube span::before {border-color: var(--youtube-color) transparent;}
 .holder a.block.youtube svg path {fill: var(--youtube-color);}
-
-.holder a.block.dribbble span {background: var(--dribbble-color); color: #fff;}
-.holder a.block.dribbble span::before {border-color: var(--dribbble-color) transparent;}
-.holder a.block.dribbble svg path {fill: var(--dribbble-color);}
 `;
 
 const containerAnimation = {
