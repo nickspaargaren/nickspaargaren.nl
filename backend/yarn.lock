@@ -1797,7 +1797,7 @@
     get-random-values-esm "1.0.2"
     lodash "^4.17.21"
 
-"@sanity/cli@3.55.0", "@sanity/cli@^3.52.4":
+"@sanity/cli@3.55.0":
   version "3.55.0"
   resolved "https://registry.yarnpkg.com/@sanity/cli/-/cli-3.55.0.tgz#41e5c3689e135dd386f584fdf47374ba695d3c1b"
   integrity sha512-Pu0QRiOB0bFBJtBOC9fjNEpyIi8Y7vmAXXWcZLQGMWF/a2JybuTRNnfZIGEvH+EqPXJB9jpdz4y/9UHCcl4AWA==
@@ -1814,6 +1814,30 @@
     esbuild-register "^3.5.0"
     get-it "^8.6.5"
     groq-js "^1.12.0"
+    node-machine-id "^1.1.12"
+    pkg-dir "^5.0.0"
+    prettier "^3.3.0"
+    semver "^7.3.5"
+    silver-fleece "1.1.0"
+    validate-npm-package-name "^3.0.0"
+
+"@sanity/cli@^3.56.0":
+  version "3.56.0"
+  resolved "https://registry.yarnpkg.com/@sanity/cli/-/cli-3.56.0.tgz#4fd5289adc9195deecd0efd4905ec300f82cb961"
+  integrity sha512-mfHOeb1Tz1Aye2AJJN/eFX8r40hrBWfEDqt79YzpWbWtWek0hLtqAdzWqpTQB1+L6LkffCPyACPV4AaW4vRUrw==
+  dependencies:
+    "@babel/traverse" "^7.23.5"
+    "@sanity/client" "^6.21.2"
+    "@sanity/codegen" "3.56.0"
+    "@sanity/telemetry" "^0.7.7"
+    "@sanity/util" "3.56.0"
+    chalk "^4.1.2"
+    debug "^4.3.4"
+    decompress "^4.2.0"
+    esbuild "0.21.5"
+    esbuild-register "^3.5.0"
+    get-it "^8.6.5"
+    groq-js "^1.13.0"
     node-machine-id "^1.1.12"
     pkg-dir "^5.0.0"
     prettier "^3.3.0"
@@ -1847,6 +1871,27 @@
     globby "^10.0.0"
     groq "3.55.0"
     groq-js "^1.12.0"
+    json5 "^2.2.3"
+    tsconfig-paths "^4.2.0"
+    zod "^3.22.4"
+
+"@sanity/codegen@3.56.0":
+  version "3.56.0"
+  resolved "https://registry.yarnpkg.com/@sanity/codegen/-/codegen-3.56.0.tgz#0bb88155f229934d44ba1a645a488b9237333253"
+  integrity sha512-2D4sWpbyEZRdFFfHmrzNjAcDtOwTsQCwQXH4TvGJ/pJ+YPoZLWaPwZO/LXz+Q6ko1F3RYiH3IhqZnR686b7kpg==
+  dependencies:
+    "@babel/core" "^7.23.9"
+    "@babel/generator" "^7.23.6"
+    "@babel/preset-env" "^7.23.8"
+    "@babel/preset-react" "^7.23.3"
+    "@babel/preset-typescript" "^7.23.3"
+    "@babel/register" "^7.23.7"
+    "@babel/traverse" "^7.23.5"
+    "@babel/types" "^7.23.9"
+    debug "^4.3.4"
+    globby "^10.0.0"
+    groq "3.56.0"
+    groq-js "^1.13.0"
     json5 "^2.2.3"
     tsconfig-paths "^4.2.0"
     zod "^3.22.4"
@@ -2071,6 +2116,14 @@
     "@sanity/client" "^6.21.2"
     "@types/react" "^18.3.3"
 
+"@sanity/types@3.56.0":
+  version "3.56.0"
+  resolved "https://registry.yarnpkg.com/@sanity/types/-/types-3.56.0.tgz#378b38f1cb47e4f9f4d114ba01d36764ed3cf9ec"
+  integrity sha512-gFEBnLLuyjRUA49EzV0opbXf3SY9UsklFOg75Z5Kofz4lOzaMw8RBsD1kGgLgBgH/23F+tiyWr1RYNhqLpAGKg==
+  dependencies:
+    "@sanity/client" "^6.21.2"
+    "@types/react" "^18.3.3"
+
 "@sanity/ui@^2.8.8":
   version "2.8.8"
   resolved "https://registry.yarnpkg.com/@sanity/ui/-/ui-2.8.8.tgz#e0e1390091ecfa23fa8f02a398b80386cc4a8d7a"
@@ -2102,6 +2155,17 @@
   dependencies:
     "@sanity/client" "^6.21.2"
     "@sanity/types" "3.55.0"
+    get-random-values-esm "1.0.2"
+    moment "^2.29.4"
+    rxjs "^7.8.1"
+
+"@sanity/util@3.56.0":
+  version "3.56.0"
+  resolved "https://registry.yarnpkg.com/@sanity/util/-/util-3.56.0.tgz#6c00b8698d5db86a03e907af9189b1db8cd857a9"
+  integrity sha512-+g5jN9f0n19sl+zh6xNEVmJPiGsM+ivvowWyKO42RQQt7yPFfS/A8nxidE1G9+rum3qvMvYqelVVKgVBKHq5Pw==
+  dependencies:
+    "@sanity/client" "^6.21.2"
+    "@sanity/types" "3.56.0"
     get-random-values-esm "1.0.2"
     moment "^2.29.4"
     rxjs "^7.8.1"
@@ -3853,10 +3917,10 @@ graceful-fs@^4.1.10, graceful-fs@^4.1.2, graceful-fs@^4.2.0:
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.11.tgz#4183e4e8bf08bb6e05bbb2f7d2e0c8f712ca40e3"
   integrity sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==
 
-groq-js@^1.12.0:
-  version "1.12.0"
-  resolved "https://registry.yarnpkg.com/groq-js/-/groq-js-1.12.0.tgz#41a04893c1ae631d94fefa3de6de9412731aaf02"
-  integrity sha512-XxMg2qX3iX+WlhCkj4FmrtDaQKRot9RyphJ0UsmxI/l2aMOdvjG7pqF003yyXppjoE0Vk1ERCDCUYRvC3w/A2Q==
+groq-js@^1.12.0, groq-js@^1.13.0:
+  version "1.13.0"
+  resolved "https://registry.yarnpkg.com/groq-js/-/groq-js-1.13.0.tgz#b7cd2a0cd710fcce2c5cd74069be0a3e8f05954b"
+  integrity sha512-TfNyvCVDOEVZFFbeO6TbwwrslHTXpDNN4WwCYAcuSuORx4dLQU5Zn+cIsEFUQvLycU4lc0BqU1FIgldbhi4acQ==
   dependencies:
     debug "^4.3.4"
 
@@ -3864,6 +3928,11 @@ groq@3.55.0:
   version "3.55.0"
   resolved "https://registry.yarnpkg.com/groq/-/groq-3.55.0.tgz#aea2dc6f89c1299eda6376c1794832a9f260db8a"
   integrity sha512-oDMnjsIfEMtGfPJOMFx+6qS8fdX8YIRYbslF/VE6H77kKGOGOlrMK81diphkoiV0/xg0mS++gf9fCGbdasZIRQ==
+
+groq@3.56.0:
+  version "3.56.0"
+  resolved "https://registry.yarnpkg.com/groq/-/groq-3.56.0.tgz#0e2149e74ef4e43bc7067f4ee93adc27175305b9"
+  integrity sha512-r4L0U0oLkEysu5ZuB6kW9nhfXupec9NhRDRr/zzj4GuSDLgaqtDStPJu6a8G8Cp1Gc1ZOFGSTUHWEyBalKmCbQ==
 
 gunzip-maybe@^1.4.1:
   version "1.4.2"
