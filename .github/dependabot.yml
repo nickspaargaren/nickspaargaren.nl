@@ -6,3 +6,9 @@ updates:
     - "/backend"
   schedule:
     interval: "weekly"
+  groups:
+    sanity:
+      applies-to: version-updates
+      patterns:
+        - "sanity"
+        - "@sanity/*"
