@@ -42,8 +42,9 @@ export const useLocalStorage = <T,>(
   defaultValue: T,
 ): [T, (value: T) => void] => {
   const setStateAndLocalStorage = (value: T): void => {
-    typeof window !== "undefined" &&
+    if (typeof window !== "undefined") {
       localStorage.setItem(key, JSON.stringify(value));
+    }
 
     setState(value);
   };
