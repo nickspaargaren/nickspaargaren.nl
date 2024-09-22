@@ -4,6 +4,6 @@ export default defineCliConfig({
   api: {
     projectId: '5mfdvpuc',
     dataset: "production",
-    autoUpdates: false,
-  }
+  },
+  autoUpdates: false,
 });
