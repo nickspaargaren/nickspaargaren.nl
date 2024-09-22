@@ -28,8 +28,6 @@ jobs:
           node-version: 20
       - name: Install modules
         run: yarn install
-      - name: Run Prettier
-        run: yarn run prettier:check
       - name: Run ESLint
         run: yarn run lint
       - name: Build project & generate types

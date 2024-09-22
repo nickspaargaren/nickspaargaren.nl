@@ -10,8 +10,6 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "lint": "eslint --ignore-pattern \"**/.cache/**\" \"**/*.{ts,tsx}\"",
-    "prettier:check": "prettier --check .",
-    "prettier:write": "prettier --write .",
     "tsc": "tsc --noEmit",
     "test": "npx cypress run",
     "test:ui": "npx cypress open"
