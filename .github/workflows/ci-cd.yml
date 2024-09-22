@@ -47,6 +47,8 @@ jobs:
           node-version: 20
       - name: Install modules
         run: yarn install
+      - name: Run ESLint
+        run: yarn run lint
       - name: Run TypeScript Check
         run: yarn check-types
       - name: Build Sanity Studio
