@@ -1,5 +1,3 @@
-// sanity.config.js
-import { visionTool } from '@sanity/vision';
 import { defineConfig } from 'sanity';
 import { deskTool } from 'sanity/desk';
 
@@ -12,7 +10,6 @@ export default defineConfig({
   dataset: 'production',
   plugins: [
     deskTool(),
-    visionTool(),
   ],
   schema: {
     types: schemas,
