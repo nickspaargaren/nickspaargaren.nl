@@ -9,9 +9,7 @@
     "develop": "gatsby develop -H 0.0.0.0",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "lint": "eslint \"**/*.{ts,tsx}\"",
-    "prettier:check": "prettier --check .",
-    "prettier:write": "prettier --write .",
+    "lint": "eslint --ignore-pattern \"**/.cache/**\" \"**/*.{ts,tsx}\"",
     "tsc": "tsc --noEmit",
     "test": "npx cypress run",
     "test:ui": "npx cypress open"
@@ -35,17 +33,18 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@eslint/js": "^9.11.0",
     "@octokit/types": "^13.5.0",
+    "@types/eslint__js": "^8.42.3",
     "@types/react-helmet": "^6.1.11",
     "@types/styled-components": "^5.1.34",
-    "@typescript-eslint/eslint-plugin": "^7.0.0",
-    "@typescript-eslint/parser": "^6.16.0",
     "cypress": "13.14.2",
-    "eslint": "^8.56.0",
+    "eslint": "^9.11.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
-    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
     "prettier": "^3.3.3",
-    "typescript": "^5.6.2"
+    "typescript": "^5.6.2",
+    "typescript-eslint": "^8.6.0"
   }
 }
