@@ -16,6 +16,8 @@ function task:build { ## Build the project images
 	title "Building the project images.."
 	(cd frontend && yarn install)
 	echo ""
+	(cd frontend-svelte && yarn install)
+	echo ""
 	(cd backend && yarn install)
 	echo ""
 	docker compose build
@@ -29,6 +31,7 @@ function task:start { ## Start the project containers
 	echo ""
 	echo "All project containers are running:"
 	echo - The frontend is running on http://localhost:3000/.
+	echo - The frontend \(Svelte\) is running on http://localhost:5173/.
 	echo - The frontend GraphQL playground is running on http://localhost:3000/___graphql.
 	echo - The backend is running on http://localhost:3333/.
 }
