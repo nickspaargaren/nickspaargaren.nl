@@ -12,3 +12,8 @@ updates:
       patterns:
         - "sanity"
         - "@sanity/*"
+    security-updates:
+      applies-to: security-updates
+      update-types:
+      - "patch"
+      - "minor"
