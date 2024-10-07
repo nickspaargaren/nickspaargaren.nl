@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",
-    "@octokit/types": "^13.6.0",
+    "@octokit/types": "^13.6.1",
     "@types/eslint__js": "^8.42.3",
     "@types/react-helmet": "^6.1.11",
     "cypress": "13.15.0",
