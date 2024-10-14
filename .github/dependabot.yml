@@ -17,6 +17,14 @@ updates:
       update-types:
       - "patch"
       - "minor"
+    typescript-eslint:
+      patterns:
+        - "typescript"
+        - "typescript-eslint"
+        - "eslint"
+        - "eslint-*"
+        - "@eslint/*"
+        - "@types/eslint__js"
 - package-ecosystem: "github-actions"
   directory: "/"
   schedule:
