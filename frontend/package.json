@@ -19,7 +19,7 @@
     "framer-motion": "^11.11.11",
     "gatsby": "^5.13.7",
     "gatsby-plugin-image": "^3.13.1",
-    "gatsby-plugin-sharp": "^5.13.1",
+    "gatsby-plugin-sharp": "^5.14.0",
     "gatsby-plugin-sitemap": "^6.13.1",
     "gatsby-plugin-styled-components": "^6.13.1",
     "gatsby-source-filesystem": "^5.13.1",
