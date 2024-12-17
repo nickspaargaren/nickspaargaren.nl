@@ -15,12 +15,10 @@
     "test:ui": "npx cypress open"
   },
   "dependencies": {
-    "babel-plugin-styled-components": "^2.1.4",
     "gatsby": "^5.14.0",
     "gatsby-plugin-image": "^3.14.0",
     "gatsby-plugin-sharp": "^5.14.0",
     "gatsby-plugin-sitemap": "^6.14.0",
-    "gatsby-plugin-styled-components": "^6.14.0",
     "gatsby-source-filesystem": "^5.14.0",
     "gatsby-source-sanity": "^7.9.1",
     "gatsby-transformer-sharp": "^5.14.0",
@@ -45,5 +43,6 @@
     "prettier": "^3.4.2",
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.18.0"
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
 }

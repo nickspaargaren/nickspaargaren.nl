@@ -22,10 +22,7 @@ const config: GatsbyConfig = {
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-styled-components`,
-    },
+    `gatsby-plugin-sharp`
   ],
 };
 
