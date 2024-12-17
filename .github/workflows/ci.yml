@@ -1,23 +1,6 @@
 name: CI
 on: push
 jobs:
-  cypress:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'yarn'
-          cache-dependency-path: 'frontend/yarn.lock'
-      - name: Run tests
-        uses: cypress-io/github-action@v6
-        with:
-          working-directory: frontend
-          browser: firefox
-          build: yarn build
-          start: yarn serve --port 3000
-
   frontend:
     runs-on: ubuntu-latest
     defaults:
@@ -38,6 +21,12 @@ jobs:
         run: yarn build
       - name: Run TypeScript Check
         run: yarn check-types
+      - name: Run e2e tests
+        uses: cypress-io/github-action@v6
+        with:
+          working-directory: frontend
+          browser: firefox
+          start: yarn serve --port 3000
 
   backend:
     runs-on: ubuntu-latest
