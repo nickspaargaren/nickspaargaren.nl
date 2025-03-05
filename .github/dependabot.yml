@@ -29,7 +29,6 @@ updates:
         - "eslint"
         - "eslint-*"
         - "@eslint/*"
-        - "@types/eslint__js"
 - package-ecosystem: "github-actions"
   directory: "/"
   schedule:
