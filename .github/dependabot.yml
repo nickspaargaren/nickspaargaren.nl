@@ -5,7 +5,7 @@ updates:
     - "/frontend"
     - "/backend"
   schedule:
-    interval: "weekly"
+    interval: "monthly"
   groups:
     gatsby:
       applies-to: version-updates
