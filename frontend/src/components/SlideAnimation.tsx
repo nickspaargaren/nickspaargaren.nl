@@ -3,8 +3,9 @@ import React, { ReactElement, useEffect, useRef, useState } from "react";
 
 const SlideAnimation = ({
   children,
-  easing = [0.4, 0, 0.5, 1],
-}: any): ReactElement => {
+}: {
+  children: ReactElement | ReactElement[];
+}): ReactElement => {
   const ref = useRef<HTMLInputElement | null>(null);
   const [elementTop, setElementTop] = useState(0);
   const [windowHeight, setWindowHeight] = useState(0);
@@ -21,13 +22,11 @@ const SlideAnimation = ({
     scrollY,
     [elementTop - windowHeight, elementTop - windowHeight + 70],
     [0, 1],
-    easing,
   );
   const y = useTransform(
     scrollY,
     [elementTop - windowHeight, elementTop - windowHeight + 70],
     [20, 0],
-    easing,
   );
 
   return (
