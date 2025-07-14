@@ -1,6 +1,7 @@
 import { Link } from "gatsby";
 import React, {
   CSSProperties,
+  MouseEvent,
   ReactElement,
   useEffect,
   useRef,
@@ -61,10 +62,10 @@ const Menu = (): ReactElement => {
     width: 0,
   });
 
-  const hover = (e: any) =>
+  const hover = (e: MouseEvent<HTMLAnchorElement>) =>
     setHoverObject({
-      left: e.target.offsetLeft,
-      width: e.target.clientWidth,
+      left: e.currentTarget.offsetLeft,
+      width: e.currentTarget.clientWidth,
     });
 
   const leave = () => {
