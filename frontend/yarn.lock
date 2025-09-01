@@ -11560,7 +11560,7 @@ yurnalist@^2.1.0:
     read "^1.0.7"
     strip-ansi "^5.2.0"
 
-zod@^3.25.67:
-  version "3.25.67"
-  resolved "https://registry.yarnpkg.com/zod/-/zod-3.25.67.tgz#62987e4078e2ab0f63b491ef0c4f33df24236da8"
-  integrity sha512-idA2YXwpCdqUSKRCACDE6ItZD9TZzy3OZMtpfLoh6oPR47lipysRrJfjzMqFxQ3uJuUPyUeWe1r9vLH33xO/Qw==
+zod@^4.1.5:
+  version "4.1.5"
+  resolved "https://registry.yarnpkg.com/zod/-/zod-4.1.5.tgz#7a21fc3178928ede50a28f7d0db4414c4cdb0161"
+  integrity sha512-rcUUZqlLJgBC33IT3PNMgsCq6TzLQEG/Ei/KTCU0PedSWRMAXoOUN+4t/0H+Q8bdnLPdqUYnvboJT0bn/229qg==
