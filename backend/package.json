@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@sanity/eslint-config-studio": "^5.0.2",
-    "eslint": "^9.34.0",
-    "typescript": "^5.9.2"
+    "eslint": "^9.36.0",
+    "typescript": "^5.9.3"
   }
 }
