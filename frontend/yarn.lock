@@ -5885,9 +5885,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cypress@npm:15.5.0":
-  version: 15.5.0
-  resolution: "cypress@npm:15.5.0"
+"cypress@npm:15.8.1":
+  version: 15.8.1
+  resolution: "cypress@npm:15.8.1"
   dependencies:
     "@cypress/request": "npm:^3.0.9"
     "@cypress/xvfb": "npm:^1.2.4"
@@ -5925,16 +5925,15 @@ __metadata:
     process: "npm:^0.11.10"
     proxy-from-env: "npm:1.0.0"
     request-progress: "npm:^3.0.0"
-    semver: "npm:^7.7.1"
     supports-color: "npm:^8.1.1"
-    systeminformation: "npm:5.27.7"
+    systeminformation: "npm:^5.27.14"
     tmp: "npm:~0.2.4"
     tree-kill: "npm:1.2.2"
     untildify: "npm:^4.0.0"
     yauzl: "npm:^2.10.0"
   bin:
     cypress: bin/cypress
-  checksum: 10c0/0a7aabc9920a808f5257f111b9b4bb6602e9b7146dd945a49e16a0811c201d5f5837f9ae439756556b686e020155483542505bf8499b72307236047b85a1130b
+  checksum: 10c0/6c5a5dba566b7bd939c3aa0fec23814ee16ca40a28f3a1b3a64ab18fc5e9c31725c9a128a45fcca9d2e1d9be3cbca7fbfbcc95a4be00157942b440a987b2e9a8
   languageName: node
   linkType: hard
 
@@ -11195,7 +11194,7 @@ __metadata:
     "@octokit/types": "npm:^16.0.0"
     "@types/react-helmet": "npm:^6.1.11"
     babel-plugin-styled-components: "npm:^2.1.4"
-    cypress: "npm:15.5.0"
+    cypress: "npm:15.8.1"
     eslint: "npm:^9.39.1"
     eslint-config-prettier: "npm:^10.1.8"
     eslint-plugin-prettier: "npm:^5.5.4"
@@ -13500,7 +13499,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^7.2.1, semver@npm:^7.3.2, semver@npm:^7.3.4, semver@npm:^7.3.5, semver@npm:^7.3.7, semver@npm:^7.3.8, semver@npm:^7.5.3, semver@npm:^7.5.4, semver@npm:^7.6.0, semver@npm:^7.7.1":
+"semver@npm:^7.2.1, semver@npm:^7.3.2, semver@npm:^7.3.4, semver@npm:^7.3.5, semver@npm:^7.3.7, semver@npm:^7.3.8, semver@npm:^7.5.3, semver@npm:^7.5.4, semver@npm:^7.6.0":
   version: 7.7.3
   resolution: "semver@npm:7.7.3"
   bin:
@@ -14467,12 +14466,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"systeminformation@npm:5.27.7":
-  version: 5.27.7
-  resolution: "systeminformation@npm:5.27.7"
+"systeminformation@npm:^5.27.14":
+  version: 5.28.7
+  resolution: "systeminformation@npm:5.28.7"
   bin:
     systeminformation: lib/cli.js
-  checksum: 10c0/92a9f3a2f37e135422da745be8e51984d66ae4c411e3d5c0ffdab9aef5cd8abc45d0d476bfa28c4bfee30a6e73722649544a88c4b6fa82b426c291adbfcdd8f9
+  checksum: 10c0/dbf7fd3f893ad84032399e4c81147715933f80e3b11bc0c2c59a14948be488404a0de49407253bcc1b9fae6ef2b8c25a9798ed4424158c70730a44e4b138aa71
   conditions: (os=darwin | os=linux | os=win32 | os=freebsd | os=openbsd | os=netbsd | os=sunos | os=android)
   languageName: node
   linkType: hard
