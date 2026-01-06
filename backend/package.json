@@ -17,11 +17,11 @@
   "dependencies": {
     "react": "^19.2.2",
     "react-dom": "^19.2.2",
-    "sanity": "^4.19.0",
+    "sanity": "^5.1.0",
     "styled-components": "^6.1.19"
   },
   "devDependencies": {
-    "@sanity/eslint-config-studio": "^5.0.2",
+    "@sanity/eslint-config-studio": "^6.0.0",
     "eslint": "^9.39.1",
     "typescript": "^5.9.3"
   },
