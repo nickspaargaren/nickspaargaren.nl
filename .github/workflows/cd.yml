@@ -16,7 +16,7 @@ jobs:
       - name: Enable Corepack
         run: corepack enable
       - name: Install modules
-        run: yarn install
+        run: yarn install --immutable
       - name: Deploy Sanity
         env:
           SANITY_AUTH_TOKEN: ${{ secrets.SANITY_AUTH_TOKEN }}

@@ -14,9 +14,9 @@ PATH=./node_modules/.bin:$PATH
 
 function task:build { ## Build the project images
 	title "Building the project images.."
-	(cd frontend && yarn install)
+	(cd frontend && yarn install --immutable)
 	echo ""
-	(cd backend && yarn install)
+	(cd backend && yarn install --immutable)
 	echo ""
 	docker compose build
 	echo ""
