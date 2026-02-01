@@ -22,7 +22,7 @@ jobs:
       - name: Run TypeScript Check
         run: yarn check-types
       - name: Run e2e tests
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v7
         with:
           working-directory: frontend
           browser: firefox
