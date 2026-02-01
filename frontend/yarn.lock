@@ -8397,25 +8397,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-source-filesystem@npm:^5.16.0":
-  version: 5.16.0
-  resolution: "gatsby-source-filesystem@npm:5.16.0"
-  dependencies:
-    "@babel/runtime": "npm:^7.20.13"
-    chokidar: "npm:^3.6.0"
-    file-type: "npm:^16.5.4"
-    fs-extra: "npm:^11.2.0"
-    gatsby-core-utils: "npm:^4.16.0"
-    mime: "npm:^3.0.0"
-    pretty-bytes: "npm:^5.6.0"
-    valid-url: "npm:^1.0.9"
-    xstate: "npm:^4.38.0"
-  peerDependencies:
-    gatsby: ^5.0.0-next
-  checksum: 10c0/98d746ff145862d961be7310b78dcd6473da4f2abfa87841b9e5038e15f3bffae8de5803b000fdd9f75675bcd7a3865f8973ec04143b40f94dfd5b5dcb13a60a
-  languageName: node
-  linkType: hard
-
 "gatsby-source-sanity@npm:^7.9.2":
   version: 7.9.2
   resolution: "gatsby-source-sanity@npm:7.9.2"
@@ -11277,7 +11258,6 @@ __metadata:
     gatsby-plugin-sharp: "npm:^5.16.0"
     gatsby-plugin-sitemap: "npm:^6.16.0"
     gatsby-plugin-styled-components: "npm:^6.16.0"
-    gatsby-source-filesystem: "npm:^5.16.0"
     gatsby-source-sanity: "npm:^7.9.2"
     gatsby-transformer-sharp: "npm:^5.16.0"
     motion: "npm:^12.23.12"
@@ -15322,13 +15302,6 @@ __metadata:
   version: 2.4.0
   resolution: "v8-compile-cache@npm:2.4.0"
   checksum: 10c0/387851192545e7f4d691ba674de90890bba76c0f08ee4909ab862377f556221e75b3a361466490e201203401d64d7795f889882bdabc98b6f3c0bf1038a535be
-  languageName: node
-  linkType: hard
-
-"valid-url@npm:^1.0.9":
-  version: 1.0.9
-  resolution: "valid-url@npm:1.0.9"
-  checksum: 10c0/3995e65f9942dbcb1621754c0f9790335cec61e9e9310c0a809e9ae0e2ae91bb7fc6a471fba788e979db0418d9806639f681ecebacc869bc8c3de88efa562ee6
   languageName: node
   linkType: hard
 

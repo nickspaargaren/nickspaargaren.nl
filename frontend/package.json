@@ -21,7 +21,6 @@
     "gatsby-plugin-sharp": "^5.16.0",
     "gatsby-plugin-sitemap": "^6.16.0",
     "gatsby-plugin-styled-components": "^6.16.0",
-    "gatsby-source-filesystem": "^5.16.0",
     "gatsby-source-sanity": "^7.9.2",
     "gatsby-transformer-sharp": "^5.16.0",
     "motion": "^12.23.12",
