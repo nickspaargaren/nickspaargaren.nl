@@ -12,6 +12,12 @@ updates:
       patterns:
         - "gatsby"
         - "gatsby-*"
+    react:
+        patterns:
+            - 'react'
+            - 'react-dom'
+            - '@types/react'
+            - '@types/react-dom'
     sanity:
       applies-to: version-updates
       patterns:
