@@ -10,6 +10,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "lint": "eslint --ignore-pattern \"**/.cache/**\" \"**/*.{ts,tsx}\"",
+    "lint:fix": "eslint --fix --ignore-pattern \"**/.cache/**\" \"**/*.{ts,tsx}\"",
     "check-types": "tsc --noEmit",
     "test": "npx cypress run",
     "test:ui": "npx cypress open"
