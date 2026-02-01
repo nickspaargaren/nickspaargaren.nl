@@ -1,7 +1,7 @@
 import Button from "@src/components/Button";
 import { useSiteMetadata } from "@src/hooks/useSiteMetadata";
 import { SocialData } from "@src/hooks/useSocialData";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import React, { ReactElement, useEffect, useRef } from "react";
 import { Helmet } from "react-helmet";
 import { FaEnvelopeOpen } from "react-icons/fa";
