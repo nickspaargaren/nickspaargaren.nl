@@ -1,35 +1,41 @@
 version: 2
 updates:
-- package-ecosystem: "npm"
-  directories:
-    - "/frontend"
-    - "/backend"
-  schedule:
-    interval: "monthly"
-  groups:
-    gatsby:
-      applies-to: version-updates
-      patterns:
-        - "gatsby"
-        - "gatsby-*"
-    sanity:
-      applies-to: version-updates
-      patterns:
-        - "sanity"
-        - "@sanity/*"
-    security-updates:
-      applies-to: security-updates
-      update-types:
-      - "patch"
-      - "minor"
-    typescript-eslint:
-      patterns:
-        - "typescript"
-        - "typescript-eslint"
-        - "eslint"
-        - "eslint-*"
-        - "@eslint/*"
-- package-ecosystem: "github-actions"
-  directory: "/"
-  schedule:
-    interval: "monthly"
+  - package-ecosystem: "npm"
+    directories:
+      - "/frontend"
+      - "/backend"
+    schedule:
+      interval: "monthly"
+    groups:
+      gatsby:
+        applies-to: version-updates
+        patterns:
+          - "gatsby"
+          - "gatsby-*"
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"
+      sanity:
+        applies-to: version-updates
+        patterns:
+          - "sanity"
+          - "@sanity/*"
+      security-updates:
+        applies-to: security-updates
+        update-types:
+          - "patch"
+          - "minor"
+      typescript-eslint:
+        patterns:
+          - "typescript"
+          - "typescript-eslint"
+          - "eslint"
+          - "eslint-*"
+          - "@eslint/*"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
