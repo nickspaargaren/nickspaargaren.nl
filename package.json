@@ -1,0 +1,22 @@
+{
+  "name": "nickspaargaren.nl",
+  "description": "Personal website",
+  "packageManager": "yarn@4.12.0",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "clean": "turbo run clean",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo run lint:fix",
+    "check-types": "turbo run check-types",
+    "test": "turbo run test",
+    "test:ui": "turbo run test:ui"
+  },
+  "devDependencies": {
+    "turbo": "^2.8.1"
+  }
+}

@@ -1,19 +1,18 @@
 {
-  "name": "nickspaargaren.nl",
+  "name": "frontend",
   "private": true,
-  "description": "Personal website",
   "version": "0.1.0",
   "license": "0BSD",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop -H 0.0.0.0",
+    "dev": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "lint": "eslint --ignore-pattern \"**/.cache/**\" \"**/*.{ts,tsx}\"",
     "lint:fix": "eslint --fix --ignore-pattern \"**/.cache/**\" \"**/*.{ts,tsx}\"",
     "check-types": "tsc --noEmit",
-    "test": "npx cypress run",
-    "test:ui": "npx cypress open"
+    "test": "start-server-and-test serve http://localhost:9000 'cypress run'",
+    "test:ui": "start-server-and-test serve http://localhost:9000 'cypress open'"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^2.1.4",
@@ -43,11 +42,12 @@
     "eslint-plugin-prettier": "^5.5.5",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "prettier": "^3.7.3",
+    "start-server-and-test": "^2.1.3",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.54.0"
   },
   "engines": {
     "node": "24"
   },
-  "packageManager": "yarn@4.11.0"
+  "packageManager": "yarn@4.12.0"
 }
