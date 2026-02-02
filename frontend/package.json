@@ -12,7 +12,7 @@
     "lint:fix": "eslint --fix --ignore-pattern \"**/.cache/**\" \"**/*.{ts,tsx}\"",
     "check-types": "tsc --noEmit",
     "test": "start-server-and-test serve http://localhost:9000 'cypress run'",
-    "test:ui": "npx cypress open"
+    "test:ui": "start-server-and-test serve http://localhost:9000 'cypress open'"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^2.1.4",

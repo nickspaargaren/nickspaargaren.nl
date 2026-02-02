@@ -13,7 +13,8 @@
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint:fix",
     "check-types": "turbo run check-types",
-    "test": "turbo run test"
+    "test": "turbo run test",
+    "test:ui": "turbo run test:ui"
   },
   "devDependencies": {
     "turbo": "^2.8.1"
