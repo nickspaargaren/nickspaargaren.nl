@@ -1,7 +1,5 @@
 import Button from "@src/components/Button";
 import { useSiteMetadata } from "@src/hooks/useSiteMetadata";
-import { SocialData } from "@src/hooks/useSocialData";
-import { motion } from "motion/react";
 import React, { ReactElement, useEffect, useRef } from "react";
 import { Helmet } from "react-helmet";
 import { FaEnvelopeOpen } from "react-icons/fa";
@@ -60,29 +58,6 @@ div[class*="grid"] img {max-width: 100%; height: auto !important;}
   .content {padding: 40px 10px;}
 }
 
-.holder {display: grid; grid-gap: 10px; grid-template-columns: repeat(auto-fit, minmax(158px, 1fr)); max-width: 768px; margin: 0 auto;}
-
-.holder a.block {transition: .3s all ease; color: inherit; text-decoration: none; white-space: nowrap; font-size: 30px; position: relative; padding: 20px; background: #fff; border-radius: 4px; box-shadow: 2px 2px 1px 2px rgba(0,0,0,.1);}
-
-.holder a.block span {display: block; border-radius: 3px; white-space: nowrap; padding: 9px 11px; font-size: 12px; line-height: 1.25em; pointer-events: none; position: relative; margin-top: 10px; transition: .3s all ease; background: #aaa;}
-.holder a.block span::before {border: solid; border-width: 0px 6px 6px 6px; top: -4px; content: ""; position: absolute; left: 50%; transform: translateX(-50%); transition: .3s all ease; border-color: #aaa transparent;}
-.holder a.block span strong {display: block; font-size: 14px; text-transform: capitalize;}
-
-
-.holder a.block.linkedin span {background: var(--linkedin-color-tint); color: var(--linkedin-color);}
-.holder a.block.linkedin:hover span {background: var(--linkedin-color); color: #fff;}
-.holder a.block.linkedin span::before {border-color: var(--linkedin-color-tint) transparent;}
-.holder a.block.linkedin:hover span::before {border-color: var(--linkedin-color) transparent;}
-.holder a.block.linkedin svg path {fill: var(--linkedin-color);}
-.holder a.block.linkedin::before {content: ""; height: 13px; width: 13px; border-radius: 4px; top: -5px; position: absolute; right: -5px; background: #F54335; border: 2px solid rgba(255, 255, 255, 0.5); box-sizing: border-box;}
-
-.holder a.block.github span {background: var(--github-color); color: #fff;}
-.holder a.block.github span::before {border-color: var(--github-color) transparent;}
-.holder a.block.github svg path {fill:var(--github-color);}
-
-.holder a.block.youtube span {background: var(--youtube-color); color: #fff;}
-.holder a.block.youtube span::before {border-color: var(--youtube-color) transparent;}
-.holder a.block.youtube svg path {fill: var(--youtube-color);}
 `;
 
 const containerAnimation = {
@@ -101,28 +76,6 @@ const itemAnimation = {
 const Home = (): ReactElement => {
   const siteMetadata = useSiteMetadata();
 
-  const siteholderRef = useRef<HTMLDivElement>(null);
-  const socialsRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!siteholderRef.current) return;
-
-    const canvas = siteholderRef.current;
-
-    const { width, height } = canvas.getBoundingClientRect();
-    const limit = 5;
-
-    canvas.addEventListener("mousemove", (mousemove) => {
-      const xWalk = (mousemove.x / width) * limit - limit / 2;
-      const yWalk = (mousemove.y / height) * limit - limit / 2;
-
-      socialsRef.current?.childNodes.forEach((block) => {
-        const { style } = block as HTMLDivElement;
-        style.boxShadow = `${xWalk}px ${yWalk}px 1px 2px rgba(0,0,0,.1)`;
-      });
-    });
-  }, []);
-
   return (
     <>
       <Helmet>
@@ -132,7 +85,7 @@ const Home = (): ReactElement => {
         <meta name="description" content={siteMetadata?.position || ""} />
       </Helmet>
       <GlobalStyle />
-      <div className="siteholder" ref={siteholderRef}>
+      <div className="siteholder">
         <div className="content" style={{ textAlign: "center", width: "100%" }}>
           <div className="title">
             <h1 style={{ fontSize: "2em" }}>{siteMetadata?.name}</h1>
@@ -146,32 +99,6 @@ const Home = (): ReactElement => {
               />
             </div>
           </div>
-
-          <motion.div
-            variants={containerAnimation}
-            initial="hidden"
-            animate="show"
-          >
-            <div className="holder" ref={socialsRef}>
-              {SocialData.map((social) => (
-                <motion.a
-                  variants={itemAnimation}
-                  key={social.id}
-                  className={`block ${social.class}`}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  href={social.url}
-                  aria-label={`Nick's ${social.platform} account`}
-                >
-                  {social.icon}
-                  <span>
-                    <strong>{social.platform}</strong>
-                    {siteMetadata?.name}
-                  </span>
-                </motion.a>
-              ))}
-            </div>
-          </motion.div>
         </div>
       </div>
     </>
