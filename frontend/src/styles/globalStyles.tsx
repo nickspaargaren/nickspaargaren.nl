@@ -80,8 +80,6 @@ const GlobalStyle = createGlobalStyle`
 
   p a {color: #019bff;}
 
-  .calc {display: inline-block; text-decoration: line-through; background: #d1d9e2; opacity: .5; padding: 0 7px; border-radius: 3px; font-size: 13px;}
-
   header {
     background: #221e25; color: #fff; overflow: hidden;
   }
