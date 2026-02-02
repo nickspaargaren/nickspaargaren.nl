@@ -1,15 +1,11 @@
 {
-  "name": "nickspaargarennl",
+  "name": "backend",
   "private": true,
   "version": "1.0.0",
-  "description": "",
-  "main": "package.json",
-  "author": "Nick Spaargaren",
   "license": "UNLICENSED",
   "scripts": {
-    "start": "sanity start --host=0.0.0.0",
-    "dev": "sanity dev --host=0.0.0.0",
-    "test": "sanity check",
+    "start": "sanity start",
+    "dev": "sanity dev",
     "build": "sanity build",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
