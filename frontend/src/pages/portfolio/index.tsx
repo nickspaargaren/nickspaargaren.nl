@@ -19,6 +19,7 @@ import {
   SiApple,
   SiCodeclimate,
   SiDevdotto,
+  SiFigma,
   SiLinux,
   SiMaterialdesignicons,
   SiNetflix,
@@ -29,6 +30,8 @@ import {
   SiVisualstudiocode,
   SiXbox,
 } from "react-icons/si";
+
+const yearsOfWorkExperience: number = new Date().getFullYear() - 2013;
 
 const Index = () => {
   const portfolio = usePortfolioData();
@@ -85,13 +88,11 @@ const Index = () => {
               <SiMaterialdesignicons aria-hidden="true" />
               <SiAdobe aria-hidden="true" />
               <SiSketch aria-hidden="true" />
+              <SiFigma aria-hidden="true" />
               <h4>Design</h4>
               <p>
-                Meer dan 10 jaar{" "}
-                <span className="calc" aria-hidden="true">
-                  27 - 10 = 17 ✓
-                </span>{" "}
-                ervaring met vormgeving, design, fotobewerking en dtp.
+                {yearsOfWorkExperience}+ jaar ervaring met vormgeving, design,
+                fotobewerking en dtp.
               </p>
             </SlideAnimation>
             <SlideAnimation>
@@ -99,8 +100,17 @@ const Index = () => {
               <SiDevdotto aria-hidden="true" />
               <h4>Develop</h4>
               <p>
-                Front-end developer sinds 2013. Altijd zoekend naar nieuwe
-                technieken waaronder op dit moment <i>Apollo en Graphql</i>
+                Van Front-end naar Full Stack Developer. Altijd op zoek naar
+                nieuwe technieken. Zie mijn open source{" "}
+                <a
+                  href="https://github.com/nickspaargaren"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                >
+                  GitHub
+                </a>{" "}
+                portfolio.
               </p>
             </SlideAnimation>
             <SlideAnimation>
@@ -108,7 +118,7 @@ const Index = () => {
               <SiAirbnb aria-hidden="true" />
               <h4>Drone videography</h4>
               <p>
-                Vakantie en activiteitenvideo's, promotievideo's /
+                Vakantie- en activiteitenvideo's, promotievideo's /
                 inzamelingsacties, luchtopnames.{" "}
                 <Link to="/portfolio/drone" aria-label="Drone video's">
                   Naar video's
@@ -120,8 +130,9 @@ const Index = () => {
               <SiApple aria-hidden="true" />
               <h4>Device rooting/jailbreakscene</h4>
               <p>
-                Checkra1n, ADB debug, Unc0ver, Odin, Custom recoveries, TWRP,
-                ClockwordMod, LineageOS, CarBridge
+                Checkra1n, ADB debug, Unc0ver, ROM Flashing, Odin, HENkaku,
+                Custom recoveries, TWRP, ClockwordMod, webOS, LineageOS,
+                CarBridge
               </p>
             </SlideAnimation>
             <SlideAnimation>
@@ -129,7 +140,8 @@ const Index = () => {
               <SiLinux aria-hidden="true" />
               <h4>Linux / Raspberry pi</h4>
               <p>
-                Pi-hole, Homebrige, Unbound DNS, openVPN, Domoticz, Wireguard
+                Home Assistant, Pi-hole, Homebrige, AdGuard Home, Unbound DNS,
+                openVPN, Domoticz, Wireguard
               </p>
             </SlideAnimation>
             <SlideAnimation>
@@ -141,7 +153,7 @@ const Index = () => {
                 <span style={{ textDecoration: "line-through" }}>
                   Adobe Flash
                 </span>
-                , Proxies, GoPro timelapses
+                , Final Cut, iMovie, Video proxies, GoPro timelapses
               </p>
             </SlideAnimation>
             <SlideAnimation>
