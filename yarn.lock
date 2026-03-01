@@ -11876,7 +11876,7 @@ __metadata:
     eslint-config-prettier: "npm:^10.1.8"
     eslint-plugin-prettier: "npm:^5.5.5"
     eslint-plugin-simple-import-sort: "npm:^12.1.1"
-    gatsby: "npm:^5.16.0"
+    gatsby: "npm:^5.16.1"
     gatsby-plugin-image: "npm:^3.16.0"
     gatsby-plugin-sharp: "npm:^5.16.0"
     gatsby-plugin-sitemap: "npm:^6.16.0"
@@ -12135,7 +12135,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-parcel-config@npm:^1.16.0":
+"gatsby-parcel-config@npm:1.16.0":
   version: 1.16.0
   resolution: "gatsby-parcel-config@npm:1.16.0"
   dependencies:
@@ -12414,9 +12414,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby@npm:^5.16.0":
-  version: 5.16.0
-  resolution: "gatsby@npm:5.16.0"
+"gatsby@npm:^5.16.1":
+  version: 5.16.1
+  resolution: "gatsby@npm:5.16.1"
   dependencies:
     "@babel/code-frame": "npm:^7.18.6"
     "@babel/core": "npm:^7.20.12"
@@ -12505,7 +12505,7 @@ __metadata:
     gatsby-legacy-polyfills: "npm:^3.16.0"
     gatsby-link: "npm:^5.16.0"
     gatsby-page-utils: "npm:^3.16.0"
-    gatsby-parcel-config: "npm:^1.16.0"
+    gatsby-parcel-config: "npm:1.16.0"
     gatsby-plugin-page-creator: "npm:^5.16.0"
     gatsby-plugin-typescript: "npm:^5.16.0"
     gatsby-plugin-utils: "npm:^4.16.0"
@@ -12593,7 +12593,7 @@ __metadata:
       optional: true
   bin:
     gatsby: ./cli.js
-  checksum: 10c0/333dd9a902e509152a61a6ada4296229451215ff36f0d699e565c3208012b427c5482aa53378baa82443c98405afc6aaf95c198010d9061ce3c2546408bf9a4e
+  checksum: 10c0/a28fe03ac12a375ef1dbbb9ac2bdeb4eb5345e884f95b242fe5b129f06beb62fac33d1d7c31f640c6c6bce5fdc2f770dd839c6fbd913535ce49e0d366fe1c5d4
   languageName: node
   linkType: hard
 
