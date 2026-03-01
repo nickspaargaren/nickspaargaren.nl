@@ -1,7 +1,7 @@
 import Breadcrumbs from "@src/components/Breadcrumbs";
 import Button from "@src/components/Button";
 import Layout from "@src/layout";
-import { graphql } from "gatsby";
+import { graphql, HeadFC } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import React, { ReactElement } from "react";
 import { FaAngleDoubleRight, FaCode } from "react-icons/fa";
@@ -13,11 +13,7 @@ type PortfolioDetailPageType = {
 const PortfolioDetailPage = ({
   data: { page },
 }: PortfolioDetailPageType): ReactElement => (
-  <Layout
-    title={`Projecten | ${page?.title}`}
-    description={page?.description}
-    noindex
-  >
+  <Layout>
     <div className="inhoud">
       <Breadcrumbs list={["Projecten", page?.title || ""]} />
     </div>
@@ -77,3 +73,13 @@ export const query = graphql`
 `;
 
 export default PortfolioDetailPage;
+
+export const Head: HeadFC<Queries.pageQuery> = ({ data }): ReactElement => {
+  return (
+    <>
+      <title>{`Projecten | ${data?.page?.title}`}</title>
+      <meta name="description" content={data?.page?.description || ""} />
+      <meta name="robots" content="noindex" />
+    </>
+  );
+};

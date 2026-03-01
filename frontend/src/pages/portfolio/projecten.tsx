@@ -3,13 +3,14 @@ import PortfolioItem from "@src/components/PortfolioItem";
 import SlideAnimation from "@src/components/SlideAnimation";
 import { usePortfolioData } from "@src/hooks/usePortfolioData";
 import Layout from "@src/layout";
-import React from "react";
+import { HeadFC } from "gatsby";
+import React, { ReactElement } from "react";
 
 const Projecten = () => {
   const portfolio = usePortfolioData();
 
   return (
-    <Layout title={`Portfolio`} description="Portfolio overzicht" noindex>
+    <Layout>
       <div className="inhoud">
         <Breadcrumbs list={["Projecten"]} />
       </div>
@@ -32,3 +33,13 @@ const Projecten = () => {
 };
 
 export default Projecten;
+
+export const Head: HeadFC = (): ReactElement => {
+  return (
+    <>
+      <title>Portfolio</title>
+      <meta name="description" content="Portfolio overzicht" />
+      <meta name="robots" content="noindex" />
+    </>
+  );
+};
