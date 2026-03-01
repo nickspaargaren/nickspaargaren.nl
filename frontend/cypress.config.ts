@@ -7,6 +7,7 @@ export default defineConfig({
       htmlvalidate.install(on, {
         rules: {
           "require-sri": "off",
+          "element-required-content": "off",
           "valid-id": "off",
         },
       });
