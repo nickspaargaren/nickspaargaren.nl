@@ -1,9 +1,9 @@
 import Button from "@src/components/Button";
 import { useSiteMetadata } from "@src/hooks/useSiteMetadata";
 import { SocialData } from "@src/hooks/useSocialData";
+import { HeadFC } from "gatsby";
 import { motion } from "motion/react";
 import React, { ReactElement, useEffect, useRef } from "react";
-import { Helmet } from "react-helmet";
 import { FaEnvelopeOpen } from "react-icons/fa";
 import { createGlobalStyle } from "styled-components";
 
@@ -125,12 +125,6 @@ const Home = (): ReactElement => {
 
   return (
     <>
-      <Helmet>
-        <html lang="nl" />
-        <meta charSet="utf-8" />
-        <title>{siteMetadata?.name}</title>
-        <meta name="description" content={siteMetadata?.position || ""} />
-      </Helmet>
       <GlobalStyle />
       <div className="siteholder" ref={siteholderRef}>
         <div className="content" style={{ textAlign: "center", width: "100%" }}>
@@ -179,3 +173,14 @@ const Home = (): ReactElement => {
 };
 
 export default Home;
+
+export const Head: HeadFC = (): ReactElement => {
+  const siteMetadata = useSiteMetadata();
+
+  return (
+    <>
+      <title>{siteMetadata?.name}</title>
+      <meta name="description" content={siteMetadata?.position || ""} />
+    </>
+  );
+};

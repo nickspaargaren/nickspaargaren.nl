@@ -9,8 +9,8 @@ import { usePortfolioData } from "@src/hooks/usePortfolioData";
 import { useSiteMetadata } from "@src/hooks/useSiteMetadata";
 import { useStatsData } from "@src/hooks/useStatsData";
 import Layout from "@src/layout";
-import { Link } from "gatsby";
-import React from "react";
+import { HeadFC, Link } from "gatsby";
+import React, { ReactElement } from "react";
 import { FaLinkedin } from "react-icons/fa";
 import {
   SiAdobe,
@@ -36,14 +36,9 @@ const yearsOfWorkExperience: number = new Date().getFullYear() - 2013;
 const Index = () => {
   const portfolio = usePortfolioData();
   const stats = useStatsData();
-  const siteMetadata = useSiteMetadata();
 
   return (
-    <Layout
-      title={`Portfolio | ${siteMetadata?.name}`}
-      description={siteMetadata?.position}
-      noindex
-    >
+    <Layout>
       <section>
         <div className="inhoud">
           <div className="grid-4x">
@@ -203,3 +198,15 @@ const Index = () => {
 };
 
 export default Index;
+
+export const Head: HeadFC = (): ReactElement => {
+  const siteMetadata = useSiteMetadata();
+
+  return (
+    <>
+      <title>{`Portfolio | ${siteMetadata?.name}`}</title>
+      <meta name="description" content={siteMetadata?.position || ""} />
+      <meta name="robots" content="noindex" />
+    </>
+  );
+};
