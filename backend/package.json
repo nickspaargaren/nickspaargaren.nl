@@ -19,8 +19,8 @@
   },
   "devDependencies": {
     "@sanity/eslint-config-studio": "^6.0.0",
-    "eslint": "^9.39.1",
-    "typescript": "^5.9.3"
+    "eslint": "^10.1.0",
+    "typescript": "^6.0.2"
   },
   "engines": {
     "node": "24"
