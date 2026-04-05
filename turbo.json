@@ -6,7 +6,11 @@
       "persistent": true
     },
     "build": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build"],
+      "outputs": [".cache/**", "public/**", "dist/**"]
+    },
+    "serve": {
+      "dependsOn": ["build"]
     },
     "clean": {
       "dependsOn": ["^clean"]
