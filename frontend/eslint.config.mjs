@@ -1,8 +1,9 @@
 import eslint from "@eslint/js";
+import { defineConfig } from "eslint/config";
+import depend from "eslint-plugin-depend";
 import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
 import simpleImportSort from "eslint-plugin-simple-import-sort";
 import tseslint from "typescript-eslint";
-import { defineConfig } from "eslint/config";
 
 export default defineConfig(
   eslint.configs.recommended,
@@ -12,6 +13,7 @@ export default defineConfig(
   {
     plugins: {
       "simple-import-sort": simpleImportSort,
+      depend,
     },
     rules: {
       "prettier/prettier": "warn",
@@ -19,5 +21,6 @@ export default defineConfig(
       "simple-import-sort/exports": "error",
       "@typescript-eslint/consistent-type-definitions": ["error", "type"],
     },
+    extends: ["depend/flat/recommended"],
   },
 );
