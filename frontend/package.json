@@ -43,7 +43,7 @@
     "eslint-plugin-depend": "^1.5.0",
     "eslint-plugin-prettier": "^5.5.5",
     "eslint-plugin-simple-import-sort": "^12.1.1",
-    "html-validate": "^10.9.0",
+    "html-validate": "^11.5.0",
     "prettier": "^3.7.3",
     "start-server-and-test": "^3.0.0",
     "typescript": "^5.9.3",
