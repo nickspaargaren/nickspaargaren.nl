@@ -8914,13 +8914,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cypress-html-validate@npm:^8.1.0":
-  version: 8.1.0
-  resolution: "cypress-html-validate@npm:8.1.0"
+"cypress-html-validate@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "cypress-html-validate@npm:9.0.0"
   peerDependencies:
-    cypress: ^12.0.0 || ^13.0.0 || ^14.0.0 || ^15.0.0
-    html-validate: ^8.10.0 || ^9.0.0 || ^10.0.0
-  checksum: 10c0/3bed9a2ce2856d2574aa5459e75ca35d0b8f471f78bb6a8e356ebe4e1e4b3c617f007e7ae86b8de57d7e1cc18fe3d559ff2da61a9b5f08ab373e33d254eb9263
+    cypress: ^13.0.0 || ^14.0.0 || ^15.0.0
+    html-validate: ^8.10.0 || ^9.0.0 || ^10.0.0 || ^11.0.0
+  checksum: 10c0/4de06121b76ad6d5c3b2a3865dad7629acb9a64fc9d95a9e0b4384168d8ea5cd02c67cd7893d5b145ed6007eee0e511041d49f8f27a50103c4e2d083a248a4aa
   languageName: node
   linkType: hard
 
@@ -11410,7 +11410,7 @@ __metadata:
     "@types/babel__core": "npm:^7"
     babel-plugin-styled-components: "npm:^2.1.4"
     cypress: "npm:15.14.2"
-    cypress-html-validate: "npm:^8.1.0"
+    cypress-html-validate: "npm:^9.0.0"
     eslint: "npm:^9.39.1"
     eslint-config-prettier: "npm:^10.1.8"
     eslint-plugin-depend: "npm:^1.5.0"
