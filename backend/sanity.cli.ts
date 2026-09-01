@@ -5,6 +5,7 @@ export default defineCliConfig({
     projectId: '5mfdvpuc',
     dataset: "production",
   },
+  studioHost: "nickspaargaren-nl",
   deployment: {
     autoUpdates: false,
   },
